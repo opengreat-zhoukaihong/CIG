@@ -1,0 +1,154 @@
+<html>
+<head>
+
+
+<title>CNHotelBooking.com后台管理工具</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.font9 {  font-size: 9pt; color: #FF8000; font-weight: normal}
+.font12 {  font-size: 12pt; color: #FF8000; font-weight: bold}
+        A:link {text-decoration: none; font-family: "宋体"}
+        A:visited {text-decoration: none; font-family: "宋体"}
+        A:active {text-decoration: none; font-family: "宋体"}
+        A:hover {text-decoration: underline; color: #FFCC33}
+-->
+</style>
+</head>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var wStr
+function PostForm(I)
+{
+  if ( I ==3)
+  {
+	wStr = "";
+	for (j=0;j<fmOrderResult.elements.length;++j)
+	{ 
+	  if (fmOrderResult.elements[j].type == "checkbox")
+	  {
+        if (fmOrderResult.elements[j].checked == true)
+        {
+          wStr = wStr + "'" + fmOrderResult.elements[j].value + "',"; 
+        }
+      }
+    }
+    //alert(wStr + "'0'");
+    if (wStr == "")
+    {
+      alert ("请选择删除的记录!");
+      return;
+    }
+    wStr = wStr + "'0'";
+    fmOrderResult.method="post";
+    fmOrderResult.action = "/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstDelRow?TableName=Booking_gb&ID=" + wStr;
+    fmOrderResult.submit();
+  }
+  else if ( I == 1)
+  {
+    fmOrderResult.action = "/cnhotel/bst/open_order_view.jsp?PageFlag=PREV";
+    fmOrderResult.submit();
+  }
+  else if ( I == 2)
+  {
+    fmOrderResult.action = "/cnhotel/bst/open_order_view.jsp?PageFlag=NEXT";
+    fmOrderResult.submit();
+  }
+  
+}
+
+//-->
+</SCRIPT>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+
+
+<span class="font9"></span> <span class="font9"></span> 
+<table width="478" border="0" cellspacing="0" cellpadding="0" height="216">
+  <tr>
+    <td width="80">&nbsp;</td>
+    <td width="397"> 
+      <table border="0" cellpadding="0" cellspacing="0" width="50">
+        <tr> 
+          <td width="10">&nbsp; </td>
+          <td> 
+            <form name=fmOrderResult  action="">
+              <table width="400" border="0" cellspacing="2" cellpadding="5" height="40">
+                <tr> 
+                  <td class="font12">订单查询结果(修改请按ID号)</td>
+                </tr>
+              </table>
+              <table width="400" border="1" cellspacing="2" cellpadding="5" bordercolorlight="#f9c026" bordercolordark="#FFFFFF">
+                
+                
+<tr align="center"> 
+                  <td class="font9" width="40">ID</td>
+                  <td class="font9" width="59">客户名称</td>
+                  <td class="font9" width="89">酒店名称</td>
+                  <td class="font9" width="69">城市</td>
+                  <td class="font9" width="50">状态</td>
+                </tr>
+<tr align="center"> 
+                  <td class="font9" width="40"><a href="order_update.jsp?ID=983" class="font9"> 
+                    <input type="checkbox" name="ckID" value="983">
+                    983</a></td>
+                  <td class="font9" width="59"><a href="order_update.jsp?ID=983" class="font9"> 张林</a></td>
+                  <td class="font9" width="89">九龙酒店</td>
+                  <td class="font9" width="69">香港</td>
+                  <td class="font9" width="50">预订</td>
+                </tr>
+<tr align="center"> 
+                  <td class="font9" width="40"><a href="order_update.jsp?ID=982" class="font9"> 
+                    <input type="checkbox" name="ckID" value="982">
+                    982</a></td>
+                  <td class="font9" width="59"><a href="order_update.jsp?ID=982" class="font9"> 何锋</a></td>
+                  <td class="font9" width="89">星湖大酒店</td>
+                  <td class="font9" width="69">肇庆</td>
+                  <td class="font9" width="50">预订</td>
+                </tr>
+<tr align="center"> 
+                  <td class="font9" width="40"><a href="order_update.jsp?ID=981" class="font9"> 
+                    <input type="checkbox" name="ckID" value="981">
+                    981</a></td>
+                  <td class="font9" width="59"><a href="order_update.jsp?ID=981" class="font9"> Fong</a></td>
+                  <td class="font9" width="89">西丽大酒店</td>
+                  <td class="font9" width="69">深圳</td>
+                  <td class="font9" width="50">预订</td>
+                </tr>
+<tr align="center"> 
+                  <td class="font9" width="40"><a href="order_update.jsp?ID=963" class="font9"> 
+                    <input type="checkbox" name="ckID" value="963">
+                    963</a></td>
+                  <td class="font9" width="59"><a href="order_update.jsp?ID=963" class="font9"> zhouwen</a></td>
+                  <td class="font9" width="89">嘉应宾馆</td>
+                  <td class="font9" width="69">广州</td>
+                  <td class="font9" width="50">预订</td>
+                </tr>
+<tr align="center"> 
+                  <td class="font9" width="40"><a href="order_update.jsp?ID=962" class="font9"> 
+                    <input type="checkbox" name="ckID" value="962">
+                    962</a></td>
+                  <td class="font9" width="59"><a href="order_update.jsp?ID=962" class="font9"> liangweifeng</a></td>
+                  <td class="font9" width="89">逸东酒店</td>
+                  <td class="font9" width="69">香港</td>
+                  <td class="font9" width="50">预订</td>
+                </tr>
+<tr align="center"> 
+                  <td class="font9" colspan="5">
+<a href="open_order_view.jsp?PageFlag=NEXT"><img src="images/botton_next.gif" width="68" height="26" border="0"></a>
+<img src="images/dot.gif" width="50" height="1">
+<a href="javascript:PostForm(3)"><img src="images/deltree.gif" width="68" height="26" border="0" ></a></td>
+                </tr>
+                
+                
+              </table>
+            </form>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

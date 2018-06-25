@@ -1,0 +1,133 @@
+<HTML><head>
+<title>W3Perl provider installation - FR</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE WIDTH=100% CELLSPACING=5 BORDER=0>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP>
+<CENTER>
+<FONT COLOR="#0000FF"><H1>Installation chez un provider</H1></FONT>
+<P>
+</CENTER>
+<P>
+<BR>
+<BR>
+Il est assez rare de disposer d'un acc&eacute;s telnet lorsque vous
+ouvrez un compte chez un h&eacute;bergeur. La plupart se contente
+de vous offrir un acc&egrave;s ftp pour les mises &agrave; jour
+de votre site Web. Mais il est courant d'avoir un r&eacute;pertoire
+cgi-bin o&ugrave; vous pouvez y mettre vos scripts CGI. Si cela
+n'est pas le cas, l'installation de w3perl n'est pas possible.
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=CENTER>
+<I><FONT SIZE=+1><B>R&eacute;pertoire <BR>cgi-bin avec <BR>sous-r&eacute;pertoire</B></FONT><HR width=50%></I>
+</TD>
+<TD VALIGN=TOP>
+1.1 - T&eacute;l&eacute;chargez l'application <A HREF="http://www.w3perl.com/download//chinaeoa/index.jsp">W3Perl</A> sur <I><B>votre propre ordinateur</B></I>. 
+Le r&eacute;pertoire sur votre machine sera appel&eacute; par la suite MY_DIR. 
+Vous allez devoir faire deux parties, une pour les scripts perl et l'autre pour les fichiers de ressources.
+<P>
+1.2 - Editez le fichier fixperlpath.pl pour refl&eacute;ter l'endroit o&ugrave; se trouve l'ex&eacute;cutable
+Perl sur la machine de <I><B>votre h&eacute;bergeur</B></I> (la plupart utilise /usr/local/bin/perl). 
+Les sites Web h&eacute;berg&eacute;s sous NT devront &eacute;galement modifier la deuxi&egrave;me ligne
+de fixperlpath.pl pour rendre compte de l'endroit o&ugrave; se trouvera situ&eacute; le fichier libw3perl.pl
+dans le r&eacute;pertoire cgi-bin sur la machine de votre h&eacute;bergeur.
+Les sites sous Unix et NT devront modifi&eacute; la troisi&egrave;me ligne afin de refl&eacute;ter l'endroit
+de votre r&eacute;pertoire de statistiques sur la machine de votre h&eacute;bergeur.
+<P>
+1.3 - Faites deux fichiers tar ou zip. 
+Le premier contiendra tous les scripts perl. D&eacute;placez les scripts situ&eacute;s dans 
+MY_DIR/cgi-bin/w3perl/*.pl vers MY_DIR et fabriquer un fichier tar ou zip (exempe : tar -cvf
+pack1.tar *.pl).<BR>
+Le deuxi&egrave;me contiendra tous les fichiers HTML et les fichiers de ressources situ&eacute;s dans 
+MY_DIR. Par exemple : tar -cvf pack2.tar resources/ docs/ admin/
+<P>
+1.4 - Cr&eacute;ez un sous r&eacute;pertoire w3perl au sein de votre r&eacute;pertoire cgi-bin 
+sur la machine de votre h&eacute;bergeur.
+Cr&eacute;ez &eacute;galement un r&eacute;pertoire de statistique au niveau de la racine de votre
+serveur. Ce r&eacute;pertoire sera appel&eacute; DIR_STAT par la suite.
+<P>
+1.5 - Envoyez le fichier pack1.tar que vou venez de cr&eacute;er dans le r&eacute;pertoire /cgi-bin/w3perl/ 
+de la machine de votre h&eacute;bergeur et pack2.tar dans /DIR_STAT/.
+<P>
+1.6 - D&eacute;compressez et d&eacute;sarchivez ces fichiers (si cela n'est pas possible, il ne vous reste plus
+qu'&agrave; envoyez les fichiers un par un !)
+<P>
+1.7 - Utilisez votre fureteur pr&eacute;f&eacute;r&eacute; et allez sur l'URL suivante 
+www.votresiteweb.com/DIR_STAT/admin/ o&ugrave; www.votresiteweb.com est l'adresse de votre site web.
+L'interface d'administration de w3perl devrait alors apparaitre. S&eacute;lectionnez ''Customization'
+dans la section 'W3Perl Launch' qui va mettre &agrave; jour les chemins dans tous les scripts.
+<P>
+1.8 - Maintenant un petit retour en arri&egrave;re et s&eacute;lectionnez 'Make configuration file'
+et remplissez les diff&eacute;rents formulaires. Vous devrez apparavant avoir d&eacute;placer le
+fichier config.pl vers un autre nom de fichier sinon les formulaires vous avertirons de la 
+pr&eacute;sence actuelle d'un fichier de configuration.
+<P>
+1.9 - C'est termin&eacute; ! Il ne reste plus qu'&agrave; lancer les scripts.
+Les sites sous Unix peuvent s&eacute;lectionner 'Initialization' qui va lancer tous les
+scripts de stats automatiquement.
+(soyez patient si votre fichier de log est tr&egrave;s gros et/ou la machine est lente).
+Les sites sous NT devront lancer les scripts un par un dans la section 'First use', 
+s&eacute;lectionnez en premier lieu 'Documents stats', puis 'Main stats' et finalement
+tous les autres.<BR>
+Des messages seront affich&eacute;s vous permettant ainsi de suivre les diff&eacute;rentes parties
+des calculs. Si une erreur survient, v&eacute;rifiez votre fichier de configuration ou si rien
+n'est affich&eacute;, t&eacute;l&eacute;chargez le fichier error_log pour examiner ce qui ne va pas.
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=CENTER>
+<I><FONT SIZE=+1><B>R&eacute;pertoire<BR> cgi-bin<BR> unique</B></FONT><HR width=50%></I>
+</TD>
+<TD VALIGN=TOP>
+<P>
+Certains h&eacute;bergeurs n'autorisent pas la cr&eacute;ation de sous r&eacute;pertoires au
+sein de leur r&eacute;pertoire cgi-bin pour des raisons de s&eacute;curit&eacute;.
+<BR> L'installation standard suppose que vous puissiez en cr&eacute;er donc il vous faudra modifier
+quelques lignes de code pour installer l'application. (la partie 1.4 n'est pas possible pour vous)
+<P>
+2.1 - Avant de cr&eacute;er les deux parties, editez tous les
+fichiers contenus dans /MY_DIR/admin/ et changez les liens pointant vers 
+/cgi-bin/w3perl/ en /cgi-bin/ dans les premi&egrave;res lignes de chaque lignes.
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=CENTER>
+<I><FONT SIZE=+1><B>Conseils</B></FONT><HR width=50%></I>
+</TD>
+<TD VALIGN=TOP>
+1 - Certains h&eacute;bergeur utilisent un nom diff&eacute;rent pour le r&eacute;pertoire cgi-bin.
+Par exemple, Rapidsite utilise un r&eacute;pertoire /cgi-local/ au lieu de /cgi-bin/. 
+Vous allez devoir &eacute;diter tous les fichiers dans
+/MY_DIR/admin/ pour changer les liens /cgi-bin/ en /cgi-local/ ! (voir 2.1).
+<P>
+2 - Si votre h&eacute;bergeur vous permet d'utiliser une crontab, choississez de lancer une fois
+par jour cron-w3perl.pl qui va mettre toutes vos stats de mani&egrave;re incrementale.
+Vous devrez auparavant &eacute;diter cron-w3perl.pl pour choisir quels sont les scripts que vous
+d&eacute;sirez lancer et &agrave; quels moments.
+<P>
+3 - Installez un mot de passe au niveau du r&eacute;pertoire  /DIR_STAT/admin/ afin
+d'&eacute;viter que tout le monde puisse changer votre configuration.
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="install.html"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

@@ -1,0 +1,45 @@
+A:link {
+	COLOR: #494949
+}
+A:visited {
+	COLOR: #5a5a5a
+}
+A:active {
+	COLOR: #ff3300
+}
+.bottom-menu {
+	COLOR: #585858; FONT-FAMILY: "arial", "helvetica", "verdana", "sans-serif"; FONT-SIZE: 0.6em
+}
+.legal-notice {
+	COLOR: #224388; FONT-FAMILY: "arial", "helvetica", "verdana", "sans-serif"; FONT-SIZE: 9pt
+}
+.orange-title {
+	COLOR: #ff6633; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 10pt; FONT-STYLE: normal; FONT-WEIGHT: bold; LINE-HEIGHT: normal
+}
+.orange-title1 {
+	COLOR: #000099; FONT-FAMILY: "arial", "helvetica", "verdana", "sans-serif"; FONT-SIZE: 15pt; FONT-WEIGHT: bold
+}
+.white-title {
+	COLOR: #ffffff; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 9pt; FONT-WEIGHT: bold; LINE-HEIGHT: normal
+}
+.black-m-text {
+	FONT-FAMILY: "arial", "helvetica", "verdana", "sans-serif"; FONT-SIZE: 9pt
+}
+A:hover {
+	COLOR: #ff6666
+}
+.product-name {
+	COLOR: #333333; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 12pt; FONT-WEIGHT: bold
+}
+.contact {
+	COLOR: #5f5f5f; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 9pt; FONT-WEIGHT: bold
+}
+.xiaolei {
+	COLOR: #333333; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 8pt
+}
+.dalei {
+	COLOR: #0a72da; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 9pt; FONT-STYLE: normal; FONT-WEIGHT: bold; LINE-HEIGHT: 17pt
+}
+.border {
+	BACKGROUND-COLOR: #ffffff; BORDER-BOTTOM: #dddddd 1px inset; BORDER-LEFT: #dddddd 1px inset; BORDER-RIGHT: #dddddd 1px inset; BORDER-TOP: #dddddd 1px inset; FONT-SIZE: 9pt
+}

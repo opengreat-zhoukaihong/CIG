@@ -1,0 +1,139 @@
+<HTML><head>
+<title>W3Perl provider installation</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE WIDTH=100% CELLSPACING=5 BORDER=0>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP>
+<CENTER>
+<FONT COLOR="#0000FF"><H1>Provider installation</H1></FONT>
+<P>
+<!-- <H3>Provider Installation</H3> -->
+</CENTER>
+<P>
+<BR>
+<BR>
+Usually, you don't have an telnet access when you open an account
+on a provider. But you have a cgi-bin directory where files you can
+download have automatically execution permission. if not, you
+can't install the package !
+<BR>
+<FONT COLOR="#20A0A0">W3Perl provider installation directory</FONT><BR>
+<FONT COLOR="#A02020">Cgi-bin provider directory</FONT><BR>
+<FONT COLOR="#A020A0">W3Perl local directory</FONT>
+<P>
+
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=CENTER>
+<I><FONT SIZE=+1><B>Multi level<BR> cgi-bin<BR> directory</B></FONT><HR width=50%></I>
+</TD>
+<TD VALIGN=TOP>
+1.1 - Download the <A HREF="http://www.w3perl.com/download/index.html">W3Perl package</A> on <I><B>your own computer</B></I> and extract it into the <FONT COLOR="#A020A0">w3perl directory</FONT>. You'll have to make two packages, one for perl scripts and the other for resource files.
+<P>
+1.2 - Edit the install.pl script to reflect the Perl location on <I><B><FONT COLOR="#20A0A0">your
+provider hosts</FONT></B></I> (most use /usr/local/bin/perl). 
+Then edit $pathcgi to reflect the location where you will install the 
+<FONT COLOR="#A02020">cgi scripts on your provider host</FONT>. 
+Finally edit $pathw3perl to reflect the location of
+your <FONT COLOR="#20A0A0">stats directory</FONT> on your provider host.
+<P>
+1.3 - Make two tar files. 
+One will contains all the perl scripts. Move the scripts inside 
+<FONT COLOR="#A020A0">w3perl/cgi-bin/w3perl/*.pl</FONT> into <FONT COLOR="#A020A0">w3perl</FONT> and make a tar file (<I>tar -cvf
+pack1.tar *.pl</I>).<BR>
+The other will contains HTML files and
+resources files located in <FONT COLOR="#A020A0">w3perl/resources/ w3perl/admin/ w3perl/docs/ w3perl/config/</FONT>. Use <I>tar -cvf pack2.tar resources/* docs/* /admin/*</I>.
+<BR>
+You can of course make a zip file if you can unzip files on your provider
+hosts. If you can't either unzip or untar files, you'll have to send
+the files one by one.
+<P>
+1.4 - Create in the cgi-bin provider host a subdirectory called <FONT COLOR="#A02020">w3perl</FONT>.
+Also create a <FONT COLOR="#20A0A0">stat directory</FONT> in your server root 
+(create a <I>/w3perl/</I> directory from
+your server root where w3perl will the name of your stats directory, you
+could choose another directory name of course).
+<P>
+1.5 - Upload pack1.tar in your <FONT COLOR="#A02020">/cgi-bin/w3perl/</FONT> provider host and 
+pack2.tar in <FONT COLOR="#20A0A0">/w3perl/</FONT>.
+<P>
+1.6 - Untar all these files (if you can't, send the files one by one !)
+<P>
+1.7 - Use your favourite browser and go to www.yourwebsite.com/w3perl/admin/
+. You'll see the w3perl administration interface. Select first 'Customization'  in the 'W3Perl Launch' section which will update all path inside the scripts.
+<P>
+1.8 - Now go back and select 'Make configuration file' and fill the different forms.
+You'll need to copy the current config.pl to another name or the script
+will complain about an existing file. If nothing appears, something is
+wrong, check your scripts are located in the /cgi-bin/w3perl/ directory and
+the resources files are located in your w3perl directory. If everything
+seems good, just ask me ;) (but check before)
+<P>
+1.9 - Now you're ready to compute your stats !
+Unix user can click on 'Initialization' which will launch all scripts stats
+(please be patient if your logfile is huge and/or your host slow). NT
+users will have to run scripts one by one in the 'First use' section, select
+first 'Documents stats', then 'Main stats' and the others.<BR>
+Messages will be displayed while computing showing you the different 
+part of the computation. If an error occured, check your configuration 
+file or if nothing is displayed, view your error_log logfile to see what's wrong.
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=CENTER>
+<I><FONT SIZE=+1><B>Single level<BR> cgi-bin<BR> directory</B></FONT><HR width=50%></I>
+</TD>
+<TD VALIGN=TOP>
+<P>
+Some providers don't allow you to create subdirectories inside
+their cgi-bin directory for 'security restriction'.
+<BR> Standard installation assumed you can create subdirectories so
+you'll need to change few things to install the package. (1.4 is
+not possible for you).
+<P>
+2.1 - Before making the two tar package, edit all the files
+inside /w3perl/admin/* and change /cgi-bin/w3perl/ to /cgi-bin/ in the
+first few lines.
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=CENTER>
+<I><FONT SIZE=+1><B>Hints</B></FONT><HR width=50%></I>
+</TD>
+<TD VALIGN=TOP>
+1 - Some provider use a different name for the cgi-bin name directory.
+For example, Rapidsite use /cgi-local/ instead of /cgi-bin/. You'll
+need to edit all the files in /w3perl/admin/ to change /cgi-bin/ to /cgi-local/ ! (see 2.1).
+<P>
+2 - If your provider allow you to use a crontab, choose to launch
+cron-w3perl.pl once a day which will compute all incremental scripts
+for you. You'll have to edit cron-w3perl.pl to choose which scripts
+to launch and when. No data is lost if you run stats at least once a week.
+<P>
+3 - Install a password in the /w3perl/admin/ to avoid everyone to change
+your stats settings.
+<P>
+4 - If you uncompress the package on a PC, edit files and upload then to
+an Unix server, take care of carriage return character.
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="install.html"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

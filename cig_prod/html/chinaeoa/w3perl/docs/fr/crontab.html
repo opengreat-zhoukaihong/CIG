@@ -1,0 +1,214 @@
+<HTML><head>
+<title>W3Perl Automatic/manual use - FR</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Utilisation automatique/manuelle</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Avec une crontab</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+<LI><B>Unix</B>
+<P>Vous devez pouvoir avoir acc&egrave;s &agrave; une crontab (demandez &agrave; votre
+ing&eacute;nieur syst&egrave;me si tel n'est pas le cas). Vous devez &eacute;crire le
+chemin complet dans la crontab pour que les scripts soient lanc&eacute;s.
+<P>
+<TABLE WIDTH=100% BORDER=1>
+<TR>
+<TD>
+<B>Nouveau dans la version 2.08</B>, cron-w3perl.pl a &eacute;t&eacute; introduit
+ afin d'&eacute;viter de multiples lignes de scripts dans votre crontab
+ et permet de lancer les scripts dans le bon ordre. Plus besoin d'attendre la fin
+ d'un script pour lancer le suivant.<BR>
+Editez le fichier et d&eacute;cidez quels scripts doivent &ecirc;tre lancer et quand. <BR>
+Ce script doit &ecirc;etre lancer chaque hour ou une fois par jour, cela d&eacute;pend de la
+fr&eacute;quence de lancement du script sur les heures.
+<BR>
+Vous devez donc juste ajouter une ligne de ce genre dans votre crontab :
+<P>
+01 00 * * * /usr/local/httpd/htdocs/w3perl/cron-w3perl.pl &gt; /dev/null
+<CENTER>
+<BR>ou<BR>
+</CENTER>
+01 00 * * * /usr/local/httpd/htdocs/w3perl/cron-w3perl.pl -c /norfolk/www/w3perl/config-oj.pl &gt; /dev/null
+<BR>
+si vous devez charger un fichier de configuration.
+</TD>
+</TR>
+</TABLE>
+<P>
+<LI><B>NT</B>
+<P>
+Les sites sous NT ne peuvent pas utiliser cron-w3perl donc vous devrez avoir une ligne
+pour chaque script dans le gestionnaire d'&eacute;v&eacute;nement.
+
+<table width=100%>
+<tr>
+<th colspan=2>Scripts principaux</th>
+</tr>
+<tr>
+<td>10 00 * * *</td>
+<td>/norfolk/www/w3perl/cron-inc.pl &gt; /dev/null</td>
+</tr>
+<tr>
+<td>01 * * * *</td>
+<td>/norfolk/www/w3perl/cron-hour.pl &gt; /dev/null</td>
+</tr>
+<tr>
+<td>00 01 * * *</td>
+<td>/norfolk/www/w3perl/cron-day.pl &gt; /dev/null</td>
+</tr>
+<tr>
+<td>30 01 * * 1</td>
+<td>/norfolk/www/w3perl/cron-week.pl &gt; /dev/null</td>
+</tr>
+<tr>
+<td>00 02 1 * *</td>
+<td>/norfolk/www/w3perl/cron-month.pl &gt; /dev/null</td>
+</tr>
+</table>
+
+<LI> Cron-inc sera lanc&eacute; chaque nuit &agrave; 00:10, il doit &ecirc;tre le premier
+&agrave; tourner car il g&eacute;n&eacute;re des fichiers de r&eacute;sultat n&eacute;cessaire
+pour l'ex&eacute;cution des autres scripts.
+<b>Vous devrez auparavant avoir lancer une fois cron-pages.pl lors de l'installation de l'application
+</b>
+<LI> Cron-hour.pl tourne chaque heure.
+<LI> Les autres scripts doivent &ecirc;tre lanc&eacute;s plus tard lorsque cron-inc s'est 
+termine&eacute;.
+<P>
+
+<table width=100%>
+<tr>
+<th colspan=2>Scripts optionels</th>
+</tr>
+<tr>
+<td>03 00 * * 1</td>
+<td>/norfolk/www/w3perl/cron-url.pl &gt; /dev/null</td>
+</tr>
+<tr>
+<td>30 02 * * 1</td>
+<td>/norfolk/www/w3perl/cron-session.pl &gt; /dev/null</td>
+</tr>
+<tr>
+<td>35 03 * * 1</td>
+<td>/norfolk/www/w3perl/cron-agent.pl &gt; /dev/null</td>
+</tr>
+<tr>
+<td>40 03 * * 1</td>
+<td>/norfolk/www/w3perl/cron-refer.pl &gt; /dev/null</td>
+</tr>
+<tr>
+<td>45 03 * * 1</td>
+<td>/norfolk/www/w3perl/cron-error.pl &gt; /dev/null</td>
+</tr>
+</table>
+
+<LI> Cron-url.pl g&eacute;n&eacute;re un fichier de sortie de correspondance entre les URL
+et le titre des fichiers. Il est possible de le lancer tous les jours juste avant cron-inc.pl,
+mais si votre site n'est pas mis &agrave; jour quotidiennement, une fois par semaine suffit.
+<LI> cron-refer, cron-agent ne sont pas n&eacute;cessaire si votre serveur ne g&eacute;re
+pas ce genre d'informations.
+<LI> Cron-session peut prendre beaucoup de temps si votre fichier de log est important.
+<P>
+Vous recevrez un email chaque matin vous informant des probl&egrave;mes &eacute;ventuels
+rencontr&eacute;s par les scripts durant leur calcul.
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Sans crontab</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+<LI><B>Unix</B>
+<P>
+<TABLE WIDTH=100% BORDER=1>
+<TR>
+<TD>
+<P>
+<B>Nouveau dans la version 2.40</B>, cron-w3perl.pl peut &ecirc;tre utilis&eacute;
+pour lancer tous les scripts de mani&egrave;re incr&eacute;mentale les uns apr&egrave;s
+les autres. Les sites sous NT ne peuvent pas utiliser cron-w3perl, d&eacute;sol&eacute;.
+incremental script one by one. NT can't use cron-w3perl, sorry.
+<P>
+Il faudra appeler le script avec l'option -e (cron-w3perl.pl -e) une fois par semaine au
+minimum.
+</TD>
+</TR>
+</TABLE>
+<P>
+<LI><B>NT</B>
+<P>
+Apr&egrave;s avoir configur&eacute; le fichier de configuration config.pl, vous pouvez
+lancer cron-pages.pl qui va initialiser les stats. Une fois le script termin&eacute;, 
+v&eacute;rifier le r&eacute;sultat et modifier le fichier de configuration en cons&eacute;quence.
+Il ne sera plus jamais n&eacute;cessaire de lancer cron-pages par la suite. A la place,
+vous devrez lancer cron-inc qui prendra le relais en ne calculant que des stats
+incr&eacute;mentales par rapport &agrave; la journ&eacute;e pr&eacute;c&eacute;dente.
+Cron-inc est capable de calculer des stats incr&eacute;mentales sur une p&eacute;riode
+maximale de 7 jours, donc il est pas obligatoire de le lancer tous les jours. Par
+contre celui-ci doit &ecirc;tre lanc&eacute; au moins une fois par semaine, dans 
+le cas contraire, il vous faudra tout r&eacute;initialiser avec cron-pages.
+<BR>
+Donc utilisez dans les cas suivants :
+<UL>
+<LI>cron-pages pour la premi&egrave;re fois
+<UL>
+<LI> &agrave; la premi&egrave;re utilisation lors de l'initialisation
+<LI> si vous avez oublie de lancer les stats depuis plus de 7 jours
+<LI> si vous modifiez en profondeur le fichier de configuration
+</UL>
+<LI>cron-inc
+<UL>
+<LI> tous les jours pour le calcul incr&eacute;mental
+</UL> 
+</UL>
+Ensuite utilisez :
+<UL>
+<LI>cron-hour pour les stats sur les heures (chaque heure ou une fois par jour &agrave; minuit)
+<LI>cron-day pour les stats sur les jours (une fois par jour)
+<LI>cron-week pour les stats sur les semaines (une fois par semaine)
+<LI>cron-month pour les stats sur les mois (le premier jour de chaque mois)
+</UL>
+Les stats sont automatiquement mis &agrave; jour depuis la derni&egrave;re fois que
+vous les avez lanc&eacute;es. Vous ne perdez aucune donn&eacute;e si vous n'ex&eacute;cuter
+pas les scripts tous les jours.
+<P>
+Si certains liens ne sont actifs, la raison est simplement que votre fichier de log ne
+contient pas encore assez de donn&eacute;es pour que certaines stats soient calcul&eacute;es.
+<BR>
+Pour obtenir encore plus d'informations, vous pouvez utiliser les scripts optionnels :
+<UL>
+<LI>cron-agent pour les stats sur les fureteurs
+<LI>cron-refer pour les stats sur les r&eacute;f&eacute;rences
+<LI>cron-url pour des stats sur votre site Web (une correspondance entre les fichiers et leur titre est aussi effectu&eacute;e)
+<LI>cron-session pour les stats sur les sessions
+<LI>cron-error pour les stats sur les erreurs.
+</UL>
+Libre &agrave; vous de les lancer &agrave; votre guise. Personnellement je les lance une 
+fois par semaine. Vous devrez attendre le jour suivant pour que la page d'accueil soit
+automatiquement mise &agrave; jour et qu'apparaissent les liens vers ces diff&eacute;rentes
+parties.
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="install.html"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

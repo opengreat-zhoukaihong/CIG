@@ -1,0 +1,586 @@
+<html>
+<head>
+<title>CNHotelBooking.com后台管理工具</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.font9 {  font-size: 9pt; color: #FF8000; font-weight: normal}
+.font12 {  font-size: 12pt; color: #FF8000; font-weight: bold}
+-->
+</style>
+</head>
+<body bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+<SCRIPT LANGUAGE=javascript>
+<!--
+
+
+function PostForm(I)
+{ 
+  if (I==1)
+  {
+    if ((fmAddHotel.txtName.value == "")||(fmAddHotel.txtCity.value == ""))
+    {	
+ 	  alert("请输入名称和城市!");
+	  return;
+    }
+   fmAddHotel.submit();
+  }
+ else
+ {  
+    //alert("请输!");
+    fmAddHotel.action="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstAddPrice?Type=Add";
+    
+    fmAddHotel.submit();  
+ }    
+ 
+}
+//-->
+</SCRIPT>
+
+<span class="font9"></span> <span class="font9"></span> 
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="26">&nbsp; </td>
+    <td width="547"> 
+      <form name= fmAddHotel method="post" action="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstUpdateHotel">
+        <table width="550" border="0" cellspacing="2" cellpadding="5" height="40">
+          <tr> 
+            <td height="30" class="font12"> 更新酒店资料</td>
+          </tr>
+        </table>
+<table width="564" border="1" cellspacing="2" cellpadding="5" bordercolorlight="#f9c026" bordercolordark="#ffffff">
+          <tr class="font9"> 
+            <td width="81" class="font9">酒店编号：</td>
+            <td width="171" class="font9">604
+              <input type="hidden" name="txtID" value="604" >
+            </td>
+            <td width="78" class="font9">操作员：</td>
+            <td width="174">21</td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9" height="35">中文名称：</td>
+            <td class="font9" height="35" width="171"> 
+              <input name="txtName" value="投资大厦宾馆"
+           >
+              * </td>
+            <td class="font9" height="35" width="78">英文名称：</td>
+            <td class="font9" height="35" width="174"> 
+              <input name="txtNameEN" value=""
+           >
+            </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">中文简称：</td>
+            <td width="171"> 
+              <input name="txtShortName" value="投资大厦宾馆"
+           >
+              * </td>
+            <td width="78" class="font9">地址：</td>
+            <td width="174"> 
+              <input name="txtAddress"  value="深南大道4009号"
+           >
+              &nbsp;* </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">具体位置：</td>
+            <td width="171"> 
+              <input name="txtLocation"  value="近高交会馆"
+           >
+            </td>
+<td width="77" class="font9">城市：</td>
+            <td width="169">
+              <select name="txtCity" size="1">
+<option value='1'>合肥</option>
+<option value='10'>番禺</option>
+<option value='11'>佛山</option>
+<option value='12'>广州</option>
+<option value='13'>鹤山</option>
+<option value='133'>保定</option>
+<option value='134'>潮州</option>
+<option value='135'>秦皇岛</option>
+<option value='136'>余杭</option>
+<option value='137'>南海</option>
+<option value='138'>金华</option>
+<option value='14'>惠州</option>
+<option value='145'>阳朔</option>
+<option value='147'>从化</option>
+<option value='148'>黄山</option>
+<option value='15'>江门</option>
+<option value='150'>花都</option>
+<option value='151'>包头</option>
+<option value='16'>梅州</option>
+<option value='168'>漳州</option>
+<option value='17'>汕头</option>
+<option value='171'>镇江</option>
+<option value='18'  selected >深圳</option>
+<option value='185'>开平</option>
+<option value='186'>九寨沟</option>
+<option value='19'>顺德</option>
+<option value='2'>澳门</option>
+<option value='20'>台山</option>
+<option value='21'>湛江</option>
+<option value='22'>肇庆</option>
+<option value='23'>中山</option>
+<option value='24'>珠海</option>
+<option value='25'>北海</option>
+<option value='26'>桂林</option>
+<option value='27'>南宁</option>
+<option value='28'>贵阳</option>
+<option value='29'>海口</option>
+<option value='3'>北京</option>
+<option value='30'>三亚</option>
+<option value='31'>兴隆 </option>
+<option value='32'>石家庄</option>
+<option value='33'>洛阳</option>
+<option value='34'>郑州</option>
+<option value='35'>哈尔滨</option>
+<option value='36'>武汉</option>
+<option value='37'>长沙</option>
+<option value='38'>长春</option>
+<option value='39'>常州</option>
+<option value='4'>福州</option>
+<option value='40'>连云港</option>
+<option value='41'>南京</option>
+<option value='42'>苏州</option>
+<option value='43'>无锡</option>
+<option value='44'>南昌</option>
+<option value='45'>大连</option>
+<option value='46'>丹东</option>
+<option value='47'>沈阳</option>
+<option value='48'>呼和浩特</option>
+<option value='49'>济南</option>
+<option value='5'>武夷山</option>
+<option value='50'>青岛</option>
+<option value='51'>烟台</option>
+<option value='52'>太原</option>
+<option value='53'>西安</option>
+<option value='54'>上海</option>
+<option value='55'>成都</option>
+<option value='56'>天津</option>
+<option value='57'>拉萨</option>
+<option value='58'>香港</option>
+<option value='59'>乌鲁木齐</option>
+<option value='6'>厦门</option>
+<option value='60'>昆明</option>
+<option value='61'>杭州</option>
+<option value='62'>宁波</option>
+<option value='63'>温州</option>
+<option value='64'>重庆</option>
+<option value='7'>敦煌</option>
+<option value='8'>兰州</option>
+<option value='9'>东莞</option>
+              </select>
+              &nbsp;* </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">邮政编号：</td>
+            <td width="171"> 
+              <input name="txtPostCode"  value="0"
+           >
+              &nbsp;* </td>
+            <td width="78">省份：</td>
+            <td width="169" class="font9">
+              <select name="txtState" size="1">
+<option value='1'>安徽</option>
+<option value='10'>河北</option>
+<option value='11'>河南</option>
+<option value='12'>黑龙江</option>
+<option value='13'>湖北</option>
+<option value='14'>湖南</option>
+<option value='15'>吉林</option>
+<option value='16'>江苏</option>
+<option value='17'>江西</option>
+<option value='18'>辽宁</option>
+<option value='19'>内蒙古</option>
+<option value='2'>澳门</option>
+<option value='20'>山东</option>
+<option value='21'>山西</option>
+<option value='22'>陕西</option>
+<option value='23'>上海</option>
+<option value='24'>四川</option>
+<option value='25'>天津</option>
+<option value='26'>西藏</option>
+<option value='27'>香港</option>
+<option value='28'>新疆</option>
+<option value='29'>云南</option>
+<option value='3'>北京</option>
+<option value='30'>浙江</option>
+<option value='31'>重庆</option>
+<option value='4'>福建</option>
+<option value='5'>甘肃</option>
+<option value='6'  selected >广东</option>
+<option value='7'>广西</option>
+<option value='8'>贵州</option>
+<option value='9'>海南</option>
+              </select>
+              &nbsp;* </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9" height="37">国家：</td>
+            <td width="171" height="37"> 
+              <select name="sltCtryCode" size="1">
+<option value='1'  selected >中国</option>
+<option value='2'>中国香港</option>
+<option value='3'>中国台湾</option>
+<option value='4'>澳门</option>
+<option value='5'>新加坡</option>
+<option value='6'>日本</option>
+<option value='7'>美国</option>
+<option value='8'>加拿大</option>
+<option value='9'>其他国家</option>
+              </select>
+              * </td>
+            <td width="78" class="font9" height="37">电话：</td>
+            <td width="174" height="37"> 
+              <input name="txtTelephone" value="0755-2712988" 
+           >
+              * </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">传真：</td>
+            <td width="171"> 
+              <input name="txtFax" value="0755-2712057" 
+           >
+            </td>
+            <td width="78" class="font9">电子信箱：</td>
+            <td width="174"> 
+              <input name="txtEmail" value="" 
+           >
+            </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">酒店主页：</td>
+            <td width="171"> 
+              <input name="txtUrl" value="" 
+           >
+            </td>
+            <td width="78" class="font9">联系人：</td>
+            <td width="174"> 
+              <input name="txtContact" value="" 
+           >
+            </td>
+          </tr>
+          <tr> 
+            <td width="81" class="font9">价格等级：</td>
+            <td width="171"> 
+              <select name="sltPriceRange" size="1">
+<option value='1'>200元以下</option>
+<option value='2'>200-300元</option>
+<option value='3'  selected >300-450元</option>
+<option value='4'>500-650元以上</option>
+<option value='5'>650元以上</option>
+              </select>
+            </td>
+            <td width="78" class="font9">星级：</td>
+            <td width="174" class="font9"> 
+              <select name="sltStarPating" size="1">
+<option value='1'>一星级</option>
+<option value='2'>二星级</option>
+<option value='3'  selected >三星级</option>
+<option value='4'>四星级</option>
+<option value='5'>五星级</option>
+              </select>
+              * </td>
+          </tr>
+<tr class="font9"> 
+            <td colspan="4" class="font9">
+              <table width="100%" border="1" cellspacing="2" cellpadding="5" bordercolorlight="#F9C026" bordercolordark="#FFFFFF">
+                <tr> 
+                  <td class="font9"><a href="javascript:PostForm(2)" class="font9"> 客房类别</a></td>
+                  <td class="font9">币种</td>
+                  <td class="font9">客房单价</td>
+                  <td class="font9">周五单价</td>
+                  <td class="font9">周六单价</td>
+                  <td class="font9">周日单价</td>
+                </tr>
+                <tr> 
+                  <td class="font9"><a href='/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstGetPrice?ID=604&RoomTypeID=1&HotelName=%CD%B6%D7%CA%B4%F3%CF%C3%B1%F6%B9%DD' class='font9'>双人标准房</a></td>
+                  <td class="font9">RMB</td>
+                  <td class="font9">330</td>
+                  <td class="font9">&nbsp;</td>
+                  <td class="font9">&nbsp;</td>
+                  <td class="font9">&nbsp;</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">图片路径：</td>
+            <td width="171"> 
+              <select name="sltImageDir" size="1">
+<option value='1'>酒店图片目录</option>
+<option value='10'>大连酒店图片目录</option>
+<option value='11'>海口酒店图片目录</option>
+<option value='110'>阳朔酒店图片目录</option>
+<option value='111'>从化酒店图片目录</option>
+<option value='112'>黄山酒店图片目录</option>
+<option value='113'>花都酒店图片目录</option>
+<option value='114'>包头酒店图片目录</option>
+<option value='12'>武汉酒店图片目录</option>
+<option value='129'>金华酒店图片目录</option>
+<option value='13'>重庆酒店图片目录</option>
+<option value='14'>珠海酒店图片目录</option>
+<option value='15'>合肥酒店图片目录</option>
+<option value='150'>镇江酒店图片目录</option>
+<option value='16'>三亚酒店图片目录</option>
+<option value='17'>鹤山酒店图片目录</option>
+<option value='18'>佛山酒店图片目录</option>
+<option value='19'>呼和浩特酒店图片目录</option>
+<option value='2'>房间图片目录</option>
+<option value='20'>惠州酒店图片目录</option>
+<option value='21'>贵阳酒店图片目录</option>
+<option value='22'>北海酒店图片目录</option>
+<option value='23'>长春酒店图片目录</option>
+<option value='24'>长沙酒店图片目录</option>
+<option value='25'>常州酒店图片目录</option>
+<option value='26'>成都酒店图片目录</option>
+<option value='27'>丹东酒店图片目录</option>
+<option value='28'>东莞酒店图片目录</option>
+<option value='29'>敦煌酒店图片目录</option>
+<option value='3'>地图目录</option>
+<option value='30'>番禺酒店图片目录</option>
+<option value='31'>福州酒店图片目录</option>
+<option value='32'>哈尔滨酒店图片目录</option>
+<option value='33'>杭州酒店图片目录</option>
+<option value='34'>济南酒店图片目录</option>
+<option value='35'>江门酒店图片目录</option>
+<option value='36'>昆明酒店图片目录</option>
+<option value='37'>拉萨酒店图片目录</option>
+<option value='38'>兰州酒店图片目录</option>
+<option value='39'>连云港酒店图片目录</option>
+<option value='4'>酒店星级图片目录</option>
+<option value='40'>洛阳酒店图片目录</option>
+<option value='41'>梅州酒店图片目录</option>
+<option value='42'>南昌酒店图片目录</option>
+<option value='43'>南宁酒店图片目录</option>
+<option value='44'>宁波酒店图片目录</option>
+<option value='45'>汕头酒店图片目录</option>
+<option value='46'>香港酒店图片目录</option>
+<option value='47'>苏州酒店图片目录</option>
+<option value='48'>石家庄酒店图片目录</option>
+<option value='49'>青岛酒店图片目录</option>
+<option value='5'>天津酒店图片目录</option>
+<option value='50'>顺德酒店图片目录</option>
+<option value='51'>台山酒店图片目录</option>
+<option value='52'>太原酒店图片目录</option>
+<option value='53'>温州酒店图片目录</option>
+<option value='54'>乌鲁木齐酒店图片目录</option>
+<option value='55'>烟台酒店图片目录</option>
+<option value='56'>湛江酒店图片目录</option>
+<option value='57'>肇庆酒店图片目录</option>
+<option value='58'>郑州酒店图片目录</option>
+<option value='59'>中山酒店图片目录</option>
+<option value='6'>桂林酒店图片目录</option>
+<option value='60'>无锡酒店图片目录</option>
+<option value='61'>武夷山酒店图片目录</option>
+<option value='62'>西安酒店图片目录</option>
+<option value='63'>厦门酒店图片目录</option>
+<option value='64'>兴隆酒店图片目录</option>
+<option value='65'>北京酒店图片目录</option>
+<option value='66'>上海酒店图片目录</option>
+<option value='67'  selected >深圳酒店图片目录</option>
+<option value='68'>广州酒店图片目录</option>
+<option value='7'>南京酒店图片目录</option>
+<option value='8'>沈阳酒店图片目录</option>
+<option value='89'>保定酒店图片目录</option>
+<option value='9'>澳门酒店图片目录</option>
+<option value='91'>潮州酒店图片目录</option>
+<option value='92'>秦皇岛酒店图片目录</option>
+<option value='93'>南海酒店图片目录</option>
+              </select>
+            </td>
+            <td width="78" class="font9">图片文件1：</td>
+            <td width="174"> 
+              <input name="txtImageFile1" value="shenzhentouzidasha_out.jpg"
+           >
+            </td>
+          </tr>
+          <tr> 
+            <td width="81" class="font9">图片文件2：</td>
+            <td width="171" class="font9"> 
+              <input name="txtImageFile2" value="">
+            </td>
+            <td width="78" class="font9">图片文件3</td>
+            <td width="174"> 
+              <input name="txtImageFile3" value=""
+           >
+            </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">地图目录：</td>
+            <td width="171"> 
+              <select name="sltMapDir" size="1" >
+<option value='1'>酒店图片目录</option>
+<option value='10'>大连酒店图片目录</option>
+<option value='11'>海口酒店图片目录</option>
+<option value='110'>阳朔酒店图片目录</option>
+<option value='111'>从化酒店图片目录</option>
+<option value='112'>黄山酒店图片目录</option>
+<option value='113'>花都酒店图片目录</option>
+<option value='114'>包头酒店图片目录</option>
+<option value='12'>武汉酒店图片目录</option>
+<option value='129'>金华酒店图片目录</option>
+<option value='13'>重庆酒店图片目录</option>
+<option value='14'>珠海酒店图片目录</option>
+<option value='15'>合肥酒店图片目录</option>
+<option value='150'>镇江酒店图片目录</option>
+<option value='16'>三亚酒店图片目录</option>
+<option value='17'>鹤山酒店图片目录</option>
+<option value='18'>佛山酒店图片目录</option>
+<option value='19'>呼和浩特酒店图片目录</option>
+<option value='2'>房间图片目录</option>
+<option value='20'>惠州酒店图片目录</option>
+<option value='21'>贵阳酒店图片目录</option>
+<option value='22'>北海酒店图片目录</option>
+<option value='23'>长春酒店图片目录</option>
+<option value='24'>长沙酒店图片目录</option>
+<option value='25'>常州酒店图片目录</option>
+<option value='26'>成都酒店图片目录</option>
+<option value='27'>丹东酒店图片目录</option>
+<option value='28'>东莞酒店图片目录</option>
+<option value='29'>敦煌酒店图片目录</option>
+<option value='3'  selected >地图目录</option>
+<option value='30'>番禺酒店图片目录</option>
+<option value='31'>福州酒店图片目录</option>
+<option value='32'>哈尔滨酒店图片目录</option>
+<option value='33'>杭州酒店图片目录</option>
+<option value='34'>济南酒店图片目录</option>
+<option value='35'>江门酒店图片目录</option>
+<option value='36'>昆明酒店图片目录</option>
+<option value='37'>拉萨酒店图片目录</option>
+<option value='38'>兰州酒店图片目录</option>
+<option value='39'>连云港酒店图片目录</option>
+<option value='4'>酒店星级图片目录</option>
+<option value='40'>洛阳酒店图片目录</option>
+<option value='41'>梅州酒店图片目录</option>
+<option value='42'>南昌酒店图片目录</option>
+<option value='43'>南宁酒店图片目录</option>
+<option value='44'>宁波酒店图片目录</option>
+<option value='45'>汕头酒店图片目录</option>
+<option value='46'>香港酒店图片目录</option>
+<option value='47'>苏州酒店图片目录</option>
+<option value='48'>石家庄酒店图片目录</option>
+<option value='49'>青岛酒店图片目录</option>
+<option value='5'>天津酒店图片目录</option>
+<option value='50'>顺德酒店图片目录</option>
+<option value='51'>台山酒店图片目录</option>
+<option value='52'>太原酒店图片目录</option>
+<option value='53'>温州酒店图片目录</option>
+<option value='54'>乌鲁木齐酒店图片目录</option>
+<option value='55'>烟台酒店图片目录</option>
+<option value='56'>湛江酒店图片目录</option>
+<option value='57'>肇庆酒店图片目录</option>
+<option value='58'>郑州酒店图片目录</option>
+<option value='59'>中山酒店图片目录</option>
+<option value='6'>桂林酒店图片目录</option>
+<option value='60'>无锡酒店图片目录</option>
+<option value='61'>武夷山酒店图片目录</option>
+<option value='62'>西安酒店图片目录</option>
+<option value='63'>厦门酒店图片目录</option>
+<option value='64'>兴隆酒店图片目录</option>
+<option value='65'>北京酒店图片目录</option>
+<option value='66'>上海酒店图片目录</option>
+<option value='67'>深圳酒店图片目录</option>
+<option value='68'>广州酒店图片目录</option>
+<option value='7'>南京酒店图片目录</option>
+<option value='8'>沈阳酒店图片目录</option>
+<option value='89'>保定酒店图片目录</option>
+<option value='9'>澳门酒店图片目录</option>
+<option value='91'>潮州酒店图片目录</option>
+<option value='92'>秦皇岛酒店图片目录</option>
+<option value='93'>南海酒店图片目录</option>
+              </select>
+            </td>
+            <td width="78">地图文件：</td>
+            <td width="174"> 
+              <input name="txtMapFile" value="" >
+            </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">要求推荐：</td>
+            <td width="171"> 
+              <input type="radio" name="rdPromotion" value="Y" checked>
+              是 
+              <input type="radio" name="rdPromotion" value="N" >
+              否 </td>
+            <td width="78">免费早餐：</td>
+            <td width="174"> 
+              <input type="radio" name="rdFreeBreakfast" value="N" checked>
+              没有
+              <input type="radio" name="rdFreeBreakfast" value="Y" >
+              单人
+              <input type="radio" name="rdFreeBreakfast" value="S" >
+              双人</td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">优惠服务：</td>
+            <td width="171"> 
+              <input type="radio" name="rdService" value="Y">
+              是 
+              <input type="radio" name="rdService" value="N" checked>
+              否</td>
+            <td width="78">建立预订：</td>
+            <td width="174"> 
+              <input type="radio" name="rdStatus" value="Y" checked>
+              是 
+              <input type="radio" name="rdStatus" value="N" >
+              否</td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">餐饮设施：</td>
+            <td colspan="3"> 
+              <textarea cols=50 name=txtFacilityDrink></textarea>
+            </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">娱乐设施：</td>
+            <td colspan="3"> 
+              <textarea cols=50 name=txtFacilityEnt></textarea>
+            </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">服务设施：</td>
+            <td colspan="3"> 
+              <textarea cols=50 name=txtFacilityServ></textarea>
+            </td>
+          </tr>
+          <tr> 
+            <td width="81" class="font9">简短描述：</td>
+            <td colspan="3"> 
+              <table width="109" border="0" cellspacing="0" cellpadding="0">
+                <tr align="middle"> 
+                  <td> 
+                    <textarea cols=50 name=txtSDesc></textarea>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">详细描述：</td>
+            <td colspan="3"> 
+              <textarea cols=50 name=txtFDesc></textarea>
+            </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">合作日期：</td>
+            <td colspan="3"> 
+              <input name="txtCreateDate" value ="2000-05-30"
+           >
+              [输入格式 YYYY-MM-DD，2000-03-06] </td>
+          </tr>
+        </table>
+        
+        <table width="550" border="0" cellspacing="0" cellpadding="0">
+          <tr align="middle"> 
+            <td height="40"> <A href="JavaScript:PostForm(1)"><IMG border=0 height=26 src="images/botton_update.gif" width=68></A><IMG height=1 src="images/dot.gif" width=50> 
+              <A href="javascript:fmAddHotel.reset()"><IMG border=0 height=26 src="images/botton_restore.gif" width=68></a></td>
+          </tr>
+        </table>
+      </form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

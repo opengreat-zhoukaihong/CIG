@@ -1,0 +1,8 @@
+[2.68]
+$extconv = "fileext";
+$filetype = "filetype";
+$dirdomain = "domain";
+$dirdownload = "download";
+$earthmap = "earth.jpg";
+$icon_filetype = "filetype".$gifext;
+[2.69]

@@ -1,0 +1,317 @@
+<HTML><head>
+<title>W3Perl Forms- Step 3</TITLE>
+
+<SCRIPT LANGUAGE="Javascript">
+
+var popup_help = null;
+
+function HelpDisplay(file,xwin,ywin) {
+        popup_help = window.open("","popDialog2","height="+ywin+",width="+xwin+",scrollbar=no")
+        popup_help.location.href="<!-- HELP -->/"+file+".html";
+        popup_help.document.close();
+	popup_help.focus();
+}
+
+
+</SCRIPT>
+
+</head>
+
+<BODY BACKGROUND="<!-- BG -->" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<FORM METHOD=POST ACTION="<!-- cgiurl -->/confstat.pl">
+
+<INPUT NAME="step" VALUE="3" TYPE="HIDDEN">
+
+<!-- HIDDEN -->
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="<!-- LINE -->" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Configuration - Step 3</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TR><TD BGCOLOR="#AAAAAA" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR>
+
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Logfile format</FONT></I>
+</TD>
+
+<TD BGCOLOR="#DDDDDD">
+
+Choose the logfile format, select the one you are using if you
+are running a standard logfile.
+If you have something more specific, select the second choice and 
+describe the values you are using in your logfile. 
+Each value is a '%string'. If not found in the list, use %null instead. 
+Use a space to separate value.
+<P>
+</TD>
+</TR>
+<TR>
+<TD></TD>
+<TD VALIGN=TOP BGCOLOR="#DDDDDD">
+
+<TABLE BORDER=0>
+<TR><TD VALIGN=CENTER>
+<INPUT NAME="logformat" TYPE="radio" VALUE="standard">
+</TD><TD>
+Standard logfile :
+</TD>
+<TD>
+<SELECT NAME="logfile">
+<!-- Cf script -->
+</SELECT>
+</TD>
+<TD>
+<FONT COLOR="#0000FF">
+<INPUT TYPE=BUTTON VALUE="Help" OnClick="HelpDisplay('logfileformat','750','380')">
+</FONT>
+</TD>
+</TR>
+<TR>
+<TD VALIGN=CENTER>
+<INPUT NAME="logformat" TYPE="radio" VALUE="own">
+</TD><TD>
+Your own logfile :
+</TD><TD>
+<INPUT TYPE="text" NAME="stringlogfile" SIZE=30>
+</TD>
+<TD>
+<FONT COLOR="#0000FF">
+<INPUT TYPE=BUTTON VALUE="Help" OnClick="HelpDisplay('logfileconf','520','550')">
+</FONT>
+<!--
+</TD></TR><TR><TD></TD><TD COLSPAN=2>
+<FONT SIZE=-1>
+(ex : %host %login %null %date %method %page %protocol %status %requetesize"
+for a CLF logfile).
+</FONT>
+<P>
+Fields available :
+<SELECT NAME="fieldslogfile">
+<OPTION SELECTED>%host (Host connexion)
+<OPTION>%date (Day:Hour or Day)
+<OPTION>%time (Hour)
+<OPTION>%hourshift (Hour shift)
+<OPTION>%method (GET, POST...)
+<OPTION>%page (File request)
+<OPTION>%protocol (HTTP 1.x)
+<OPTION>%status (Transaction code)
+<OPTION>%requetesize (Size of the file)
+<OPTION>%agent (Browser and OS)
+<OPTION>%refer (Referer host)
+<OPTION>%virtualhost (Virtual host)
+<OPTION>%query (File query)
+<OPTION>%null (-)
+</SELECT>
+-->
+</TD></TR></TABLE>
+<!-- BEGIN_NTUSERS -->
+</TD></TR>
+<TD></TD>
+<TD BGCOLOR="#DDDDDD">
+Date format : <INPUT NAME="stringdateformat" TYPE="text" SIZE=30 VALUE="">
+<BR>
+<FONT SIZE=-1>
+(Date format could be very different on IIS server : don't specify separator string)
+</FONT>
+<P>
+Fields available :
+<SELECT NAME="fieldsdateformat">
+<OPTION SELECTED>%year (Year : 2 or 4 digits number)
+<OPTION>%day (Day)
+<OPTION>%month (Month)
+</SELECT>
+
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for example
+<OPTION>%month%day%year (02/28/98 : IIS 3/4)
+<OPTION>%day%month%year (28-02-98 : IIS 4)
+<OPTION>%day%month%year (03/04/2000 IIS 5)
+</SELECT>
+
+<!-- END_NTUSERS -->
+</TD></TR>
+<TR><TD BGCOLOR="#AAAAAA" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Virtual servers</FONT></I>
+</TD>
+<TD BGCOLOR="#DDDDDD">
+If you are using virtual servers inside your logfile format, two format are supported, first one being the standard.
+<P>
+<INPUT NAME="virtualCLF" TYPE="radio" VALUE="0"> Virtual servers in NECLF logfile format
+<FONT COLOR="#0000FF">
+<INPUT TYPE=BUTTON VALUE="Help" OnClick="HelpDisplay('neclf','600','400')">
+</FONT>
+<BR>
+<INPUT NAME="virtualCLF" TYPE="radio" VALUE="1"> Virtual servers in CLF or ECLF logfile format
+<!--
+<BR>
+<I><FONT SIZE=-1>(the field %page contains the %virtualhost field (ex : //www.mac-detectors1.com//chinaeoa/index.jsp))</FONT></I>
+<P>
+-->
+
+</TD>
+</TR>
+<TR><TD BGCOLOR="#AAAAAA" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Splitted logfiles</FONT></I>
+</TD>
+<TD BGCOLOR="#DDDDDD">
+
+<!--
+<FONT SIZE=-1>
+A small csh script is available in the package to monthly cut
+your logfile each first day of the month (squeezelog). Default logfile format if you are using this script is : <BR>
+<I>&lt;filename&gt;.&lt;month&gt;-&lt;year&gt;.&lt;suffix&gt; </I> for a monthly log and<BR>
+<I>&lt;filename&gt;.&lt;day&gt;-&lt;month&gt;-&lt;year&gt;.&lt;suffix&gt;</I> for a daily log.
+</FONT>
+<BR>
+<P>
+
+You could use your own format where :
+<UL>
+<LI> day and month are 2 digits number 
+<LI> lettermonth is a three letters month with first in upper
+<LI> year a 4 digits number
+<LI> smallyear a 2 digits number (for Microsoft products ;)
+<LI> prefixlog is a constant string in your filename
+<LI> suffix can be gz or zip.
+</UL>
+
+</TD>
+</TR><TR>
+<TD></TD>
+<TD VALIGN=TOP BGCOLOR="#DDDDDD">
+-->
+If you are using splitted logfiles, you should specify the log filename structure
+<P>
+<TABLE>
+<TR><TD>
+
+Logfilename :</TD>
+<TD><INPUT NAME="struct_compressed_logfile" TYPE="text" SIZE=80 VALUE=""></TD>
+<TD>
+<FONT COLOR="#0000FF">
+<INPUT TYPE=BUTTON VALUE="Help" OnClick="HelpDisplay('compressed','600','380')">
+</FONT>
+<!--
+Fields available :
+<SELECT NAME="fieldslogfile">
+<OPTION SELECTED>%prefixlog (Constant string)
+<OPTION>%day (Day in 01 - 31 range)
+<OPTION>%month (Month in 00 - 12 range)
+<OPTION>%lettermonth (Month in Jan - Dec range)
+<OPTION>%smallyear (Year in 2 digits number)
+<OPTION>%year (Year in 4 digits number)
+</SELECT>
+
+</TD>
+</TR><TR>
+<TD>
+</TD>
+<TD COLSPAN=2>
+-->
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for example
+<OPTION>%prefixlog.%day-%month-%year (access_log.01-01-1998)
+<OPTION>%year.%month.%day.%prefixlog (1998.03.31.raw)
+<OPTION>%prefixlog.%year%lettermonth (access_log.1998Mar)
+<OPTION>%prefixlog%smallyear%month%day.log (in990330.log)
+</SELECT>
+</TD>
+<TD></TD>
+</TR>
+</TABLE>
+
+<P>
+
+
+</TD>
+</TR>
+<TR><TD BGCOLOR="#AAAAAA" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Compression</FONT></I>
+</TD>
+<TD BGCOLOR="#DDDDDD">
+If you compress your logfiles each month or each day, give the following informations :
+
+<P>
+Compressed log files :
+
+<INPUT NAME="zip" TYPE="radio" VALUE="1"> Yes
+<INPUT NAME="zip" TYPE="radio" VALUE="0"> No
+<FONT COLOR="#0000FF">
+<INPUT TYPE=BUTTON VALUE="Help" OnClick="HelpDisplay('zip','540','400')">
+</FONT>
+<P>
+<!--
+<UL>
+<TABLE>
+<TR><TD>
+<INPUT NAME="zipcut" TYPE="radio" VALUE="1">
+</TD><TD>
+Monthly <I>(ex : access_log.01-1998.gz)</I>
+</TD>
+</TR><TR><TD>
+<INPUT NAME="zipcut" TYPE="radio" VALUE="2">
+</TD>
+<TD>
+Daily&nbsp;&nbsp;&nbsp; <I>(ex : access_log.01-01-1998.zip)</I>
+</TD></TR>
+</TABLE>
+</UL>
+<P>
+<I>(fullname where your gzip or unzip binary is stored)</I>
+-->
+
+
+<TABLE BORDER=0>
+<TR><TD>
+Compression tool binary :
+</TD><TD>
+<INPUT NAME="GZIP" SIZE=30 TYPE="text" VALUE="">
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for examples
+<OPTION>/usr/bin/gzip (Unix)
+<OPTION>C:/Inetpub/wwwroot/bin/unzip.exe (NT)
+<OPTION>D:/Program Files/winrar/rar.exe (NT)
+</SELECT>
+</TD></TR>
+<TR><TD>
+Compression suffix
+</TD><TD>
+<SELECT NAME="zipext">
+<!-- Cf script -->
+</SELECT>
+</TD></TR>
+</TABLE>
+
+
+
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD>
+
+<CENTER>
+<INPUT TYPE="SUBMIT" VALUE="Submit">
+<INPUT TYPE="RESET" VALUE="Reset">
+</CENTER>
+</TD>
+
+</TR>
+</TABLE>
+
+</FORM>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<HTML>
+<HEAD>
+<TITLE>W3Perl Forms - Launch</TITLE>
+
+<SCRIPT language="JavaScript">
+
+
+var end = "<BR>\n<FORM>\n<INPUT TYPE='BUTTON' VALUE='Close'" +
+          "onClick='self.close()'>\n" +
+          "</FORM>\n</CENTER>\n</BODY>";
+
+var start = "<HTML><HEAD><TITLE>Menu</TITLE></HEAD>\n" +
+            "<BODY BGCOLOR='#FFFFFF' TEXT='#000000' VLINK='#000080'" +
+            "ALINK='#FF0000'>\n<CENTER>\n";
+
+
+function check_file(xwin,ywin) {
+var val;
+val = document.run.configfile.value;
+popup = window.open("","popDialog","height="+ywin+",width="+xwin+",scrollbars=auto")
+popup.focus();
+popup.document.write(start);
+popup.document.write("TOTO"+val);
+popup.document.write("<BR><CENTER>\n");
+popup.document.write(end);
+popup.document.close();
+
+}
+
+</SCRIPT>
+
+</HEAD>
+
+<BODY BACKGROUND="<!-- BG -->" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<FORM METHOD=POST NAME="run" ACTION="<!-- cgiurl -->/runconf.pl">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="<!-- LINE -->" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Running scripts</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD ALIGN=CENTER VALIGN=TOP>
+ </TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD>
+<P><HR ALIGN=CENTER WIDTH=30%><P>
+All configuration files you have already build are displayed.
+Choose the one you want to run.
+ <P>  
+<P><HR ALIGN=CENTER WIDTH=30%><P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Config file</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+<SELECT NAME="configfile">
+<!-- DISPLAY -->
+</SELECT>
+<P>
+<FONT COLOR="#FF0000"><!-- WARNING --></FONT>
+</TD>
+</TR>
+</TABLE>
+
+
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD>
+<!-- STOP_BEGIN -->
+<P><HR ALIGN=CENTER WIDTH=30%><P>
+
+<CENTER>
+<INPUT TYPE="SUBMIT" VALUE="Submit">
+<INPUT TYPE="RESET" VALUE="Reset">
+</CENTER>
+<!-- STOP_END -->
+</TD>
+
+</TR>
+</TABLE>
+
+</FORM>
+
+</body>
+</html>

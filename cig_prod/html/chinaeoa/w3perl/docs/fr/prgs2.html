@@ -1,0 +1,403 @@
+<HTML><head>
+<title>W3Perl - Description des programmes 2</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Scripts description</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD VALIGN=TOP>
+All scripts are using the configuration file config.pl to know the options
+you have choosen. You don't have to modify in any case the scripts.
+<P>
+List of scripts :
+<P>
+<UL>
+
+<LI> Time structures
+<UL>
+<LI><A HREF="#hour">cron-hour.pl</A>
+<LI><A HREF="#jour">cron-day.pl</A>
+<LI><A HREF="#semaines">cron-week.pl</A>
+<LI><A HREF="#mois">cron-month.pl</A>
+</UL>
+
+</UL>
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+
+<A NAME="hour">
+<table  border=1>
+<tr>
+<th align=middle colspan=2>
+Cron-hour.pl
+</th>
+</tr>
+<tr>
+<td>
+Aim
+</td>
+<td>
+Hourly stats<br>
+It compute stats for each hours of the current day,
+by scanning the logfile on the current day.
+</td>
+</tr>
+<tr>
+<td>
+Frequency
+</td>
+<td>
+Once every hour.<br>
+If you forget to run it one hour, it won't loose any data as
+cron-hour.pl compute the hourly stats from the beginning of
+the current day. So you can run cron-hour once a day (at midnight) if
+your CPU is low.
+</td>
+</tr>
+<tr>
+<td>
+Time taken
+</td>
+<td>
+A few seconds.<br>
+</td>
+</tr>
+<tr>
+<td>
+How it works
+</td>
+<td>
+It scan the logfile for the current date and compute values
+for each hours from the beginning of the current day.
+It will also save the hourly stats at midnight, the files can
+be viewed in the table of daily stats.
+</td>
+</tr>
+<tr>
+<td>
+Options
+</td>
+<td>
+
+<table>
+<tr>
+<th>-a</th><td> scan all the logfile to produce average hourly stats</td>
+</tr><tr>
+<th>-c &lt;file&gt;</th><td>load configuration file</td>
+</tr><tr>
+<th>-i &lt;file&gt;</th><td> input logfile</td>
+</tr><tr>
+<th>-o &lt;file&gt;</th><td> output logfile</td>
+</tr><tr>
+<th>-l &lt;language&gt;</th><td>language output</td>
+</tr><tr>
+<th>-j &lt;dd/Mmm/yyyy&gt;</th><td> scan only a specific day</td>
+</tr><tr>
+<th>-r &lt;string&gt;</th><td> scan only this matching string</td>
+</tr><tr>
+<th>-p &lt;level&gt;</th><td> precision level</td>
+</tr><tr>
+<th>-t &lt;topten&gt;</th><td> display only toplist files</td>
+</tr><tr>
+<th>-v</th><td> show default value </td>
+</tr><tr>
+<th>-v</th><td> display version </td>
+</tr></table>
+
+</td>
+</tr>
+<tr>
+<td>
+Notes
+</td>
+<td>
+Produced a stats of the day, you can see them in the text version of the
+daily stats. Will not save over than one year daily files. The -a option
+will show you the average hourly hits over the full logfile (these job is
+done by cron-session for registered users).<BR>
+Can be run as a standalone prg.
+</td>
+</tr>
+</table>
+
+
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+
+<A NAME="jour">
+<table  border=1>
+<tr>
+<th align=middle colspan=2>
+Cron-day.pl
+</th>
+</tr>
+<tr>
+<td>
+Aim
+</td>
+<td>
+Daily stats<br>
+It compute text and graphics stats for each day,
+by scanning files produced by cron-pages or cron-inc.
+</td>
+</tr>
+<tr>
+<td>
+Frequency
+</td>
+<td>
+Once every day.<br>
+No data lost if you forget to run it one day.
+</td>
+</tr>
+<tr>
+<td>
+Time taken
+</td>
+<td>
+A few seconds.<br>
+</td>
+</tr>
+<tr>
+<td>
+How it works
+</td>
+<td>
+It scan differents files produced by cron-pages or cron-inc
+, extract some values and compute the graphs and table data.
+</td>
+</tr>
+<tr>
+<td>
+Options
+</td>
+<td>
+
+<table>
+<tr>
+<th>-c &lt;file&gt;</th><td>load configuration file</td>
+</tr><tr>
+<th>-d &lt;number&gt;</th><td> number of days </td>
+</tr><tr>
+<th>-g &lt;graphic&gt;</th><td> use different graphic option</td>
+</tr><tr>
+<th>-l &lt;language&gt;</th><td>language output</td>
+</tr><tr>
+<th>-p &lt;level&gt;</th><td> precision level</td>
+</tr><tr>
+<th>-v</th><td> display version</td>
+</tr><tr>
+<th>-x</th><td> show default values</td>
+</tr></table>
+
+</td>
+</tr>
+<tr>
+<td>
+Notes
+</td>
+<td>
+You could look for the last previous days stats in the text option.
+The hourly stats script save its daily file at the end of the day
+and cron-day.pl add the link in its table data.
+</td>
+</tr>
+</table>
+
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+
+<A NAME="semaines">
+<table  border=1>
+<tr>
+<th align=middle colspan=2>
+Cron-week.pl
+</th>
+</tr>
+<tr>
+<td>
+Aim
+</td>
+<td>
+Weekly stats<br>
+It compute stats for each week
+by scanning files produced by cron-pages or cron-inc.
+</td>
+</tr>
+<tr>
+<td>
+Frequency
+</td>
+<td>
+Once every week.<br>
+No data lost if you forget to run it one week.<BR>
+You will have to wait two weeks to see the graphs (need two
+points to draw a graph !).
+</td>
+</tr>
+<tr>
+<td>
+Time taken
+</td>
+<td>
+A few seconds.<br>
+</td>
+</tr>
+<tr>
+<td>
+How it works
+</td>
+<td>
+It scan differents files produced by cron-pages or cron-inc
+, extract some values and compute the graphs and table data.
+</td>
+</tr>
+<tr>
+<td>
+Options
+</td>
+<td>
+
+<table>
+<tr>
+<!-- <th>-w &lt;number&gt;</th><td> number of weeks </td>
+</tr><tr> -->
+<th>-c &lt;file&gt;</th><td>load configuration file</td>
+</tr><tr>
+<th>-g &lt;graphic&gt;</th><td> use different graphic option</td>
+</tr><tr>
+<th>-l &lt;language&gt;</th><td>language output</td>
+</tr><tr>
+<th>-p &lt;level&gt;</th><td> precision level</td>
+</tr><tr>
+<th>-v</th><td> display version</td>
+</tr><tr>
+<th>-x</th><td> show default values</td>
+</tr></table>
+
+</td>
+</tr>
+
+<tr>
+<td>
+Notes
+</td>
+<td>
+Cron-week compute a graph for the directory stats.<BR>
+It will also compute graphs for each directories you have choosen
+in the configuration files.
+</td>
+</tr>
+</table>
+
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+
+<A NAME="mois">
+<table  border=1>
+<tr>
+<th align=middle colspan=2>
+Cron-month.pl
+</th>
+</tr>
+<tr>
+<td>
+Aim
+</td>
+<td>
+Monthly stats<br>
+It compute stats for each month
+by scanning the log file.
+</td>
+</tr>
+<tr>
+<td>
+Frequency
+</td>
+<td>
+Once every month.<br>
+No data lost if you forget to run it one month.<BR>
+You will have to wait two months to see the graphs (need two
+points to draw a graph !).
+</td>
+</tr>
+<tr>
+<td>
+Time taken
+</td>
+<td>
+From a few minutes to several hours depending of the size of your logfile.<br>
+</td>
+</tr>
+<tr>
+<td>
+How it works
+</td>
+<td>
+It scan the log file to extract a resume stats for each month.
+</td>
+</tr>
+<tr>
+<td>
+Options
+</td>
+<td>
+
+<table>
+<tr>
+<th>-b</th><td> incremental run</td>
+</tr><tr>
+<th>-c &lt;file&gt;</th><td>load configuration file</td>
+</tr><tr>
+<th>-g &lt;graphic&gt;</th><td> use different graphic option</td>
+</tr><tr>
+<th>-l &lt;language&gt;</th><td>language output</td>
+</tr><tr>
+<th>-p &lt;level&gt;</th><td> precision level</td>
+</tr><tr>
+<th>-v</th><td> display version</td>
+</tr><tr>
+<th>-x</th><td> show default values</td>
+</tr><tr>
+<th>-z</th><td> use compressed logfiles</td>
+</tr></table>
+
+</td>
+</tr>
+
+<tr>
+<td>
+Notes
+</td>
+<td>
+When choosing th '-b' flag, the script will scan only the last month,
+speeding the process !
+</td>
+</tr>
+</table>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<BR>
+<A HREF="contents.html"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

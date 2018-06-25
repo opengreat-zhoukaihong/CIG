@@ -1,0 +1,232 @@
+<HTML><head>
+<title>W3Perl program description 1</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE WIDTH=100% CELLSPACING=5 BORDER=0>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Scripts description</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD VALIGN=TOP>
+All scripts are using the configuration file config.pl to know the options
+you have choosen. You don't have to modify in any case the scripts.
+<P>
+You will have to run cron-pages.pl only once except if you change some values
+in the configuration file.
+<UL>
+</UL>
+<P>
+
+List of scripts :
+<P>
+<UL>
+<LI> Pages, Directories, Countries, Sites, Scripts stats
+
+<UL>
+<LI><A HREF="#pages">cron-pages.pl</A>
+<LI><A HREF="#inc">cron-inc.pl</A>
+</UL>
+
+</UL> 
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+<A NAME="pages">
+<table border=1>
+<tr>
+<th align=middle colspan=2>
+Cron-pages.pl
+</th>
+</tr>
+<tr>
+<td>
+Aim
+</td>
+<td>
+Initialization<br>
+It compute stats scanning all the logfile excluding the current day
+</td>
+</tr>
+<tr>
+<td>
+Frequency
+</td>
+<td>
+Only once. Need to be rerun if you change the config.pl file as the
+incremental version will load data produced by cron-pages.pl
+</td>
+</tr>
+<tr>
+<td>
+Time taken
+</td>
+<td>
+Depending on your logfile size and your configuration file, 
+it can take from a few minutes to several hours.<br>
+If your log file is really huge, I suggest you to 
+<A HREF="logfile.html">compress</A>
+it on several parts or to test first output via a small logfile.
+</td>
+</tr>
+<tr>
+<td>
+How it works
+</td>
+<td>
+It create the stats structure, output incremental files, generate HTML
+pages for the stats and also produce time structure data. 
+</td>
+</tr>
+
+<tr>
+<td>
+Options
+</td>
+<td>
+
+<table>
+<tr>
+<th>-c &lt;file&gt;</th><td>load configuration file</td></tr><tr>
+<th>-d &lt;nbdays&gt;</th><td>scan only the nbdays previous day</td></tr><tr>
+<th>-i &lt;file&gt;</th><td>input log file</td></tr><tr>
+<th>-p &lt;level&gt;</th><td>precision level</td></tr><tr>
+<th>-l &lt;language&gt;</th><td>language output</td></tr><tr>
+<th>-q &lt;string&gt;</th><td>scanning only matching string</td></tr><tr>
+<th>-r &lt;date&gt;</th><td>ending date for stats</td></tr><tr>
+<th>-s &lt;date&gt;</th><td>starting date for stats</td></tr><tr>
+<th>-t &lt;toplist&gt;</th><td>display only toplist files</td></tr><tr>
+<th>-u</th><td>update stats homepage</td></tr><tr>
+<th>-x</th><td>show default value</td></tr><tr>
+<th>-v</th><td>version</td></tr><tr>
+<th>-z</th><td>use compressed logfiles</td>
+</tr></table>
+
+</td>
+</tr>
+
+<tr>
+<td>
+Notes
+</td>
+<td>
+Directory graph is not computed by cron-pages but with cron-week.
+You will need to wait two weeks before having the graph.
+</td>
+</tr>
+</table>
+
+
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+
+<A NAME="inc">
+<table  border=1>
+<tr>
+<th align=middle colspan=2>
+Cron-inc.pl
+</th>
+</tr>
+<tr>
+<td>
+Aim
+</td>
+<td>
+Incremental stats<br>
+It compute stats scanning only for the previous day
+</td>
+</tr>
+<tr>
+<td>
+Frequency
+</td>
+<td>
+Once every day.<br>
+<P>
+People without cron access :<br>
+If you forgot to use cron-inc.pl for less than 7 days, cron-inc.pl
+will be able to scan for the missing day. If you have more than
+7 days, you will have to run back cron-pages.pl to compute
+all the values from the first day.<br>
+You can alter this value in the code but it could take longer
+time to compute than cron-pages if you use a high value. 
+Hints : use around 10% of the total days from the beginning of 
+log file.
+</td>
+</tr>
+<tr>
+<td>
+Time taken
+</td>
+<td>
+Typically, a few minutes.<br>
+</td>
+</tr>
+<tr>
+<td>
+How it works
+</td>
+<td>
+It load incremental files, scan for the previous day, 
+compute new stats and save back the new incremental files.
+Then it generate HTML pages and also append the time structure data. 
+</td>
+</tr>
+<tr>
+<td>
+Options
+</td>
+<td>
+
+<table>
+<tr>
+<th>-c</th><td>load configuration file</td></tr><tr>
+<th>-i &lt;file&gt;</th><td>input log file</td></tr><tr>
+<th>-j &lt;dd/Mmm/yyyy&gt;</th><td>will compute stats only for a specific day</td></TR>
+
+<th>-l &lt;language&gt;</th><td>language output</td></tr><tr>
+<th>-p &lt;level&gt;</th><td>precision level</td></tr><tr>
+<th>-s &lt;nbdays&gt;</th><td>scan for the nbdays previous day (default is 7)</td></tr><tr>
+<th>-t &lt;toplist&gt;</th><td>display only toplist files</td></tr><tr>
+<th>-x</th><td>show default value</td></tr><tr>
+<th>-v</th><td>version</td>
+</tr></table>
+
+</td>
+</tr>
+<tr>
+<td>
+Notes
+</td>
+<td>
+You can use cron-inc.pl to compute stats for a specific date with
+the command line : <I>cron-inc.pl -j dd/Mmm/yyyy</I> 
+(dd is the day number, Mmm the first three letter of a month with
+the first one in upper, yyyy is the year).<br>
+Incremental data are not deleted if you use this option.
+</td>
+</tr>
+</table>
+
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="contents.html"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

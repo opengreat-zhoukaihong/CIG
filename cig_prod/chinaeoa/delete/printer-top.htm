@@ -1,0 +1,203 @@
+<html>
+<head>
+<title>orderhome</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script language="JavaScript">
+<!--
+function MM_timelineGoto(tmLnName, fNew, numGotos) { //v2.0
+  //Copyright 1997 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,lastKeyFr,propNum,theObj;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (numGotos != null)
+    if (tmLn.gotoCount == null) tmLn.gotoCount = 1;
+    else if (tmLn.gotoCount++ >= numGotos) {tmLn.gotoCount=0; return}
+  jmpFwd = (fNew > tmLn.curFrame);
+  for (i = 0; i < tmLn.length; i++) {
+    sprite = (jmpFwd)? tmLn[i] : tmLn[(tmLn.length-1)-i]; //count bkwds if jumping back
+    if (sprite.charAt(0) == "s") {
+      numKeyFr = sprite.keyFrames.length;
+      firstKeyFr = sprite.keyFrames[0];
+      lastKeyFr = sprite.keyFrames[numKeyFr - 1];
+      if ((jmpFwd && fNew<firstKeyFr) || (!jmpFwd && lastKeyFr<fNew)) continue; //skip if untouchd
+      for (keyFrm=1; keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]; keyFrm++);
+      for (j=0; j<sprite.values.length; j++) {
+        props = sprite.values[j];
+        if (numKeyFr == props.length) propNum = keyFrm-1 //keyframes only
+        else propNum = Math.min(Math.max(0,fNew-firstKeyFr),props.length-1); //or keep in legal range
+        if (sprite.obj != null) {
+          if (props.prop2 == null) sprite.obj[props.prop] = props[propNum];
+          else        sprite.obj[props.prop2][props.prop] = props[propNum];
+      } }
+    } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+  }
+  tmLn.curFrame = fNew;
+  if (tmLn.ID == 0) eval('MM_timelinePlay(tmLnName)');
+}
+
+function MM_timelinePlay(tmLnName, myID) { //v1.2
+  //Copyright 1997 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,propNum,theObj,firstTime=false;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (myID == null) { myID = ++tmLn.ID; firstTime=true;}//if new call, incr ID
+  if (myID == tmLn.ID) { //if Im newest
+    setTimeout('MM_timelinePlay("'+tmLnName+'",'+myID+')',tmLn.delay);
+    fNew = ++tmLn.curFrame;
+    for (i=0; i<tmLn.length; i++) {
+      sprite = tmLn[i];
+      if (sprite.charAt(0) == 's') {
+        if (sprite.obj) {
+          numKeyFr = sprite.keyFrames.length; firstKeyFr = sprite.keyFrames[0];
+          if (fNew >= firstKeyFr && fNew <= sprite.keyFrames[numKeyFr-1]) {//in range
+            keyFrm=1;
+            for (j=0; j<sprite.values.length; j++) {
+              props = sprite.values[j]; 
+              if (numKeyFr != props.length) {
+                if (props.prop2 == null) sprite.obj[props.prop] = props[fNew-firstKeyFr];
+                else        sprite.obj[props.prop2][props.prop] = props[fNew-firstKeyFr];
+              } else {
+                while (keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]) keyFrm++;
+                if (firstTime || fNew==sprite.keyFrames[keyFrm-1]) {
+                  if (props.prop2 == null) sprite.obj[props.prop] = props[keyFrm-1];
+                  else        sprite.obj[props.prop2][props.prop] = props[keyFrm-1];
+        } } } } }
+      } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+      if (fNew > tmLn.lastFrame) tmLn.ID = 0;
+  } }
+}
+
+function MM_initTimelines() {
+    //MM_initTimelines() Copyright 1997 Macromedia, Inc. All rights reserved.
+    var ns = navigator.appName == "Netscape";
+    document.MM_Time = new Array(1);
+    document.MM_Time[0] = new Array(1);
+    document.MM_Time["Timeline1"] = document.MM_Time[0];
+    document.MM_Time[0].MM_Name = "Timeline1";
+    document.MM_Time[0].fps = 15;
+    document.MM_Time[0][0] = new String("behavior");
+    document.MM_Time[0][0].frame = 46;
+    document.MM_Time[0][0].value = "MM_timelineGoto('Timeline1','1')";
+    document.MM_Time[0].lastFrame = 46;
+    for (i=0; i<document.MM_Time.length; i++) {
+        document.MM_Time[i].ID = null;
+        document.MM_Time[i].curFrame = 0;
+        document.MM_Time[i].delay = 1000/document.MM_Time[i].fps;
+    }
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+.unnamed1 {  font-size: xx-small; line-height: 18pt; left: 30px; clip:   rect(   ); font-family: "Arial", "Helvetica", "sans-serif", "宋体"}
+.unnamed2 {  font-size: xx-small}
+.unnamed3 {  font-size: 9pt}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" onLoad="MM_timelinePlay('Timeline1')">
+<div id="Layer1" style="position:absolute; left:0px; top:18px; width:505px; height:27px; z-index:2; background-color: #4A4AB0; layer-background-color: #4A4AB0; border: 1px none #000000"> 
+  <img src="image/title-1.gif" width="150" height="27"> </div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div id="Layer5" style="position:absolute; width:505px; height:19px; z-index:1; top: 0px; left: 0px; visibility: visible"> 
+  <div id="Layer8" style="position:absolute; width:505px; height:18px; z-index:4; left: 0; top: 0; visibility: visible"><img src="file://///Zhangjj/e/zhang/product/image/navigation.gif" width="505" height="18" usemap="#Map2" border="0"><map name="Map2"><area shape="rect" coords="-10,2,46,14" href="file://///Zhangjj/e/zhang/index.htm" target="_parent"><area shape="rect" coords="406,2,474,21" href="#"><area shape="rect" coords="332,2,402,20" href="#"><area shape="rect" coords="50,2,119,15" href="file://///Zhangjj/e/zhang/product/product.htm" target="_parent"><area shape="rect" coords="197,2,253,17" href="file://///Zhangjj/e/zhang/dealer/dealer.htm" target="_parent"><area shape="rect" coords="123,2,192,17" href="#"></map></div>
+</div>
+<div id="Layer2" style="position:absolute; left:348px; top:109px; width:57px; height:26px; z-index:8"><font size="2"> 
+  <input type="submit" name="Submit" value="查 询">
+  </font></div>
+<div id="Layer3" style="position:absolute; left:36px; top:66px; width:287px; height:170px; z-index:9"> 
+  <table width="307" border="0" cellspacing="1">
+    <tr> 
+      <td width="107"><font size="2" color="#333333">按品牌查询</font></td>
+      <td width="191"><font size="2"> 
+        <select name="select" size="1">
+          <option selected>品牌</option>
+          <option>施乐/XEROX</option>
+          <option>佳能/CANON</option>
+          <option>惠普/HP</option>
+          <option>爱普生/EPSON</option>
+          <option>OKI</option>
+          <option>利盟/LEXMARK</option>
+        </select>
+        </font></td>
+    </tr>
+    <tr> 
+      <td width="107"><font size="2" color="#333333">选择某一产品</font></td>
+      <td width="191"><font size="2"> 
+        <select name="select2" size="1">
+          <option selected>产品型号</option>
+          <option>HP-6L</option>
+          <option>XJ4C</option>
+        </select>
+        </font></td>
+    </tr>
+    <tr> 
+      <td width="107"><font size="2" color="#333333">选择产品类别</font></td>
+      <td width="191"><font size="2"> 
+        <select name="select7">
+          <option>选择全部产品</option>
+          <option>激光打印机</option>
+          <option>喷墨打印机</option>
+          <option>针式打印机</option>
+          <option>一体机</option>
+        </select>
+        </font></td>
+    </tr>
+    <tr> 
+      <td width="107"><font size="2" color="#333333">选择打印速度</font></td>
+      <td width="191"><font size="2"> 
+        <select name="select4">
+          <option>打印速度</option>
+          <option>小于10张/分</option>
+          <option>10至20张/分</option>
+          <option>21至30张/分</option>
+          <option>31张/分以上</option>
+        </select>
+        </font></td>
+    </tr>
+    <tr> 
+      <td width="107"><font size="2">分辨率</font></td>
+      <td width="191"><font size="2"> 
+        <select name="select5">
+          <option>720DPI</option>
+          <option>1440DPI</option>
+        </select>
+        </font></td>
+    </tr>
+    <tr> 
+      <td width="107" height="22"><font size="2" color="#333333">选择价格范围 </font></td>
+      <td width="191" height="22"><font size="2"> 
+        <select name="select3">
+          <option selected>查询价格</option>
+          <option>&lt;1,000</option>
+          <option>1,000&lt;=&amp;&lt;2,000</option>
+          <option>2,000&lt;=&amp;&lt;3,000</option>
+          <option>3,000&lt;=&amp;&lt;4,000</option>
+          <option>4,000&lt;=&amp;&lt;5.000</option>
+          <option>5,000&lt;=&amp;&lt;6,000</option>
+          <option>6,000&lt;=&amp;&lt;7,000</option>
+          <option>7,000&lt;=&amp;&lt;8,000</option>
+          <option>8,000&lt;=&amp;&lt;9,000</option>
+          <option>9,000&lt;=&amp;10,000</option>
+          <option>&gt;10,000</option>
+        </select>
+        </font></td>
+    </tr>
+    <tr> 
+      <td height="23"><font size="2"><font size="2" color="#333333">查询彩色产品</font><font color="#712662" face="宋体"></font></font></td>
+      <td height="23"><font size="2"> 
+        <select name="select6">
+          <option>彩色打印机</option>
+          <option>黑白打印机</option>
+        </select>
+        </font></td>
+    </tr>
+    <tr> 
+      <td colspan="2" height="35"><font size="2"><font color="#712662" face="宋体"><b>您可以根据您的需要进行单项或多项查询</b></font></font></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

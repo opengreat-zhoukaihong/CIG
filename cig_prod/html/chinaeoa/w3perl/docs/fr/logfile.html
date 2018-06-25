@@ -1,0 +1,210 @@
+<HTML><head>
+<title>W3Perl Logfile - FR</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Format du fichier de log</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD VALIGN=TOP>
+Choisir le format du fichier de log est une chose importante car il
+vous donnera ds informations plus ou moins pr&eacute;cise sur les
+statistiques de votre serveur.
+<BR>
+Si vous &ecirc;tes sur un serveur Unix, vous pouvez choisir entre le
+format standard common ou l'extended common logfile format. Seul
+Apache (AFAIK) supporte le nouveau format new extended common logfile format.
+SI vous utilisez un serveur NT, vous pouvez choisir entre le format propri&eacute;taire
+IIS ou le format common logfile.
+<P>
+<CENTER>
+<TABLE BORDER=1>
+<TR>
+<TD>
+<FONT SIZE=-1>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Fichier de log
+<BR><BR><BR>
+&nbsp;Server
+</FONT>
+</TD>
+<TD ALIGN=CENTER><B>CLF</B></TD>
+<TD ALIGN=CENTER><B>E-CLF</B>
+<FONT SIZE=-2>
+<BR>
+Etendu<BR>
+</FONT>
+</TD>
+<TD ALIGN=CENTER><B>NE-CLF</B>
+<FONT SIZE=-2>
+<BR>
+Nouveau Etendu<BR>
+</FONT>
+</TD>
+<TD ALIGN=CENTER><B>IIS</B></TD>
+<TD ALIGN=CENTER><B>E-IIS</B>
+<FONT SIZE=-2>
+<BR>
+Etendu<BR>
+</FONT>
+</TD>
+</TR>
+<TR>
+<TD ALIGN=CENTER>Apache</TD>
+<TD ALIGN=CENTER>X</TD>
+<TD ALIGN=CENTER>X</TD>
+<TD ALIGN=CENTER>X</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+</TR>
+<TR>
+<TD ALIGN=CENTER>Netscape</TD>
+<TD ALIGN=CENTER>X</TD>
+<TD ALIGN=CENTER>X</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+</TR>
+<TR>
+<TD ALIGN=CENTER>Domino</TD>
+<TD ALIGN=CENTER>X</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+</TR>
+<TR>
+<TD ALIGN=CENTER>NCSA</TD>
+<TD ALIGN=CENTER>X</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+</TR>
+<TR>
+<TD ALIGN=CENTER>CERN</TD>
+<TD ALIGN=CENTER>X</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+</TR>
+<TR>
+<TD ALIGN=CENTER>IIS 3.0</TD>
+<TD ALIGN=CENTER>X</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>X</TD>
+<TD ALIGN=CENTER><FONT SIZE=-1>(avec modification)</FONT></TD>
+</TR>
+<TR>
+<TD ALIGN=CENTER>IIS 4.0</TD>
+<TD ALIGN=CENTER>X</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>X</TD>
+<TD ALIGN=CENTER>X</TD>
+</TR>
+</TABLE>
+<P>
+</CENTER>
+<BR>
+W3Perl peut g&eacute;rer :
+<UL>
+<LI> <B>Common logfile format</B> <I>[tous serveur]</I>
+<LI> <B>Extended Common logfile format</B> <I>[NCSA > 1.4, Apache]</I>
+<BR>(ajoute des informations sur les fureteurs et les r&eacute;f&eacute;rences)
+<LI> <B>New Extended Common logfile format</B> <I>[Apache > 1.1.1]</I>
+<BR>(ajout les serveurs virtuels et le temps moyen de traitement)
+<LI> <B>IIS standard logfile format</B> <I>[serveur NT]</I>
+<LI> <B>Domino logfile format</B> <I>[serveur Domino]</I>
+<LI> <B>IIS 3.0 avec format modifi&eacute;</B> <I>[serveur NT]</I>
+<BR>(ajoute des informations sur les fureteurs et les r&eacute;f&eacute;rences)
+<LI> <B>IIS 4.0 logfile format</B> <I>[serveur NT]</I>
+<BR>(ajoute des informations sur les fureteurs et les r&eacute;f&eacute;rences)
+</UL>
+<P>
+Les fichiers de log d'erreurs des serveurs CERN, Apache, Netscape, NCSA et Domino 
+sont &eacute;galement support&eacute;s.<BR>
+Les fichiers de log s&eacute;par&eacute;s des fureteurs et des r&eacute;f&eacute;rences sont &eacute;galement
+support&eacute;s.
+<P>
+De nouveaux formats de fichiers de log peuvent &ecirc;tre tr&egrave;s facilement incorpor&eacute;s
+dans l'application, contactez moi si vous avez besoin d'un format sp&eacute;cifique.
+Il n'est pas possible d'avoir directement les stats sur les erreurs du serveur sous un serveur
+NT car celles-ci sont stock&eacute;es dans une base. Mais avec un jeu de redirection, ces
+informations de code d'erreur peuvent &ecirc;tre mises dans un fichier de log.
+<P>
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Extended Common pour Apache</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+<TABLE BORDER=1>
+<TR>
+<TD>
+Comment avoir le format extended common logfile pour Apache (par d&eacute;faut, celui
+fourni est le common logfile sans r&eacute;f&eacute;rences, ni fureteurs !).
+<P>
+Il suffit de modifier une ligne dans le fichier de configuration httpd.conf du serveur.
+<P>
+<I>CustomLog logs/access_log common</I>
+<BR>
+en
+<BR>
+<I>CustomLog logs/access_log combined</I>
+<P>
+Ensuite red&eacute;marrer votre serveur web.
+
+</TD>
+</TR>
+</TABLE>
+
+<P>
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Fichiers tr&egrave;s gros</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+Il est plus rapide pour l'application de traiter des fichiers de log
+compress&eacute;s chaque mois. Au lieu de scanner un &eacute;norme fichier
+de log, l'application se contente de scanner le fichier de log courant.
+<P>
+Comment fabriquer et g&eacute;n&eacute;rer de tels fichiers est expliqu&eacute;
+<A HREF="multiple.html">ici</A>
+<P>
+
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="/chinaeoa/index.jsp"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

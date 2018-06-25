@@ -1,0 +1,656 @@
+<%@ page import="java.util.*,java.sql.*" session="true" language="java" errorPage="error.jsp"%>
+
+
+<html><!-- #BeginTemplate "/Templates/ceoa.dwt" -->
+<head>
+<!-- #BeginEditable "doctitle" --> 
+<title>ChinaEOA.com</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="eoa.css" rel="stylesheet" type="text/css">
+<script
+language="JavaScript">
+<!--
+function imgOn(imgName) {
+if (document.images) {
+document[imgName].src = eval (imgName + "on.src");
+}
+}
+function imgOff (imgName) {
+if (document.images) {
+document[imgName].src = eval(imgName + "off.src");
+}
+}
+function MM_preloadImages() { //v3.0
+var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+//-->
+</script>
+
+<SCRIPT LANGUAGE="JavaScript"><!--
+  // This function is used to check the validity of
+  // the datas input from the form.
+  // @param : formName which indicates the name of the input form
+  function validateForm(formName)
+  {
+    
+     
+    if(formName.country.value=="0")
+		{
+			alert("请选择您所在的国家，然后提交!");
+			formName.country.focus();
+      return false;
+    }
+		if(formName.province.value=="0")
+    {
+			alert("请选择您所在的省份，然后提交!");
+      formName.province.focus();
+      return false;
+    }
+		if(formName.city.value=="0")
+    {
+			alert("请选择您所在的城市，然后提交!");
+			formName.city.focus();
+      return false;
+    }
+    
+    if (formName.memberTypeRadio[1].checked) 
+    {
+      if(formName.compName.value=="")
+		{
+			alert("请输入公司名称，然后提交!");
+			formName.compName.focus();
+			return false;
+		}
+		
+    }
+    if(formName.compAddr.value=="")
+    {
+      alert("请输入联系地址,然后提交!");
+      formName.compAddr.focus();
+      return false;
+    }
+    if(formName.zipCode.value.length!=6)
+    {
+      alert("请正确输入邮政编码,然后提交!");
+      formName.zipCode.focus();
+      return false;
+    }
+    if(formName.telephone.value.length<7)
+    {
+      alert("请输入联系电话,然后提交!");
+      formName.telephone.focus();
+      return false;
+    }
+    
+    if (formName.memberTypeRadio[1].checked) 
+    {
+      if(formName.lawRep.value=="")
+      {
+        alert("请输入法人代表,然后提交!");
+        formName.lawRep.focus();
+        return false;
+      }
+    
+
+      if(formName.bankAccount.value=="")
+      {
+        alert("请输入公司帐号,然后提交!");
+        formName.bankAccount.focus();
+        return false;
+      }
+      if(formName.bank.value=="")
+      {
+        alert("请输入开户银行,然后提交!");
+        formName.bank.focus();
+        return false;
+      }
+      if(formName.taxAccount.value=="")
+      {
+        alert("请输入公司税号,然后提交!");
+        formName.taxAccount.focus();
+        return false;
+      }
+      if(formName.contName.value=="")
+      {
+        alert("请输入联系人姓名,然后提交!");
+        formName.contName.focus();
+        return false;
+      }
+    }
+    
+    if(formName.contEmail.value.indexOf("@")<1)
+    {
+      alert("Email地址有误,请重新输入!");
+      formName.contEmail.focus();
+      return false;
+    }
+    if(formName.userID.value.length<4||formName.userID.value.length>20)
+    {
+      alert("输入的用户名无效,请重新输入!");
+      formName.userID.focus();
+      return false;
+    }
+    if(formName.passwd1.value.length<6||formName.passwd1.value.length>20)
+    {
+      alert("输入的密码无效,请重新输入!");
+      formName.passwd1.value="";
+      formName.passwd1.focus();
+      return false;
+    }
+    if(formName.passwd1.value!=formName.passwd2.value)
+    {
+      alert("您的密码与确认密码不符!");
+      formName.passwd1.value="";
+      formName.passwd2.value="";
+      formName.passwd1.focus();
+      return false;
+    }
+    if(formName.question.value=="")
+    {
+      alert("请输入密码提示!");
+      formName.question.focus();
+      return false;
+    }
+    if(formName.answer.value=="")
+    {
+      alert("请输入您的答案,然后提交!");
+      formName.answer.focus();
+      return false;
+    }
+    if(formName.memberTypeRadio[1].checked )   // company user checked
+    {
+      formName.memberType.value = "3";
+      formName.action = "registration1.jsp";
+      return true;
+    }
+    else                                        // individual user checked
+    {
+      formName.memberType.value = "2";
+      formName.action = "addNewMember.jsp";
+      return true;
+    }
+  }
+
+//-->
+</SCRIPT>
+
+<%-- 从数据库中取出国家,省份,城市和会员类别的信息 --%>
+
+<%!
+  String lang_code = "GB";
+  Vector v_country = new Vector();
+  Vector v_countryID = new Vector();
+  Vector v_province = new Vector();
+  Vector v_city = new Vector();
+  Vector v_compTypeID = new Vector();
+  Vector v_compType = new Vector();
+
+  ResultSet countryData,provinceData,cityData,compTypeInfo;
+  String tempIdStr,tempSqlStr,tempProvinceStr,tempCityStr;
+  int i,j;
+%>
+
+<jsp:useBean id="areaInfo" scope="page" class="com.cig.chinaeoa.member.AreaInfo" />
+
+<%
+  try
+  {
+    if(!v_country.isEmpty())
+      v_country.removeAllElements();
+    if(!v_countryID.isEmpty())
+      v_countryID.removeAllElements();
+    if(!v_province.isEmpty())
+      v_province.removeAllElements();
+    if(!v_city.isEmpty())
+      v_city.removeAllElements();
+    if(!v_compTypeID.isEmpty())
+      v_compTypeID.removeAllElements();
+    if(!v_compType.isEmpty())
+      v_compType.removeAllElements();
+
+    // 取出公司类别信息
+    tempSqlStr = "select code,str_value from parameter where ID='1' and lang_code = '" +
+      lang_code + "'";
+    areaInfo.setSqlStr(tempSqlStr);
+    compTypeInfo = areaInfo.getDatas();
+    while(compTypeInfo.next())
+    {
+      v_compTypeID.addElement(compTypeInfo.getString("code"));
+      v_compType.addElement(compTypeInfo.getString("str_value"));
+    }
+    areaInfo.disconn();
+
+    // 取出国家信息,省份信息，城市信息,存于个自的向量中
+    // 然后在JavaScript 中进行动态显示
+    areaInfo.setSqlStr("select countryID,name from country where Lang_code='"+lang_code+"' order by countryID");
+    countryData = areaInfo.getDatas();
+
+    i=0;
+    while(countryData.next())
+    {
+      i++;
+      v_country.addElement(countryData.getString("name"));
+
+      tempIdStr = countryData.getString("countryID");
+      v_countryID.addElement(tempIdStr);
+      tempSqlStr = "select provinceID,name from province where lang_code='"+lang_code+"' and countryID='" +
+        tempIdStr + "'" + " order by provinceID";
+      areaInfo.setSqlStr(tempSqlStr);
+      provinceData = areaInfo.getProvince();
+
+      j=0;
+      while(provinceData.next())
+      {
+        j++;
+        tempIdStr = provinceData.getString("provinceID");
+        v_province.addElement(""+i+"."+provinceData.getString("name")+"."+tempIdStr);
+
+        tempSqlStr = "select cityID,name from city where lang_code='"+lang_code+"' and provinceID='" +
+          tempIdStr + "'" + " order by cityID";
+        areaInfo.setSqlStr(tempSqlStr);
+        cityData = areaInfo.getCity();
+
+        while(cityData.next())
+        {
+          tempIdStr = cityData.getString("cityID");
+          v_city.addElement(""+i+"."+j+"."+cityData.getString("name")+"."+tempIdStr);
+        }
+        areaInfo.closeCityStmt();   // free the connection from connection pool;
+
+      } // for while(provinceData.next())
+      areaInfo.closeProvinceStmt();
+
+    }   // for while( countryData.next())
+    areaInfo.disconn();
+
+
+    tempProvinceStr = "\""+v_province.elementAt(0)+"\""+",";
+    tempCityStr = "\""+v_city.elementAt(0)+"\""+",";
+    for(i=1;i<v_province.size()-1;i++)
+    {
+      tempProvinceStr += "\""+v_province.elementAt(i)+"\""+",";
+    }
+    tempProvinceStr += "\""+v_province.elementAt(v_province.size()-1)+"\"";
+
+    for(i=1;i<v_city.size()-1;i++)
+    {
+      tempCityStr += "\""+v_city.elementAt(i)+"\""+",";
+    }
+    tempCityStr += "\""+v_city.elementAt(v_city.size()-1)+"\"";
+  }
+  catch(Exception e)
+  {
+    e.printStackTrace();
+  }
+%>
+
+<SCRIPT language="JavaScript"><!--
+  provinceArray = new Array(<%=tempProvinceStr%>);
+  cityArray = new Array(<%=tempCityStr%>);
+  dropDownItem = new String();
+
+  function changeProvinceInfo(countryBox,provinceBox,cityBox)
+  {
+    var countryItem = countryBox.selectedIndex;
+    var itemCount;
+
+    if(countryItem>0)
+    {
+      provinceBox.length=1;
+      cityBox.length=1;
+      for(var i=0;i<provinceArray.length;i++)
+      {
+        dropDownItem = provinceArray[i].split(".");
+        if(countryItem==dropDownItem[0])
+        {
+          itemCount = provinceBox.length;
+          provinceBox.length += 1;
+          provinceBox.options[itemCount].value = dropDownItem[2];
+          provinceBox.options[itemCount].text = dropDownItem[1];
+        }
+      }
+      if((document.newMemberInfo.provinceSelect.value==null)||(document.newMemberInfo.provinceSelect.value==""))
+        provinceBox.selectedIndex = 1;
+      else
+        provinceBox.selectedIndex = document.newMemberInfo.provinceSelect.value;
+    }
+    else
+    {
+      provinceBox.selectedIndex = 1;
+      cityBox.selectedIndex = 1;
+      provinceBox.length=1;
+      cityBox.length=1;
+    }
+  }
+
+  function changeCityInfo(countryBox,provinceBox,cityBox)
+  {
+    var countryItem = countryBox.selectedIndex;
+    var provinceItem = provinceBox.selectedIndex;
+    var itemCount;
+
+    if(provinceItem>0)
+    {
+      cityBox.length=1;
+      for(var i=0;i<cityArray.length;i++)
+      {
+        dropDownItem = cityArray[i].split(".");
+        if(dropDownItem[0]==countryItem && dropDownItem[1]==provinceItem)
+        {
+          itemCount = cityBox.length;
+          cityBox.length += 1;
+          cityBox.options[itemCount].value = dropDownItem[3];
+          cityBox.options[itemCount].text = dropDownItem[2];
+        }
+      }
+      if((document.newMemberInfo.citySelect.value==null)||(document.newMemberInfo.citySelect.value==""))
+        cityBox.selectedIndex = 1;
+      else
+        cityBox.selectedIndex = document.newMemberInfo.citySelect.value;
+    }
+    else
+    {
+      cityBox.selectedIndex = 1;
+      cityBox.length=1;
+    }
+  }
+
+  // 保存省份的选择值
+  function saveProvince()
+  {
+    document.newMemberInfo.provinceSelect.value = document.newMemberInfo.province.selectedIndex;
+  }
+
+  // 保存城市的选择值
+  function saveCity()
+  {
+    document.newMemberInfo.citySelect.value = document.newMemberInfo.city.selectedIndex;
+  }
+
+
+  function initArea()
+  {
+    changeProvinceInfo(document.newMemberInfo.country,document.newMemberInfo.province,document.newMemberInfo.city);
+    changeCityInfo(document.newMemberInfo.country,document.newMemberInfo.province,document.newMemberInfo.city);
+  }
+//-->
+</SCRIPT>
+
+</head>
+
+<body bgcolor="#F7FBFA" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" tracingsrc="file:///F%7C/ChinaEOA/ceoa.gif" tracingopacity="80" background="/images/temp/bg.gif" onLoad="initArea()">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="1" bgcolor="#000000" >
+  <tr>
+    <td><img src="/images/spacer.gif" width="1" height="1"></td>
+  </tr>
+</table>
+<script language="JavaScript" src="/javascript/title.js">
+</script>
+<table width="640" border="0" cellspacing="0" cellpadding="0" >
+  <tr>
+    <td valign="top" width="14"> <img src="/images/temp/left_bar.gif" width="14" height="2"></td>
+    <td valign="top" colspan="2"><!-- #BeginEditable "body" -->
+      <table width="500" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr>
+          <td height="30"><img src="/images/temp/path.gif" width="49" height="13">
+            <img src="/images/arrow.gif" width="7" height="11"> <a href="/chinaeoa/index.jsp">首页</a>
+            <img src="/images/arrow.gif" width="7" height="11"> <font title="里边有什么好东西呢">
+            用户注册</font></td>
+        </tr>
+      </table>
+      <table width="500" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr bgcolor="#99CCFF">
+          <td class="font4b" align="center" width="7" valign="top"><img src="/images/temp/corner_l.gif" width="7" height="7"></td>
+          <td height="25" class="font4b" align="center">新用户注册</td>
+          <td class="font4b" align="center" bgcolor="#99CCFF" width="7" valign="top"><img src="/images/temp/corner_r.gif" width="7" height="7"></td>
+        </tr>
+        <tr bgcolor="#000066">
+          <td height="1" class="font4b" align="center" colspan="3" valign="top"><img src="/images/spacer.gif" width="1" height="1"></td>
+        </tr>
+      </table>
+      <table width="500" border="0" cellspacing="0" cellpadding="3" align="center">
+        <form name="newMemberInfo" method="post" onSubmit="return validateForm(newMemberInfo)">
+          <tr bgcolor="#F4FCFF">
+            <td height="30" colspan="2" align="center">有<font color="#CC0000">*</font>,<font color="#CC0000">#</font> 
+              号的栏目分别为公司与个人用户必填</td>
+          </tr>
+          <tr bgcolor="#DFEEFF">
+            <td align="right">用户类别：</td>
+            <td bgcolor="#DFEEFF"> 
+              <input type="radio" name="memberTypeRadio" value="2" >
+              个人用户
+              <input type="radio" name="memberTypeRadio" value="3" checked>
+              公司用户
+              <font color="#CC0000">*</font> </td>
+              <input type="hidden" name="memberType" >
+          </tr>
+          <tr>
+            <td align="right" bgcolor="#F4FCFF">国&nbsp;&nbsp;&nbsp;&nbsp;家：</td>
+            <td bgcolor="#F4FCFF">
+              <select name="country" onChange="changeProvinceInfo(newMemberInfo.country,newMemberInfo.province,newMemberInfo.city)" >
+                <option value="0" >--请选择--</option>
+
+           <%  for(i=0;i<v_country.size();i++) { %>
+                <option value="<%=v_countryID.elementAt(i)%>"><%=v_country.elementAt(i)%></option>
+           <%  }   %>
+
+              </select>
+              <font color="#CC0000">*</font> <font color="#CC0000">#</font></td>
+          </tr>
+          <tr bgcolor="#DFEEFF">
+            <td align="right" bgcolor="#DFEEFF">省&nbsp;&nbsp;&nbsp;&nbsp;份：</td>
+            <td bgcolor="#DFEEFF">
+              <select  name="province" onChange="changeCityInfo(newMemberInfo.country,newMemberInfo.province,newMemberInfo.city)" onBlur="saveProvince()">
+                <option value="0" >--请选择--</option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+
+              </select>
+              <font color="#CC0000">*</font> <font color="#CC0000">#</font></td>
+          </tr>
+          <tr>
+            <td align="right" bgcolor="#F4FCFF">所在城市：</td>
+            <td bgcolor="#F4FCFF">
+              <select name="city" onBlur="saveCity()">
+                <option value="0" >--请选择--</option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+              </select>
+
+              <input type="hidden" name="provinceSelect">
+              <input type="hidden" name="citySelect" >
+              <font color="#CC0000">*#</font></td>
+          </tr>
+          <tr bgcolor="#DFEEFF">
+            <td align="right" bgcolor="#DFEEFF">公司名称：</td>
+            <td bgcolor="#DFEEFF"> 
+              <input type="text" name="compName" size="35" class="font1">
+              <font color="#CC0000">*</font> </td>
+          </tr>
+          <tr>
+            <td align="right" bgcolor="#F4FCFF">联系地址：</td>
+            <td bgcolor="#F4FCFF">
+              <input type="text" name="compAddr" size="35" class="font1">
+              <font color="#CC0000">*</font> <font color="#CC0000">#</font></td>
+          </tr>
+          <tr bgcolor="#DFEEFF">
+            <td align="right" bgcolor="#DFEEFF">邮政编码：</td>
+            <td bgcolor="#DFEEFF">
+              <input type="text" name="zipCode" size="15" class="font1">
+              <font color="#CC0000">*</font> <font color="#CC0000">#</font></td>
+          </tr>
+          <tr>
+            <td align="right" bgcolor="#F4FCFF">联系电话：</td>
+            <td bgcolor="#F4FCFF">
+              <input type="text" name="telephone" size="15" class="font1">
+              <font color="#CC0000">*</font> <font color="#CC0000">#</font></td>
+          </tr>
+          <tr bgcolor="#DFEEFF"> 
+            <td align="right" bgcolor="#DFEEFF">传&nbsp;&nbsp;&nbsp;&nbsp;真：</td>
+            <td> 
+              <input type="text" name="fax" size="15" class="font1" bgcolor="#DFEEFF">
+            </td>
+          </tr>
+          <tr> 
+            <td align="right" bgcolor="#F4FCFF">公司规模：</td>
+            <td bgcolor="#F4FCFF"> 
+                <select name="compSize" size="1" >
+                            <option value="1">1-20人 </option>
+                            <option value="2">21-40人 </option>
+                            <option value="3">41-60人 </option>
+                            <option value="4">61-100人 </option>
+                            <option value="5">100人以上 </option>
+                 </select>
+              <font color="#CC0000">*</font> </td>
+          </tr>
+          <tr bgcolor="#DFEEFF"> 
+            <td align="right" bgcolor="#DFEEFF">法人代表：</td>
+            <td><font color="#CC0000" bgcolor="#DFEEFF"> 
+              <input type="text" name="lawRep" size="15" class="font1">
+              *</font> </td>
+          </tr>
+          <tr> 
+            <td align="right" bgcolor="#F4FCFF">行业类别：</td>
+            <td bgcolor="#F4FCFF"> 
+                <select name="compType" >
+
+           <%  for(i=0;i<v_compTypeID.size();i++) { %>
+                <option value="<%=v_compTypeID.elementAt(i)%>"><%=v_compType.elementAt(i)%></option>
+           <%  }   %>
+                     
+                </select>
+            </td>
+          </tr>
+          <tr bgcolor="#DFEEFF"> 
+            <td align="right" bgcolor="#DFEEFF">公司帐号：</td>
+            <td><font color="#CC0000" bgcolor="#DFEEFF"> 
+              <input type="text" name="bankAccount" size="15" class="font1">
+              *</font></td>
+          </tr>
+          <tr>
+            <td align="right" bgcolor="#F4FCFF">开户银行：</td>
+            <td bgcolor="#F4FCFF"><font color="#CC0000" bgcolor="#F4FCFF">
+              <input type="text" name="bank" size="15" class="font1">
+              *</font> </td>
+          </tr>
+          <tr bgcolor="#DFEEFF"> 
+            <td align="right" bgcolor="#DFEEFF">公司税号：</td>
+            <td><font color="#CC0000" bgcolor="#DFEEFF"> 
+              <input type="text" name="taxAccount" size="15" class="font1">
+              *</font> </td>
+          </tr>
+          <tr> 
+            <td align="right" bgcolor="#F4FCFF">&nbsp;</td>
+            <td bgcolor="#F4FCFF">&nbsp;</td>
+          </tr>
+          <tr bgcolor="#DFEEFF"> 
+            <td align="right" bgcolor="#DFEEFF">联 系 人：</td>
+            <td bgcolor="#DFEEFF"> 
+              <input type="text" name="contName" size="15" class="font1">
+              <font color="#CC0000">*</font> </td>
+          </tr>
+          <tr> 
+            <td align="right" bgcolor="#F4FCFF">称&nbsp;&nbsp;&nbsp;&nbsp;谓：</td>
+            <td bgcolor="#F4FCFF"> 
+              <input type="radio" name="contSex" value="F" >
+              女士
+              <input type="radio" name="contSex" value="M" checked>
+              先生 </td>
+          </tr>
+          <tr bgcolor="#DFEEFF"> 
+            <td align="right" bgcolor="#DFEEFF">工作部门：</td>
+            <td> 
+              <input type="text" name="contDept" size="15" class="font1" bgcolor="#DFEEFF">
+            </td>
+          </tr>
+          <tr>
+            <td align="right" bgcolor="#F4FCFF">职&nbsp;&nbsp;&nbsp;&nbsp;务：</td>
+            <td bgcolor="#F4FCFF">
+              <input type="text" name="contTitle" size="15" class="font1" bgcolor="#F4FCFF">
+            </td>
+          </tr>
+          <tr bgcolor="#DFEEFF">
+            <td align="right"><b bgcolor="#DFEEFF">E-mail : </b ></td>
+            <td bgcolor="#DFEEFF">
+              <input type="text" name="contEmail" size="25" class="font1">
+              <font color="#CC0000">*#</font></td>
+          </tr>
+          <tr> 
+            <td colspan="2" bgcolor="#F4FCFF"><b bgcolor="#F4FCFF"><font color="#990033">请输入用户名和密码:</font></b></td>
+          </tr>
+          <tr bgcolor="#DFEEFF"> 
+            <td align="right" bgcolor="#DFEEFF">用 户 名：</td>
+            <td bgcolor="#DFEEFF"> 
+              <input type="text" name="userID" size="15" class="font1">
+              <font color="#CC0000">*#&nbsp;(有效用户名由字母,数字和下划线组成,长度为4~20位)</font></td>
+          </tr>
+          <tr>
+            <td align="right" bgcolor="#F4FCFF">密&nbsp;&nbsp;&nbsp;&nbsp;码：</td>
+            <td bgcolor="#F4FCFF">
+              <input type="password" name="passwd1" size="15" class="font1">
+              <font color="#CC0000">*&nbsp;#(有效密码由字母,数字和下划线组成,长度为6~20位)</font> 
+            </td>
+          </tr>
+          <tr bgcolor="#DFEEFF">
+            <td align="right" bgcolor="#DFEEFF">确认密码：</td>
+            <td bgcolor="#DFEEFF">
+              <input type="password" name="passwd2" size="15" class="font1">
+              <font color="#CC0000">*</font> <font color="#CC0000">#</font></td>
+          </tr>
+          <tr>
+            <td align="right" bgcolor="#F4FCFF">密码提示：</td>
+            <td bgcolor="#F4FCFF">
+              <input type="text" name="question" size="25" class="font1">
+              <font color="#CC0000">*</font> <font color="#CC0000">#</font></td>
+          </tr>
+          <tr bgcolor="#DFEEFF">
+            <td align="right" bgcolor="#DFEEFF">答&nbsp;&nbsp;&nbsp;&nbsp;案： </td>
+            <td bgcolor="#DFEEFF">
+              <input type="text" name="answer" size="25" class="font1">
+              <font color="#CC0000">*</font> <font color="#CC0000">#</font></td>
+          </tr>
+          <tr>
+            <td colspan="2" bgcolor="#F4FCFF">感谢您注册成为我们的用户。</td>
+          </tr>
+          <tr bgcolor="#DFEEFF"> 
+            <td align="right"> 
+
+            </td>
+            <td bgcolor="#DFEEFF">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td colspan="2" bgcolor="#F4FCFF"><font color="#660066" bgcolor="#F4FCFF">现在您已准备提交登记。要提交您的登记，单击“提交登记”按钮。 
+              要取消更改，单击下面的“取消”按钮。</font></td>
+          </tr>
+          <tr> 
+            <td colspan="2" align="center" bgcolor="#DFEEFF"> 
+              <input type="image" img src="/images/temp/submit.gif" name="submit"  class="font1" width="80" height="17" border="0">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="registration.jsp" target="_self"><img src="/images/temp/reset.gif" name="cancel" class="font1" border="0" ></a> 
+            </td>
+          </tr>
+          <tr bgcolor="#F4FCFF"> 
+            <td colspan="2">&nbsp;</td>
+          </tr>
+          <tr bgcolor="#000066"> 
+            <td colspan="2" height="1"><img src="/images/spacer.gif" width="1" height="1"></td>
+          </tr>
+        </form>
+      </table>
+      <p>&nbsp;</p>
+      <!-- #EndEditable --> </td>
+  </tr>
+</table>
+<script language="JavaScript" src="/javascript/foot.js">
+</script>
+
+</body>
+<!-- #EndTemplate --></html>

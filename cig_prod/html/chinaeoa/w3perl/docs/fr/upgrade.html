@@ -1,0 +1,95 @@
+<HTML><head>
+<title>W3Perl - Mise a jour - FR</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Mise &agrave; jour de l'application</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD VALIGN=TOP>
+Si vous utilisez une version ant&eacute;rieure &agrave; 2.50, je vous
+recommande de tout r&eacute;installer car beaucoup de choses ont chang&eacute;es depuis. Certains fichiers ont chang&eacute;s de structure dans leur
+m&eacute;thode de sauvegarde de donn&eacute;es.
+<P>
+
+<HR ALIGN=CENTER WIDTH=30%>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Proc&eacute;dure</FONT></I></TD>
+<TD VALIGN=TOP>
+Certaines mises &agrave; jour n&eacute;cessitent de r&eacute;initialiser vos stats car 
+certaines structures de donn&eacute;es incr&eacute;mentales ont &eacute;t&eacute; modifi&eacute;es.
+<P>
+<OL>
+<LI> <B>Effectuez une copie de vos fichiers sensibles</B>
+
+<P>
+
+Sauvegardez vos fichier de configuration, ainsi que le fichier d'install.pl et
+le script cron-w3perl.pl
+<P>
+<LI> <B>Extraction</B>
+<P>
+D&eacute;compressez l'application qui va remplacer les scripts existants.
+<P>
+<LI> <B>Configuration</B>
+<P>
+<UL>
+<LI>
+Remplissez le nouveau fichier de configuration config.pl avec l'aide de votre ancien fichier config/config.pl. Copiez, et remplissez les nouveaux champs. Il est possible d'utiliser l'interface d'adminstration pour
+g&eacute;n&eacute;rer le fichier de configuration si vous utilisez une version r&eacute;cente de w3perl.
+<BR>
+<LI> Copier/coller $pathcgi, $pathw3perl dans le nouveau script d'installation
+ainsi que la premi&egrave;re ligne qui indique le chemin o&ugrave; se situe Perl.
+<BR>
+<LI> Copier/coller les valeurs que vous avez donner dans cron-w3perl.pl dans le
+nouveau script.
+</UL>
+<P>
+<LI> <B>Installation</B>
+<P>
+Lorsque tout est pr&ecirc;t, lancer install.pl .... maintenant vous &ecirc;tes pr&ecirc;t &agrave; utiliser la derni&egrave;re version de w3perl
+</OL>
+<P>
+
+<P>
+Si vous d&eacute;sirez garder une copie de vos vieilles stats avant de les effacer, ajoutez le vieux
+r&eacute;pertoire de w3perl dans @excluderepert au niveau de config.pl (ex : @excluderepert = ('/w3perl.old/');)
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>R&eacute;initialisation</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+
+La plupart des scripts tourne de mani&egrave;re incr&eacute;mentale. Si vous
+avez besoin de r&eacute;initialiser toutes vos stats, vous devrez lancer cron-w3perl.pl avec l'option -u. Cela d&eacute;truira tous vos fichiers de stats and relancera les scripts pour recalculer vos stats.
+<BR>
+Si vous ne d&eacute;sirez que r&eacute;initialiser que certains scripts, utilisez l'option -b qui effacera les valeurs incr&eacute;mentales stock&eacute;es associ&eacute;es au script. 
+(voir les options disponibles avec l'option -h).
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="/chinaeoa/index.jsp"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

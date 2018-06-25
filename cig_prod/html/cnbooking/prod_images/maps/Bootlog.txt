@@ -1,0 +1,1054 @@
+[0009A0B3] Loading Device = C:\WIN98\HIMEM.SYS
+[0009A0B3] LoadSuccess    = C:\WIN98\HIMEM.SYS
+[0009A0B3] Loading Device = C:\WIN98\DBLBUFF.SYS
+[0009A0B3] LoadSuccess    = C:\WIN98\DBLBUFF.SYS
+[0009A0B3] Loading Device = C:\WIN98\IFSHLP.SYS
+[0009A0B3] LoadSuccess    = C:\WIN98\IFSHLP.SYS
+[0009A0C7] d:\PROGRA~1\NORTON~1\NAVDX.EXE[0009A0C7]  starting
+[0009A134] Loading Vxd = VMM
+[0009A134] LoadSuccess = VMM
+[0009A134] Loading Vxd = C:\WIN98\SMARTDRV.EXE
+[0009A133] LoadSuccess = C:\WIN98\SMARTDRV.EXE
+[0009A134] Loading Vxd = vnetsup.vxd
+[0009A133] LoadSuccess = vnetsup.vxd
+[0009A133] Loading Vxd = ndis.vxd
+[0009A133] LoadSuccess = ndis.vxd
+[0009A133] Loading Vxd = ndis2sup.vxd
+[0009A133] LoadFailed = ndis2sup.vxd
+[0009A133] Loading Vxd = JAVASUP.VXD
+[0009A133] LoadSuccess = JAVASUP.VXD
+[0009A133] Loading Vxd = CONFIGMG
+[0009A133] LoadSuccess = CONFIGMG
+[0009A133] Loading Vxd = NTKERN
+[0009A133] LoadSuccess = NTKERN
+[0009A133] Loading Vxd = VWIN32
+[0009A134] LoadSuccess = VWIN32
+[0009A134] Loading Vxd = VFBACKUP
+[0009A134] LoadSuccess = VFBACKUP
+[0009A134] Loading Vxd = VCOMM
+[0009A134] LoadSuccess = VCOMM
+[0009A134] Loading Vxd = COMBUFF
+[0009A134] LoadSuccess = COMBUFF
+[0009A134] Loading Vxd = C:\WIN98\system\VMM32\IFSMGR.VXD
+[0009A133] LoadSuccess = C:\WIN98\system\VMM32\IFSMGR.VXD
+[0009A133] Loading Vxd = C:\WIN98\system\VMM32\IOS.VXD
+[0009A133] LoadSuccess = C:\WIN98\system\VMM32\IOS.VXD
+[0009A134] Loading Vxd = mtrr
+[0009A134] LoadSuccess = mtrr
+[0009A134] Loading Vxd = SPOOLER
+[0009A134] LoadSuccess = SPOOLER
+[0009A134] Loading Vxd = UDF
+[0009A134] LoadSuccess = UDF
+[0009A134] Loading Vxd = VFAT
+[0009A134] LoadSuccess = VFAT
+[0009A134] Loading Vxd = VCACHE
+[0009A133] LoadSuccess = VCACHE
+[0009A133] Loading Vxd = VCOND
+[0009A133] LoadSuccess = VCOND
+[0009A133] Loading Vxd = VCDFSD
+[0009A133] LoadSuccess = VCDFSD
+[0009A133] Loading Vxd = VXDLDR
+[0009A133] LoadSuccess = VXDLDR
+[0009A133] Loading Vxd = VDEF
+[0009A133] LoadSuccess = VDEF
+[0009A133] Loading Vxd = VPICD
+[0009A133] LoadSuccess = VPICD
+[0009A133] Loading Vxd = VTD
+[0009A133] LoadSuccess = VTD
+[0009A133] Loading Vxd = REBOOT
+[0009A133] LoadSuccess = REBOOT
+[0009A133] Loading Vxd = VDMAD
+[0009A133] LoadSuccess = VDMAD
+[0009A133] Loading Vxd = VSD
+[0009A133] LoadSuccess = VSD
+[0009A133] Loading Vxd = V86MMGR
+[0009A133] LoadSuccess = V86MMGR
+[0009A133] Loading Vxd = PAGESWAP
+[0009A133] LoadSuccess = PAGESWAP
+[0009A133] Loading Vxd = DOSMGR
+[0009A133] LoadSuccess = DOSMGR
+[0009A133] Loading Vxd = VMPOLL
+[0009A134] LoadSuccess = VMPOLL
+[0009A134] Loading Vxd = SHELL
+[0009A134] LoadSuccess = SHELL
+[0009A134] Loading Vxd = PARITY
+[0009A134] LoadSuccess = PARITY
+[0009A134] Loading Vxd = BIOSXLAT
+[0009A134] LoadSuccess = BIOSXLAT
+[0009A134] Loading Vxd = VMCPD
+[0009A134] LoadSuccess = VMCPD
+[0009A134] Loading Vxd = VTDAPI
+[0009A134] LoadSuccess = VTDAPI
+[0009A134] Loading Vxd = PERF
+[0009A134] LoadSuccess = PERF
+[0009A135] Loading Vxd = C:\WIN98\SYSTEM\vrtwd.386
+[0009A145] LoadSuccess = C:\WIN98\SYSTEM\vrtwd.386
+[0009A145] Loading Vxd = C:\WIN98\SYSTEM\vfixd.vxd
+[0009A145] LoadSuccess = C:\WIN98\SYSTEM\vfixd.vxd
+[0009A146] Loading Vxd = vnetbios.vxd
+[0009A145] LoadSuccess = vnetbios.vxd
+[0009A146] Loading Vxd = vredir.vxd
+[0009A145] LoadSuccess = vredir.vxd
+[0009A145] Loading Vxd = dfs.vxd
+[0009A145] LoadSuccess = dfs.vxd
+[0009A145] Loading Vxd = vserver.vxd
+[0009A145] Skipped (not needed) = vserver.vxd
+[0009A145] Loading Vxd = C:\PROGRA~1\SYMANTEC\SYMEVNT.386
+[0009A145] LoadSuccess = C:\PROGRA~1\SYMANTEC\SYMEVNT.386
+[0009A147] Loading Vxd = d:\PROGRA~1\NORTON~1\NAVAP.VXD
+[0009A145] LoadSuccess = d:\PROGRA~1\NORTON~1\NAVAP.VXD
+[0009A145] Loading Vxd = ebios
+[0009A145] LoadSuccess = ebios
+[0009A145] Loading Vxd = vpbiosd.vxd
+[0009A145] LoadSuccess = vpbiosd.vxd
+[0009A145] Loading Vxd = vmsgd.vxd
+[0009A145] LoadSuccess = vmsgd.vxd
+[0009A145] Loading Vxd = vmouse
+[0009A145] LoadSuccess = vmouse
+[0009A145] Loading Vxd = msmouse.vxd
+[0009A146] LoadSuccess = msmouse.vxd
+[0009A146] Loading Vxd = dynapage
+[0009A146] LoadSuccess = dynapage
+[0009A146] Loading Vxd = vcd
+[0009A146] LoadSuccess = vcd
+[0009A146] Loading Vxd = vpd
+[0009A146] LoadSuccess = vpd
+[0009A146] Loading Vxd = int13
+[0009A146] LoadSuccess = int13
+[0009A146] Loading Vxd = enable
+[0009A146] LoadSuccess = enable
+[0009A146] Loading Vxd = vkd
+[0009A146] LoadSuccess = vkd
+[0009A146] Loading Vxd = vdd
+[0009A147] LoadSuccess = vdd
+[0009A147] Loading Vxd = vflatd
+[0009A147] LoadSuccess = vflatd
+[0009A145] SYSCRITINIT  = VMM     
+[0009A145] SYSCRITINITSUCCESS  = VMM     
+[0009A145] SYSCRITINIT  = MTRR    
+[0009A145] SYSCRITINITSUCCESS  = MTRR    
+[0009A145] SYSCRITINIT  = VCACHE  
+[0009A145] SYSCRITINITSUCCESS  = VCACHE  
+[0009A145] SYSCRITINIT  = DFS     
+[0009A145] SYSCRITINITSUCCESS  = DFS     
+[0009A145] SYSCRITINIT  = PERF    
+[0009A145] SYSCRITINITSUCCESS  = PERF    
+[0009A145] SYSCRITINIT  = VFIXD   
+[0009A145] SYSCRITINITSUCCESS  = VFIXD   
+[0009A145] SYSCRITINIT  = VPICD   
+[0009A145] SYSCRITINITSUCCESS  = VPICD   
+[0009A145] SYSCRITINIT  = VrtwD   
+[0009A145] SYSCRITINITSUCCESS  = VrtwD   
+[0009A145] SYSCRITINIT  = VTD     
+[0009A145] SYSCRITINITSUCCESS  = VTD     
+[0009A145] SYSCRITINIT  = VWIN32  
+[0009A145] SYSCRITINITSUCCESS  = VWIN32  
+[0009A145] SYSCRITINIT  = VXDLDR  
+[0009A145] SYSCRITINITSUCCESS  = VXDLDR  
+[0009A145] SYSCRITINIT  = NTKERN  
+[0009A145] SYSCRITINITSUCCESS  = NTKERN  
+[0009A145] SYSCRITINIT  = CONFIGMG
+[0009A145] SYSCRITINITSUCCESS  = CONFIGMG
+[0009A145] SYSCRITINIT  = VCDFSD  
+[0009A145] SYSCRITINITSUCCESS  = VCDFSD  
+[0009A145] SYSCRITINIT  = IOS     
+[0009A145] SYSCRITINITSUCCESS  = IOS     
+[0009A145] SYSCRITINIT  = PAGEFILE
+[0009A145] SYSCRITINITSUCCESS  = PAGEFILE
+[0009A145] SYSCRITINIT  = PAGESWAP
+[0009A145] SYSCRITINITSUCCESS  = PAGESWAP
+[0009A145] SYSCRITINIT  = PARITY  
+[0009A145] SYSCRITINITSUCCESS  = PARITY  
+[0009A145] SYSCRITINIT  = SYMEvent
+[0009A145] SYSCRITINITSUCCESS  = SYMEvent
+[0009A145] SYSCRITINIT  = REBOOT  
+[0009A145] SYSCRITINITSUCCESS  = REBOOT  
+[0009A145] SYSCRITINIT  = EBIOS   
+[0009A145] SYSCRITINITSUCCESS  = EBIOS   
+[0009A145] SYSCRITINIT  = VPBIOSD 
+[0009A145] SYSCRITINITSUCCESS  = VPBIOSD 
+[0009A145] SYSCRITINIT  = VDD     
+[0009A145] SYSCRITINITSUCCESS  = VDD     
+[0009A145] SYSCRITINIT  = VSD     
+[0009A145] SYSCRITINITSUCCESS  = VSD     
+[0009A145] SYSCRITINIT  = COMBUFF 
+[0009A145] SYSCRITINITSUCCESS  = COMBUFF 
+[0009A145] SYSCRITINIT  = VCD     
+[0009A145] SYSCRITINITSUCCESS  = VCD     
+[0009A145] SYSCRITINIT  = VMOUSE  
+[0009A145] SYSCRITINITSUCCESS  = VMOUSE  
+[0009A145] SYSCRITINIT  = MSMINI  
+[0009A145] SYSCRITINITSUCCESS  = MSMINI  
+[0009A145] SYSCRITINIT  = ENABLE  
+[0009A145] SYSCRITINITSUCCESS  = ENABLE  
+[0009A145] SYSCRITINIT  = VKD     
+[0009A145] SYSCRITINITSUCCESS  = VKD     
+[0009A145] SYSCRITINIT  = VPD     
+[0009A145] SYSCRITINITSUCCESS  = VPD     
+[0009A145] SYSCRITINIT  = INT13   
+[0009A145] SYSCRITINITSUCCESS  = INT13   
+[0009A145] SYSCRITINIT  = VMCPD   
+[0009A145] SYSCRITINITSUCCESS  = VMCPD   
+[0009A145] SYSCRITINIT  = BIOSXLAT
+[0009A145] SYSCRITINITSUCCESS  = BIOSXLAT
+[0009A145] SYSCRITINIT  = SDVXD   
+[0009A145] SYSCRITINITSUCCESS  = SDVXD   
+[0009A145] SYSCRITINIT  = VNETBIOS
+[0009A145] SYSCRITINITSUCCESS  = VNETBIOS
+[0009A145] SYSCRITINIT  = NDIS    
+[0009A145] SYSCRITINITSUCCESS  = NDIS    
+[0009A145] SYSCRITINIT  = DOSMGR  
+[0009A145] SYSCRITINITSUCCESS  = DOSMGR  
+[0009A145] SYSCRITINIT  = VMPOLL  
+[0009A145] SYSCRITINITSUCCESS  = VMPOLL  
+[0009A145] SYSCRITINIT  = JAVASUP 
+[0009A145] SYSCRITINITSUCCESS  = JAVASUP 
+[0009A145] SYSCRITINIT  = VCOMM   
+[0009A145] SYSCRITINITSUCCESS  = VCOMM   
+[0009A145] SYSCRITINIT  = VCOND   
+[0009A145] SYSCRITINITSUCCESS  = VCOND   
+[0009A145] SYSCRITINIT  = VTDAPI  
+[0009A145] SYSCRITINITSUCCESS  = VTDAPI  
+[0009A145] SYSCRITINIT  = NAVAP   
+[0009A145] SYSCRITINITSUCCESS  = NAVAP   
+[0009A145] SYSCRITINIT  = VMSGD   
+[0009A145] SYSCRITINITSUCCESS  = VMSGD   
+[0009A145] SYSCRITINIT  = VFLATD  
+[0009A145] SYSCRITINITSUCCESS  = VFLATD  
+[0009A145] SYSCRITINIT  = VDMAD   
+[0009A145] SYSCRITINITSUCCESS  = VDMAD   
+[0009A145] SYSCRITINIT  = V86MMGR 
+[0009A145] SYSCRITINITSUCCESS  = V86MMGR 
+[0009A145] SYSCRITINIT  = SPOOLER 
+[0009A145] SYSCRITINITSUCCESS  = SPOOLER 
+[0009A145] SYSCRITINIT  = UDF     
+[0009A145] SYSCRITINITSUCCESS  = UDF     
+[0009A145] SYSCRITINIT  = VFAT    
+[0009A145] SYSCRITINITSUCCESS  = VFAT    
+[0009A145] SYSCRITINIT  = VDEF    
+[0009A145] SYSCRITINITSUCCESS  = VDEF    
+[0009A145] SYSCRITINIT  = IFSMGR  
+[0009A145] SYSCRITINITSUCCESS  = IFSMGR  
+[0009A145] SYSCRITINIT  = VNETSUP 
+[0009A145] SYSCRITINITSUCCESS  = VNETSUP 
+[0009A145] SYSCRITINIT  = VREDIR  
+[0009A145] SYSCRITINITSUCCESS  = VREDIR  
+[0009A145] SYSCRITINIT  = VFBACKUP
+[0009A145] SYSCRITINITSUCCESS  = VFBACKUP
+[0009A145] SYSCRITINIT  = SHELL   
+[0009A145] SYSCRITINITSUCCESS  = SHELL   
+[0009A146] DEVICEINIT   = VMM     
+[0009A146] DEVICEINITSUCCESS   = VMM     
+[0009A146] DEVICEINIT   = MTRR    
+[0009A146] DEVICEINITFAILED    = MTRR    
+[0009A146] DEVICEINIT   = VCACHE  
+[0009A146] DEVICEINITSUCCESS   = VCACHE  
+[0009A147] DEVICEINIT   = DFS     
+[0009A147] DEVICEINITSUCCESS   = DFS     
+[0009A147] DEVICEINIT   = PERF    
+[0009A147] DEVICEINITSUCCESS   = PERF    
+[0009A147] DEVICEINIT   = VFIXD   
+[0009A147] DEVICEINITSUCCESS   = VFIXD   
+[0009A147] DEVICEINIT   = VPICD   
+[0009A147] DEVICEINITSUCCESS   = VPICD   
+[0009A147] DEVICEINIT   = VrtwD   
+[0009A147] DEVICEINITSUCCESS   = VrtwD   
+[0009A147] DEVICEINIT   = VTD     
+[0009A147] DEVICEINITSUCCESS   = VTD     
+[0009A147] DEVICEINIT   = VWIN32  
+[0009A147] DEVICEINITSUCCESS   = VWIN32  
+[0009A147] DEVICEINIT   = VXDLDR  
+[0009A147] DEVICEINITSUCCESS   = VXDLDR  
+[0009A147] DEVICEINIT   = NTKERN  
+[0009A14D] DEVICEINITSUCCESS   = NTKERN  
+[0009A158] DEVICEINIT   = CONFIGMG
+[0009A158] Starting Unknown (HTREE\ROOT\0)
+[0009A158] Started Unknown (HTREE\ROOT\0)
+[0009A158] Enumerating Unknown (HTREE\ROOT\0)
+[0009A158] Enumerated Unknown (HTREE\ROOT\0)
+[0009A158] Starting Unknown (HTREE\RESERVED\0)
+[0009A158] Started Unknown (HTREE\RESERVED\0)
+[0009A158] Enumerating Unknown (HTREE\RESERVED\0)
+[0009A158] Enumerated Unknown (HTREE\RESERVED\0)
+[0009A158] Loading PNP drivers of 拨号适配器 (ROOT\NET\0000)
+[0009A158] Loading PNP drivers of 处理器支持 (ROOT\PROCESSOR_UPDATE\0000)
+[0009A159] Loaded PNP drivers of 处理器支持 (ROOT\PROCESSOR_UPDATE\0000)
+[0009A159] Starting 处理器支持 (ROOT\PROCESSOR_UPDATE\0000)
+[0009A159] Started 处理器支持 (ROOT\PROCESSOR_UPDATE\0000)
+[0009A159] Loading PNP drivers of Plug and Play Software Device Enumerator (ROOT\SWENUM\0000)
+[0009A158] Loaded PNP drivers of Plug and Play Software Device Enumerator (ROOT\SWENUM\0000)
+[0009A158] Starting Plug and Play Software Device Enumerator (ROOT\SWENUM\0000)
+[0009A158] Started Plug and Play Software Device Enumerator (ROOT\SWENUM\0000)
+[0009A158] Loading PNP drivers of 即插即用 BIOS (ROOT\*PNP0C00\0000)
+[0009A158] Dynamic load device  bios.vxd
+[0009A158] Dynamic init device  BIOS
+[0009A158] Dynamic init success BIOS
+[0009A158] Dynamic load success bios.vxd
+[0009A158] Starting 即插即用 BIOS (ROOT\*PNP0C00\0000)
+[0009A158] Started 即插即用 BIOS (ROOT\*PNP0C00\0000)
+[0009A158] Enumerating 即插即用 BIOS (ROOT\*PNP0C00\0000)
+[0009A158] Enumerated 即插即用 BIOS (ROOT\*PNP0C00\0000)
+[0009A158] Starting 可编程的中断控制器 (BIOS\*PNP0000\00)
+[0009A158] Started 可编程的中断控制器 (BIOS\*PNP0000\00)
+[0009A158] Enumerating 可编程的中断控制器 (BIOS\*PNP0000\00)
+[0009A158] Enumerated 可编程的中断控制器 (BIOS\*PNP0000\00)
+[0009A158] Loading PNP drivers of 直接内存访问控制器 (BIOS\*PNP0200\01)
+[0009A158] Loaded PNP drivers of 直接内存访问控制器 (BIOS\*PNP0200\01)
+[0009A158] Starting 直接内存访问控制器 (BIOS\*PNP0200\01)
+[0009A158] Started 直接内存访问控制器 (BIOS\*PNP0200\01)
+[0009A158] Enumerating 直接内存访问控制器 (BIOS\*PNP0200\01)
+[0009A158] Enumerated 直接内存访问控制器 (BIOS\*PNP0200\01)
+[0009A158] Loading PNP drivers of 系统计时器 (BIOS\*PNP0100\02)
+[0009A158] Loaded PNP drivers of 系统计时器 (BIOS\*PNP0100\02)
+[0009A158] Starting 系统计时器 (BIOS\*PNP0100\02)
+[0009A158] Started 系统计时器 (BIOS\*PNP0100\02)
+[0009A158] Enumerating 系统计时器 (BIOS\*PNP0100\02)
+[0009A158] Enumerated 系统计时器 (BIOS\*PNP0100\02)
+[0009A158] Loading PNP drivers of 系统 CMOS/实时钟 (BIOS\*PNP0B00\03)
+[0009A158] Loaded PNP drivers of 系统 CMOS/实时钟 (BIOS\*PNP0B00\03)
+[0009A158] Starting 系统 CMOS/实时钟 (BIOS\*PNP0B00\03)
+[0009A158] Started 系统 CMOS/实时钟 (BIOS\*PNP0B00\03)
+[0009A158] Enumerating 系统 CMOS/实时钟 (BIOS\*PNP0B00\03)
+[0009A158] Enumerated 系统 CMOS/实时钟 (BIOS\*PNP0B00\03)
+[0009A158] Loading PNP drivers of 标准 101/102 键或 Microsoft 自然键盘 (BIOS\*PNP0303\04)
+[0009A158] Loaded PNP drivers of 标准 101/102 键或 Microsoft 自然键盘 (BIOS\*PNP0303\04)
+[0009A158] Starting 标准 101/102 键或 Microsoft 自然键盘 (BIOS\*PNP0303\04)
+[0009A158] Started 标准 101/102 键或 Microsoft 自然键盘 (BIOS\*PNP0303\04)
+[0009A158] Loading PNP drivers of 系统扬声器 (BIOS\*PNP0800\05)
+[0009A158] Loaded PNP drivers of 系统扬声器 (BIOS\*PNP0800\05)
+[0009A158] Starting 系统扬声器 (BIOS\*PNP0800\05)
+[0009A158] Started 系统扬声器 (BIOS\*PNP0800\05)
+[0009A158] Enumerating 系统扬声器 (BIOS\*PNP0800\05)
+[0009A158] Enumerated 系统扬声器 (BIOS\*PNP0800\05)
+[0009A158] Loading PNP drivers of 数值数据处理器 (BIOS\*PNP0C04\06)
+[0009A158] Loaded PNP drivers of 数值数据处理器 (BIOS\*PNP0C04\06)
+[0009A158] Starting 数值数据处理器 (BIOS\*PNP0C04\06)
+[0009A158] Started 数值数据处理器 (BIOS\*PNP0C04\06)
+[0009A158] Enumerating 数值数据处理器 (BIOS\*PNP0C04\06)
+[0009A158] Enumerated 数值数据处理器 (BIOS\*PNP0C04\06)
+[0009A158] Loading PNP drivers of 即插即用 BIOS 的系统板扩展 (BIOS\*PNP0C01\07)
+[0009A158] Loaded PNP drivers of 即插即用 BIOS 的系统板扩展 (BIOS\*PNP0C01\07)
+[0009A158] Starting 即插即用 BIOS 的系统板扩展 (BIOS\*PNP0C01\07)
+[0009A158] Started 即插即用 BIOS 的系统板扩展 (BIOS\*PNP0C01\07)
+[0009A158] Enumerating 即插即用 BIOS 的系统板扩展 (BIOS\*PNP0C01\07)
+[0009A158] Enumerated 即插即用 BIOS 的系统板扩展 (BIOS\*PNP0C01\07)
+[0009A158] Starting 主板资源 (BIOS\*PNP0C02\08)
+[0009A158] Started 主板资源 (BIOS\*PNP0C02\08)
+[0009A158] Enumerating 主板资源 (BIOS\*PNP0C02\08)
+[0009A158] Enumerated 主板资源 (BIOS\*PNP0C02\08)
+[0009A158] Loading PNP drivers of PCI bus (BIOS\*PNP0A03\09)
+[0009A158] Dynamic load device  pci.vxd
+[0009A158] Dynamic init device  PCI
+[0009A158] Dynamic init success PCI
+[0009A158] Dynamic load success pci.vxd
+[0009A158] Starting PCI bus (BIOS\*PNP0A03\09)
+[0009A158] Started PCI bus (BIOS\*PNP0A03\09)
+[0009A158] Enumerating PCI bus (BIOS\*PNP0A03\09)
+[0009A158] Starting VIA Tech 8598 CPU to AGP controller (PCI\VEN_1106&DEV_8598&SUBSYS_00000000&REV_00\BUS_00&DEV_01&FUNC_00)
+[0009A158] Started VIA Tech 8598 CPU to AGP controller (PCI\VEN_1106&DEV_8598&SUBSYS_00000000&REV_00\BUS_00&DEV_01&FUNC_00)
+[0009A158] Enumerating VIA Tech 8598 CPU to AGP controller (PCI\VEN_1106&DEV_8598&SUBSYS_00000000&REV_00\BUS_00&DEV_01&FUNC_00)
+[0009A158] Enumerated VIA Tech 8598 CPU to AGP controller (PCI\VEN_1106&DEV_8598&SUBSYS_00000000&REV_00\BUS_00&DEV_01&FUNC_00)
+[0009A158] Enumerated PCI bus (BIOS\*PNP0A03\09)
+[0009A158] Loading PNP drivers of VIA Tech 82C586B (PIPC) PCI to ISA bridge (PCI\VEN_1106&DEV_0586&SUBSYS_00001106&REV_47\BUS_00&DEV_07&FUNC_00)
+[0009A158] Dynamic load device  isapnp.vxd
+[0009A158] Dynamic init device  ISAPNP
+[0009A158] Dynamic init success ISAPNP
+[0009A158] Dynamic load success isapnp.vxd
+[0009A158] Starting VIA Tech 82C586B (PIPC) PCI to ISA bridge (PCI\VEN_1106&DEV_0586&SUBSYS_00001106&REV_47\BUS_00&DEV_07&FUNC_00)
+[0009A158] Started VIA Tech 82C586B (PIPC) PCI to ISA bridge (PCI\VEN_1106&DEV_0586&SUBSYS_00001106&REV_47\BUS_00&DEV_07&FUNC_00)
+[0009A158] Enumerating VIA Tech 82C586B (PIPC) PCI to ISA bridge (PCI\VEN_1106&DEV_0586&SUBSYS_00001106&REV_47\BUS_00&DEV_07&FUNC_00)
+[0009A158] Starting ISA 即插即用计数器 IO 读取数据端口 (ISAPNP\READDATAPORT\0)
+[0009A158] Started ISA 即插即用计数器 IO 读取数据端口 (ISAPNP\READDATAPORT\0)
+[0009A158] Enumerating ISA 即插即用计数器 IO 读取数据端口 (ISAPNP\READDATAPORT\0)
+[0009A158] Enumerated ISA 即插即用计数器 IO 读取数据端口 (ISAPNP\READDATAPORT\0)
+[0009A158] Enumerated VIA Tech 82C586B (PIPC) PCI to ISA bridge (PCI\VEN_1106&DEV_0586&SUBSYS_00001106&REV_47\BUS_00&DEV_07&FUNC_00)
+[0009A15A] Loaded PNP drivers of VIA Tech 82C586B (PIPC) PCI to ISA bridge (PCI\VEN_1106&DEV_0586&SUBSYS_00001106&REV_47\BUS_00&DEV_07&FUNC_00)
+[0009A15A] Starting VIA Tech 82C586B Power Management Controller (PCI\VEN_1106&DEV_3040&SUBSYS_00000000&REV_10\BUS_00&DEV_07&FUNC_03)
+[0009A15A] Started VIA Tech 82C586B Power Management Controller (PCI\VEN_1106&DEV_3040&SUBSYS_00000000&REV_10\BUS_00&DEV_07&FUNC_03)
+[0009A15A] Enumerating VIA Tech 82C586B Power Management Controller (PCI\VEN_1106&DEV_3040&SUBSYS_00000000&REV_10\BUS_00&DEV_07&FUNC_03)
+[0009A15A] Enumerated VIA Tech 82C586B Power Management Controller (PCI\VEN_1106&DEV_3040&SUBSYS_00000000&REV_10\BUS_00&DEV_07&FUNC_03)
+[0009A15A] Loaded PNP drivers of PCI bus (BIOS\*PNP0A03\09)
+[0009A15A] Loading PNP drivers of 标准软盘控制器 (BIOS\*PNP0700\0D)
+[0009A15A] Loaded PNP drivers of 即插即用 BIOS (ROOT\*PNP0C00\0000)
+[0009A15A] Loading PNP drivers of 系统板 (ROOT\*PNP0C01\0000)
+[0009A15A] Loaded PNP drivers of 系统板 (ROOT\*PNP0C01\0000)
+[0009A15A] Starting 系统板 (ROOT\*PNP0C01\0000)
+[0009A15A] Started 系统板 (ROOT\*PNP0C01\0000)
+[0009A15A] Enumerating 系统板 (ROOT\*PNP0C01\0000)
+[0009A15A] Enumerated 系统板 (ROOT\*PNP0C01\0000)
+[0009A15A] Loading PNP drivers of 高级电源管理支持 (ROOT\*PNP0C05\0000)
+[0009A15A] Dynamic load device  VPOWERD.VXD
+[0009A15A] Dynamic init device  VPOWERD
+[0009A158] Dynamic init success VPOWERD
+[0009A158] Dynamic load success VPOWERD.VXD
+[0009A158] Loaded PNP drivers of 高级电源管理支持 (ROOT\*PNP0C05\0000)
+[0009A158] Starting 高级电源管理支持 (ROOT\*PNP0C05\0000)
+[0009A158] Started 高级电源管理支持 (ROOT\*PNP0C05\0000)
+[0009A158] Enumerating 高级电源管理支持 (ROOT\*PNP0C05\0000)
+[0009A158] Enumerated 高级电源管理支持 (ROOT\*PNP0C05\0000)
+[0009A158] Starting Unknown (ROOT\PRINTER\0000)
+[0009A158] Started Unknown (ROOT\PRINTER\0000)
+[0009A158] Enumerating Unknown (ROOT\PRINTER\0000)
+[0009A158] Enumerated Unknown (ROOT\PRINTER\0000)
+[0009A158] Starting Unknown (ROOT\PRINTER\0001)
+[0009A158] Started Unknown (ROOT\PRINTER\0001)
+[0009A158] Enumerating Unknown (ROOT\PRINTER\0001)
+[0009A158] Enumerated Unknown (ROOT\PRINTER\0001)
+[0009A158] Starting Unknown (ROOT\PRINTER\0002)
+[0009A158] Started Unknown (ROOT\PRINTER\0002)
+[0009A158] Enumerating Unknown (ROOT\PRINTER\0002)
+[0009A158] Enumerated Unknown (ROOT\PRINTER\0002)
+[0009A158] Enumerating 处理器支持 (ROOT\PROCESSOR_UPDATE\0000)
+[0009A158] Enumerated 处理器支持 (ROOT\PROCESSOR_UPDATE\0000)
+[0009A158] Enumerating Plug and Play Software Device Enumerator (ROOT\SWENUM\0000)
+[0009A158] Enumerated Plug and Play Software Device Enumerator (ROOT\SWENUM\0000)
+[0009A158] Enumerating 标准 101/102 键或 Microsoft 自然键盘 (BIOS\*PNP0303\04)
+[0009A158] Enumerated 标准 101/102 键或 Microsoft 自然键盘 (BIOS\*PNP0303\04)
+[0009A158] DEVICEINITSUCCESS   = CONFIGMG
+[0009A158] Loading PNP drivers of PS/2 兼容型鼠标端口 (BIOS\*PNP0F13\0A)
+[0009A158] Loading PNP drivers of 通讯端口 (COM1) (BIOS\*PNP0501\0C)
+[0009A158] Loaded PNP drivers of 通讯端口 (COM1) (BIOS\*PNP0501\0C)
+[0009A158] Starting 通讯端口 (COM1) (BIOS\*PNP0501\0C)
+[0009A158] Started 通讯端口 (COM1) (BIOS\*PNP0501\0C)
+[0009A158] Loading PNP drivers of 打印机端口 (LPT1) (BIOS\*PNP0400\0E)
+[0009A158] Loaded PNP drivers of 打印机端口 (LPT1) (BIOS\*PNP0400\0E)
+[0009A158] Starting 打印机端口 (LPT1) (BIOS\*PNP0400\0E)
+[0009A158] Started 打印机端口 (LPT1) (BIOS\*PNP0400\0E)
+[0009A158] Loading PNP drivers of 通讯端口 (COM2) (BIOS\*PNP0501\10)
+[0009A158] Loaded PNP drivers of 通讯端口 (COM2) (BIOS\*PNP0501\10)
+[0009A158] Starting 通讯端口 (COM2) (BIOS\*PNP0501\10)
+[0009A158] Started 通讯端口 (COM2) (BIOS\*PNP0501\10)
+[0009A158] Starting VIA Tech V82C597 CPU to PCI bridge (PCI\VEN_1106&DEV_0597&SUBSYS_00000000&REV_04\BUS_00&DEV_00&FUNC_00)
+[0009A158] Started VIA Tech V82C597 CPU to PCI bridge (PCI\VEN_1106&DEV_0597&SUBSYS_00000000&REV_04\BUS_00&DEV_00&FUNC_00)
+[0009A158] Enumerating VIA Tech V82C597 CPU to PCI bridge (PCI\VEN_1106&DEV_0597&SUBSYS_00000000&REV_04\BUS_00&DEV_00&FUNC_00)
+[0009A158] Enumerated VIA Tech V82C597 CPU to PCI bridge (PCI\VEN_1106&DEV_0597&SUBSYS_00000000&REV_04\BUS_00&DEV_00&FUNC_00)
+[0009A158] Loading PNP drivers of IRQ Holder for PCI Steering (PCI\IRQHOLDER\IRQ0B)
+[0009A158] Dynamic load device  PCI.VxD
+[0009A159] Dynamic init device  PCI
+[0009A159] Dynamic init success PCI
+[0009A159] Dynamic load success PCI.VxD
+[0009A159] Loaded PNP drivers of IRQ Holder for PCI Steering (PCI\IRQHOLDER\IRQ0B)
+[0009A159] Starting IRQ Holder for PCI Steering (PCI\IRQHOLDER\IRQ0B)
+[0009A159] Started IRQ Holder for PCI Steering (PCI\IRQHOLDER\IRQ0B)
+[0009A159] Enumerating IRQ Holder for PCI Steering (PCI\IRQHOLDER\IRQ0B)
+[0009A159] Enumerated IRQ Holder for PCI Steering (PCI\IRQHOLDER\IRQ0B)
+[0009A159] Loading PNP drivers of VIA Bus Master PCI IDE Controller (PCI\VEN_1106&DEV_0571&SUBSYS_00000000&REV_06\BUS_00&DEV_07&FUNC_01)
+[0009A159] Loaded PNP drivers of VIA Bus Master PCI IDE Controller (PCI\VEN_1106&DEV_0571&SUBSYS_00000000&REV_06\BUS_00&DEV_07&FUNC_01)
+[0009A159] Starting VIA Bus Master PCI IDE Controller (PCI\VEN_1106&DEV_0571&SUBSYS_00000000&REV_06\BUS_00&DEV_07&FUNC_01)
+[0009A159] Started VIA Bus Master PCI IDE Controller (PCI\VEN_1106&DEV_0571&SUBSYS_00000000&REV_06\BUS_00&DEV_07&FUNC_01)
+[0009A159] Enumerating VIA Bus Master PCI IDE Controller (PCI\VEN_1106&DEV_0571&SUBSYS_00000000&REV_06\BUS_00&DEV_07&FUNC_01)
+[0009A159] Enumerated VIA Bus Master PCI IDE Controller (PCI\VEN_1106&DEV_0571&SUBSYS_00000000&REV_06\BUS_00&DEV_07&FUNC_01)
+[0009A159] Loading PNP drivers of VIA Tech 3038 PCI to USB Universal Host Controller (PCI\VEN_1106&DEV_3038&SUBSYS_12340925&REV_02\BUS_00&DEV_07&FUNC_02)
+[0009A16A] Loaded PNP drivers of VIA Tech 3038 PCI to USB Universal Host Controller (PCI\VEN_1106&DEV_3038&SUBSYS_12340925&REV_02\BUS_00&DEV_07&FUNC_02)
+[0009A16A] Starting VIA Tech 3038 PCI to USB Universal Host Controller (PCI\VEN_1106&DEV_3038&SUBSYS_12340925&REV_02\BUS_00&DEV_07&FUNC_02)
+[0009A16A] Started VIA Tech 3038 PCI to USB Universal Host Controller (PCI\VEN_1106&DEV_3038&SUBSYS_12340925&REV_02\BUS_00&DEV_07&FUNC_02)
+[0009A16A] Loading PNP drivers of IRQ Holder for PCI Steering (PCI\IRQHOLDER\IRQ0A)
+[0009A16A] Dynamic load device  PCI.VxD
+[0009A16A] Dynamic init device  PCI
+[0009A16A] Dynamic init success PCI
+[0009A16A] Dynamic load success PCI.VxD
+[0009A16A] Loaded PNP drivers of IRQ Holder for PCI Steering (PCI\IRQHOLDER\IRQ0A)
+[0009A16A] Starting IRQ Holder for PCI Steering (PCI\IRQHOLDER\IRQ0A)
+[0009A16A] Started IRQ Holder for PCI Steering (PCI\IRQHOLDER\IRQ0A)
+[0009A16A] Enumerating IRQ Holder for PCI Steering (PCI\IRQHOLDER\IRQ0A)
+[0009A16A] Enumerated IRQ Holder for PCI Steering (PCI\IRQHOLDER\IRQ0A)
+[0009A16A] Loading PNP drivers of Realtek RTL8029(AS) PCI Ethernet NIC (PCI\VEN_10EC&DEV_8029&SUBSYS_00000000&REV_00\BUS_00&DEV_0A&FUNC_00)
+[0009A16A] Loading PNP drivers of IRQ Holder for PCI Steering (PCI\IRQHOLDER\IRQ05)
+[0009A16A] Dynamic load device  PCI.VxD
+[0009A16A] Dynamic init device  PCI
+[0009A16A] Dynamic init success PCI
+[0009A16A] Dynamic load success PCI.VxD
+[0009A16A] Loaded PNP drivers of IRQ Holder for PCI Steering (PCI\IRQHOLDER\IRQ05)
+[0009A16A] Starting IRQ Holder for PCI Steering (PCI\IRQHOLDER\IRQ05)
+[0009A16A] Started IRQ Holder for PCI Steering (PCI\IRQHOLDER\IRQ05)
+[0009A16A] Enumerating IRQ Holder for PCI Steering (PCI\IRQHOLDER\IRQ05)
+[0009A16A] Enumerated IRQ Holder for PCI Steering (PCI\IRQHOLDER\IRQ05)
+[0009A16A] Loading PNP drivers of SiS 6326 (PCI\VEN_1039&DEV_6326&SUBSYS_63261039&REV_0B\000800)
+[0009A16A] Loaded PNP drivers of SiS 6326 (PCI\VEN_1039&DEV_6326&SUBSYS_63261039&REV_0B\000800)
+[0009A16A] Starting SiS 6326 (PCI\VEN_1039&DEV_6326&SUBSYS_63261039&REV_0B\000800)
+[0009A16A] Dynamic load device  sis6326m.vxd
+[0009A16A] Dynamic init device  SIS6326M
+[0009A16A] Dynamic init success SIS6326M
+[0009A16A] Dynamic load success sis6326m.vxd
+[0009A16A] Starting SiS 6326 (PCI\VEN_1039&DEV_6326&SUBSYS_63261039&REV_0B\000800)
+[0009A16A] Started SiS 6326 (PCI\VEN_1039&DEV_6326&SUBSYS_63261039&REV_0B\000800)
+[0009A16A] Enumerating SiS 6326 (PCI\VEN_1039&DEV_6326&SUBSYS_63261039&REV_0B\000800)
+[0009A16A] Enumerated SiS 6326 (PCI\VEN_1039&DEV_6326&SUBSYS_63261039&REV_0B\000800)
+[0009A16A] Starting 即插即用监视器 (MONITOR\SAM1035\PCI_VEN_1039&DEV_6326&SUBSYS_63261039&REV_0B_000800)
+[0009A16A] Started 即插即用监视器 (MONITOR\SAM1035\PCI_VEN_1039&DEV_6326&SUBSYS_63261039&REV_0B_000800)
+[0009A16A] Enumerating 即插即用监视器 (MONITOR\SAM1035\PCI_VEN_1039&DEV_6326&SUBSYS_63261039&REV_0B_000800)
+[0009A16A] Enumerated 即插即用监视器 (MONITOR\SAM1035\PCI_VEN_1039&DEV_6326&SUBSYS_63261039&REV_0B_000800)
+[0009A16A] Started SiS 6326 (PCI\VEN_1039&DEV_6326&SUBSYS_63261039&REV_0B\000800)
+[0009A16A] Enumerating SiS 6326 (PCI\VEN_1039&DEV_6326&SUBSYS_63261039&REV_0B\000800)
+[0009A16A] Enumerated SiS 6326 (PCI\VEN_1039&DEV_6326&SUBSYS_63261039&REV_0B\000800)
+[0009A16A] Enumerating 即插即用监视器 (MONITOR\SAM1035\PCI_VEN_1039&DEV_6326&SUBSYS_63261039&REV_0B_000800)
+[0009A16A] Enumerated 即插即用监视器 (MONITOR\SAM1035\PCI_VEN_1039&DEV_6326&SUBSYS_63261039&REV_0B_000800)
+[0009A16A] Loading PNP drivers of Primary IDE controller (dual fifo) (MF\CHILD0000\PCI&VEN_1106&DEV_0571&SUBSYS_00000000&REV_06&BUS_00&DEV_07&FUNC_01)
+[0009A16A] Loading PNP drivers of Secondary IDE controller (dual fifo) (MF\CHILD0001\PCI&VEN_1106&DEV_0571&SUBSYS_00000000&REV_06&BUS_00&DEV_07&FUNC_01)
+[0009A16A] Enumerating VIA Tech 3038 PCI to USB Universal Host Controller (PCI\VEN_1106&DEV_3038&SUBSYS_12340925&REV_02\BUS_00&DEV_07&FUNC_02)
+[0009A16A] Enumerated VIA Tech 3038 PCI to USB Universal Host Controller (PCI\VEN_1106&DEV_3038&SUBSYS_12340925&REV_02\BUS_00&DEV_07&FUNC_02)
+[0009A16A] Loading PNP drivers of USB Root Hub (USB\ROOT_HUB\PCI&VEN_1106&DEV_3038&SUBSYS_12340925&REV_02&BUS_00&DEV_07&FUNC_02)
+[0009A17D] Loaded PNP drivers of USB Root Hub (USB\ROOT_HUB\PCI&VEN_1106&DEV_3038&SUBSYS_12340925&REV_02&BUS_00&DEV_07&FUNC_02)
+[0009A17D] Starting USB Root Hub (USB\ROOT_HUB\PCI&VEN_1106&DEV_3038&SUBSYS_12340925&REV_02&BUS_00&DEV_07&FUNC_02)
+[0009A17D] Started USB Root Hub (USB\ROOT_HUB\PCI&VEN_1106&DEV_3038&SUBSYS_12340925&REV_02&BUS_00&DEV_07&FUNC_02)
+[0009A17D] Enumerating USB Root Hub (USB\ROOT_HUB\PCI&VEN_1106&DEV_3038&SUBSYS_12340925&REV_02&BUS_00&DEV_07&FUNC_02)
+[0009A17D] Enumerated USB Root Hub (USB\ROOT_HUB\PCI&VEN_1106&DEV_3038&SUBSYS_12340925&REV_02&BUS_00&DEV_07&FUNC_02)
+[0009A17D] DEVICEINIT   = VCDFSD  
+[0009A17D] DEVICEINITSUCCESS   = VCDFSD  
+[0009A17D] DEVICEINIT   = IOS     
+[0009A180] Dynamic load device  C:\WIN98\system\IOSUBSYS\apix.vxd
+[0009A181] Dynamic load success C:\WIN98\system\IOSUBSYS\apix.vxd
+[0009A181] Dynamic load device  C:\WIN98\system\IOSUBSYS\atapchng.vxd
+[0009A17D] Dynamic load success C:\WIN98\system\IOSUBSYS\atapchng.vxd
+[0009A17D] Dynamic load device  C:\WIN98\system\IOSUBSYS\cdfs.vxd
+[0009A17D] Dynamic load success C:\WIN98\system\IOSUBSYS\cdfs.vxd
+[0009A17D] Dynamic load device  C:\WIN98\system\IOSUBSYS\cdtsd.vxd
+[0009A17D] Dynamic load success C:\WIN98\system\IOSUBSYS\cdtsd.vxd
+[0009A17D] Dynamic load device  C:\WIN98\system\IOSUBSYS\cdvsd.vxd
+[0009A17D] Dynamic load success C:\WIN98\system\IOSUBSYS\cdvsd.vxd
+[0009A17D] Dynamic load device  C:\WIN98\system\IOSUBSYS\disktsd.vxd
+[0009A17D] Dynamic load success C:\WIN98\system\IOSUBSYS\disktsd.vxd
+[0009A17D] Dynamic load device  C:\WIN98\system\IOSUBSYS\diskvsd.vxd
+[0009A17D] Dynamic load success C:\WIN98\system\IOSUBSYS\diskvsd.vxd
+[0009A17D] Dynamic load device  C:\WIN98\system\IOSUBSYS\drvspacx.vxd
+[0009A17D] Dynamic load success C:\WIN98\system\IOSUBSYS\drvspacx.vxd
+[0009A17D] Dynamic load device  C:\WIN98\system\IOSUBSYS\necatapi.vxd
+[0009A17D] Dynamic load success C:\WIN98\system\IOSUBSYS\necatapi.vxd
+[0009A17D] Dynamic load device  C:\WIN98\system\IOSUBSYS\scsi1hlp.vxd
+[0009A17D] Dynamic load success C:\WIN98\system\IOSUBSYS\scsi1hlp.vxd
+[0009A17D] Dynamic load device  C:\WIN98\system\IOSUBSYS\torisan3.vxd
+[0009A17D] Dynamic load success C:\WIN98\system\IOSUBSYS\torisan3.vxd
+[0009A17D] Dynamic load device  C:\WIN98\system\IOSUBSYS\voltrack.vxd
+[0009A17D] Dynamic load success C:\WIN98\system\IOSUBSYS\voltrack.vxd
+[0009A17D] Dynamic load device  C:\WIN98\system\IOSUBSYS\rmm.pdr
+[0009A17D] Dynamic load success C:\WIN98\system\IOSUBSYS\rmm.pdr
+[0009A17D] Dynamic load device  C:\WIN98\system\IOSUBSYS\bigmem.drv
+[0009A17D] Dynamic load success C:\WIN98\system\IOSUBSYS\bigmem.drv
+[0009A17D] DEVICEINITSUCCESS   = IOS     
+[0009A17D] DEVICEINIT   = PAGEFILE
+[0009A17D] DEVICEINITSUCCESS   = PAGEFILE
+[0009A17D] DEVICEINIT   = PAGESWAP
+[0009A17D] DEVICEINITSUCCESS   = PAGESWAP
+[0009A17D] DEVICEINIT   = PARITY  
+[0009A17D] DEVICEINITSUCCESS   = PARITY  
+[0009A17D] DEVICEINIT   = SYMEvent
+[0009A17D] DEVICEINITSUCCESS   = SYMEvent
+[0009A17D] DEVICEINIT   = REBOOT  
+[0009A17D] DEVICEINITSUCCESS   = REBOOT  
+[0009A17D] DEVICEINIT   = EBIOS   
+[0009A17D] DEVICEINITSUCCESS   = EBIOS   
+[0009A17D] DEVICEINIT   = VPBIOSD 
+[0009A17D] DEVICEINITSUCCESS   = VPBIOSD 
+[0009A17D] DEVICEINIT   = VDD     
+[0009A17D] DEVICEINITSUCCESS   = VDD     
+[0009A17D] DEVICEINIT   = VSD     
+[0009A17D] DEVICEINITSUCCESS   = VSD     
+[0009A17D] DEVICEINIT   = COMBUFF 
+[0009A17D] DEVICEINITSUCCESS   = COMBUFF 
+[0009A17D] DEVICEINIT   = VCD     
+[0009A17D] DEVICEINITSUCCESS   = VCD     
+[0009A17D] DEVICEINIT   = VMOUSE  
+[0009A17D] DEVICEINITSUCCESS   = VMOUSE  
+[0009A17D] Loading PNP drivers of PS/2 兼容型鼠标端口 (BIOS\*PNP0F13\0A)
+[0009A17D] Loaded PNP drivers of PS/2 兼容型鼠标端口 (BIOS\*PNP0F13\0A)
+[0009A17D] Starting PS/2 兼容型鼠标端口 (BIOS\*PNP0F13\0A)
+[0009A18E] Started PS/2 兼容型鼠标端口 (BIOS\*PNP0F13\0A)
+[0009A18E] Enumerating PS/2 兼容型鼠标端口 (BIOS\*PNP0F13\0A)
+[0009A18E] Enumerated PS/2 兼容型鼠标端口 (BIOS\*PNP0F13\0A)
+[0009A18E] DEVICEINIT   = MSMINI  
+[0009A18E] DEVICEINITSUCCESS   = MSMINI  
+[0009A18E] DEVICEINIT   = ENABLE  
+[0009A18E] DEVICEINITSUCCESS   = ENABLE  
+[0009A18E] DEVICEINIT   = VKD     
+[0009A18E] DEVICEINITSUCCESS   = VKD     
+[0009A18E] DEVICEINIT   = VPD     
+[0009A18E] DEVICEINITSUCCESS   = VPD     
+[0009A18E] DEVICEINIT   = INT13   
+[0009A18E] DEVICEINITSUCCESS   = INT13   
+[0009A18E] DEVICEINIT   = VMCPD   
+[0009A18E] DEVICEINITSUCCESS   = VMCPD   
+[0009A18E] DEVICEINIT   = BIOSXLAT
+[0009A18E] DEVICEINITSUCCESS   = BIOSXLAT
+[0009A18E] DEVICEINIT   = SDVXD   
+[0009A18E] DEVICEINITSUCCESS   = SDVXD   
+[0009A18E] DEVICEINIT   = VNETBIOS
+[0009A18E] DEVICEINITSUCCESS   = VNETBIOS
+[0009A18E] DEVICEINIT   = NDIS    
+[0009A18F] DEVICEINITSUCCESS   = NDIS    
+[0009A1A2] Loading PNP drivers of 拨号适配器 (ROOT\NET\0000)
+[0009A1A2] Dynamic load device  pppmac.vxd
+[0009A1A4] Dynamic init device  PPPMAC
+[0009A1A4] Dynamic load device  C:\WIN98\system\spap.vxd
+[0009A1A2] Dynamic init device  SPAP
+[0009A1A2] Dynamic init success SPAP
+[0009A1A2] Dynamic load success C:\WIN98\system\spap.vxd
+[0009A1A2] Dynamic init success PPPMAC
+[0009A1A2] Dynamic load success pppmac.vxd
+[0009A1A2] Loaded PNP drivers of 拨号适配器 (ROOT\NET\0000)
+[0009A1A2] Starting 拨号适配器 (ROOT\NET\0000)
+[0009A1A2] Started 拨号适配器 (ROOT\NET\0000)
+[0009A1A2] Enumerating 拨号适配器 (ROOT\NET\0000)
+[0009A1A2] Enumerated 拨号适配器 (ROOT\NET\0000)
+[0009A1A2] Loading PNP drivers of Realtek RTL8029(AS) PCI Ethernet NIC (PCI\VEN_10EC&DEV_8029&SUBSYS_00000000&REV_00\BUS_00&DEV_0A&FUNC_00)
+[0009A1A1] Loaded PNP drivers of Realtek RTL8029(AS) PCI Ethernet NIC (PCI\VEN_10EC&DEV_8029&SUBSYS_00000000&REV_00\BUS_00&DEV_0A&FUNC_00)
+[0009A1A1] Starting Realtek RTL8029(AS) PCI Ethernet NIC (PCI\VEN_10EC&DEV_8029&SUBSYS_00000000&REV_00\BUS_00&DEV_0A&FUNC_00)
+[0009A1A1] Started Realtek RTL8029(AS) PCI Ethernet NIC (PCI\VEN_10EC&DEV_8029&SUBSYS_00000000&REV_00\BUS_00&DEV_0A&FUNC_00)
+[0009A1A1] Loading PNP drivers of TCP/IP (NETWORK\MSTCP\0000)
+[0009A1A1] Dynamic load device  vtdi.386
+[0009A1A3] Dynamic init device  VTDI
+[0009A1A3] Dynamic init success VTDI
+[0009A1A3] Dynamic load success vtdi.386
+[0009A1A3] Dynamic load device  vip.386
+[0009A1A1] Dynamic init device  VIP
+[0009A1A1] Dynamic init success VIP
+[0009A1A1] Dynamic load success vip.386
+[0009A1A1] Dynamic load device  vtcp.386
+[0009A1A1] Dynamic init device  MSTCP
+[0009A1A1] Dynamic init success MSTCP
+[0009A1A1] Dynamic load success vtcp.386
+[0009A1A1] Dynamic load device  vdhcp.386
+[0009A1A1] Dynamic init device  VDHCP
+[0009A1A1] Dynamic init success VDHCP
+[0009A1A1] Dynamic load success vdhcp.386
+[0009A1A1] Dynamic load device  vnbt.386
+[0009A1A1] Dynamic init device  VNBT
+[0009A1A1] Dynamic init success VNBT
+[0009A1A1] Dynamic load success vnbt.386
+[0009A1A1] Starting TCP/IP (NETWORK\MSTCP\0000)
+[0009A1A1] Started TCP/IP (NETWORK\MSTCP\0000)
+[0009A1A1] Enumerating TCP/IP (NETWORK\MSTCP\0000)
+[0009A1A1] Enumerated TCP/IP (NETWORK\MSTCP\0000)
+[0009A1A1] Loading PNP drivers of Microsoft 网络用户 (NETWORK\VREDIR\0000)
+[0009A1A1] Starting Microsoft 网络用户 (NETWORK\VREDIR\0000)
+[0009A1A1] Started Microsoft 网络用户 (NETWORK\VREDIR\0000)
+[0009A1A1] Starting Microsoft 网络用户 (NETWORK\VREDIR\0000)
+[0009A1A1] Started Microsoft 网络用户 (NETWORK\VREDIR\0000)
+[0009A1A1] Loaded PNP drivers of Microsoft 网络用户 (NETWORK\VREDIR\0000)
+[0009A1A1] Enumerating Microsoft 网络用户 (NETWORK\VREDIR\0000)
+[0009A1A1] Enumerated Microsoft 网络用户 (NETWORK\VREDIR\0000)
+[0009A1A1] Loading PNP drivers of Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0000)
+[0009A1A1] Starting Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0000)
+[0009A1A1] Started Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0000)
+[0009A1A1] Dynamic load device  vserver.vxd
+[0009A1A1] Dynamic init device  VSERVER
+[0009A1A1] Dynamic init success VSERVER
+[0009A1A1] Dynamic load success vserver.vxd
+[0009A1A1] Starting Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0000)
+[0009A1A1] Started Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0000)
+[0009A1A1] Loaded PNP drivers of Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0000)
+[0009A1A1] Enumerating Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0000)
+[0009A1A1] Enumerated Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0000)
+[0009A1A1] Loading PNP drivers of Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0001)
+[0009A1A1] Starting Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0001)
+[0009A1A1] Started Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0001)
+[0009A1A1] Starting Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0001)
+[0009A1A1] Started Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0001)
+[0009A1A1] Loaded PNP drivers of Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0001)
+[0009A1A1] Enumerating Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0001)
+[0009A1A1] Enumerated Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0001)
+[0009A1A1] Loaded PNP drivers of TCP/IP (NETWORK\MSTCP\0000)
+[0009A1A1] Enumerating Realtek RTL8029(AS) PCI Ethernet NIC (PCI\VEN_10EC&DEV_8029&SUBSYS_00000000&REV_00\BUS_00&DEV_0A&FUNC_00)
+[0009A1A1] Enumerated Realtek RTL8029(AS) PCI Ethernet NIC (PCI\VEN_10EC&DEV_8029&SUBSYS_00000000&REV_00\BUS_00&DEV_0A&FUNC_00)
+[0009A1A1] Loading PNP drivers of TCP/IP (NETWORK\MSTCP\0001)
+[0009A1A1] Starting TCP/IP (NETWORK\MSTCP\0001)
+[0009A1A1] Started TCP/IP (NETWORK\MSTCP\0001)
+[0009A1A1] Enumerating TCP/IP (NETWORK\MSTCP\0001)
+[0009A1A1] Enumerated TCP/IP (NETWORK\MSTCP\0001)
+[0009A1A1] Loading PNP drivers of Microsoft 网络用户 (NETWORK\VREDIR\0001)
+[0009A1A1] Starting Microsoft 网络用户 (NETWORK\VREDIR\0001)
+[0009A1A1] Started Microsoft 网络用户 (NETWORK\VREDIR\0001)
+[0009A1A1] Starting Microsoft 网络用户 (NETWORK\VREDIR\0001)
+[0009A1A1] Started Microsoft 网络用户 (NETWORK\VREDIR\0001)
+[0009A1A1] Loaded PNP drivers of Microsoft 网络用户 (NETWORK\VREDIR\0001)
+[0009A1A1] Enumerating Microsoft 网络用户 (NETWORK\VREDIR\0001)
+[0009A1A1] Enumerated Microsoft 网络用户 (NETWORK\VREDIR\0001)
+[0009A1A1] Loading PNP drivers of Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0002)
+[0009A1A1] Starting Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0002)
+[0009A1A1] Started Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0002)
+[0009A1A1] Starting Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0002)
+[0009A1A1] Started Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0002)
+[0009A1A1] Loaded PNP drivers of Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0002)
+[0009A1A1] Enumerating Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0002)
+[0009A1A1] Enumerated Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0002)
+[0009A1A1] Loading PNP drivers of Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0003)
+[0009A1A1] Starting Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0003)
+[0009A1A1] Started Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0003)
+[0009A1A1] Starting Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0003)
+[0009A1A1] Started Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0003)
+[0009A1A1] Loaded PNP drivers of Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0003)
+[0009A1A1] Enumerating Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0003)
+[0009A1A1] Enumerated Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0003)
+[0009A1A1] Loaded PNP drivers of TCP/IP (NETWORK\MSTCP\0001)
+[0009A1A1] Enumerating TCP/IP (NETWORK\MSTCP\0001)
+[0009A1A1] Enumerated TCP/IP (NETWORK\MSTCP\0001)
+[0009A1A1] Loading PNP drivers of Microsoft 网络用户 (NETWORK\VREDIR\0001)
+[0009A1A1] Starting Microsoft 网络用户 (NETWORK\VREDIR\0001)
+[0009A1A1] Started Microsoft 网络用户 (NETWORK\VREDIR\0001)
+[0009A1A1] Starting Microsoft 网络用户 (NETWORK\VREDIR\0001)
+[0009A1A1] Started Microsoft 网络用户 (NETWORK\VREDIR\0001)
+[0009A1A1] Loaded PNP drivers of Microsoft 网络用户 (NETWORK\VREDIR\0001)
+[0009A1A1] Enumerating Microsoft 网络用户 (NETWORK\VREDIR\0001)
+[0009A1A1] Enumerated Microsoft 网络用户 (NETWORK\VREDIR\0001)
+[0009A1A1] Loading PNP drivers of Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0002)
+[0009A1A1] Starting Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0002)
+[0009A1A1] Started Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0002)
+[0009A1A1] Starting Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0002)
+[0009A1A1] Started Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0002)
+[0009A1A1] Loaded PNP drivers of Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0002)
+[0009A1A1] Enumerating Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0002)
+[0009A1A1] Enumerated Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0002)
+[0009A1A1] Loading PNP drivers of Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0003)
+[0009A1A1] Starting Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0003)
+[0009A1A1] Started Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0003)
+[0009A1A1] Starting Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0003)
+[0009A1A1] Started Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0003)
+[0009A1A1] Loaded PNP drivers of Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0003)
+[0009A1A1] Enumerating Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0003)
+[0009A1A1] Enumerated Microsoft 网络上的文件与打印机共享 (NETWORK\VSERVER\0003)
+[0009A1A1] DEVICEINIT   = DOSMGR  
+[0009A1A1] DEVICEINITSUCCESS   = DOSMGR  
+[0009A1A1] DEVICEINIT   = VMPOLL  
+[0009A1A2] DEVICEINITSUCCESS   = VMPOLL  
+[0009A1A2] DEVICEINIT   = JAVASUP 
+[0009A1A2] DEVICEINITSUCCESS   = JAVASUP 
+[0009A1A2] DEVICEINIT   = VCOMM   
+[0009A1A2] DEVICEINITSUCCESS   = VCOMM   
+[0009A1A2] DEVICEINIT   = VCOND   
+[0009A1A2] DEVICEINITSUCCESS   = VCOND   
+[0009A1A2] DEVICEINIT   = VTDAPI  
+[0009A1A2] DEVICEINITSUCCESS   = VTDAPI  
+[0009A1A2] DEVICEINIT   = NAVAP   
+[0009A1A2] DEVICEINITSUCCESS   = NAVAP   
+[0009A1A2] DEVICEINIT   = VMSGD   
+[0009A1A2] DEVICEINITSUCCESS   = VMSGD   
+[0009A1A2] DEVICEINIT   = VFLATD  
+[0009A1A2] DEVICEINITSUCCESS   = VFLATD  
+[0009A1A2] DEVICEINIT   = Display1
+[0009A1A2] DEVICEINITSUCCESS   = Display1
+[0009A1A2] DEVICEINIT   = VDMAD   
+[0009A1A2] DEVICEINITSUCCESS   = VDMAD   
+[0009A1A2] DEVICEINIT   = V86MMGR 
+[0009A1A2] DEVICEINITSUCCESS   = V86MMGR 
+[0009A1A2] DEVICEINIT   = SPOOLER 
+[0009A1A2] DEVICEINITSUCCESS   = SPOOLER 
+[0009A1A2] DEVICEINIT   = UDF     
+[0009A1A2] DEVICEINITSUCCESS   = UDF     
+[0009A1A2] DEVICEINIT   = VFAT    
+[0009A1A2] DEVICEINITSUCCESS   = VFAT    
+[0009A1A2] DEVICEINIT   = VDEF    
+[0009A1A2] DEVICEINITSUCCESS   = VDEF    
+[0009A1B4] Initing hsflop.pdr
+[0009A1B5] Init Success hsflop.pdr
+[0009A1B5] Initing esdi_506.pdr
+[0009A1CF] Init Success esdi_506.pdr
+[0009A1CF] Initing esdi_506.pdr
+[0009A1CF] Init Success esdi_506.pdr
+[0009A1D3] INITCOMPLETE = VMM     
+[0009A1D3] INITCOMPLETESUCCESS = VMM     
+[0009A1D3] INITCOMPLETE = VCACHE  
+[0009A1D3] INITCOMPLETESUCCESS = VCACHE  
+[0009A1D3] INITCOMPLETE = DFS     
+[0009A1D3] INITCOMPLETESUCCESS = DFS     
+[0009A1D3] INITCOMPLETE = PERF    
+[0009A1D3] INITCOMPLETESUCCESS = PERF    
+[0009A1D3] INITCOMPLETE = VFIXD   
+[0009A1D3] INITCOMPLETESUCCESS = VFIXD   
+[0009A1D3] INITCOMPLETE = VPOWERD 
+[0009A1D3] INITCOMPLETESUCCESS = VPOWERD 
+[0009A1D3] INITCOMPLETE = VPICD   
+[0009A1D3] INITCOMPLETESUCCESS = VPICD   
+[0009A1D3] INITCOMPLETE = VrtwD   
+[0009A1D3] INITCOMPLETESUCCESS = VrtwD   
+[0009A1D3] INITCOMPLETE = VTD     
+[0009A1D3] INITCOMPLETESUCCESS = VTD     
+[0009A1D3] INITCOMPLETE = VWIN32  
+[0009A1D3] INITCOMPLETESUCCESS = VWIN32  
+[0009A1D3] INITCOMPLETE = VXDLDR  
+[0009A1D3] INITCOMPLETESUCCESS = VXDLDR  
+[0009A1D3] INITCOMPLETE = NTKERN  
+[0009A1D3] INITCOMPLETESUCCESS = NTKERN  
+[0009A1D3] INITCOMPLETE = CONFIGMG
+[0009A1D3] INITCOMPLETESUCCESS = CONFIGMG
+[0009A1D3] INITCOMPLETE = PCI     
+[0009A1D3] INITCOMPLETESUCCESS = PCI     
+[0009A1D3] INITCOMPLETE = ISAPNP  
+[0009A1D3] INITCOMPLETESUCCESS = ISAPNP  
+[0009A1D3] INITCOMPLETE = BIOS    
+[0009A1D3] INITCOMPLETESUCCESS = BIOS    
+[0009A1D3] INITCOMPLETE = VCDFSD  
+[0009A1D3] INITCOMPLETESUCCESS = VCDFSD  
+[0009A1D3] INITCOMPLETE = IOS     
+[0009A1D5] INITCOMPLETESUCCESS = IOS     
+[0009A1D5] INITCOMPLETE = PAGEFILE
+[0009A1D5] INITCOMPLETESUCCESS = PAGEFILE
+[0009A1D5] INITCOMPLETE = PAGESWAP
+[0009A1D5] INITCOMPLETESUCCESS = PAGESWAP
+[0009A1D5] INITCOMPLETE = PARITY  
+[0009A1D5] INITCOMPLETESUCCESS = PARITY  
+[0009A1D5] INITCOMPLETE = SYMEvent
+[0009A1D5] INITCOMPLETESUCCESS = SYMEvent
+[0009A1D5] INITCOMPLETE = REBOOT  
+[0009A1D5] INITCOMPLETESUCCESS = REBOOT  
+[0009A1D5] INITCOMPLETE = EBIOS   
+[0009A1D5] INITCOMPLETESUCCESS = EBIOS   
+[0009A1D5] INITCOMPLETE = VPBIOSD 
+[0009A1D5] INITCOMPLETESUCCESS = VPBIOSD 
+[0009A1D5] INITCOMPLETE = VDD     
+[0009A1D5] INITCOMPLETESUCCESS = VDD     
+[0009A1D5] INITCOMPLETE = SIS6326M
+[0009A1D5] INITCOMPLETEFAILED  = SIS6326M
+[0009A1D5] INITCOMPLETE = VSD     
+[0009A1D5] INITCOMPLETESUCCESS = VSD     
+[0009A1D5] INITCOMPLETE = COMBUFF 
+[0009A1D5] INITCOMPLETESUCCESS = COMBUFF 
+[0009A1D5] INITCOMPLETE = VCD     
+[0009A1D5] INITCOMPLETESUCCESS = VCD     
+[0009A1D5] INITCOMPLETE = VMOUSE  
+[0009A1D5] INITCOMPLETESUCCESS = VMOUSE  
+[0009A1D5] INITCOMPLETE = MSMINI  
+[0009A1D5] INITCOMPLETESUCCESS = MSMINI  
+[0009A1D5] INITCOMPLETE = ENABLE  
+[0009A1D5] INITCOMPLETESUCCESS = ENABLE  
+[0009A1D6] INITCOMPLETE = VKD     
+[0009A1D6] INITCOMPLETESUCCESS = VKD     
+[0009A1D6] INITCOMPLETE = VPD     
+[0009A1D6] INITCOMPLETESUCCESS = VPD     
+[0009A1D6] INITCOMPLETE = INT13   
+[0009A1D6] INITCOMPLETESUCCESS = INT13   
+[0009A1D6] INITCOMPLETE = VMCPD   
+[0009A1D6] INITCOMPLETESUCCESS = VMCPD   
+[0009A1D6] INITCOMPLETE = BIOSXLAT
+[0009A1D6] INITCOMPLETESUCCESS = BIOSXLAT
+[0009A1D6] INITCOMPLETE = SDVXD   
+[0009A1D6] INITCOMPLETEFAILED  = SDVXD   
+[0009A1D6] INITCOMPLETE = VNETBIOS
+[0009A1D6] INITCOMPLETESUCCESS = VNETBIOS
+[0009A1D6] INITCOMPLETE = NDIS    
+[0009A1D6] INITCOMPLETESUCCESS = NDIS    
+[0009A1D6] INITCOMPLETE = PPPMAC  
+[0009A1D6] INITCOMPLETESUCCESS = PPPMAC  
+[0009A1D6] INITCOMPLETE = VTDI    
+[0009A1D6] INITCOMPLETESUCCESS = VTDI    
+[0009A1D6] INITCOMPLETE = VIP     
+[0009A1D6] INITCOMPLETESUCCESS = VIP     
+[0009A1D6] INITCOMPLETE = MSTCP   
+[0009A1D6] INITCOMPLETESUCCESS = MSTCP   
+[0009A1D6] INITCOMPLETE = VDHCP   
+[0009A1D6] INITCOMPLETESUCCESS = VDHCP   
+[0009A1D6] INITCOMPLETE = VNBT    
+[0009A1D6] INITCOMPLETESUCCESS = VNBT    
+[0009A1D6] INITCOMPLETE = DOSMGR  
+[0009A1D7] INITCOMPLETESUCCESS = DOSMGR  
+[0009A1D7] INITCOMPLETE = VMPOLL  
+[0009A1D7] INITCOMPLETESUCCESS = VMPOLL  
+[0009A1D7] INITCOMPLETE = JAVASUP 
+[0009A1D7] INITCOMPLETESUCCESS = JAVASUP 
+[0009A1D7] INITCOMPLETE = VCOMM   
+[0009A1D7] Dynamic load device  serenum.vxd
+[0009A1D7] Dynamic init device  SERENUM
+[0009A1D7] Dynamic init success SERENUM
+[0009A1D7] Dynamic load success serenum.vxd
+[0009A1D7] Dynamic load device  lptenum.vxd
+[0009A1D7] Dynamic init device  LPTENUM
+[0009A1D7] Dynamic init success LPTENUM
+[0009A1D7] Dynamic load success lptenum.vxd
+[0009A1D7] Dynamic load device  serenum.vxd
+[0009A1D8] Dynamic init device  SERENUM
+[0009A1D8] Dynamic init success SERENUM
+[0009A1D8] Dynamic load success serenum.vxd
+[0009A1D8] INITCOMPLETESUCCESS = VCOMM   
+[0009A1D8] Enumerating 通讯端口 (COM1) (BIOS\*PNP0501\0C)
+[0009A1D8] Dynamic load device  C:\WIN98\system\serial.vxd
+[0009A1D8] Dynamic init device  SERIAL
+[0009A1D8] Dynamic init success SERIAL
+[0009A1D8] Dynamic load success C:\WIN98\system\serial.vxd
+[0009A1DD] Enumerated 通讯端口 (COM1) (BIOS\*PNP0501\0C)
+[0009A1DD] Enumerating 打印机端口 (LPT1) (BIOS\*PNP0400\0E)
+[0009A1DD] Enumerated 打印机端口 (LPT1) (BIOS\*PNP0400\0E)
+[0009A1DD] Enumerating 通讯端口 (COM2) (BIOS\*PNP0501\10)
+[0009A1E2] Enumerated 通讯端口 (COM2) (BIOS\*PNP0501\10)
+[0009A1E2] INITCOMPLETE = VCOND   
+[0009A1E2] INITCOMPLETESUCCESS = VCOND   
+[0009A1E2] INITCOMPLETE = VTDAPI  
+[0009A1E2] INITCOMPLETESUCCESS = VTDAPI  
+[0009A1E2] INITCOMPLETE = NAVAP   
+[0009A239] Dynamic load device  C:\PROGRA~1\COMMON~1\SYMANT~1\VIRUSD~1\19980105.001\NAVEX15.VXD
+[0009A23A] Dynamic init device  NAVEX15
+[0009A23A] Dynamic init success NAVEX15
+[0009A23A] Dynamic load success C:\PROGRA~1\COMMON~1\SYMANT~1\VIRUSD~1\19980105.001\NAVEX15.VXD
+[0009A23A] Dynamic load device  C:\PROGRA~1\COMMON~1\SYMANT~1\VIRUSD~1\19980105.001\NAVENG.VXD
+[0009A23A] Dynamic load failed  C:\PROGRA~1\COMMON~1\SYMANT~1\VIRUSD~1\19980105.001\NAVENG.VXD : [0009A23A] File not found
+[0009A23D] INITCOMPLETESUCCESS = NAVAP   
+[0009A23D] INITCOMPLETE = VMSGD   
+[0009A23D] INITCOMPLETESUCCESS = VMSGD   
+[0009A23D] INITCOMPLETE = VFLATD  
+[0009A23D] INITCOMPLETESUCCESS = VFLATD  
+[0009A23D] INITCOMPLETE = Display1
+[0009A23D] INITCOMPLETESUCCESS = Display1
+[0009A23D] INITCOMPLETE = DiskTSD 
+[0009A23D] INITCOMPLETESUCCESS = DiskTSD 
+[0009A23D] INITCOMPLETE = voltrack
+[0009A23D] INITCOMPLETESUCCESS = voltrack
+[0009A23D] INITCOMPLETE = RMM     
+[0009A23D] INITCOMPLETESUCCESS = RMM     
+[0009A23D] INITCOMPLETE = BIGMEM  
+[0009A23D] INITCOMPLETESUCCESS = BIGMEM  
+[0009A23D] INITCOMPLETE = SPAP    
+[0009A23D] INITCOMPLETESUCCESS = SPAP    
+[0009A23D] INITCOMPLETE = HSFLOP  
+[0009A23D] INITCOMPLETESUCCESS = HSFLOP  
+[0009A23D] INITCOMPLETE = ESDI_506
+[0009A23D] INITCOMPLETESUCCESS = ESDI_506
+[0009A23D] INITCOMPLETE = SERENUM 
+[0009A23D] INITCOMPLETESUCCESS = SERENUM 
+[0009A23D] INITCOMPLETE = LPTENUM 
+[0009A23D] INITCOMPLETESUCCESS = LPTENUM 
+[0009A23D] INITCOMPLETE = NAVEX   
+[0009A23D] INITCOMPLETESUCCESS = NAVEX   
+[0009A23D] INITCOMPLETE = VDMAD   
+[0009A23D] INITCOMPLETESUCCESS = VDMAD   
+[0009A23D] INITCOMPLETE = V86MMGR 
+[0009A23D] INITCOMPLETESUCCESS = V86MMGR 
+[0009A23D] INITCOMPLETE = SPOOLER 
+[0009A23D] INITCOMPLETESUCCESS = SPOOLER 
+[0009A23D] INITCOMPLETE = UDF     
+[0009A23D] INITCOMPLETESUCCESS = UDF     
+[0009A23D] INITCOMPLETE = VFAT    
+[0009A23D] INITCOMPLETESUCCESS = VFAT    
+[0009A23D] INITCOMPLETE = VDEF    
+[0009A23D] INITCOMPLETESUCCESS = VDEF    
+[0009A23D] INITCOMPLETE = IFSMGR  
+[0009A23D] INITCOMPLETESUCCESS = IFSMGR  
+[0009A23D] INITCOMPLETE = VNETSUP 
+[0009A23D] INITCOMPLETESUCCESS = VNETSUP 
+[0009A23D] INITCOMPLETE = VREDIR  
+[0009A23D] INITCOMPLETESUCCESS = VREDIR  
+[0009A23D] INITCOMPLETE = VSERVER 
+[0009A23D] INITCOMPLETESUCCESS = VSERVER 
+[0009A23D] INITCOMPLETE = VFBACKUP
+[0009A23D] INITCOMPLETESUCCESS = VFBACKUP
+[0009A23D] INITCOMPLETE = SHELL   
+[0009A23D] INITCOMPLETESUCCESS = SHELL   
+Initializing KERNEL
+LoadStart = system.drv
+LoadSuccess = system.drv
+LoadStart = keyboard.drv
+LoadSuccess = keyboard.drv
+LoadStart = mouse.drv
+LoadSuccess = mouse.drv
+LoadStart = sis6326m.drv
+LoadStart = DIBENG.DLL
+LoadSuccess = DIBENG.DLL
+LoadSuccess = sis6326m.drv
+LoadStart = mmsound.drv
+LoadSuccess = mmsound.drv
+LoadStart = comm.drv
+LoadSuccess = comm.drv
+LoadStart = gdi.exe
+LoadStart = C:\WIN98\SYSTEM\GDI32.DLL
+LoadStart = GDI.EXE
+LoadSuccess = GDI.EXE
+LoadStart = GDI.EXE
+LoadSuccess = GDI.EXE
+LoadStart = GDI.EXE
+LoadSuccess = GDI.EXE
+LoadStart = GDI.EXE
+LoadSuccess = GDI.EXE
+LoadSuccess = C:\WIN98\SYSTEM\GDI32.DLL
+LoadStart = WIFEMAN.DLL
+LoadSuccess = WIFEMAN.DLL
+LoadStart = C:\WIN98\fonts\vgasys.fon
+LoadSuccess = C:\WIN98\fonts\vgasys.fon
+LoadStart = C:\WIN98\fonts\vgafix.fon
+LoadSuccess = C:\WIN98\fonts\vgafix.fon
+LoadStart = C:\WIN98\fonts\vgaoem.fon
+LoadSuccess = C:\WIN98\fonts\vgaoem.fon
+LoadStart = C:\WIN98\fonts\simsun.ttf
+LoadFail = C:\WIN98\fonts\simsun.ttf Failure code is 0016
+
+LoadSuccess = gdi.exe
+LoadStart = user.exe
+LoadStart = IMM.DLL
+LoadStart = C:\WIN98\SYSTEM\WINNLS.DLL
+LoadSuccess = C:\WIN98\SYSTEM\WINNLS.DLL
+LoadSuccess = IMM.DLL
+LoadStart = DDEML.DLL
+LoadSuccess = DDEML.DLL
+LoadStart = C:\WIN98\SYSTEM\USER32.DLL
+LoadStart = USER.EXE
+LoadSuccess = USER.EXE
+LoadStart = USER.EXE
+LoadSuccess = USER.EXE
+LoadStart = USER.EXE
+LoadSuccess = USER.EXE
+LoadStart = USER.EXE
+LoadSuccess = USER.EXE
+LoadStart = USER.EXE
+LoadSuccess = USER.EXE
+LoadSuccess = C:\WIN98\SYSTEM\USER32.DLL
+LoadStart = COOL.DLL
+LoadSuccess = COOL.DLL
+Init = KEYBOARD
+LoadStart = C:\WIN98\SYSBCKUP\LZEXPAND.DLL
+LoadSuccess = C:\WIN98\SYSBCKUP\LZEXPAND.DLL
+LoadStart = C:\WIN98\SYSBCKUP\VER.DLL
+LoadSuccess = C:\WIN98\SYSBCKUP\VER.DLL
+LoadStart = VER.DLL
+LoadSuccess = VER.DLL
+LoadStart = VER.DLL
+LoadSuccess = VER.DLL
+InitDone = KEYBOARD
+Init = Mouse
+Status = Mouse driver installed
+InitDone = Mouse
+Init = 
+LoadStart = DISPLAY.drv
+LoadSuccess = DISPLAY.drv
+LoadStart = DD326.DLL
+LoadStart = TOOLHELP.DLL
+LoadSuccess = TOOLHELP.DLL
+LoadSuccess = DD326.DLL
+InitDone = DISPLAY
+Init = Display Resources
+InitDone = Display Resources
+LoadStart = C:\WIN98\fonts\serife.fon
+LoadSuccess = C:\WIN98\fonts\serife.fon
+LoadStart = C:\WIN98\fonts\sserife.fon
+LoadSuccess = C:\WIN98\fonts\sserife.fon
+LoadStart = C:\WIN98\fonts\coure.fon
+LoadSuccess = C:\WIN98\fonts\coure.fon
+LoadStart = C:\WIN98\fonts\symbole.fon
+LoadSuccess = C:\WIN98\fonts\symbole.fon
+LoadStart = C:\WIN98\fonts\smalle.fon
+LoadSuccess = C:\WIN98\fonts\smalle.fon
+LoadStart = C:\WIN98\fonts\MODERN.FON
+LoadSuccess = C:\WIN98\fonts\MODERN.FON
+LoadStart = imm.dll
+LoadSuccess = imm.dll
+LoadStart = C:\WIN98\SYSTEM\IMM32.DLL
+LoadStart = Imm.dll
+LoadSuccess = Imm.dll
+LoadStart = Imm.dll
+LoadSuccess = Imm.dll
+LoadSuccess = C:\WIN98\SYSTEM\IMM32.DLL
+LoadStart = winnls.dll
+LoadSuccess = winnls.dll
+LoadSuccess = user.exe
+LoadStart = MSGSRV32.EXE
+LoadSuccess = MSGSRV32.EXE
+Init = Final USER
+InitDone = Final USER
+Init = Installable Drivers
+InitDone = Installable Drivers
+Init = TSRQuery
+InitDone = TSRQuery
+[0009A2D8] Enumerating 标准软盘控制器 (BIOS\*PNP0700\0D)
+[0009A2DA] Enumerated 标准软盘控制器 (BIOS\*PNP0700\0D)
+Terminate = User
+Terminate = Query Drivers
+EndTerminate = Query Drivers
+Terminate = Unload Network
+EndTerminate = Unload Network
+Terminate = Reset Display
+EndTerminate = Reset Display
+EndTerminate = User

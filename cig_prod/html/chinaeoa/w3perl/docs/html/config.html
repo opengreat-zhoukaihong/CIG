@@ -1,0 +1,330 @@
+<HTML><head>
+<title>W3Perl Configuration</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD>&nbsp;</TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Configuration</H1></FONT>
+<BR><BR>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD WIDTH=15>&nbsp;</TD>
+<TD VALIGN=TOP>
+If you have a cgi-bin access, please use the form available in
+/w3perl/admin/ to build the configuration file.<BR>
+Note that if you are using the administration interface, you don't need
+to fill all the fields if you just want to alter a previous config file. 
+Just select 'modify'.<P>
+
+People without cgi-bin access need to edit the config.pl file. <br>
+
+Never put a rem in front of these variable. If you don't know what to
+give, don't change anything. The scripts need to initialize these variables to run.
+<P>
+Various configuration file are provided in the /docs/conf/ directory, both
+for NT, Archimedes and Mac (last ones are a little bit old). if you've
+got into any trouble, just send me your config file and I will be able
+to check it.
+<P>
+<BR>
+</TD>
+</TR>
+<TR>
+<TD BGCOLOR="#AAAAAA" ALIGN=LEFT COLSPAN=3><IMG SRC="../img/line.gif" WIDTH=1 HEIGHT=3></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=LEFT>
+
+<TABLE BORDER=0 WIDTH=106 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<TD BGCOLOR="#AAAAAA" WIDTH=3 HEIGHT=50>&nbsp;</TD>
+<TD WIDTH=100 VALIGN=CENTER BGCOLOR="#DDDDDD" ALIGN=CENTER>
+<BR>
+<B>Platform specific</B>
+<BR><BR>
+</TD>
+<TD BGCOLOR="#AAAAAA" WIDTH=3 HEIGHT=50>&nbsp;</TD>
+</TR>
+<TR>
+<TD BGCOLOR="#AAAAAA" WIDTH=106 COLSPAN=3><IMG SRC="../img/line.gif" WIDTH=1 HEIGHT=3></TD>
+</TR>
+</TABLE>
+</TD>
+<TD WIDTH=15>&nbsp;</TD>
+<TD VALIGN=TOP>
+<FORM>
+<DIR>
+<BR>
+<LI>$type_serveur : server used<br>
+<SELECT NAME="type_serveur">
+<OPTION SELECTED>Serveur
+<OPTION>0 (Unix)
+<OPTION>1 (NT)
+<OPTION>2 (Domino)
+</SELECT>
+(Eg : $type_serveur = 0 on Unix)
+<P>
+<LI>$dirsep : path separator<br>
+(Eg : $dirsep = "/" on Unix)
+<P>
+<LI>$htmlext : HTML extension<br>
+(Eg : $htmlext = ".html" on Unix)
+<P>
+<LI>$gifext : GIF extension<br>
+(Eg : $gifext = ".gif" on Unix)
+<P>
+<LI>$plext : Perl extension<br>
+(Eg : $plext = ".pl" on Unix)
+<P>
+<LI>$zipext : compression extension<br>
+(Eg : $zipext = ".gz" on Unix)
+<P>
+<LI>$struct_logfile : logfile format<br> Uncomment the one you want to use.<BR>
+(Eg : $struct_logfile = "%host %null %login %date %hourshift %method %page %protocol %status %requetesize" for a CLF logfile)
+<P>
+<LI>$struct_compressed_logfile : logfile string format<br>
+(Eg : $struct_compressed_logfile = "%year.%month.%day.%prefixlog" for
+a logfile like 1998.03.20.access_log)
+
+</TD>
+</TR>
+<TR>
+<TD BGCOLOR="#AAAAAA" ALIGN=LEFT COLSPAN=3><IMG SRC="../img/line.gif" WIDTH=1 HEIGHT=3></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=LEFT>
+
+<TABLE BORDER=0 WIDTH=106 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<TD BGCOLOR="#AAAAAA" WIDTH=3 HEIGHT=50>&nbsp;</TD>
+<TD WIDTH=100 VALIGN=CENTER BGCOLOR="#DDDDDD" ALIGN=CENTER>
+<BR>
+<B>Setup</B>
+<BR><BR>
+</TD>
+<TD BGCOLOR="#AAAAAA" WIDTH=3 HEIGHT=50>&nbsp;</TD>
+</TR>
+<TR>
+<TD BGCOLOR="#AAAAAA" WIDTH=106 COLSPAN=3><IMG SRC="../img/line.gif" WIDTH=1 HEIGHT=3></TD>
+</TR>
+</TABLE>
+</TD>
+<TD>&nbsp;</TD>
+<TD VALIGN=TOP>
+
+You should setup these variables in order to run W3Perl<P>
+<P>
+<LI>$path is the full path where the output files will be stored<br>
+(Eg : $path = "/export/home/www/htdocs/w3perl/")
+<P>
+<LI>$pathinit is the full path to the w3perl directory (where the package have been installed)<br>
+(Eg : $pathinit = "/export/home/www/htdocs/w3perl/")
+<P>
+<LI>$linkpathinit is the absolute URL to w3perl directory from your server<br>
+(Eg : $linkpathinit = "/w3perl/")
+<P>
+<LI>$pathserver is the absolute path where your server's documents are stored<br>
+(Eg : $pathserver = "/export/home/www/htdocs/")
+<P>
+<LI>$linkpathserver is the relative path where your server's documents are stored<br>
+Usually $linkpathserver is / except for personal pages<br>
+(Eg : $linkpathserver = "/")
+<P>
+<LI>$cgipath is the location of your cgi-bin directory<br>
+If you don't know the value, don't modify it.<br>
+(Eg : $cgipath = "/export/home/www/cgi-bin/")
+<P>
+<LI>$fileroot is the full path to the httpd log files<br>
+(Eg : $fileroot = "/export/home/www/apache/logs/";
+<P>
+<LI>$prefixlog is the name of your log file (found in $fileroot)
+<br>usually 'access_log' for NCSA server and 'httpd-log' for CERN server<br>
+(Eg : $prefixlog = "access_log")
+<P>
+<LI>$referlog is the name of your referer log (found in $fileroot)
+<br>if you don't have such file on your server, don't modify it.<br>
+(Eg : $referlog = "referer_log")
+<P>
+<LI>$agentlog is the name of your agent log (found in $fileroot)
+<br>if you don't have such file on your server, don't modify it.<br>
+(Eg : $agentlog = "agent_log")
+<P>
+<LI>$errorlog is the name of your error log (found in $fileroot)
+<br>if you don't have such file on your server, don't modify it.<br>
+(Eg : $errorlog = "error_log")
+<P>
+<LI>Full path to your gzip and fly utils
+<br>Execute 'whereis &lt;command&gt;' or 'which &lt;command&gt;' to find the path.<br>
+Don't delete the '-dc' option for gzip !<br>
+(Eg : $GZIP = "/opt/bin/gzip -dc" on Unix or $GZIP = "d:\\bin\\unzip" on NT)
+</TD>
+</TR>
+<TR>
+<TD BGCOLOR="#AAAAAA" ALIGN=LEFT COLSPAN=3><IMG SRC="../img/line.gif" WIDTH=1 HEIGHT=3></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=LEFT>
+
+<TABLE BORDER=0 WIDTH=106 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<TD BGCOLOR="#AAAAAA" WIDTH=3 HEIGHT=50>&nbsp;</TD>
+<TD WIDTH=100 VALIGN=CENTER BGCOLOR="#DDDDDD" ALIGN=CENTER>
+<BR>
+<B>Output</B>
+<BR><BR>
+</TD>
+<TD BGCOLOR="#AAAAAA" WIDTH=3 HEIGHT=50>&nbsp;</TD>
+</TR>
+<TR>
+<TD BGCOLOR="#AAAAAA" WIDTH=106 COLSPAN=3><IMG SRC="../img/line.gif" WIDTH=1 HEIGHT=3></TD>
+</TR>
+</TABLE>
+</TD>
+<TD WIDTH=15>&nbsp;</TD>
+<TD VALIGN=TOP>
+You need to setup these variables in order to configure W3Perl<P>
+<LI>$localserver is the name of your WWW server<br>
+(Eg : $localserver = "www.orstom.fr")
+<P>
+<LI>$tri is used if you want to log only a subdirectory on your server<br>
+(Eg : $tri = "/subdirectory/")
+<P>
+<LI>$nolog if you want to cancel log from some servers<br>
+(Eg : @nolog = ('194.51.174','.grolier.') exclude 194.51.174.* and all grolier hosts)
+<P>
+<A NAME="selection">
+<LI>@selection of HTML pages with full info...don't specify too much !<br>
+(Eg : @selection = ('/raydream//chinaeoa/index.jsp'))
+<P>
+<LI>@selecrepert : graphical output for these subdirectories, should be in the same depth level<br>
+(Eg : @selecrepert = ('/raydream/','/astro/'))
+<P>
+<LI>@excluderepert : no report for these subdirectories<br>
+(Eg : @excluderepert = ('/private/'))
+<P>
+<LI>$precision configure the level of <A HREF="accuracy.html">accuracy</A><br>
+(Eg : $precision = 1 to 4)
+<P>
+<LI>$locallog if you want to log your domain server<br>
+(Eg : $locallog = 1 will also compute log for your domain)
+<P>
+<LI>$localonly if you want to log ONLY your domain server<br>
+(Eg : $locallog = 1 will compute log ONLY for your domain)
+<P>
+<LI>$zip use one log file or splitted gziped log files (see <A HREF="newhttpd.html">squeezelog</A>)<br>
+(Eg : $zip = 0 for one file or $zip = 1 for monthly or daily compressed log files)
+<P>
+<LI>$zipcut use monthly (1) or daily (2) compressed logfiles<br>
+(Eg : $zipcut = 0)
+<P>
+<LI>$topten only list the $topten most successful files<br>
+(Eg : $topten = 10)
+<P>
+<LI>$seuilpage : list only files with more than $seuilpage requests.<br>
+It avoid to have too large files results.
+(Eg : $seuilpage = 100)
+<P>
+<LI>$seuilsite : list only sites with more than $seuilsite requests<br>
+(Eg : $seuilsite = 9 to show sites with 10 accesses and more)
+<P>
+<LI>$seuilscript : list only scripts with more than $seuilscript requests<br>
+(Eg : $seuilscript = 5 to show scripts used more than 5 accesses)
+<P>
+<LI>$seuilrepert : list only directory with more than $seuilrepert accesses<br>
+(Eg : $seuilrepert = 0 to show all directories requests)
+<P>
+<LI>$optdirsize : for directories traffic graphs <br>
+1-2-3 html (total, external, domain)<br>
+4-5-6 all  (total, external, domain)<br>
+(Eg : $optdirsize = 4 external and internal traffic for HTML, GIF...)
+<P>
+
+<LI>$nbdays : number of days for the daily graphs (0 for the year)<br>
+(Eg : $nbdays = 50)
+<P>
+<LI>$virtualserver : select one web server to filter your NECLF (only applicable with NECLF logfile)<br>
+(Eg : $virtualserver = "www.detector.com")
+<P>
+<LI>$defaulthomepage : default HTML page returned when your httpd server produced "/"<br>
+(Eg : $defaulthomepage = "index" (usual one))
+<P>
+<LI>$titlename : convert URL to the string included in your title's document<br>
+(Eg : $titlename = 1 if yes)
+<P>
+<LI>Compute log only with these extension files<br>
+(Eg : @extension = ('html','htm')) <br>
+(Eg : @extensionimage = ('gif','jpg','jpeg'))<br>
+<P>
+<LI>$localdomaine : add here IP hosts in your $localdomainename (if these hosts don't have DNS)<br>
+(Eg : $localdomaine = "$localdomainename|^145\.238\.44\.[4567]" cancel accesses from 145.238.44.4 to 7)
+<P>
+<LI>$mailadr : your email if users want to alter the config file.<br>
+If people want precise infos on their pages, you should add
+their URL in <A HREF="#selection">@selection</A> in config.pl file<br>
+(Eg : $mailadr = "webmaster\@hplyot.obspm.fr")
+<P>
+<LI>$tildealias : your alias for users HTML directory<br>
+(Eg : $tildealias = "public_html" or "www")
+<P>
+<LI>$yellowfile : need if you use yellow page NIS for your intranet DNS<br>
+(Eg : $yellowfile = "" don't use yellow page)
+<P>
+<LI>$reverse_dns : will convert IP address to name server (<B>WARNING</B> : very slow !!!)<br>
+(Eg : $reverse_dns = 1 will activate)
+<P>
+<LI>@lang : choose your languages output<br>
+(Eg : @lang = ('uk') if you need only english ouput)
+<P>
+<LI>@homepages : filename for your different language<br>
+You should have the same number of elements than @lang<br>
+(Eg : @lang = ('index') if you select only english ouput)
+<P>
+<LI>$frame_updown : choose top-bottom or right-left frames<br>
+(Eg : $frame_updown = 1 top-bottom frames)
+<P>
+<LI>$topframelinks : configure your own link in the top frame<br>
+(Eg : $topframelinks = "My_server")
+<P>
+<LI>$bargraph $tridim $linegraph $fillgraph : give value 1 for your choice<br>
+(Eg : $tridim = 1)
+<P>
+<LI>$custom_text : use your own color for text<br>
+(Eg : $custom_text = "#000000" for black)
+<P>
+<LI>$custom_link : use your own color for link<br>
+(Eg : $custom_link = "#000080")
+<P>
+<LI>$custom_vlink : use your own color for vlink<br>
+(Eg : $custom_vlink = "#800000")
+<P>
+<LI>$background : use your own background file<br>
+Need to be put in /w3perl/resources/ or make a symbolic link<br>
+(Eg : $background = "background.gif")
+<P>
+<P>
+<LI>$backgrd : use a background file or a color code<br>
+Uncomment $background  if you choose a file<br>
+(Eg : $backgrd = "BACKGROUND=\"$background\"")
+</FORM>
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD WIDTH=15>&nbsp;</TD>
+<TD ALIGN=CENTER>
+<A HREF="install.html"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

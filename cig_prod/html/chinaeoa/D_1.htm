@@ -1,0 +1,272 @@
+<html>
+
+	<head>
+		<title>job at IH?</title>
+		<script language="JavaScript" type="text/javascript"><!--
+			function preload(imgObj,imgSrc) {
+				if (document.images) {
+				eval(imgObj+' = new Image()')
+				eval(imgObj+'.src = "'+imgSrc+'"')
+				}
+			}
+			
+			function changeImage(layer,imgName,imgObj) {
+				if (document.images) {
+				if (document.layers && layer!=null) eval('document.'+layer+'.document.images["'+imgName+'"].src = '+imgObj+'.src')
+				else document.images[imgName].src = eval(imgObj+".src")
+				}
+			}
+			
+			preload('btnmidoff','images/middle_mid2_off.gif');
+			preload('btnmidon','images/middle_mid2_on.gif');
+			preload('btnarrowoff','images/rightdotted3_off.gif');
+			preload('btnarrowon','images/rightdotted3_on.gif');
+			preload('btnarrow2off','images/pil2_off.gif');
+			preload('btnarrow2on','images/pil2_on.gif');
+// -->
+		</script>
+		<csactions>
+			<csaction name="B50476E70" class="ShowHide" type="ONEVENT" val0="texthide" val1="1">
+			<csaction name="B50479246" class="Set Status" type="ONEVENT" val0="read more ...">
+			<csaction name="B50479307" class="Set Status" type="ONEVENT" val0>
+			<csaction name="B504793D8" class="ShowHide" type="ONEVENT" val0="text2" val1="0">
+			<csaction name="B50479679" class="ShowHide" type="ONEVENT" val0="text2b" val1="0">
+			<csaction name="B504797710" class="ShowHide" type="ONEVENT" val0="text2" val1="1">
+			<csaction name="B504799311" class="ShowHide" type="ONEVENT" val0="text2b" val1="1">
+			<csaction name="B50479F312" class="Move To" type="ONEVENT" val0="text" val1="new Array(16,-230)" val2="true" val3="15">
+			<csaction name="B5047A2E13" class="Move To" type="ONEVENT" val0="text2" val1="new Array(16,-230)" val2="true" val3="15">
+			<csaction name="B5047A4014" class="ShowHide" type="ONEVENT" val0="texthide" val1="0">
+			<csaction name="B5047AC517" class="Move To" type="ONEVENT" val0="text" val1="new Array(16,16)" val2="true" val3="15">
+			<csaction name="B5047ACF18" class="Move To" type="ONEVENT" val0="text2" val1="new Array(16,16)" val2="true" val3="15">
+			<csaction name="B5047B5B19" class="ShowHide" type="ONEVENT" val0="texthide" val1="1">
+			<csaction name="B5047B6E20" class="Move To" type="ONEVENT" val0="text" val1="new Array(16,16)" val2="true" val3="15">
+			<csaction name="B5047B7721" class="Move To" type="ONEVENT" val0="text2" val1="new Array(16,16)" val2="true" val3="15">
+		</csactions>
+		<csscriptdict>
+			<script><!--
+function CSClickReturn () {
+	var bAgent = window.navigator.userAgent; 
+	var bAppName = window.navigator.appName;
+	if ((bAppName.indexOf("Explorer") >= 0) && (bAgent.indexOf("Mozilla/3") >= 0) && (bAgent.indexOf("Mac") >= 0))
+		return true; // dont follow link
+	else return false; // dont follow link
+}
+CSStopExecution = false;
+
+function CSAction(array) { 
+	return CSAction2(CSAct, array);
+}
+function CSAction2(fct, array) { 
+	var result;
+	for (var i=0;i<array.length;i++) {
+		if(CSStopExecution) return false; 
+		var actArray = fct[array[i]];
+		if(actArray == null) return false; 
+
+		var tempArray = new Array;
+		for(var j=1;j<actArray.length;j++) {
+			if((actArray[j] != null) && (typeof(actArray[j]) == "object") && (actArray[j].length == 2)) {
+				if(actArray[j][0] == "VAR") {
+					tempArray[j] = CSStateArray[actArray[j][1]];
+				}
+				else {
+					if(actArray[j][0] == "ACT") {
+						tempArray[j] = CSAction(new Array(new String(actArray[j][1])));
+					}
+				else
+					tempArray[j] = actArray[j];
+				}
+			}
+			else
+				tempArray[j] = actArray[j];
+		}			
+		result = actArray[0](tempArray);
+	}
+	return result;
+}
+CSAct = new Object;
+CSAg = window.navigator.userAgent; CSBVers = parseInt(CSAg.charAt(CSAg.indexOf("/")+1),10);
+function IsIE() { return CSAg.indexOf("MSIE") > 0;}
+function CSIEStyl(s) { return document.all.tags("div")[s].style; }
+function CSNSStyl(s) { return CSFindElement(s,0); }
+function CSFindElement(n,ly) { if (CSBVers < 4) return document[n];
+	var curDoc = ly ? ly.document : document; var elem = curDoc[n];
+	if (!elem) { for (var i=0;i<curDoc.layers.length;i++) {
+		elem = CSFindElement(n,curDoc.layers[i]); if (elem) return elem; }}
+	return elem;
+}
+function CSSetStyleVis(s,v) { if (IsIE()) CSIEStyl(s).visibility = (v == 0) ? "hidden" : "visible";
+	else CSNSStyl(s).visibility = (v == 0) ? 'hide' : 'show'; }
+function CSGetStyleVis(s) { if (IsIE()) return (CSIEStyl(s).visibility == "hidden") ? 0 : 1;
+	else return (CSNSStyl(s).visibility == 'hide') ? 0 : 1;}
+function CSShowHide(action) {
+	if (action[1] == '') return;
+	var type=action[2];
+	if(type==0) CSSetStyleVis(action[1],0);
+	else if(type==1) CSSetStyleVis(action[1],1);
+	else if(type==2) { 
+		if (CSGetStyleVis(action[1]) == 0) CSSetStyleVis(action[1],1);
+		else CSSetStyleVis(action[1],0);
+	}
+}function CSSetStatus(action) { self.status = action[1]; }function CSSetStylePos(s,d,p) { if (IsIE()) { if (d == 0) CSIEStyl(s).posLeft = p; else CSIEStyl(s).posTop = p; }
+	else { if (d == 0) CSNSStyl(s).left = p; else CSNSStyl(s).top = p; } }
+function CSGetStylePos(s,d) { if (IsIE()) { if (d == 0) return CSIEStyl(s).posLeft; else return CSIEStyl(s).posTop; }
+	else { if (d == 0) return CSNSStyl(s).left; else return CSNSStyl(s).top; }}
+CSLoopIsRunning = false; CSFctArray = new Array; CSTimeoutID = null;
+function CSLoop() {	
+	CSLoopIsRunning = false;
+	for (i=0;i<CSFctArray.length;i++) {
+		var curFct = CSFctArray[i];
+		if (curFct)	{
+			if (curFct.DoFunction(curFct)) { CSLoopIsRunning = true; curFct.counter++; }
+			else CSFctArray[i] = 0;
+		}
+	}
+	if (CSLoopIsRunning) CSTimeoutID = setTimeout("CSLoop()", 1);
+}
+function CSStartFunction(fct,data) {
+	if (!CSLoopIsRunning) { CSFctArray = 0; CSFctArray = new Array; }
+	var fctInfo = new Object;
+	fctInfo.DoFunction = fct; fctInfo.counter = 0; fctInfo.data = data;
+	CSFctArray[CSFctArray.length] = fctInfo; 
+	if (!CSLoopIsRunning) CSLoop();
+}
+function CSStopFunction(sceneName) {
+	var i;
+	for (i=0;i<CSFctArray.length;i++) {
+		var curFct = CSFctArray[i];
+		if (curFct){ if (curFct.data.name == sceneName){ CSFctArray[i] = 0; return; } }
+	}
+}
+function CSStopComplete() {
+	if (CSTimeoutID == null) return;
+	clearTimeout (CSTimeoutID); CSLoopIsRunning = false; CSTimeoutID = null;
+}
+function CSMoveLoop(fInf) {
+	var ticks = 60 * (((new Date()).getTime()) - fInf.data.startTime)/1000;
+	var f = ticks/fInf.data.ticks;
+	if (f < 1) { CSSetStylePos(fInf.data.layer,0,fInf.data.start[0] * (1-f) + fInf.data.end[0] * f);
+		CSSetStylePos(fInf.data.layer,1,fInf.data.start[1] * (1-f) + fInf.data.end[1] * f); return true; }
+	else { CSSetStylePos(fInf.data.layer,0,fInf.data.end[0]);
+		CSSetStylePos(fInf.data.layer,1,fInf.data.end[1]); }
+	return false;
+}
+function CSSlideObj (layer,start,end,ticks,startTime) {
+	this.layer=layer;this.start=start;this.end=end;this.ticks=ticks;this.startTime=startTime;
+}
+function CSSlideLayer(l,pos,anim,ticks) {
+	var x = pos[0]; var y = pos[1];
+
+	if (l == '') return;
+	if (!anim) { CSSetStylePos(l,0,x); CSSetStylePos(l,1,y); }
+	else {  var fctData = new CSSlideObj(l,new Array(CSGetStylePos(l,0),CSGetStylePos(l,1)),new Array(x,y),ticks,(new Date()).getTime()); CSStartFunction(CSMoveLoop,fctData); }
+}
+function CSMoveTo(action) { CSSlideLayer(action[1],action[2],action[3],action[4]); }
+// --></script>
+		</csscriptdict>
+		<csactiondict>
+			<script><!--
+CSAct[/*CMP*/ 'B50476E70'] = new Array(CSShowHide,/*CMP*/ 'texthide',1);
+CSAct[/*CMP*/ 'B50479246'] = new Array(CSSetStatus,'read more ...');
+CSAct[/*CMP*/ 'B50479307'] = new Array(CSSetStatus,'');
+CSAct[/*CMP*/ 'B504793D8'] = new Array(CSShowHide,/*CMP*/ 'text2',0);
+CSAct[/*CMP*/ 'B50479679'] = new Array(CSShowHide,/*CMP*/ 'text2b',0);
+CSAct[/*CMP*/ 'B504797710'] = new Array(CSShowHide,/*CMP*/ 'text2',1);
+CSAct[/*CMP*/ 'B504799311'] = new Array(CSShowHide,/*CMP*/ 'text2b',1);
+CSAct[/*CMP*/ 'B50479F312'] = new Array(CSMoveTo,/*CMP*/ 'text',new Array(16,-230),true,15);
+CSAct[/*CMP*/ 'B5047A2E13'] = new Array(CSMoveTo,/*CMP*/ 'text2',new Array(16,-230),true,15);
+CSAct[/*CMP*/ 'B5047A4014'] = new Array(CSShowHide,/*CMP*/ 'texthide',0);
+CSAct[/*CMP*/ 'B5047AC517'] = new Array(CSMoveTo,/*CMP*/ 'text',new Array(16,16),true,15);
+CSAct[/*CMP*/ 'B5047ACF18'] = new Array(CSMoveTo,/*CMP*/ 'text2',new Array(16,16),true,15);
+CSAct[/*CMP*/ 'B5047B5B19'] = new Array(CSShowHide,/*CMP*/ 'texthide',1);
+CSAct[/*CMP*/ 'B5047B6E20'] = new Array(CSMoveTo,/*CMP*/ 'text',new Array(16,16),true,15);
+CSAct[/*CMP*/ 'B5047B7721'] = new Array(CSMoveTo,/*CMP*/ 'text2',new Array(16,16),true,15);
+
+// --></script>
+		</csactiondict>
+		<style type="text/css"><!--
+			#greentop { background-color: #32393f; position: absolute; z-index: 5; top: 0px; left: 0px; width: 484px; height: 16px; visibility: visible }
+			#text { background-color: #fff; position: absolute; z-index: 3; top: -230px; left: 16px; width: 238px; height: 230px; visibility: visible }
+			#text2 { position: absolute; z-index: 4; top: -230px; left: 16px; width: 238px; height: 230px; visibility: visible }
+			#text2b { position: absolute; z-index: 4; top: 16px; left: 16px; width: 238px; height: 230px; visibility: hidden }
+			#texthide { position: absolute; z-index: 4; top: 146px; left: 254px; width: 230px; height: 32px; visibility: hidden }-->
+		</style>
+	</head>
+
+	<body bgcolor="#32393f" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
+		<div id="greentop">
+			<img height="16" width="484" src="images/topdotted.gif"></div>
+		<div id="text">
+			<img height="230" width="238" src="images/page2_background.jpg"></div>
+		<div id="text2">
+			<table border="0" cellpadding="0" cellspacing="0" width="238" height="230">
+				<tr height="17">
+					<td width="238" height="17" valign="top"><a href="#" onfocus="this.blur();" onmouseover="changeImage('text2','btnarrow2','btnarrow2on') ; self.status='go back ...' ; return true" onmouseout="changeImage('text2','btnarrow2','btnarrow2off') ; self.status='' ; return true" onclick="CSAction(new Array(/*CMP*/'B50479F312',/*CMP*/'B5047A2E13',/*CMP*/'B5047A4014'));return CSClickReturn();" csclick="B50479F312,B5047A2E13,B5047A4014"><img height="17" width="21" src="images/pil2_off.gif" border="0" name="btnarrow2" align="top"></a></td>
+				</tr>
+				<tr height="38">
+					<td width="238" height="38"><img height="38" width="10" src="images/1.gif"></td>
+				</tr>
+				<tr height="175">
+					<td width="238" height="175" valign="top">
+						<table border="0" cellpadding="0" cellspacing="0" width="238" height="167">
+							<tr height="167">
+								<td width="8" height="167"><img height="17" width="8" src="images/1.gif"></td>
+								<td width="222" height="167" valign="top"><img height="167" width="222" src="images/text1.gif" border="0" usemap="#text1b506e627" align="top"><map name="text1b506e627"><area href="#" onfocus="this.blur();" onclick="CSAction(new Array(/*CMP*/'B504793D8',/*CMP*/'B504799311'));return CSClickReturn();" csclick="B504793D8,B504799311" onmouseover="CSAction(new Array(/*CMP*/'B50479246'));return true;" csover="B50479246" onmouseout="CSAction(new Array(/*CMP*/'B50479307'));" csout="B50479307" coords="-10,153,39,171" shape="rect"></map></td>
+								<td width="8" height="167" valign="top"><img height="17" width="8" src="images/1.gif"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="text2b">
+			<table border="0" cellpadding="0" cellspacing="0" width="238" height="230">
+				<tr height="17">
+					<td width="238" height="17" valign="top"><a href="#" onfocus="this.blur();" onmouseover="changeImage('text2b','btnarrow2b','btnarrow2on') ; self.status='go back ...' ; return true" onmouseout="changeImage('text2b','btnarrow2b','btnarrow2off') ; self.status='' ; return true" onclick="CSAction(new Array(/*CMP*/'B50479679',/*CMP*/'B504797710'));return CSClickReturn();" csclick="B50479679,B504797710"><img height="17" width="21" src="images/pil2_off.gif" border="0" name="btnarrow2b" align="top"></a></td>
+				</tr>
+				<tr height="38">
+					<td width="238" height="38"><img height="38" width="10" src="images/1.gif"></td>
+				</tr>
+				<tr height="175">
+					<td width="238" height="175" valign="top">
+						<table border="0" cellpadding="0" cellspacing="0" width="238" height="167">
+							<tr>
+								<td width="8" height="167"><img height="17" width="8" src="images/1.gif"></td>
+								<td width="222" height="167" valign="top"><img height="167" width="222" src="images/text2.gif" border="0" usemap="#text2b506e63e" align="top"><map name="text2b506e63e"><area href="http://www.ih.com/" onfocus="this.blur();" target="xtras" coords="113,141,172,154" shape="rect"><area href="mailto:ijobs@ih.com?subject=job at IH UK" onfocus="this.blur();" coords="0,109,66,120" shape="rect"></map></td>
+								<td width="8" height="167" valign="top"><img height="17" width="8" src="images/1.gif"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="texthide">
+			<img height="32" width="230" src="images/hiderpiece.jpg"></div>
+		<table border="0" cellpadding="0" cellspacing="0" width="484" height="262">
+			<tr height="16">
+				<td height="16" colspan="3"><img height="16" width="10" src="images/1.gif"></td>
+			</tr>
+			<tr height="230">
+				<td width="16" height="230" valign="top"><img height="230" width="16" src="images/leftdotted.gif"></td>
+				<td width="432" height="230">
+					<table border="0" cellpadding="0" cellspacing="0" width="432">
+						<tr>
+							<td width="432" valign="top"><img height="130" width="432" src="images/middle_top.jpg" align="top"></td>
+						</tr>
+						<tr>
+							<td width="432" valign="top"><img height="32" width="113" src="images/middle_mid1.jpg" border="0" align="top"><a href="page2.htm" onfocus="this.blur();" target="_self" csclick="B50476E70,B5047AC517,B5047ACF18" onmouseover="changeImage(null,'btnmid','btnmidon') ; changeImage(null,'btnarrow','btnarrowon') ; self.status='read more...' ; return true" onmouseout="changeImage(null,'btnmid','btnmidoff') ; changeImage(null,'btnarrow','btnarrowoff') ; self.status='' ; return true" onclick="CSAction(new Array(/*CMP*/'B50476E70',/*CMP*/'B5047AC517',/*CMP*/'B5047ACF18'));return CSClickReturn();"><img height="32" width="319" src="images/middle_mid2_off.gif" border="0" align="top" name="btnmid"></a></td>
+						</tr>
+						<tr>
+							<td width="432" valign="top"><img height="68" width="432" src="images/middle_bottom.jpg" border="0" align="top"></td>
+						</tr>
+					</table>
+				</td>
+				<td width="36" height="230" valign="top"><img height="130" width="36" src="images/rightdotted1.gif" border="0" align="top"><a href="page2.htm" onfocus="this.blur();" target="_self" csclick="B5047B5B19,B5047B6E20,B5047B7721" onmouseover="changeImage(null,'btnarrow','btnarrowon') ; changeImage(null,'btnmid','btnmidon') ; self.status='read more...' ; return true" onmouseout="changeImage(null,'btnarrow','btnarrowoff') ; changeImage(null,'btnmid','btnmidoff') ; self.status='' ; return true" onclick="CSAction(new Array(/*CMP*/'B5047B5B19',/*CMP*/'B5047B6E20',/*CMP*/'B5047B7721'));return CSClickReturn();"><img height="32" width="36" src="images/rightdotted3_off.gif" border="0" align="top" name="btnarrow"></a><img height="68" width="36" src="images/rightdotted2.gif" border="0" align="top"></td>
+			</tr>
+			<tr height="16">
+				<td height="16" colspan="3"><img height="16" width="484" src="images/bottomdotted.gif"></td>
+			</tr>
+		</table>
+	</body>
+
+</html>

@@ -1,0 +1,170 @@
+<html>
+<head>
+<title>distributor</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script language="JavaScript">
+<!--
+function MM_timelinePlay(tmLnName, myID) { //v1.2
+  //Copyright 1997 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,propNum,theObj,firstTime=false;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (myID == null) { myID = ++tmLn.ID; firstTime=true;}//if new call, incr ID
+  if (myID == tmLn.ID) { //if Im newest
+    setTimeout('MM_timelinePlay("'+tmLnName+'",'+myID+')',tmLn.delay);
+    fNew = ++tmLn.curFrame;
+    for (i=0; i<tmLn.length; i++) {
+      sprite = tmLn[i];
+      if (sprite.charAt(0) == 's') {
+        if (sprite.obj) {
+          numKeyFr = sprite.keyFrames.length; firstKeyFr = sprite.keyFrames[0];
+          if (fNew >= firstKeyFr && fNew <= sprite.keyFrames[numKeyFr-1]) {//in range
+            keyFrm=1;
+            for (j=0; j<sprite.values.length; j++) {
+              props = sprite.values[j]; 
+              if (numKeyFr != props.length) {
+                if (props.prop2 == null) sprite.obj[props.prop] = props[fNew-firstKeyFr];
+                else        sprite.obj[props.prop2][props.prop] = props[fNew-firstKeyFr];
+              } else {
+                while (keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]) keyFrm++;
+                if (firstTime || fNew==sprite.keyFrames[keyFrm-1]) {
+                  if (props.prop2 == null) sprite.obj[props.prop] = props[keyFrm-1];
+                  else        sprite.obj[props.prop2][props.prop] = props[keyFrm-1];
+        } } } } }
+      } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+      if (fNew > tmLn.lastFrame) tmLn.ID = 0;
+  } }
+}
+
+function MM_timelineGoto(tmLnName, fNew, numGotos) { //v2.0
+  //Copyright 1997 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,lastKeyFr,propNum,theObj;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (numGotos != null)
+    if (tmLn.gotoCount == null) tmLn.gotoCount = 1;
+    else if (tmLn.gotoCount++ >= numGotos) {tmLn.gotoCount=0; return}
+  jmpFwd = (fNew > tmLn.curFrame);
+  for (i = 0; i < tmLn.length; i++) {
+    sprite = (jmpFwd)? tmLn[i] : tmLn[(tmLn.length-1)-i]; //count bkwds if jumping back
+    if (sprite.charAt(0) == "s") {
+      numKeyFr = sprite.keyFrames.length;
+      firstKeyFr = sprite.keyFrames[0];
+      lastKeyFr = sprite.keyFrames[numKeyFr - 1];
+      if ((jmpFwd && fNew<firstKeyFr) || (!jmpFwd && lastKeyFr<fNew)) continue; //skip if untouchd
+      for (keyFrm=1; keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]; keyFrm++);
+      for (j=0; j<sprite.values.length; j++) {
+        props = sprite.values[j];
+        if (numKeyFr == props.length) propNum = keyFrm-1 //keyframes only
+        else propNum = Math.min(Math.max(0,fNew-firstKeyFr),props.length-1); //or keep in legal range
+        if (sprite.obj != null) {
+          if (props.prop2 == null) sprite.obj[props.prop] = props[propNum];
+          else        sprite.obj[props.prop2][props.prop] = props[propNum];
+      } }
+    } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+  }
+  tmLn.curFrame = fNew;
+  if (tmLn.ID == 0) eval('MM_timelinePlay(tmLnName)');
+}
+
+function MM_initTimelines() {
+    //MM_initTimelines() Copyright 1997 Macromedia, Inc. All rights reserved.
+    var ns = navigator.appName == "Netscape";
+    document.MM_Time = new Array(1);
+    document.MM_Time[0] = new Array(1);
+    document.MM_Time["Timeline1"] = document.MM_Time[0];
+    document.MM_Time[0].MM_Name = "Timeline1";
+    document.MM_Time[0].fps = 15;
+    document.MM_Time[0][0] = new String("behavior");
+    document.MM_Time[0][0].frame = 31;
+    document.MM_Time[0][0].value = "MM_timelineGoto('Timeline1','1')";
+    document.MM_Time[0].lastFrame = 31;
+    for (i=0; i<document.MM_Time.length; i++) {
+        document.MM_Time[i].ID = null;
+        document.MM_Time[i].curFrame = 0;
+        document.MM_Time[i].delay = 1000/document.MM_Time[i].fps;
+    }
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+a:link {  font-family: "微软简老宋"; font-size: 16pt; font-style: normal; line-height: normal; text-decoration: none}
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" onLoad="MM_timelinePlay('Timeline1')" topmargin="0">
+<div id="Layer1" style="position:absolute; width:640px; height:65px; z-index:2; top: 0; left: 0; visibility: visible"> 
+  <div id="Layer2" style="position:absolute; width:450px; height:45px; z-index:3; left: 0; top: 0"><img src="../images/chinaeoa-bar.gif" width="450" height="45"></div>
+  <div id="Layer3" style="position:absolute; width:190px; height:50px; z-index:2; left: 450; top: 0; background-color: #FFFFFF; layer-background-color: #FFFFFF; border: 1px none #000000"><img src="../images/solution.gif" width="190" height="50"></div>
+  <div id="Layer5" style="position:absolute; width:505px; height:18px; z-index:4; left: 0; top: 45"><img src="../images/navigation.gif" width="505" height="18" usemap="#Map" border="0"><map name="Map"><area shape="rect" coords="4,1,49,19" href="file:///C%7C/WINDOWS/Desktop/index.htm"><area shape="rect" coords="53,1,119,24" href="file:///C%7C/WINDOWS/Desktop/product/product.htm"><area shape="rect" coords="124,0,192,18" href="file:///C%7C/WINDOWS/Desktop/register/login.htm"><area shape="rect" coords="260,-1,328,21" href="file:///C%7C/WINDOWS/Desktop/orderonline/order.htm"><area shape="rect" coords="334,1,400,17" href="file:///C%7C/WINDOWS/Desktop/news/news.htm"><area shape="rect" coords="408,2,475,16" href="file:///C%7C/WINDOWS/Desktop/aboutus/about.htm"></map></div>
+</div>
+
+<p>&nbsp;</p>
+<div id="Layer8" style="position:absolute; width:390px; height:390px; z-index:6; top: 70; left: 135"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0" width="390" height="390">
+    <param name=movie value="../movie/chinamap.swf">
+    <param name=quality value=high>
+    <embed src="../movie/chinamap.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="390" height="390">
+    </embed> 
+  </object> </div>
+<div id="Layer18" style="position:absolute; width:100px; height:390px; z-index:11; top: 70; left: 535"> 
+  <div id="Layer20" style="position:absolute; width:80px; height:49px; z-index:12; left: 10; top: 5"><a href="file:///C%7C/WINDOWS/Desktop/product/category/copier/product-copier.htm"><img src="../images/symbol-copier.gif" width="80" height="49" border="0"></a></div>
+  <p>&nbsp;</p>
+  <div id="Layer21" style="position:absolute; width:70px; height:53px; z-index:12; left: 15; top: 95"><a href="file:///C%7C/WINDOWS/Desktop/product/category/printer/product-printer.htm"><img src="../images/symbol-printer.gif" width="70" height="53" border="0"></a></div>
+  <div id="Layer19" style="position:absolute; width:100px; height:5px; z-index:12; left: 0; top: 70"> 
+    <hr align="left" width="100" size="2">
+  </div>
+  <p>&nbsp;</p>
+  <div id="Layer6" style="position:absolute; width:51px; height:15px; z-index:13; left: 30px; top: 60px"><font size="2" color="#000000">复印机</font></div>
+  <p>&nbsp;</p>
+  <div id="Layer22" style="position:absolute; width:70px; height:66px; z-index:12; left: 15; top: 185"><a href="file:///C%7C/WINDOWS/Desktop/product/category/fax/product-fax.htm"><img src="../images/symbol-fax.gif" width="70" height="66" border="0"></a></div>
+  <div id="Layer19" style="position:absolute; width:100px; height:5px; z-index:12; left: 0; top: 165"> 
+    <hr align="left" width="100" size="2">
+  </div>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div id="Layer10" style="position:absolute; width:45px; height:15px; z-index:13; left: 30px; top: 155px"><font color="#333333" size="2">打印机</font></div>
+  <div id="Layer7" style="position:absolute; width:46px; height:15px; z-index:13; left: 30px; top: 250px"><font size="2" color="#000000">传真机</font> 
+  </div>
+  <p>&nbsp;</p>
+  <div id="Layer19" style="position:absolute; width:100px; height:5px; z-index:12; left: 0; top: 262"> 
+    <hr align="left" width="100" size="2">
+  </div>
+  <p>&nbsp;</p>
+</div>
+<div id="Layer11" style="position:absolute; width:125px; height:70px; z-index:13; top: 80px; left: 5px"> 
+  <table width="100%" border="0" height="0" cellpadding="0" cellspacing="0">
+    <tr> 
+      <td width="82%">
+        <div align="center"><font size="2"><a href="../dealerhome/dealers%20home.htm">进入经销商帐户</a>：</font></div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="82%" height="20"> 
+        <pre><font size="2">公司简称:<input type="text" name="textfield" size="8"></font></pre>
+      </td>
+    </tr>
+    <tr> 
+      <td width="82%" height="11"> 
+        <pre><font size="2">密    码:<input type="text" name="textfield2" size="8"></font></pre>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div id="Layer9" style="position:absolute; width:135px; height:300px; z-index:5; top: 160; left: 0px"><img src="../images/leftbar_globe.gif" width="135" height="300" usemap="#Map2" border="0"><map name="Map2"><area shape="rect" coords="4,37,120,75" href="../welcome%20to%20join.htm"><area shape="rect" coords="26,87,104,106" href="#"><area shape="rect" coords="26,108,81,126" href="#"><area shape="rect" coords="26,128,104,145" href="#"></map></div>
+<div id="Layer4" style="position:absolute; width:200px; height:15px; z-index:12; top: 480; left: 200"><img src="../images/bottombar.gif" width="200" height="15"></div>
+</body>
+</html>

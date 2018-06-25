@@ -1,0 +1,301 @@
+<html><!-- #BeginTemplate "/Templates/main_big.dwt" -->
+<head>
+<!-- #BeginEditable "doctitle" --> 
+<title>中港澳酒店訂房專家</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<style type="text/css">
+<!--
+ input {font-family: "細明體"; font-size: 12px ;color:#666666}
+ select {font-family: "細明體"; color:#666666}
+ A:link {text-decoration: none; color: #715922; font-family: 細明體}
+ A:visited {text-decoration: none; color: #715922; font-family: 細明體}
+ A:active {text-decoration: none; font-family: 細明體}
+ A:hover {text-decoration: underline; color:#CAA54D}
+ td {font-family: "細明體", "Times New Roman";font-size: 12px;}
+ .email { font-size: 7.5pt}
+ .title { font-size: 14pt; font-weight: bold}
+ .txt { font-size: 9pt; line-height: 12pt}
+ .bigtxt { font-size: 11pt; line-height: 15pt}
+ .copyright { font-size: 8pt; color: #000000}
+.star { font-size: 9px; color: #FF8000}
+.pt9 {  font-family: "細明體"; font-size: 12px}
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="5">
+<table width="663" border="0" cellspacing="0" cellpadding="0" height="60" align="center">
+  <tr> 
+    <td colspan="2" height="60">
+      <script language="JavaScript" src="/javascript/big/title.js">
+</script>
+    </td>
+  </tr>
+</table>
+<table width="665" border="0" cellspacing="0" cellpadding="0" align="center" height="34">
+  <tr>
+    <td width="664" height="34">
+      <table width="664" border="0" cellspacing="0" cellpadding="0" height="34">
+        <tr>
+          <td width="30" background="../images/top_back.gif" height="34" valign="bottom"><a href="/cnbooking/big/index.jsp"><img src="../images/home.gif" width="14" height="14" align="right" border="0"></a></td>
+          <td width="200" background="../images/top_back.gif" height="34" valign="bottom"><!-- #BeginEditable "top" --><font color="#666666">==>>會員資料修改</font><!-- #EndEditable --></td>
+          <td width="415" background="../images/top_back.gif" height="34">&nbsp;</td>
+          <td width="19" height="34"><img src="../images/top_right.gif" width="19" height="34"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table width="665" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td colspan="3" valign="top"><!-- #BeginEditable "main" --> 
+      <form name="RegForm" onSubmit="return submitIt(this)" action="/servlet/com.dreamerland.cnhotelbooking.CRegistration" method="POST">
+        <br>
+        <table width=300 border=0 cellpadding=0 cellspacing=0 bgcolor=#FFBC04 align="center">
+          <tr align="center" bgcolor="#CFC8CF"> 
+            <td height="3"><img src="images/space.gif" width="1" height="3"></td>
+          </tr>
+          <tr align="center" valign="middle"> 
+            <td><b><font color="#666666" class="bigtxt"> 中港澳酒店訂房專家會員注冊</font></b></td>
+          </tr>
+          <tr align="center"> 
+            <td bgcolor="#CFC8CF" height="3"><img src="images/space.gif" width="1" height="3"></td>
+          </tr>
+        </table>
+        <p align="center">標有"<font color="red">*</font>"號的欄目是必填項</p>
+        <table width="510" border="1" bordercolor="#FFBC04" cellpadding="0" cellspacing="0" align="center">
+          <tr align="center"> 
+            <td> <br>
+              <table width="484" border="0" cellspacing="4" cellpadding="4">
+                <tr> 
+                  <td valign="top" rowspan="5" align="center" width="1">&nbsp; </td>
+                  <td valign="top" width="75" align="center"> 
+                    <table width="75" border="1" cellspacing="0" cellpadding="2" bordercolor="#CFC8CF">
+                      <tr align="center"> 
+                        <td><font color="#000000"> 用 戶 名</font></td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td width="363" class="txt"> 
+                    <p> 
+                      <input type="text" name="login_name" size=16>
+                      <span class="txt"><font color="red">*</font> 請輸入一個用戶名，用于登錄CNhotelbooking的各種服務,用戶名由英文字母和數字組成 
+                      (至少4個字符, 首位必須是字符)。</span></p>
+                  </td>
+                  <td rowspan="5" class="txt" width="6">&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td valign="top" rowspan="2" width="75" align="center"> 
+                    <table width="75" border="1" cellspacing="0" cellpadding="2" bordercolor="#CFC8CF">
+                      <tr align="center"> 
+                        <td><font color="#000000">密　　碼</font></td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td height="32" width="363">請輸入一個密碼(由數字和英文字母組成，至少6位，注意大小寫)<br>
+                    <input type="password" name="password" value="" size="16" maxlength="16">
+                    <span class="txt"><font color="red">*</font></span> 密碼<br>
+                    <input type="password" name="verifypassword" value="" size="16" maxlength="16">
+                    <span class="txt"><font color="red">* </font></span>再次輸入密碼確認<br>
+                  </td>
+                </tr>
+                <tr> 
+                  <td height="32" width="363"> 
+                    <input type="text" name="rem_question" value="" size="20" maxlength="20">
+                    ： 提 示 問 題<br>
+                    <input type="text" name="rem_answer" value="" size="20" maxlength="20">
+                    ： 提示問題答案<br>
+                    &nbsp;&nbsp;&nbsp;萬一忘記密碼的補救措施(可選)</td>
+                </tr>
+                <tr> 
+                  <td valign="top" width="75" align="center"> 
+                    <table width="75" border="1" cellspacing="0" cellpadding="2" bordercolor="#CFC8CF">
+                      <tr align="center"> 
+                        <td><font color="#000000"> 個人信息 </font></td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td align=left height="18" width="363"> 姓　　名 
+                    <input name="name" size="10" maxlength="20" value="">
+                    <span class="txt"><font color="red">*</font></span> &nbsp;&nbsp;&nbsp; 
+                    性　　別 
+                    <select name="gender" >
+                      <option value="M" selected> </option>
+                      <option value="F">女士</option>
+                    </select>
+                    <br>
+                    城　　市 
+                    <select name="city">
+                      <option>北京</option>
+                      <option>上海</option>
+                      <option>廣州</option>
+                      <option>天津</option>
+                      <option>成都</option>
+                      <option>杭州</option>
+                      <option>寧波</option>
+                      <option>無錫</option>
+                      <option>武漢</option>
+                      <option>南京</option>
+                      <option>蘇州</option>
+                      <option>常州</option>
+                      <option>揚州</option>
+                      <option>重慶</option>
+                      <option>哈爾濱</option>
+                      <option>溫州</option>
+                      <option>青島</option>
+                      <option>福州</option>
+                      <option>廈門</option>
+                      <option>合肥</option>
+                      <option>汕頭</option>
+                      <option>濟南</option>
+                      <option>徐州</option>
+                      <option>鄭州</option>
+                      <option>烏魯木齊</option>
+                      <option>貴陽</option>
+                      <option>南昌</option>
+                      <option>牡丹江</option>
+                      <option>南通</option>
+                      <option>深圳</option>
+                      <option>珠海</option>
+                      <option>長春</option>
+                      <option>西寧</option>
+                      <option>大連</option>
+                      <option>西安</option>
+                      <option>昆明市</option>
+                      <option>桂林市</option>
+                      <option>太原市</option>
+                      <option>呼和浩特</option>
+                      <option>石家庄</option>
+                      <option>佛山</option>
+                      <option>淮坊</option>
+                      <option>三亞</option>
+                      <option>沈陽</option>
+                      <option>荊州</option>
+                      <option>海口</option>
+                      <option>煙台</option>
+                      <option>承德</option>
+                      <option>宜昌</option>
+                      <option>金華</option>
+                      <option>洛陽</option>
+                      <option>南寧</option>
+                      <option>吉林</option>
+                      <option>鎮江</option>
+                      <option>蘭州</option>
+                      <option>宜興</option>
+                      <option>揭陽</option>
+                      <option>拉薩</option>
+                      <option>長沙</option>
+                      <option>銀川</option>
+                      <option>威海</option>
+                      <option>秦皇島</option>
+                      <option>淄博</option>
+                      <option>大同</option>
+                      <option>紹興</option>
+                      <option>棗庄</option>
+                      <option>東莞</option>
+                      <option>曲阜</option>
+                      <option>東營</option>
+                      <option>泉州</option>
+                    </select>
+                    <span class="txt"><font color="red">*</font></span> <font face="Arial, Helvetica, sans-serif" size="2" color="#6C6D6D"> 
+                    &nbsp;</font>&nbsp;郵　　編 
+                    <input name="postal_code" value="" size="6" maxlength="10">
+                    <br>
+                    通訊地址 
+                    <input name="address" value="" size="30" maxlength="100">
+                    <font face="Arial, Helvetica, sans-serif" size="2" color="#6C6D6D"> 
+                    </font><br>
+                    電子郵件 
+                    <input name="email" value="" size="30" maxlength="100">
+                    <span class="txt"><font color="red">*</font></span> <br>
+                    *請注意要填寫正確地址，否則確認號碼無法發送！<br>
+                    <br>
+                    <table width="330" border="0" cellspacing="0" cellpadding="0">
+                      <tr> 
+                        <td colspan="2" valign="top">電　　話 
+                          <input type="text" name="phone0" size="5">
+                          （國家代碼） 
+                          <input type="text" name="phone1" size="5">
+                          （地區代碼）<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                          <input type="text" name="phone" size="15">
+                          <span class="txt"><font color="red">*</font></span>(格式：0086-755-2208051)</td>
+                      </tr>
+                      <tr> 
+                        <td colspan="2" valign="top">肚&nbsp;&nbsp;&nbsp;&nbsp;真 
+                          <input type="text" name="fax0" size="5">
+                          （國家代碼） 
+                          <input type="text" name="fax1" size="5">
+                          （地區代碼）<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                          <input type="text" name="fax" size="15">
+                          (格式：0086-755-2208051)</td>
+                      </tr>
+                    </table>
+                    <br>
+                    國家地區 
+                    <select name="country">
+                      <option>中國 (大陸)</option>
+                      <option>香港</option>
+                      <option>台灣</option>
+                      <option>澳門</option>
+                      <option>新加坡</option>
+                      <option>日本</option>
+                      <option>美國</option>
+                      <option>加拿大</option>
+                      <option>其他</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr> 
+                  <td align="center" valign="bottom" width="75"> 
+                    <table width="75" border="1" cellspacing="0" cellpadding="2" bordercolor="#CFC8CF">
+                      <tr align="center"> 
+                        <td><font color="#000000">會員雜志 </font></td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td width="363">是否愿意訂閱我們的會員雜志： 
+                    <input type="radio" value="Y" name="newsletter" checked>
+                    是 
+                    <input type="radio" value="N" name="newsletter">
+                    否 </td>
+                </tr>
+              </table>
+              <br>
+              <br>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <table width="300" align="center">
+          <tr align="center"> 
+            <td><a href="login.htm"><img src="../images/big/modify_data.gif" width="138" height="18" border="0"></a></td>
+            <td><a href="javascript:document.form1.reset();"><img src="../images/big/cancel.gif" width="138" height="18" border="0"></a></td>
+          </tr>
+        </table>
+        <p>&nbsp;</p>
+      </form>
+      <!-- #EndEditable --></td>
+  </tr>
+  <tr> 
+    <td colspan="3" height="20">&nbsp;</td>
+  </tr>
+  <tr valign="middle" align="center"> 
+    <td colspan="3">&nbsp; </td>
+  </tr>
+  <td colspan="3" align="center"> <IFRAME width=560  height=380 MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no BORDERcolor=000000 SRC="/cnbooking/big/foot_tel.jsp"> 
+    </IFRAME> <!--Here is ad end.--></td>
+  <tr> 
+    <td colspan="3">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td colspan="3" height="3"> 
+      <script language="JavaScript" src="/javascript/big/foot.js">
+</script>
+    </td>
+  </tr>
+</table>
+</body>
+<!-- #EndTemplate --></html>

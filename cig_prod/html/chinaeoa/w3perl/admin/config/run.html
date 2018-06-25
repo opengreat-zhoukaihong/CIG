@@ -1,0 +1,322 @@
+<HEAD>
+<TITLE>W3perl : Web Launch</TITLE>
+</HEAD>
+
+<BODY BACKGROUND="<!-- BG -->" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="<!-- LINE -->" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>W3Perl Run</H1></FONT>
+</TD>
+</TR>
+
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD ALIGN=CENTER VALIGN=TOP>
+ </TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD>                       
+<FONT SIZE=-1>                                                         
+If you can only run scripts via a HTML page (people without telnet
+access or/and crontab), use these links to run the scripts.
+On Unix, scripts have very restrictive permission (user nobody usually),
+so you should <B>verify the scripts will be able to write output files</B> in 
+your directory.
+<P>
+If you want a fine tuning, select the 'option' you want to run. All
+option available will be displayed with their current values.
+Default scripts will be run as incremental, if you need to reset or
+initialize them, you'll need to use the option -b.
+<P>
+If the scripts take too long to complete, you'll receive a time out
+from the server. Don't worry, you'll have to use a shortest period 
+of time (-d) or giving a more lower precision level (-p). Of course,
+the best way to run the stats is to get a crontab.
+</FONT>
+<P>
+
+<CENTER>
+<TABLE BORDER=1 WIDTH=100%>
+<TR>
+<TD ALIGN=CENTER>
+
+<TABLE BORDER=1 WIDTH=100%>
+<TR>
+<TD ALIGN=CENTER>
+<TABLE BORDER=0 CELLPADDING=5 WIDTH=100%>
+<TR>
+<TD VALIGN=TOP ALIGN=CENTER>
+<A HREF="<!-- cgiurl -->/cron-pages.pl?c='<!-- configfile -->'"><IMG SRC="<!-- w3perlurl -->/homepage/trash.gif" BORDER=0 WIDTH=34 HEIGHT=34></A>
+<BR>
+<A HREF="<!-- cgiurl -->/cron-pages.pl?c='<!-- configfile -->'">Cron-pages.pl</A>
+</TD>
+<TD VALIGN=TOP>
+<B><FONT COLOR="#209090">Stats initialization</FONT></B> : all previous stats are <B><FONT COLOR="#A02020">deleted</FONT></B>
+<LI> Hosts, Countries, Domain, Pages, Scripts, Directories, Download stats are computed
+<LI> <A HREF="/cgi-bin/w3perl/runconf.pl?configfile=<!-- configfile -->&script=pages">Option</A>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP ALIGN=CENTER>
+<A HREF="<!-- cgiurl -->/cron-inc.pl?c='<!-- configfile -->'"><IMG SRC="<!-- w3perlurl -->/homepage/duree.gif" BORDER=0 WIDTH=34 HEIGHT=34></A>
+<BR>
+<A HREF="<!-- cgiurl -->/cron-inc.pl?c='<!-- configfile -->'">Cron-inc.pl</A>
+</TD>
+<TD VALIGN=TOP>
+<B><FONT COLOR="#209090">Stats update</FONT></B> : all stats are updated from the previous run
+<LI> Hosts, Countries, Domain, Pages, Scripts stats are computed
+<LI> Should be run at least once a week
+<LI> <A HREF="/cgi-bin/w3perl/runconf.pl?configfile=<!-- configfile -->&script=inc">Option</A>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+
+<TD VALIGN=CENTER>
+<TABLE BORDER=1 WIDTH=100% CELLPADDING=3 HEIGHT=100%>
+<TR><TD>
+<CENTER>
+<A HREF="<!-- cgiurl -->/cron-w3perl.pl?c='<!-- configfile -->'"><IMG SRC="<!-- w3perlurl -->/homepage/document.gif" BORDER=0 WIDTH=53 HEIGHT=34></A>
+<BR>
+<A HREF="<!-- cgiurl -->/cron-w3perl.pl?c='<!-- configfile -->'">Cron-w3perl.pl</A>
+</CENTER>
+<P>
+<B><FONT COLOR="#209090">Launch stats</FONT></B>
+<LI> To <A HREF="<!-- cgiurl -->/cron-w3perl.pl?a=1&c='<!-- configfile -->'">initialize</A> all scripts
+<LI> To <A HREF="<!-- cgiurl -->/cron-w3perl.pl?e=1&c='<!-- configfile -->'">update</A> all scripts
+<LI> (Unix only)
+<LI> <A HREF="/cgi-bin/w3perl/runconf.pl?configfile=<!-- configfile -->&script=w3perl">Option</A>
+<BR>
+</TD>
+</TR>
+</TABLE>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP ALIGN=CENTER COLSPAN=2>
+
+<TABLE BORDER=1 WIDTH=100%>
+<TR><TD ALIGN=CENTER>
+<TABLE BORDER=0 CELLPADDING=5 WIDTH=100%>
+<TR>
+<TD VALIGN=TOP ALIGN=CENTER>
+<A HREF="<!-- cgiurl -->/cron-hour.pl?c='<!-- configfile -->'"><IMG SRC="<!-- w3perlurl -->/homepage/hours.gif" BORDER=0 WIDTH=34 HEIGHT=34></A>
+<BR>
+<A HREF="<!-- cgiurl -->/cron-hour.pl?c='<!-- configfile -->'">Cron-hour.pl</A>
+</TD>
+<TD VALIGN=TOP>
+ <B><FONT COLOR="#209090">Hourly stats</FONT></B>
+<LI> Hosts, Hits, HTML Pages, Trafic
+<LI> <A HREF="/cgi-bin/w3perl/runconf.pl?configfile=<!-- configfile -->&script=hour">Option</A>
+</TD>
+
+<TD VALIGN=TOP ALIGN=CENTER>
+<A HREF="<!-- cgiurl -->/cron-day.pl?c='<!-- configfile -->'"><IMG SRC="<!-- w3perlurl -->/homepage/days.gif" BORDER=0 WIDTH=75 HEIGHT=42></A>
+<BR>
+<A HREF="<!-- cgiurl -->/cron-day.pl?c='<!-- configfile -->'">Cron-day.pl</A>
+</TD>
+<TD VALIGN=TOP>
+<B><FONT COLOR="#209090">Daily stats</FONT></B>
+<LI> Hits, HTML Pages, Hosts graphics
+<LI> Trafic by directories trafic
+<LI> <A HREF="/cgi-bin/w3perl/runconf.pl?configfile=<!-- configfile -->&script=day">Option</A>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP ALIGN=CENTER>
+<A HREF="<!-- cgiurl -->/cron-week.pl?c='<!-- configfile -->'"><IMG SRC="<!-- w3perlurl -->/homepage/weeks.gif" BORDER=0 WIDTH=80 HEIGHT=62></A>
+<BR>
+<A HREF="<!-- cgiurl -->/cron-week.pl?c='<!-- configfile -->'">Cron-week.pl</A>
+</TD>
+<TD VALIGN=TOP>
+<B><FONT COLOR="#209090">Weekly stats</FONT></B>
+<LI> Hits, HTML Pages, Hosts graphics
+<LI> <A HREF="/cgi-bin/w3perl/runconf.pl?configfile=<!-- configfile -->&script=week">Option</A>
+</TD>
+
+<TD VALIGN=TOP ALIGN=CENTER>
+<A HREF="<!-- cgiurl -->/cron-month.pl?c='<!-- configfile -->'"><IMG SRC="<!-- w3perlurl -->/homepage/months.gif" BORDER=0 WIDTH=34 HEIGHT=34></A>
+<BR>
+<A HREF="<!-- cgiurl -->/cron-month.pl?c='<!-- configfile -->'">Cron-month.pl</A>
+</TD>
+<TD VALIGN=TOP>
+<B><FONT COLOR="#209090">Monthly stats</FONT></B>
+<LI> Hits, HTML Pages, Hosts graphics
+<LI> Monthly resume
+<LI> <A HREF="/cgi-bin/w3perl/runconf.pl?configfile=<!-- configfile -->&script=month">Option</A>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP ALIGN=CENTER COLSPAN=2>
+
+<TABLE BORDER=1 WIDTH=100%>
+<TR><TD ALIGN=CENTER>
+<TABLE BORDER=0 WIDTH=100%>
+<TR>
+<TD VALIGN=TOP ALIGN=CENTER>
+<A HREF="<!-- cgiurl -->/cron-agent.pl?c='<!-- configfile -->'"><IMG SRC="<!-- w3perlurl -->/homepage/agent.gif" BORDER=0 WIDTH=37 HEIGHT=39></A>
+<BR>
+<A HREF="<!-- cgiurl -->/cron-agent.pl?c='<!-- configfile -->'">Cron-agent.pl</A>
+</TD>
+<TD VALIGN=TOP>
+<B><FONT COLOR="#209090">Agent stats</FONT></B>
+<LI> Browsers and OS used
+<LI> <A HREF="/cgi-bin/w3perl/runconf.pl?configfile=<!-- configfile -->&script=agent">Option</A>
+</TD>
+
+<TD VALIGN=TOP ALIGN=CENTER>
+<A HREF="<!-- cgiurl -->/cron-refer.pl?c='<!-- configfile -->'"><IMG SRC="<!-- w3perlurl -->/homepage/refer.gif" BORDER=0 WIDTH=34 HEIGHT=34></A>
+<BR>
+<A HREF="<!-- cgiurl -->/cron-refer.pl?c='<!-- configfile -->'">Cron-refer.pl</A>
+</TD>
+<TD VALIGN=TOP>
+<B><FONT COLOR="#209090">Referer stats</FONT></B>
+<LI> Search engines, Keywords
+<LI> Hosts, linked pages, daily referer
+<LI> <A HREF="/cgi-bin/w3perl/runconf.pl?configfile=<!-- configfile -->&script=refer">Option</A>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP ALIGN=CENTER>
+<A HREF="<!-- cgiurl -->/cron-error.pl?c='<!-- configfile -->'"><IMG SRC="<!-- w3perlurl -->/homepage/error.gif" BORDER=0 WIDTH=42 HEIGHT=40></A>
+<BR>
+<A HREF="<!-- cgiurl -->/cron-error.pl?c='<!-- configfile -->'">Cron-error.pl</A>
+</TD>
+<TD VALIGN=TOP>
+<B><FONT COLOR="#209090">Error stats</FONT></B>
+<LI> Missing files, error type
+<LI> <A HREF="/cgi-bin/w3perl/runconf.pl?configfile=<!-- configfile -->&script=error">Option</A>
+</TD>
+
+<TD VALIGN=TOP ALIGN=CENTER>
+<A HREF="<!-- cgiurl -->/cron-session.pl?c='<!-- configfile -->'"><IMG SRC="<!-- w3perlurl -->/homepage/session.gif" BORDER=0 WIDTH=45 HEIGHT=44></A>
+<BR>
+<A HREF="<!-- cgiurl -->/cron-session.pl?c='<!-- configfile -->'">Cron-session.pl</A>
+</TD>
+<TD VALIGN=TOP>
+<B><FONT COLOR="#209090">Session stats</FONT></B>
+<LI> Visitors, Multiple session, Search engine
+<LI> Login access, Session time, Connection timing
+<LI> <A HREF="/cgi-bin/w3perl/runconf.pl?configfile=<!-- configfile -->&script=session">Option</A>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP ALIGN=CENTER COLSPAN=2>
+
+<TABLE BORDER=1 WIDTH=100%>
+<TR><TD ALIGN=CENTER>
+<TABLE BORDER=0 WIDTH=100%>
+<TR>
+<TD VALIGN=TOP ALIGN=CENTER>
+<A HREF="<!-- cgiurl -->/cron-url.pl?c='<!-- configfile -->'"><IMG SRC="<!-- w3perlurl -->/homepage/document.gif" BORDER=0 WIDTH=53 HEIGHT=34></A>
+<BR>
+<A HREF="<!-- cgiurl -->/cron-url.pl?c='<!-- configfile -->'">Cron-url.pl</A>
+</TD>
+<TD VALIGN=TOP>
+<B><FONT COLOR="#209090">Document stats</FONT></B>
+<LI> New page, Bad links, Tree, Same title
+<LI> Pages weight, Directories, Images, Links
+<LI> Useless page, WIDTH and HEIGHT attributs
+<LI> <A HREF="/cgi-bin/w3perl/runconf.pl?configfile=<!-- configfile -->&script=document">Option</A> 
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+</TABLE>
+
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+
+<P>
+<TABLE WIDTH=80%>
+<TR>
+<TD>
+
+
+</TD>
+</TR>
+</TABLE>
+
+</CENTER>
+
+<!--
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+If you need to use the command line available with each script, modify
+this page to include parameters in your link. <BR>
+<CENTER>
+<TABLE BORDER=1>
+<TR>
+<TH><FONT SIZE=-2>Command line</FONT></TH><TH><FONT SIZE=-2>Links in this page</FONT></TH></TR>
+<TR>
+<TD><FONT SIZE=-2>cron-hour.pl -i /home/domisse/logs/access-log</FONT></TD>
+<TD><FONT SIZE=-2>cron-hour.pl?i='/home/domisse/logs/access_log'</FONT></TD>
+</TR>
+<TR>
+<TD><FONT SIZE=-2>cron-refer.pl -b</FONT></TD>
+<TD><FONT SIZE=-2>cron-refer.pl?b=1</FONT></TD>
+</TR>
+<TR>
+<TD><FONT SIZE=-2>cron-pages.pl -d 30 -c /usr/local/etc/cgi-bin/w3perl/config-astro.pl</FONT></TD>
+<TD><FONT SIZE=-2>cron-pages.pl?d=30&c='/usr/local/etc/cgi-bin/w3perl/config-astro.pl'</FONT></TD>
+</TR>
+</TABLE>
+</CENTER>
+-->
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

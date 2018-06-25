@@ -1,0 +1,329 @@
+<HTML>
+<HEAD>
+<TITLE>W3Perl Forms- Step 5</TITLE>
+</HEAD>
+<SCRIPT LANGUAGE="Javascript">
+	
+function Check_text(string,variable,min,max,len) {
+var val1 = '';
+var val2 = '';
+
+var stop = 0;
+for (var i = 0; i < document.step5.elements.length; i++) {
+if (document.step5.elements[i].type == "text" && document.step5.elements[i].name == variable) {
+val1 = document.step5.elements[i].value.indexOf(".");
+val2 = document.step5.elements[i].value.lastIndexOf(".");
+if (val1 == -1 || (val1 == val2)) {
+alert ("Your value should have at least two . character");
+stop = 1;
+}
+
+}
+}
+}
+</SCRIPT>
+
+<BODY BACKGROUND="<!-- BG -->" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<FORM METHOD=POST NAME="step5" ACTION="<!-- cgiurl -->/confstat.pl">
+
+<INPUT NAME="step" VALUE="5" TYPE="HIDDEN">
+
+<!-- HIDDEN -->
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="<!-- LINE -->" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Configuration - Step 5</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD ALIGN=CENTER VALIGN=TOP>
+ </TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD>
+
+Now you'll have to select filters in order to select informations
+really helpful to you. If you have to type several string in the fields,
+use space as a separator.
+
+</TD>
+</TR>
+<TR><TD BGCOLOR="#AAAAAA" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Name server</FONT></I>
+</TD>
+<TD VALIGN=TOP BGCOLOR="#DDDDDD">
+
+<TABLE WIDTH=100% BORDER=0>
+<TR><TD>
+Name of your server :
+</TD><TD>
+<INPUT NAME="localserver" SIZE=30 TYPE="text" VALUE="" OnChange="Check_text('text','localserver')">
+</TD></TR>
+<TR>
+<TD>
+<FONT SIZE=-1>
+<I>(The internet address of your server, <BR>don't type port number)</I>
+</FONT>
+</TD><TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for examples
+<OPTION>www.lyot.obspm.fr
+<OPTION>pegase.unice.fr
+<OPTION>147.210.92.60
+</SELECT>
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR><TD>
+IP addresses which belong to your domain :
+</TD><TD>
+<INPUT NAME="localdomaine" SIZE=30 TYPE="text" VALUE="">
+</TD></TR>
+<TR>
+<TD>
+<FONT SIZE=-1>
+<I>(Some hosts in your domain may have IP adress, add them here)</I>
+</FONT>
+</TD><TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for examples
+<OPTION>147.210.92.60
+<OPTION>147.210.92.* (all host in 147.210.92 subdomain)
+<OPTION>147.210.92.[2-5] (147.210.92.2 to 147.210.92.5)
+</SELECT>
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR><TD>
+Your email :
+</TD><TD>
+<INPUT NAME="emailadr" SIZE=30 TYPE="text" VALUE="">
+</TD></TR>
+<TR>
+<TD>
+<FONT SIZE=-1>
+<I>(if people want to contact you, if no host is specified, domain name
+is used)</I>
+</FONT>
+</TD><TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for examples
+<OPTION>webmaster
+<OPTION>domisse@hplyot.obspm.fr
+</SELECT>
+</TD></TR>
+
+</TABLE>
+
+</TD>
+</TR>
+<TR><TD BGCOLOR="#AAAAAA" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Filters</FONT></I>
+</TD>
+<TD BGCOLOR="#DDDDDD">
+
+<TABLE WIDTH=100% BORDER=0>
+
+<TR><TD>
+Exclude framed pages
+</TD><TD>
+<INPUT NAME="exclude_frame" TYPE="radio" VALUE="1"> Yes
+<INPUT NAME="exclude_frame" TYPE="radio" VALUE="0"> No
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR><TD>
+Exclude robot visits
+</TD><TD>
+<INPUT NAME="exclude_robot" TYPE="radio" VALUE="1"> Yes
+<INPUT NAME="exclude_robot" TYPE="radio" VALUE="0"> No
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR><TD>
+Country filter
+</TD><TD>
+<!-- <SELECT NAME="country_filtering" SIZE=4 SINGLE>
+<OPTION>fr
+<OPTION>com
+</SELECT>
+-->
+<INPUT NAME="country_filtering" SIZE=5 TYPE="text" VALUE="">
+</TD></TR>
+<TR><TD>
+<FONT SIZE=-1>
+<I>(stats only for one country, should be a <A HREF="http://itl5.itlnet.com/isocodes.htm">top level</A>)</I>
+</FONT>
+</TD><TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for examples
+<OPTION> (no filter)
+<OPTION>fr (stats for France only)
+<OPTION>com (stats for .com only)
+</SELECT>
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR><TD>
+Directory filter
+</TD><TD>
+<INPUT NAME="tri" SIZE=30 TYPE="text" VALUE="">
+</TD></TR>
+<TR><TD>
+<FONT SIZE=-1>
+<I>(stats only if the files matches this URL)</I>
+</FONT>
+</TD><TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for examples
+<OPTION>/ (no filter)
+<OPTION>/~domisse/ (stats on user domisse)
+<OPTION>/uk/computer/ (stats only this directory)
+</SELECT>
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<!-- BEGIN_VIRTUAL -->
+<TR><TD>
+Virtual host to filter
+</TD><TD>
+<INPUT NAME="virtualfilter" SIZE=30 TYPE="text" VALUE="">
+</TD></TR>
+<TR>
+<TD>
+<FONT SIZE=-1>
+<I>(Select which virtual host you want to log)</I>
+</FONT>
+</TD><TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for examples
+<OPTION>(no filtering if field is left blank)
+<OPTION>www.unice.fr (select this virtual host)
+<OPTION>.unice.fr (select all subdomain virtual hosts)
+<OPTION>.com (select all .com subdomain)
+</SELECT>
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR><TD>
+Virtual hosts to exclude
+</TD><TD>
+<INPUT NAME="excludevirtual" SIZE=30 TYPE="text" VALUE="">
+</TD></TR>
+<TR>
+<TD>
+<FONT SIZE=-1>
+<I>(Select which virtual hosts you want to exclude, use blank as separator)</I>
+</FONT>
+</TD><TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for examples
+<OPTION>(no exclusion if field is blank)
+<OPTION>www.mac1-detector.com (exclude this virtual host)
+<OPTION>.unice.fr (exclude all subdomain virtual hosts)
+</SELECT>
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<!-- END_VIRTUAL -->
+<TR><TD>
+Hosts to exclude :
+</TD><TD>
+<INPUT NAME="nolog" SIZE=30 TYPE="text" VALUE="">
+</TD></TR>
+<TR>
+<TD>
+<FONT SIZE=-1>
+<I>(Select here hosts you don't want to log)</I>
+</FONT>
+</TD><TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for examples
+<OPTION>pegase.unice.fr (exclude this host)
+<OPTION>.club-internet.fr (exclude domain club-internet.fr)
+<OPTION>.ca (exclude canadian people)
+<OPTION>ppp-*.hol.fr (exclude ppp-&lt;string&gt;.hol.fr host)
+</SELECT>
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR><TD>
+HTML pages with highest precision :
+</TD><TD>
+<INPUT NAME="selection" SIZE=30 TYPE="text" VALUE="">
+</TD></TR>
+<TR>
+<TD>
+<FONT SIZE=-1>
+<I>(Don't use too much pages (10) or it will slow down the scripts)</I>
+</FONT>
+</TD><TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for examples
+<OPTION>/~domisse/w3perl/docs/html//chinaeoa/index.jsp
+<OPTION>/contact/email.html
+</SELECT>
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR><TD>
+Directories with specific stats :
+</TD><TD>
+<INPUT NAME="selecrepert" SIZE=30 TYPE="text" VALUE="">
+</TD></TR>
+<TR>
+<TD>
+<FONT SIZE=-1>
+<I>(should be in the same level, don't use '/')</I>
+</FONT>
+</TD><TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for examples
+<OPTION>/fr/
+<OPTION>/music/
+</SELECT>
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR><TD>
+Directories to exclude :
+</TD><TD>
+<INPUT NAME="excluderepert" SIZE=30 TYPE="text" VALUE="">
+</TD></TR>
+<TR>
+<TD>
+<FONT SIZE=-1>
+<I>(don't use '/' or everything will be excluded !)</I>
+</FONT>
+</TD><TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for examples
+<OPTION>/private/
+<OPTION>/admin/passwd/
+</SELECT>
+</TD></TR>
+</TABLE>
+
+</TD>
+</TR>
+</TABLE>
+
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD>
+
+<CENTER>
+<INPUT TYPE="SUBMIT" VALUE="Submit">
+<INPUT TYPE="RESET" VALUE="Reset">
+</CENTER>
+</TD>
+
+</TR>
+</TABLE>
+
+</FORM>
+
+</body>
+</html>

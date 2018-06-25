@@ -1,0 +1,298 @@
+<html>
+<head>
+
+
+<SCRIPT language=JavaScript>
+  var menuarray;
+  menur=10;
+  menuc=25;
+  menuselect="";
+  menuselects="";
+function mouseclick(lmname)
+  {
+  j=-1;
+  for(i=0;i<menur;i++)
+     {
+      if(lmname==menuarray[i][2])
+        {
+         menuselect=lmname;
+         if(menuarray[i][1]==1)
+           {
+           menuarray[i][1]=0;
+           menuselect="";
+           j=i;
+            }
+         else
+           {
+           menuarray[i][1]=1;
+           j=i;
+           }
+         }
+      else menuarray[i][1]=0;
+      }
+  document.all.menutable.outerHTML=drawmenu();
+  if(menuarray[j][0]==0)
+    {
+    menuselects="";
+    if(menuarray[j][1]==1)
+      {
+     
+
+      return(0);
+      }
+    }
+      
+  if(menuarray[j][1]==0 && menuselects!="")  
+      {
+      menuselects="";
+
+      return(0);
+      }
+  }
+
+function mouseclicks(lmname)
+  {
+  if(menuselects==lmname) 
+    menuselects="";
+  else 
+    menuselects=lmname;
+  document.all.menutable.outerHTML=drawmenu();
+  
+   for(i=0;i<menur;i++)
+     for(j=0;j<menuarray[i][0];j++)
+       if(lmname==menuarray[i][4+2*j])
+         {
+         if(menuselects=="")
+  
+           return(0);
+
+         else
+           {           
+           open(menuarray[i][4+2*j+1],"mainFrame");
+           return(0);
+           }
+         }
+  }
+function drawmenu()
+  {
+   var i,j,para;
+   para="";
+   para+='<table id="menutable" align="center" height=308 border=1 cellpadding=0 cellspacing=0  bordercolorlight=#000000 bordercolordark=#FFFFFF>';
+    for(i=0;i<menur;i++)
+       {
+       if(menuselect==menuarray[i][2])
+         para+='<tr><td id=td'+menuarray[i][2]+' align=center width=125 height=27   bgcolor=#DBA619><a style="CURSOR: hand" name='+menuarray[i][2]+' OnClick=mouseclick(name) OnMouseOver=mouseover(name) OnMouseOut=mouseout(name)> <font id=ft'+menuarray[i][2]+' face=宋体 size=2 color=#ffffff>'+menuarray[i][3]+'</font></a></td></tr>';
+       else
+         para+='<tr><td id=td'+menuarray[i][2]+' align=center width=125 height=27 bgcolor=#DBA619> <a  style="CURSOR: hand" name='+menuarray[i][2]+' OnClick=mouseclick(name) OnMouseOver=mouseover(name) OnMouseOut=mouseout(name)><font id=ft'+menuarray[i][2]+' face=宋体 size=2 color=#ffffff>'+menuarray[i][3]+'</font></a></td></tr>';
+       if(menuarray[i][1]==1)
+         {
+         for(j=0;j<menuarray[i][0];j++)
+           {
+            if(menuselects==menuarray[i][4+2*j])
+              para+='<tr><td id=td'+menuarray[i][4+2*j]+' align=center width=125 height=21  bgcolor=#FFD850><a style="CURSOR: hand" name='+menuarray[i][4+2*j]+' OnClick=mouseclicks(name) OnMouseOver=mouseover(name) OnMouseOut=mouseout(name)><font id=ft'+menuarray[i][4+2*j]+' face=宋体 size=2 color=#ffffff>'+menuarray[i][4+2*j]+'</font></a></td></tr>';
+            else
+              para+='<tr><td bgcolor=#FFD850 id=td'+menuarray[i][4+2*j]+' align=center width=125 height=21 ><a style="CURSOR: hand" name='+menuarray[i][4+2*j]+' OnClick=mouseclicks(name) OnMouseOver=mouseover(name) OnMouseOut=mouseout(name)><font id=ft'+menuarray[i][4+2*j]+' face=宋体 size=2 color=#cd5c5c>'+menuarray[i][4+2*j]+'</span></font></a></td></tr>';
+           }
+         } 
+       }
+  para+='</table>';
+  return(para);
+  }
+
+
+function mouseover(lmname)
+  {
+   if(lmname!=menuselect && lmname!=menuselects)
+     {
+     for(i=0;i<menur;i++)  if(lmname==menuarray[i][2]) break;
+     if(i<menur)
+       {
+       aaa="td"+lmname;
+       //document.all[aaa].background="menu/over.jpg";
+       aaa="ft"+lmname;
+       document.all[aaa].size=2;
+       }
+     else
+       {
+       aaa="td"+lmname;
+       //document.all[aaa].background="menu/sover.jpg";
+       aaa="ft"+lmname;
+       document.all[aaa].size=2;
+       }
+     }
+  }
+
+function mouseout(lmname)
+  {
+  if(lmname!=menuselect && lmname!=menuselects)
+     {
+     for(i=0;i<menur;i++)   if(lmname==menuarray[i][2]) break;
+     if(i<menur)
+       {
+       aaa="td"+lmname;
+      
+       aaa="ft"+lmname;
+       document.all[aaa].size=2;
+       }
+     else
+       {
+       aaa="td"+lmname;
+      
+       aaa="ft"+lmname;
+       document.all[aaa].size=2;
+       }
+     }
+  }
+
+function initmenu()
+{
+menuarray=new Array();
+for(i=0;i<menur;i++)
+menuarray[i]=new Array();
+
+
+menuarray[0][0]=5;
+menuarray[0][1]=0;
+menuarray[0][2]="0";
+menuarray[0][3]="安全管理";
+menuarray[0][4]="操作员列表";
+menuarray[0][5]="/cnbooking_bst/permission/operatorlist.jsp";
+menuarray[0][6]="增加操作员";
+menuarray[0][7]="/cnbooking_bst/permission/insertoperator.jsp";
+menuarray[0][8]="功能项管理";
+menuarray[0][9]="/cnbooking_bst/permission/funcManager.jsp";
+menuarray[0][10]="模块管理";
+menuarray[0][11]="/cnbooking_bst/permission/moduleManager.jsp";
+menuarray[0][12]="角色管理";
+menuarray[0][13]="/cnbooking_bst/permission/roleAdd.jsp";
+
+
+menuarray[1][0]=4;
+menuarray[1][1]=0;
+menuarray[1][2]="1";
+menuarray[1][3]="系统管理";
+menuarray[1][4]="系统参数设置";
+menuarray[1][5]="/cnbooking_bst/parachazhao.jsp";
+menuarray[1][6]="汇率设置";
+menuarray[1][7]="/cnbooking_bst/rateList.jsp?action=";
+menuarray[1][8]="星级设置";
+menuarray[1][9]="/cnbooking_bst/starList.jsp?action=";
+menuarray[1][10]="各地公司设置";
+menuarray[1][11]="/cnbooking_bst/compList.jsp?action=";
+
+menuarray[2][0]=1;
+menuarray[2][1]=0;
+menuarray[2][2]="2";
+menuarray[2][3]="会员管理";
+menuarray[2][4]="查询会员";
+menuarray[2][5]="/cnbooking_bst/member/member_user_search.jsp";
+
+
+
+
+menuarray[3][0]=8;
+menuarray[3][1]=0;
+menuarray[3][2]="3";
+menuarray[3][3]="酒店管理";
+menuarray[3][4]="酒店订单检索";
+menuarray[3][5]="/cnbooking_bst/hotel_order_search.jsp";
+menuarray[3][6]="查询酒店";
+menuarray[3][7]="/cnbooking_bst/HotelSearch.jsp";
+menuarray[3][8]="添加新酒店";
+menuarray[3][9]="/cnbooking_bst/HotelAdd.jsp";
+menuarray[3][10]="酒店价格自动推算";
+menuarray[3][11]="/cnbooking_bst/calAllPrice.jsp";
+menuarray[3][12]="价格更新公告板";
+menuarray[3][13]="/cnbooking_bst/hotel_price_update.jsp?pageNo=1";
+menuarray[3][14]="精选酒店";
+menuarray[3][15]="/cnbooking_bst/hotHotelList.jsp";
+menuarray[3][16]="同行信息";
+menuarray[3][17]="/cnbooking_bst/IndusCorpLogin.jsp";
+menuarray[3][18]="邮寄来价";
+menuarray[3][19]="/cnbooking_bst/in_price_table.jsp";
+
+
+menuarray[4][0]=4;
+menuarray[4][1]=0;
+menuarray[4][2]="4";
+menuarray[4][3]="机票管理";
+menuarray[4][4]="机票订单检索";
+menuarray[4][5]="/cnbooking_bst/flight/flightBKBookLogin.jsp";
+menuarray[4][6]="航空线路管理";
+menuarray[4][7]="/cnbooking_bst/flight/flightBKLineLogin.jsp";
+menuarray[4][8]="航空公司管理";
+menuarray[4][9]="/cnbooking_bst/flight/flightBKAirLogin.jsp";
+menuarray[4][10]="机场管理";
+menuarray[4][11]="/cnbooking_bst/flight/flightBKPortLogin.jsp";
+
+
+menuarray[5][0]=3;
+menuarray[5][1]=0;
+menuarray[5][2]="5";
+menuarray[5][3]="城市旅游";
+menuarray[5][4]="城市旅游订单检索";
+menuarray[5][5]="/cnbooking_bst/tour/tourBKBookLogin.jsp";
+menuarray[5][6]="城市旅游线路";
+menuarray[5][7]="/cnbooking_bst/tour/tourBKLineLogin.jsp";
+menuarray[5][8]="城市旅游价格";
+menuarray[5][9]="/cnbooking_bst/tour/tourBKPriceLogin.jsp";
+
+
+
+menuarray[6][0]=3;
+menuarray[6][1]=0;
+menuarray[6][2]="6";
+menuarray[6][3]="国家-城市管理";
+menuarray[6][4]="国家列表";
+menuarray[6][5]="/cnbooking_bst/countryList.jsp?pageNo=1&action=";
+menuarray[6][6]="省份列表";
+menuarray[6][7]="/cnbooking_bst/stateList.jsp?pageNo=1&aciton=";
+menuarray[6][8]="城市检索";
+menuarray[6][9]="/cnbooking_bst/city_search.jsp";
+
+menuarray[7][0]=2;
+menuarray[7][1]=0;
+menuarray[7][2]="7";
+menuarray[7][3]="目录管理";
+menuarray[7][4]="图片目录列表";
+menuarray[7][5]="/cnbooking_bst/dir/dir_list.jsp?pageNo=1";
+menuarray[7][6]="添加图片目录";
+menuarray[7][7]="/cnbooking_bst/dir/add_dir.jsp";
+
+menuarray[8][0]=2;
+menuarray[8][1]=0;
+menuarray[8][2]="8";
+menuarray[8][3]="网站内容管理";
+menuarray[8][4]="新闻管理";
+menuarray[8][5]="/cnbooking_bst/news_login.jsp";
+menuarray[8][6]="公告版";
+menuarray[8][7]="/cnbooking_bst/board/BoardBKLogin.jsp";
+
+
+menuarray[9][0]=1;
+menuarray[9][1]=0;
+menuarray[9][2]="10";
+menuarray[9][3]="退出管理系统";
+menuarray[9][4]="退出管理系统";
+menuarray[9][5]="/cnbooking_bst/main_middle.htm";
+}
+
+</SCRIPT>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+</head>
+
+<body bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" cellspacing="0" cellpadding="0" align="right" width="125" height="308">
+  <tr > 
+    <td height="338"> 
+      <script language=JavaScript>
+initmenu();
+document.write(drawmenu());
+</script>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

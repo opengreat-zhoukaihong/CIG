@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="/eoa.css" rel="stylesheet" type="text/css">
+</head>
+<script language="JavaScript">
+<!--
+ function Login()
+{
+  if (fmLogin.User.value == "" || fmLogin.Passwd.value == "")
+  {
+    alert("请输入用户与口令");
+  }
+  else
+   fmLogin.submit();
+}
+
+//-->
+</script>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" cellspacing="0" cellpadding="10" width="460">
+  <tr align="center"> 
+    <td rowspan="2" height="67" width="98"> <img src="/images/spacer.gif" width="80" height="1"> 
+    </td>
+    <td width="428" height="52">&nbsp;</td>
+  </tr>
+  <tr align="center"> 
+    <td width="428"> 
+      <TABLE border=0 
+      cellPadding=0 cellSpacing=0 width=317>
+        <form name="fmLogin" method="post" action="/chinaeoa/eoa-bst/BstLogin.jsp">
+          <tr> 
+            <td align="center" width="137" height="51">&nbsp;</td>
+            <td colspan="3" width="180" height="51">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td align="center" colspan="4" height="50"><font size="5" color="#FF3333"><a href="bstLogin.htm">用户或口令不对,请重新登录!</a></font></td>
+          </tr>
+          <tr> 
+            <td colspan="4" align="center" height="50"> <a href="javascript:Login();"> 
+              </a></td>
+          </tr>
+        </form>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

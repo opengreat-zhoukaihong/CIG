@@ -1,0 +1,57 @@
+ 
+<html>
+<!-- #BeginTemplate "/Templates/ceoa.dwt" --> 
+<head>
+<!-- #BeginEditable "doctitle" --> 
+<title>ChinaEOA.com</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="/eoa.css" rel="stylesheet" type="text/css">
+<script
+language="JavaScript">
+<!--
+function imgOn (imgName) {
+if (document.images) {
+document[imgName].src = eval (imgName + "on.src");
+}
+}
+function imgOff (imgName) {
+if (document.images) {
+document[imgName].src = eval(imgName + "off.src");
+}
+}
+function MM_preloadImages() { //v3.0
+var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+//-->
+</script>
+</head>
+<body bgcolor="#F7FBFA" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" tracingsrc="" tracingopacity="80" background="/images/temp/bg.gif">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="1" bgcolor="#000000" >
+  <tr> 
+    <td><img src="/images/spacer.gif" width="1" height="1"></td>
+  </tr>
+</table>
+<script language="JavaScript" src="/javascript/title.js">
+</script>
+<table width="640" border="0" cellspacing="0" cellpadding="0" >
+  <tr> 
+    <td valign="top" width="14"> <img src="/images/temp/left_bar.gif" width="14" height="2"></td>
+    <td valign="top" colspan="2"><!-- #BeginEditable "body" --> 
+      <table width="667" border="0" cellpadding="0" cellspacing="0" height="300">
+        <tr align="center"> 
+          <td class="font4b"> 
+            <p><a href="index.jsp">请先登录</a><br><a href="registration.jsp">现在注册</a></p>
+          </td>
+        </tr>
+      </table>
+      <!-- #EndEditable --> </td>
+  </tr>
+</table>
+<script language="JavaScript" src="/javascript/foot.js">
+</script>
+</body>
+<!-- #EndTemplate -->
+</html>

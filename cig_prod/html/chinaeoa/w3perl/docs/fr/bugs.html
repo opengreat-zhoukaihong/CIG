@@ -1,0 +1,84 @@
+<HTML><head>
+<title>W3Perl - problemes connus - FR</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Probl&egrave;mes connus et limitations</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Bugs</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+<LI>Sur les syst&egrave;mes d'exploitation avec des <I><B>noms de fichiers de longueur limit&eacute;</B></I> (Mac, Win3.11 ou Archimedes), 
+vous ne pouvez pas utiliser le plus haut niveau de pr&eacute;cision possible qui est le 4.
+Sous Archimedes, il est possible d'utilisez !X-Files ou mieux !RaFS qui permet de contrer cette
+limitation.
+<P>
+<LI> Votre fichier de log doit contenir <I><B>au moins une requ&ecirc;te par semaine</B></I>. Si cela
+n'est pas le cas, il y aura des d&eacute;calages de date.
+<P>
+<LI> La correspondance d'URL peut dans certains cas ne pas fonctionner correctement dans le cas o&ugrave;
+les fichiers HTML contiennent certaines horreurs (Bill, apprends le HTML stp !). Les r&eacute;pertoires
+des utilisateurs ne sont pas toujours scann&eacute;s par le script (&agrave; corriger)
+<P>
+<LI> Le suivi des liens symboliques ne fonctionnent que dans certains cas (&agrave; corriger).
+<P>
+<LI> Les stats incrementales ne sont pas calcul&eacute;es lorsqu'on utilise un fichier de log
+compr&eacute;ss&eacute; r&eacute;initialis&eacute; &agrave; chaque d&eacute;but de mois
+(corrig&eacute; pour cron-inc).
+<P>
+<!-- None as I'm killing them as soon as I'm aware of them ! ;) <BR> -->
+Si vous trouvez un bug, merci de m'envoyer les informations suivantes :
+<OL>
+<LI> L'URL de w3perl
+<LI> La version de W3Perl
+<LI> Quel est le script en cause et sa version (cron-xxx.pl -v)
+<LI> Votre fichier config.pl
+<LI> Le nom de votre serveur et son syst&egrave;me d'exploitation
+<LI> La sortie du script
+</OL>
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Limitations</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+<LI> W3Perl n'est pas compl&eacute;ment optimis&eacute; pour l'utilisation de fichiers de log journaliers.
+Mais je connais au moins un serveur qui utilise w3perl dans ce contexte sans probl&egrave;me.
+Voir la documentation sur les <A HREF="logfile.html">fichiers de log</A> pour savoir
+comment utiliser w3perl dans un tel cas.
+<P>
+<LI> W3Perl s'arr&ecirc;te si le format de la date courante n'est pas en anglais (solution : export LANG="eng" ou setenv LANG eng)
+<P>
+<LI> W3Perl produit des trous dans les pages sur les stats sur les pays.<br>
+  Mettez &agrave; jour le fichier pays-conv pour y ajouter de <A HREF="http://itl5.itlnet.com/isocodes.htm">nouveaux pays</A>.
+<P>
+<LI> W3Perl ne peut pas effectuer de stats sur plus de <I><B>120 fichiers de log compr&eacute;ss&eacute;s ou 10 ans</B></I> de log.
+Si vous utilisez un serveur web depuis plus de 10 ans, pr&eacute;venez moi !
+<P>
+
+N'h&eacute;sitez pas &agrave; <A HREF="mailto:domisse@w3perl.com?subject='w3perl bug report'">m'envoyer</A> les probl&egrave;mes
+que vous avez pu rencontrer.... y compris mes fautes d'ortographes !
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="/chinaeoa/index.jsp"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

@@ -1,0 +1,409 @@
+Context log: path="/examples" Adding context path="/examples"  docBase="webapps/examples"
+Context log: path="" Adding context path=""  docBase="webapps/ROOT"
+Context log: path="/test" Adding context path="/test"  docBase="webapps/test"
+Context log: path="/forbrand" Adding context path="/forbrand"  docBase="/usr/local/tomcat/webapps/forbrand"
+Starting tomcat install="/usr/local/tomcat" home="/usr/local/jakarta-tomcat" classPath=".:/usr/local/tomcat/lib/ant.jar:/usr/local/tomcat/lib/jasper.jar:/usr/local/tomcat/lib/servlet.jar:/usr/local/tomcat/lib/test:/usr/local/tomcat/lib/webserver.jar:/usr/local/tomcat/lib/xml.jar:/usr/local/jdk/lib/tools.jar:/usr/local/jdk/lib/tools.jar:/usr/local/jdk/lib/classes12.zip:/usr/local/j2ee/lib/j2ee.jar:/usr/local/tomcat/webapps/forbrand/WEB-INF/classes:."
+Context log: path="/admin" Automatic context load docBase="/usr/local/jakarta-tomcat/webapps/admin"
+Context log: path="/admin" Adding context path="/admin"  docBase="/usr/local/jakarta-tomcat/webapps/admin"
+Starting endpoint port="8080" handler="org.apache.tomcat.service.http.HttpConnectionHandler" 
+Starting endpoint port="8007" handler="org.apache.tomcat.service.connector.Ajp12ConnectionHandler" 
+Context log: path="/forbrand" Error in jsp service() : System busy or updating, please retry after a while...
+ javax.servlet.ServletException: System busy or updating, please retry after a while...
+	at org.apache.jasper.runtime.PageContextImpl.handlePageException(PageContextImpl.java:386)
+	at _0002fregaccess_0002ejspregaccess_jsp_0._jspService(_0002fregaccess_0002ejspregaccess_jsp_0.java:116)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java:503)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Thread.java:475)
+Context log: path="/forbrand" <b>Internal Servlet Error:</b><br>
+<pre>
+javax.servlet.ServletException: System busy or updating, please retry after a while...
+	at org.apache.jasper.runtime.PageContextImpl.handlePageException(PageContextImpl.java:386)
+	at _0002fregaccess_0002ejspregaccess_jsp_0._jspService(_0002fregaccess_0002ejspregaccess_jsp_0.java:116)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java:503)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Thread.java:475)
+</pre>
+<b>Root cause:</b>
+<pre>
+com.forbrand.member.LoginException: System busy or updating, please retry after a while...
+	at com.forbrand.member.LoginBean.insertNewUser(LoginBean.java:378)
+	at _0002fregaccess_0002ejspregaccess_jsp_0._jspService(_0002fregaccess_0002ejspregaccess_jsp_0.java:95)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java:503)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Thread.java:475)
+</pre>
+
+Context log: path="/forbrand" Error in jsp service() : System busy or updating, please retry after a while...
+ javax.servlet.ServletException: System busy or updating, please retry after a while...
+	at org.apache.jasper.runtime.PageContextImpl.handlePageException(PageContextImpl.java:386)
+	at _0002fregaccess_0002ejspregaccess_jsp_0._jspService(_0002fregaccess_0002ejspregaccess_jsp_0.java:116)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java:503)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Thread.java:475)
+Context log: path="/forbrand" <b>Internal Servlet Error:</b><br>
+<pre>
+javax.servlet.ServletException: System busy or updating, please retry after a while...
+	at org.apache.jasper.runtime.PageContextImpl.handlePageException(PageContextImpl.java:386)
+	at _0002fregaccess_0002ejspregaccess_jsp_0._jspService(_0002fregaccess_0002ejspregaccess_jsp_0.java:116)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java:503)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Thread.java:475)
+</pre>
+<b>Root cause:</b>
+<pre>
+com.forbrand.member.LoginException: System busy or updating, please retry after a while...
+	at com.forbrand.member.LoginBean.insertNewUser(LoginBean.java:378)
+	at _0002fregaccess_0002ejspregaccess_jsp_0._jspService(_0002fregaccess_0002ejspregaccess_jsp_0.java:95)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java:503)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Thread.java:475)
+</pre>
+
+Context log: path="/forbrand" Error in jsp service() : System busy or updating, please retry after a while...
+ javax.servlet.ServletException: System busy or updating, please retry after a while...
+	at org.apache.jasper.runtime.PageContextImpl.handlePageException(PageContextImpl.java:386)
+	at _0002fregaccess_0002ejspregaccess_jsp_0._jspService(_0002fregaccess_0002ejspregaccess_jsp_0.java:116)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java:503)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Thread.java:475)
+Context log: path="/forbrand" <b>Internal Servlet Error:</b><br>
+<pre>
+javax.servlet.ServletException: System busy or updating, please retry after a while...
+	at org.apache.jasper.runtime.PageContextImpl.handlePageException(PageContextImpl.java:386)
+	at _0002fregaccess_0002ejspregaccess_jsp_0._jspService(_0002fregaccess_0002ejspregaccess_jsp_0.java:116)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java:503)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Thread.java:475)
+</pre>
+<b>Root cause:</b>
+<pre>
+com.forbrand.member.LoginException: System busy or updating, please retry after a while...
+	at com.forbrand.member.LoginBean.insertNewUser(LoginBean.java:378)
+	at _0002fregaccess_0002ejspregaccess_jsp_0._jspService(_0002fregaccess_0002ejspregaccess_jsp_0.java:95)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java:503)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Thread.java:475)
+</pre>
+
+Context log: path="/forbrand" Error in jsp service() : Response has already been committed
+ java.lang.IllegalStateException: Response has already been committed
+	at org.apache.tomcat.core.HttpServletResponseFacade.sendError(HttpServletResponseFacade.java:157)
+	at org.apache.jasper.runtime.JspServlet.unknownException(JspServlet.java:299)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java:377)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java:503)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Thread.java:475)
+Context log: path="/forbrand" <b>Internal Servlet Error:</b><br>
+<pre>
+java.lang.IllegalStateException: Response has already been committed
+	at org.apache.tomcat.core.HttpServletResponseFacade.sendError(HttpServletResponseFacade.java:157)
+	at org.apache.jasper.runtime.JspServlet.unknownException(JspServlet.java:299)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java:377)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java:503)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Thread.java:475)
+</pre>
+
+Context log: path="/forbrand" Error in jsp service() : Response has already been committed
+ java.lang.IllegalStateException: Response has already been committed
+	at org.apache.tomcat.core.HttpServletResponseFacade.sendError(HttpServletResponseFacade.java:157)
+	at org.apache.jasper.runtime.JspServlet.unknownException(JspServlet.java:299)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java:377)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java:503)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Thread.java:475)
+Context log: path="/forbrand" <b>Internal Servlet Error:</b><br>
+<pre>
+java.lang.IllegalStateException: Response has already been committed
+	at org.apache.tomcat.core.HttpServletResponseFacade.sendError(HttpServletResponseFacade.java:157)
+	at org.apache.jasper.runtime.JspServlet.unknownException(JspServlet.java:299)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java:377)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java:503)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Thread.java:475)
+</pre>
+
+Context log: path="/forbrand" Error in jsp service() : System busy or updating, please retry after a while...
+ javax.servlet.ServletException: System busy or updating, please retry after a while...
+	at org.apache.jasper.runtime.PageContextImpl.handlePageException(PageContextImpl.java:386)
+	at login._0002flogin_0002fregaccess_0002ejspregaccess_jsp_0._jspService(_0002flogin_0002fregaccess_0002ejspregaccess_jsp_0.java:118)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java:503)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Thread.java:475)
+Context log: path="/forbrand" <b>Internal Servlet Error:</b><br>
+<pre>
+javax.servlet.ServletException: System busy or updating, please retry after a while...
+	at org.apache.jasper.runtime.PageContextImpl.handlePageException(PageContextImpl.java:386)
+	at login._0002flogin_0002fregaccess_0002ejspregaccess_jsp_0._jspService(_0002flogin_0002fregaccess_0002ejspregaccess_jsp_0.java:118)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java:503)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Thread.java:475)
+</pre>
+<b>Root cause:</b>
+<pre>
+com.forbrand.member.LoginException: System busy or updating, please retry after a while...
+	at com.forbrand.member.LoginBean.insertNewUser(LoginBean.java:378)
+	at login._0002flogin_0002fregaccess_0002ejspregaccess_jsp_0._jspService(_0002flogin_0002fregaccess_0002ejspregaccess_jsp_0.java:97)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java:503)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Thread.java:475)
+</pre>
+
+Context log: path="/forbrand" Error in jsp service() : System busy or updating, please retry after a while...
+ javax.servlet.ServletException: System busy or updating, please retry after a while...
+	at org.apache.jasper.runtime.PageContextImpl.handlePageException(PageContextImpl.java:386)
+	at login._0002flogin_0002fregaccess_0002ejspregaccess_jsp_1._jspService(_0002flogin_0002fregaccess_0002ejspregaccess_jsp_1.java:118)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java:503)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Thread.java:475)
+Context log: path="/forbrand" <b>Internal Servlet Error:</b><br>
+<pre>
+javax.servlet.ServletException: System busy or updating, please retry after a while...
+	at org.apache.jasper.runtime.PageContextImpl.handlePageException(PageContextImpl.java:386)
+	at login._0002flogin_0002fregaccess_0002ejspregaccess_jsp_1._jspService(_0002flogin_0002fregaccess_0002ejspregaccess_jsp_1.java:118)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java:503)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Thread.java:475)
+</pre>
+<b>Root cause:</b>
+<pre>
+com.forbrand.member.LoginException: System busy or updating, please retry after a while...
+	at com.forbrand.member.LoginBean.insertNewUser(LoginBean.java:378)
+	at login._0002flogin_0002fregaccess_0002ejspregaccess_jsp_1._jspService(_0002flogin_0002fregaccess_0002ejspregaccess_jsp_1.java:97)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java:503)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Thread.java:475)
+</pre>
+
+Context log: path="/forbrand" Error in jsp service() : System busy or updating, please retry after a while...
+ javax.servlet.ServletException: System busy or updating, please retry after a while...
+	at org.apache.jasper.runtime.PageContextImpl.handlePageException(PageContextImpl.java:386)
+	at login._0002flogin_0002fregaccess_0002ejspregaccess_jsp_1._jspService(_0002flogin_0002fregaccess_0002ejspregaccess_jsp_1.java:118)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java:503)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Thread.java:475)
+Context log: path="/forbrand" <b>Internal Servlet Error:</b><br>
+<pre>
+javax.servlet.ServletException: System busy or updating, please retry after a while...
+	at org.apache.jasper.runtime.PageContextImpl.handlePageException(PageContextImpl.java:386)
+	at login._0002flogin_0002fregaccess_0002ejspregaccess_jsp_1._jspService(_0002flogin_0002fregaccess_0002ejspregaccess_jsp_1.java:118)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java:503)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Thread.java:475)
+</pre>
+<b>Root cause:</b>
+<pre>
+com.forbrand.member.LoginException: System busy or updating, please retry after a while...
+	at com.forbrand.member.LoginBean.insertNewUser(LoginBean.java:378)
+	at login._0002flogin_0002fregaccess_0002ejspregaccess_jsp_1._jspService(_0002flogin_0002fregaccess_0002ejspregaccess_jsp_1.java:97)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java:503)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Thread.java:475)
+</pre>
+
+Context log: path="/forbrand" Error in jsp service() : System busy or updating, please retry after a while...
+ javax.servlet.ServletException: System busy or updating, please retry after a while...
+	at org.apache.jasper.runtime.PageContextImpl.handlePageException(PageContextImpl.java:386)
+	at login._0002flogin_0002fregaccess_0002ejspregaccess_jsp_1._jspService(_0002flogin_0002fregaccess_0002ejspregaccess_jsp_1.java:118)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java:503)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Thread.java:475)
+Context log: path="/forbrand" <b>Internal Servlet Error:</b><br>
+<pre>
+javax.servlet.ServletException: System busy or updating, please retry after a while...
+	at org.apache.jasper.runtime.PageContextImpl.handlePageException(PageContextImpl.java:386)
+	at login._0002flogin_0002fregaccess_0002ejspregaccess_jsp_1._jspService(_0002flogin_0002fregaccess_0002ejspregaccess_jsp_1.java:118)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java:503)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Thread.java:475)
+</pre>
+<b>Root cause:</b>
+<pre>
+com.forbrand.member.LoginException: System busy or updating, please retry after a while...
+	at com.forbrand.member.LoginBean.insertNewUser(LoginBean.java:378)
+	at login._0002flogin_0002fregaccess_0002ejspregaccess_jsp_1._jspService(_0002flogin_0002fregaccess_0002ejspregaccess_jsp_1.java:97)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java:369)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java:503)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Thread.java:475)
+</pre>
+

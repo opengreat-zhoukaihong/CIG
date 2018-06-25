@@ -1,0 +1,234 @@
+<html>
+<head>
+<title>CNHotelBooking.com后台管理工具</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.font9 {  font-size: 9pt; color: #FF8000; font-weight: normal}
+.font12 {  font-size: 12pt; color: #FF8000; font-weight: bold}
+        A:link {text-decoration: none; font-family: "宋体"}
+        A:visited {text-decoration: none; font-family: "宋体"}
+        A:active {text-decoration: none; font-family: "宋体"}
+        A:hover {text-decoration: underline; color: #FFCC33}
+-->
+</style>
+</head>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var wStr
+function PostForm(I)
+{
+  if ( I ==3)
+  {
+	wStr = "";
+	for (j=0;j<fmHotelResult.elements.length;++j)
+	{ 
+	  if (fmHotelResult.elements[j].type == "checkbox")
+	  {
+        if (fmHotelResult.elements[j].checked == true)
+        {
+          wStr = wStr + "'" + fmHotelResult.elements[j].value + "',"; 
+        }
+      }
+    }
+    //alert(wStr + "'0'");
+    if (wStr == "")
+    {
+      alert ("请选择删除的记录!");
+      return;
+    }
+    wStr = wStr + "'0'";
+    fmHotelResult.method="post";
+    fmHotelResult.action = "/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstDelRow?TableName=Hotel_gb&ID=" + wStr;
+    fmHotelResult.submit();
+  }
+  else if ( I == 1)
+  {
+    fmHotelResult.action = "/cnhotel/bst/hotel_search_result.jsp?PageFlag=PREV";
+    fmHotelResult.submit();
+  }
+  else if ( I == 2)
+  {
+    fmHotelResult.action = "/cnhotel/bst/hotel_search_result.jsp?PageFlag=NEXT";
+    fmHotelResult.submit();
+  }
+  
+}
+
+//-->
+</SCRIPT>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<span class="font9"></span> <span class="font9"></span>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="54">&nbsp; </td>
+    <td width="407">
+      <form name=fmHotelResult method="post" action="">
+        <table width="460" border="0" cellspacing="2" cellpadding="5" height="40">
+          <tr>
+            <td class="font12">酒店查询结果</td>
+          </tr>
+        </table>
+        <table width="460" border="1" cellspacing="2" cellpadding="5" bordercolorlight="#f9c026" bordercolordark="#FFFFFF">
+<tr> 
+            <td width="10%" class="font9"> 
+              <div align="center">ID</div>
+            </td>
+            <td width="16%" class="font9"> 
+              <div align="center">酒店名称</div>
+            </td>
+            <td width="22%" class="font9"> 
+              <div align="center">星级</div>
+            </td>
+            <td width="10%" class="font9"> 
+              <div align="center">城市</div>
+            </td>
+            <td width="10%" class="font9"> 
+              <div align="center">联系人</div>
+            </td>
+            <td width="16%" class="font9"> 
+              <div align="center">电话</div>
+            </td>
+            <td width="16%" class="font9"> 
+              <div align="center">地图序号</div>
+            </td>
+          </tr>
+ <tr> 
+            <td width="10%" class="font9"> 
+              <div align="center"><a href="hotelprofile_modify.jsp?ID=604" class="font9">
+                <input type="checkbox" name="ckID" value="604">
+604</a></div>
+            </td>
+            <td width="16%" class="font9"> 
+              <div align="center"><a href="hotelprofile_modify.jsp?ID=604" class="font9">投资大厦宾馆</a></div>
+            </td>
+            <td width="22%" class="font9"> 
+              <div align="center">☆☆☆</div>
+            </td>
+            <td width="10%" class="font9"> 
+              <div align="center">深圳</div>
+            </td>
+            <td width="10%" class="font9"> 
+              <div align="center">&nbsp;</div>
+            </td>
+            <td width="16%" class="font9"> 
+              <div align="center">0755-2712988</div>
+            </td>
+            <td width="16%" class="font9"> 
+              <div align="center">暂无地图</div>
+            </td>
+          </tr>
+ <tr> 
+            <td width="10%" class="font9"> 
+              <div align="center"><a href="hotelprofile_modify.jsp?ID=665" class="font9">
+                <input type="checkbox" name="ckID" value="665">
+665</a></div>
+            </td>
+            <td width="16%" class="font9"> 
+              <div align="center"><a href="hotelprofile_modify.jsp?ID=665" class="font9">富临大酒店</a></div>
+            </td>
+            <td width="22%" class="font9"> 
+              <div align="center">☆☆☆☆☆</div>
+            </td>
+            <td width="10%" class="font9"> 
+              <div align="center">深圳</div>
+            </td>
+            <td width="10%" class="font9"> 
+              <div align="center">&nbsp;</div>
+            </td>
+            <td width="16%" class="font9"> 
+              <div align="center">0755-5586333 </div>
+            </td>
+            <td width="16%" class="font9"> 
+              <div align="center"><a href="hotelmapsno_modify.jsp?ID=665" class="font9">输入序号</a></div>
+            </td>
+          </tr>
+ <tr> 
+            <td width="10%" class="font9"> 
+              <div align="center"><a href="hotelprofile_modify.jsp?ID=666" class="font9">
+                <input type="checkbox" name="ckID" value="666">
+666</a></div>
+            </td>
+            <td width="16%" class="font9"> 
+              <div align="center"><a href="hotelprofile_modify.jsp?ID=666" class="font9">富苑酒店</a></div>
+            </td>
+            <td width="22%" class="font9"> 
+              <div align="center">☆☆☆☆☆</div>
+            </td>
+            <td width="10%" class="font9"> 
+              <div align="center">深圳</div>
+            </td>
+            <td width="10%" class="font9"> 
+              <div align="center">&nbsp;</div>
+            </td>
+            <td width="16%" class="font9"> 
+              <div align="center">0755-2172288 </div>
+            </td>
+            <td width="16%" class="font9"> 
+              <div align="center"><a href="hotelmapsno_modify.jsp?ID=666" class="font9">输入序号</a></div>
+            </td>
+          </tr>
+ <tr> 
+            <td width="10%" class="font9"> 
+              <div align="center"><a href="hotelprofile_modify.jsp?ID=667" class="font9">
+                <input type="checkbox" name="ckID" value="667">
+667</a></div>
+            </td>
+            <td width="16%" class="font9"> 
+              <div align="center"><a href="hotelprofile_modify.jsp?ID=667" class="font9">骏豪酒店</a></div>
+            </td>
+            <td width="22%" class="font9"> 
+              <div align="center">☆☆☆☆☆</div>
+            </td>
+            <td width="10%" class="font9"> 
+              <div align="center">深圳</div>
+            </td>
+            <td width="10%" class="font9"> 
+              <div align="center">&nbsp;</div>
+            </td>
+            <td width="16%" class="font9"> 
+              <div align="center">0755-8020888  </div>
+            </td>
+            <td width="16%" class="font9"> 
+              <div align="center"><a href="hotelmapsno_modify.jsp?ID=667" class="font9">输入序号</a></div>
+            </td>
+          </tr>
+ <tr> 
+            <td width="10%" class="font9"> 
+              <div align="center"><a href="hotelprofile_modify.jsp?ID=668" class="font9">
+                <input type="checkbox" name="ckID" value="668">
+668</a></div>
+            </td>
+            <td width="16%" class="font9"> 
+              <div align="center"><a href="hotelprofile_modify.jsp?ID=668" class="font9">南海酒店</a></div>
+            </td>
+            <td width="22%" class="font9"> 
+              <div align="center">☆☆☆☆☆</div>
+            </td>
+            <td width="10%" class="font9"> 
+              <div align="center">深圳</div>
+            </td>
+            <td width="10%" class="font9"> 
+              <div align="center">&nbsp;</div>
+            </td>
+            <td width="16%" class="font9"> 
+              <div align="center">0755-6692888</div>
+            </td>
+            <td width="16%" class="font9"> 
+              <div align="center"><a href="hotelmapsno_modify.jsp?ID=668" class="font9">输入序号</a></div>
+            </td>
+          </tr>
+<tr align="center"> 
+                  <td class="font9" colspan="7">
+<a href="javascript:PostForm(2)"><img src="images/botton_next.gif" width="68" height="26" border="0"></a>
+<img src="images/dot.gif" width="50" height="1">
+<a href="javascript:PostForm(3)"><img src="images/deltree.gif" width="68" height="26" border="0"></a></td>
+                </tr>
+
+        </table>
+      </form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

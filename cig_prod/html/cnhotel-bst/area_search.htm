@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>CNHotelBooking.com后台管理工具</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.font9 {  font-size: 9pt; color: #FF8000; font-weight: normal}
+.font12 {  font-size: 12pt; color: #FF8000; font-weight: bold}
+-->
+</style>
+</head>
+
+<SCRIPT LANGUAGE=javascript>
+<!--
+
+function PostForm(I)
+{
+ if (I==1)
+ { 
+   if (fmAreaSearch.txtID.value == "")
+   {
+	 alert("请输入地区编号!");
+	 return;
+   }
+   fmAreaSearch.txtArea.value = "";
+   //fmAreaSearch.action = "cnhotel/bst/area_search_result.jsp";
+ }
+ else
+ {
+   if (fmAreaSearch.txtArea.value == "")
+   {
+	 alert("请输入地区名称!");
+	 return;
+   }
+   fmAreaSearch.txtID.value = "";
+   //fmAreaSearch.action = "cnhotel/bst/area_search_result.jsp"; 
+ }
+ fmAreaSearch.submit();
+}
+//-->
+</SCRIPT>
+
+<body bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<span class="font9"></span> <span class="font9"></span> 
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="93">&nbsp; </td>
+    <td width="413"> 
+      <form name=fmAreaSearch method="Post" action="cnhotel/bst/area_search_result.jsp">
+        <table width="400" border="0" cellspacing="2" cellpadding="5" height="40">
+          <tr> 
+            <td class="font12">区域查询</td>
+          </tr>
+        </table>
+        <table width="400" border="1" cellspacing="2" cellpadding="5" bordercolorlight="#f9c026" bordercolordark="#ffffff">
+          <tr> 
+            <td class="font9" width="100">按地区编号查询：</td>
+            <td> 
+              <input name="txtID" size="30" 
+           >
+            </td>
+          </tr>
+          <tr align="middle"> 
+            <td colspan="2"> <a href="JavaScript:PostForm(1)"><img border=0 height=26 src="images/botton_search.gif" width=68></a></td>
+          </tr>
+          <tr> 
+            <td class="font9" width="100">按地区名称查询：</td>
+            <td> 
+              <input name="txtArea" size="30" 
+           >
+            </td>
+          </tr>
+          <tr align="middle"> 
+            <td colspan="2"><A href="JavaScript:PostForm(2)"><IMG border=0 height=26 src="images/botton_search.gif" width=68></a></td>
+          </tr>
+        </table>
+      </form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

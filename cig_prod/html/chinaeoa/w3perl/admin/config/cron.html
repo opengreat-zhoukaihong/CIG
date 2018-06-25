@@ -1,0 +1,264 @@
+<HTML><head>
+<title>W3Perl Forms- Scheduler</TITLE>
+</head>
+
+<BODY BACKGROUND="<!-- BG -->" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<FORM METHOD=POST ACTION="/cgi-bin/w3perl/schedule.pl">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="<!-- LINE -->" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Scheduler</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD ALIGN=CENTER VALIGN=TOP>
+ </TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD>
+<P><HR ALIGN=CENTER WIDTH=30%><P>
+You have already run cron-pages.pl and the output is the way you like.
+Time now to see how to launch the scripts each night.
+<P>
+<I>Hourly or daily crontab use</I>
+<P>
+If you want to have stats updated each hour, you'll need to launch your
+crontab every hour. If you select to run only once a day your hourly
+stats (midnight is best), then your crontab need to be run only once
+a day.
+<P>
+<I>Multiple web server</I>
+<P>
+If you need to run stats over multiple server, don't run everything at the
+same time ! For example, run the first scheduler for your first webserver 
+at 00 h 10, the second ten minutes later and so on.
+
+<P><HR ALIGN=CENTER WIDTH=30%><P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Modification</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+
+Other stats package running :<P>
+<!-- DISPLAY -->
+<BR>(Display config + crontab)
+(select one if you want to modify it)
+<P>
+<INPUT NAME="toto" TYPE="radio" VALUE="modify"> Please confirm that further operation will apply to your selection 
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Config</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+Select the configuration file you want to use :
+(ne pas afficher ceux deja utilise)
+</TD>
+</TR>
+
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Time</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+Scripts should be launch at :
+
+<INPUT NAME="scripthourap" TYPE="radio" VALUE="0" CHECKED> am
+<INPUT NAME="scripthourap" TYPE="radio" VALUE="12"> pm
+<BR>
+Hour : 
+<SELECT NAME="scriptlaunchhour">
+<OPTION SELECTED>12 h
+<OPTION>1 h
+<OPTION>2 h
+<OPTION>3 h
+<OPTION>4 h
+<OPTION>5 h
+<OPTION>6 h
+<OPTION>7 h
+<OPTION>8 h
+<OPTION>9 h
+<OPTION>10 h
+<OPTION>11 h
+</SELECT>
+Minutes : 
+<SELECT NAME="scriptlaunchminute">
+<OPTION SELECTED>00 min
+<OPTION>05 min
+<OPTION>10 min
+<OPTION>15 min
+<OPTION>20 min
+<OPTION>25 min
+<OPTION>30 min
+<OPTION>35 min
+<OPTION>40 min
+<OPTION>45 min
+<OPTION>50 min
+<OPTION>55 min
+</SELECT>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Scripts</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+<P>
+
+<TABLE><TR><TD>
+
+<INPUT NAME="inc" TYPE="radio" VALUE="inc" CHECKED>
+Incremental stats
+
+</TD><TD>
+
+<SELECT NAME="incday">
+<OPTION SELECTED>Every day
+<OPTION>every 2 days
+<OPTION>every 3 days
+<OPTION>every 4 days
+<OPTION>every 5 days
+<OPTION>every 6 days
+<OPTION>once a week
+</SELECT>
+
+</TD><TD></TD>
+</TR><TR><TD>
+
+<INPUT NAME="hour" TYPE="radio" VALUE="hour" CHECKED>
+Hourly stats
+
+</TD><TD>
+
+<SELECT NAME="hourhour">
+<OPTION SELECTED>Once a day
+<OPTION>Every hour
+<OPTION>twice a day
+<OPTION>three times a day
+<OPTION>four times a day
+<OPTION>five times a day
+</SELECT>
+
+</TD><TD></TD></TR>
+<TR><TD>
+
+<INPUT NAME="day" TYPE="radio" VALUE="day" CHECKED>
+Daily stats
+
+</TD><TD>
+
+<SELECT NAME="dayday">
+<OPTION SELECTED>Every day
+<OPTION>every 2 days
+<OPTION>every 3 days
+<OPTION>every 4 days
+<OPTION>every 5 days
+<OPTION>every 6 days
+<OPTION>once a week
+</SELECT>
+
+</TD><TD></TD></TR>
+<TR><TD>
+
+<INPUT NAME="week" TYPE="radio" VALUE="week" CHECKED>
+Weekly stats
+
+</TD><TD>
+
+<SELECT NAME="weekday">
+<OPTION SELECTED>Every week
+<OPTION>every 2 weeks
+<OPTION>every 3 weeks
+<OPTION>every 4 weeks
+</SELECT>
+
+</TD><TD>
+
+<SELECT NAME="weekdow">
+<OPTION SELECTED>Monday
+<OPTION>Tuesday
+<OPTION>Wednesday
+<OPTION>Thrusday
+<OPTION>Friday
+<OPTION>Saturday
+<OPTION>Sunday
+</SELECT>
+
+</TD></TR>
+<TR><TD>
+
+<INPUT NAME="month" TYPE="radio" VALUE="month" CHECKED>
+Monthly stats
+
+</TD><TD>
+
+<SELECT NAME="monthday">
+<OPTION SELECTED>Every month
+<OPTION>every 2 months
+<OPTION>every 3 months
+</SELECT>
+
+</TD><TD></TD></TR>
+
+<TR><TD>
+
+<INPUT NAME="month" TYPE="radio" VALUE="month" CHECKED>
+Error stats
+
+</TD><TD>
+
+<SELECT NAME="errorday">
+<OPTION SELECTED>Every day
+<OPTION>every 2 days
+<OPTION>every 3 days
+<OPTION>every 4 days
+<OPTION>every 5 days
+<OPTION>every 6 days
+<OPTION>once a week
+</SELECT>
+
+</TD><TD>
+
+<SELECT NAME="errordow">
+<OPTION SELECTED>Monday
+<OPTION>Tuesday
+<OPTION>Wednesday
+<OPTION>Thrusday
+<OPTION>Friday
+<OPTION>Saturday
+<OPTION>Sunday
+</SELECT>
+
+</TD></TR>
+
+
+</TABLE>
+
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD>
+<P><HR ALIGN=CENTER WIDTH=30%><P>
+<CENTER>
+<INPUT TYPE="SUBMIT" VALUE="Submit">
+<INPUT TYPE="RESET" VALUE="Reset">
+</CENTER>
+</TD>
+
+</TR>
+</TABLE>
+
+</FORM>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+.font0 {
+	FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 9px; FONT-WEIGHT: normal
+}
+.font1 {
+	FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 12px
+}
+.font2 {
+	FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 13px
+}
+.font3 {
+	FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 14px
+}
+.font4 {
+	FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 16px
+}
+.font5 {
+	FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 18px
+}
+.font6 {
+	FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 22px
+}
+.font1b {
+	FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.font2b {
+	COLOR: #000066; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 13px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.font3b {
+	COLOR: #000066; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.font4b {
+	COLOR: #000066; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 16px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.font5b {
+	COLOR: #000066; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 18px; FONT-WEIGHT: bold
+}
+.font6b {
+	COLOR: #000066; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 22px; FONT-WEIGHT: bold
+}
+.block {
+	BACKGROUND-COLOR: #cccccc; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 12px
+}
+TD {
+	FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 12px
+}
+TD.px16 {
+	FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 12px; LINE-HEIGHT: 16px
+}
+A:link {
+	COLOR: #000000; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ff0000; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #000000; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000000; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+A.top:link {
+	COLOR: #000000; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.top:hover {
+	COLOR: #ff0000; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.top:active {
+	COLOR: #000000; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.top:visited {
+	COLOR: #000000; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.mail:link {
+	COLOR: #000000; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 9px; TEXT-DECORATION: none
+}
+A.mail:hover {
+	COLOR: #ff0000; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 9px; TEXT-DECORATION: none
+}
+A.mail:active {
+	COLOR: #000000; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 9px; TEXT-DECORATION: none
+}
+A.mail:visited {
+	COLOR: #000000; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 9px; TEXT-DECORATION: none
+}
+.atd {  font-size: 9pt}

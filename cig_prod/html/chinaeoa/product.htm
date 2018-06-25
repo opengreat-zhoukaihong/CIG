@@ -1,0 +1,243 @@
+<html>
+<head>
+<title>products</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script language="JavaScript">
+<!--
+function MM_timelineGoto(tmLnName, fNew, numGotos) { //v2.0
+  //Copyright 1997 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,lastKeyFr,propNum,theObj;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (numGotos != null)
+    if (tmLn.gotoCount == null) tmLn.gotoCount = 1;
+    else if (tmLn.gotoCount++ >= numGotos) {tmLn.gotoCount=0; return}
+  jmpFwd = (fNew > tmLn.curFrame);
+  for (i = 0; i < tmLn.length; i++) {
+    sprite = (jmpFwd)? tmLn[i] : tmLn[(tmLn.length-1)-i]; //count bkwds if jumping back
+    if (sprite.charAt(0) == "s") {
+      numKeyFr = sprite.keyFrames.length;
+      firstKeyFr = sprite.keyFrames[0];
+      lastKeyFr = sprite.keyFrames[numKeyFr - 1];
+      if ((jmpFwd && fNew<firstKeyFr) || (!jmpFwd && lastKeyFr<fNew)) continue; //skip if untouchd
+      for (keyFrm=1; keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]; keyFrm++);
+      for (j=0; j<sprite.values.length; j++) {
+        props = sprite.values[j];
+        if (numKeyFr == props.length) propNum = keyFrm-1 //keyframes only
+        else propNum = Math.min(Math.max(0,fNew-firstKeyFr),props.length-1); //or keep in legal range
+        if (sprite.obj != null) {
+          if (props.prop2 == null) sprite.obj[props.prop] = props[propNum];
+          else        sprite.obj[props.prop2][props.prop] = props[propNum];
+      } }
+    } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+  }
+  tmLn.curFrame = fNew;
+  if (tmLn.ID == 0) eval('MM_timelinePlay(tmLnName)');
+}
+
+function MM_timelinePlay(tmLnName, myID) { //v1.2
+  //Copyright 1997 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,propNum,theObj,firstTime=false;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (myID == null) { myID = ++tmLn.ID; firstTime=true;}//if new call, incr ID
+  if (myID == tmLn.ID) { //if Im newest
+    setTimeout('MM_timelinePlay("'+tmLnName+'",'+myID+')',tmLn.delay);
+    fNew = ++tmLn.curFrame;
+    for (i=0; i<tmLn.length; i++) {
+      sprite = tmLn[i];
+      if (sprite.charAt(0) == 's') {
+        if (sprite.obj) {
+          numKeyFr = sprite.keyFrames.length; firstKeyFr = sprite.keyFrames[0];
+          if (fNew >= firstKeyFr && fNew <= sprite.keyFrames[numKeyFr-1]) {//in range
+            keyFrm=1;
+            for (j=0; j<sprite.values.length; j++) {
+              props = sprite.values[j]; 
+              if (numKeyFr != props.length) {
+                if (props.prop2 == null) sprite.obj[props.prop] = props[fNew-firstKeyFr];
+                else        sprite.obj[props.prop2][props.prop] = props[fNew-firstKeyFr];
+              } else {
+                while (keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]) keyFrm++;
+                if (firstTime || fNew==sprite.keyFrames[keyFrm-1]) {
+                  if (props.prop2 == null) sprite.obj[props.prop] = props[keyFrm-1];
+                  else        sprite.obj[props.prop2][props.prop] = props[keyFrm-1];
+        } } } } }
+      } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+      if (fNew > tmLn.lastFrame) tmLn.ID = 0;
+  } }
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+
+function MM_jumpMenuGo(selName,targ,restore){ //v3.0
+  var selObj = MM_findObj(selName); if (selObj) MM_jumpMenu(targ,selObj,restore);
+}
+
+function MM_initTimelines() {
+    //MM_initTimelines() Copyright 1997 Macromedia, Inc. All rights reserved.
+    var ns = navigator.appName == "Netscape";
+    document.MM_Time = new Array(1);
+    document.MM_Time[0] = new Array(3);
+    document.MM_Time["Timeline1"] = document.MM_Time[0];
+    document.MM_Time[0].MM_Name = "Timeline1";
+    document.MM_Time[0].fps = 15;
+    document.MM_Time[0][0] = new String("sprite");
+    document.MM_Time[0][0].slot = 1;
+    if (ns)
+        document.MM_Time[0][0].obj = document["Layer3"];
+    else
+        document.MM_Time[0][0].obj = document.all ? document.all["Layer3"] : null;
+    document.MM_Time[0][0].keyFrames = new Array(1, 25);
+    document.MM_Time[0][0].values = new Array(5);
+    document.MM_Time[0][0].values[0] = new Array(10,14,18,23,27,31,35,39,43,48,52,56,60,64,68,73,77,81,85,89,93,98,102,106,110);
+    document.MM_Time[0][0].values[0].prop = "left";
+    document.MM_Time[0][0].values[1] = new Array(85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85);
+    document.MM_Time[0][0].values[1].prop = "top";
+    if (!ns) {
+        document.MM_Time[0][0].values[0].prop2 = "style";
+        document.MM_Time[0][0].values[1].prop2 = "style";
+    }
+    document.MM_Time[0][0].values[2] = new Array(170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170);
+    document.MM_Time[0][0].values[2].prop = "width";
+    if (!ns)
+        document.MM_Time[0][0].values[2].prop2 = "style";
+    document.MM_Time[0][0].values[3] = new Array(15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15);
+    document.MM_Time[0][0].values[3].prop = "height";
+    if (!ns)
+        document.MM_Time[0][0].values[3].prop2 = "style";
+    document.MM_Time[0][0].values[4] = new Array("6","3");
+    document.MM_Time[0][0].values[4].prop = "zIndex";
+    if (!ns)
+        document.MM_Time[0][0].values[4].prop2 = "style";
+    document.MM_Time[0][1] = new String("behavior");
+    document.MM_Time[0][1].frame = 50;
+    document.MM_Time[0][1].value = "MM_timelineGoto('Timeline1','1')";
+    document.MM_Time[0][2] = new String("sprite");
+    document.MM_Time[0][2].slot = 1;
+    if (ns)
+        document.MM_Time[0][2].obj = document["Layer3"];
+    else
+        document.MM_Time[0][2].obj = document.all ? document.all["Layer3"] : null;
+    document.MM_Time[0][2].keyFrames = new Array(26, 50);
+    document.MM_Time[0][2].values = new Array(3);
+    document.MM_Time[0][2].values[0] = new Array(110,106,102,98,93,89,85,81,77,73,68,64,60,56,52,48,43,39,35,31,27,23,18,14,10);
+    document.MM_Time[0][2].values[0].prop = "left";
+    document.MM_Time[0][2].values[1] = new Array(85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85);
+    document.MM_Time[0][2].values[1].prop = "top";
+    if (!ns) {
+        document.MM_Time[0][2].values[0].prop2 = "style";
+        document.MM_Time[0][2].values[1].prop2 = "style";
+    }
+    document.MM_Time[0][2].values[2] = new Array("3","3");
+    document.MM_Time[0][2].values[2].prop = "zIndex";
+    if (!ns)
+        document.MM_Time[0][2].values[2].prop2 = "style";
+    document.MM_Time[0].lastFrame = 50;
+    for (i=0; i<document.MM_Time.length; i++) {
+        document.MM_Time[i].ID = null;
+        document.MM_Time[i].curFrame = 0;
+        document.MM_Time[i].delay = 1000/document.MM_Time[i].fps;
+    }
+}
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" onLoad="MM_timelinePlay('Timeline1')">
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div id="Layer5" style="position:absolute; width:640px; height:80px; z-index:1; top: 0px; left: 0px"> 
+  <div id="Layer7" style="position:absolute; width:450px; height:80px; z-index:2; left: 0; top: 0"><img src="../orderonline/image/chinaeoa-barhigh.gif" width="450" height="80"></div>
+  <div id="Layer6" style="position:absolute; width:190px; height:50px; z-index:3; left: 450"><img src="../dealer/image/solution.gif" width="190" height="50"></div>
+  <div id="Layer8" style="position:absolute; width:505px; height:18px; z-index:4; left: 0; top: 50"><img src="image/navigation-product.gif" width="505" height="18" usemap="#Map2" border="0"><map name="Map2"><area shape="rect" coords="-10,3,46,15" href="../index.htm"><area shape="rect" coords="406,2,474,21" href="../aboutus/about.htm"><area shape="rect" coords="332,2,402,20" href="../news/news.htm"><area shape="rect" coords="259,2,328,15" href="../orderonline/order.htm"><area shape="rect" coords="197,2,253,17" href="../dealer/dealer.htm"><area shape="rect" coords="123,2,192,17" href="../register/login.htm"></map></div>
+  
+</div>
+<div id="Layer1" style="position: absolute; left: 575px; top: 50px; width: 65px; height: 55px; z-index: 6; background: #FFFFFF"> 
+  <table width="65" border="0" cellspacing="1" height="55" mm_noconvert="TRUE">
+    <tr> 
+      <td height="17" bgcolor="#99CCFF"> 
+        <div align="center"><font face="黑体" size="2" color="#333333"><a href="../orderonline/gwc_1.htm" target="_blank" onClick="MM_openBrWindow('../orderonline/gwc_1.htm','','width=730,height=400')">购物车</a></font></div>
+      </td>
+    </tr>
+    <tr bgcolor="#99ccff"> 
+      <td height="5"> 
+        <div align="center"><font face="黑体" size="2" color="#333333">订 单</font></div>
+      </td>
+    </tr>
+    <tr> 
+      <td bgcolor="#99CCFF"> 
+        <div align="center"><font face="黑体" size="2" color="#333333">帮 助</font></div>
+      </td>
+    </tr>
+  </table></div>
+<div id="Layer3" style="position: absolute; left: 10px; top: 85px; width: 170px; height: 15px; z-index: 6"> 
+  <p><font face="黑体" size="2" color="#006666">欢迎光临</font><font size="2" color="#006666"><font face="Arial, Helvetica, sans-serif">Chinaeoa</font></font><font face="黑体" size="2" color="#006666">产品中心</font> 
+  </p>
+</div>
+<div id="Layer10" style="position:absolute; width:640px; height:320px; z-index:1; left: 0px; top: 80px"><img src="image/production.gif" width="640" height="300" usemap="#Map" border="0"><map name="Map"><area shape="rect" coords="195,41,256,66" href="../orderonline/copier.htm"><area shape="rect" coords="140,72,197,95" href="../orderonline/printer.htm"><area shape="rect" coords="97,108,162,130" href="../orderonline/fax.htm"><area shape="rect" coords="97,166,165,190" href="../orderonline/scaner.htm"><area shape="rect" coords="131,209,190,232" href="category/supply/product-supply.htm"><area shape="rect" coords="179,238,249,264" href="category/parts/product-parts.htm"><area shape="rect" coords="471,153,507,167" href="brand/canon/product-canon.htm"><area shape="rect" coords="510,153,547,170" href="brand/xerox/product-xerox.htm"><area shape="rect" coords="548,173,583,189" href="brand/sharp/product-sharp.htm"><area shape="rect" coords="548,154,583,168" href="brand/ricoh/product-ricoh.htm"><area shape="rect" coords="587,154,621,168" href="brand/hp/product-hp.htm"><area shape="rect" coords="472,175,506,189" href="brand/toshiba/product-toshiba.htm"><area shape="rect" coords="511,175,545,189" href="brand/panasonic/product-panasonic.htm"><area shape="rect" coords="550,197,585,213" href="brand/mita/product-mita.htm"><area shape="rect" coords="510,196,548,211" href="brand/minolta/product-minolta.htm"></map></div>
+<div id="Layer9" style="position:absolute; width:120px; height:300px; z-index:8; left: 500px; top: 80px; visibility: hidden"> 
+  <div id="Layer11" style="position:absolute; width:60px; height:25px; z-index:1; left: 0px; top: 30px"><a href="../products/a"><img src="image/logo_canon.gif" width="60" height="25" border="0"></a></div>
+  <div id="Layer12" style="position:absolute; width:60px; height:25px; z-index:2; left: 0px; top: 60px"><a href="../products/b"><img src="image/logo_xeror.gif" width="60" height="25" border="0"></a></div>
+  <div id="Layer13" style="position:absolute; width:60px; height:25px; z-index:3; left: 0px; top: 90px"><a href="../products/c"><img src="image/logo_pana.gif" width="60" height="25" border="0"></a></div>
+  <div id="Layer14" style="position:absolute; width:60px; height:25px; z-index:4; left: 0; top: 120"><a href="../products/d"><img src="image/logo_ricoh.gif" width="60" height="25" border="0"></a></div>
+  <div id="Layer15" style="position:absolute; width:60px; height:25px; z-index:5; top: 150; left: 0"><a href="../products/e"><img src="image/logo_toshiba.gif" width="60" height="25" border="0"></a></div>
+  <div id="Layer16" style="position:absolute; width:60px; height:25px; z-index:6; top: 180; left: 0"><a href="../products/f"><img src="image/logo-brother.gif" width="60" height="25" border="0"></a></div>
+  <div id="Layer17" style="position:absolute; width:60px; height:25px; z-index:7; top: 210; left: 0"><a href="../products/g"><img src="image/logo-minolta.gif" width="60" height="25" border="0"></a></div>
+  <div id="Layer18" style="position:absolute; width:60px; height:25px; z-index:8; top: 240; left: 0"><a href="../products/h"><img src="image/logo-mita.gif" width="60" height="25" border="0"></a></div>
+  <div id="Layer19" style="position:absolute; width:60px; height:25px; z-index:9; top: 270; left: 0"><a href="../products/j"><img src="image/logo_hp.gif" width="60" height="25" border="0"></a></div>
+  <div id="Layer20" style="position:absolute; width:60px; height:25px; z-index:10; top: 270; left: 60"><a href="../products/k"><img src="image/logo-epson.gif" width="60" height="25" border="0"></a></div>
+</div>
+<div id="Layer21" style="position:absolute; width:281px; height:46px; z-index:9; left: 350px; top: 300px; background-color: #FFCC66; layer-background-color: #FFCC66; border: 1px none #000000"> 
+  <div id="Layer23" style="position:absolute; width:275px; height:40px; z-index:2; left: 3; top: 3; background-color: #605786; layer-background-color: #605786; border: 1px none #000000"> 
+    <div id="Layer22" style="position:absolute; width:90px; height:15px; z-index:1; top: 3; left: 5"><font color="#FFFFFF" size="2">快速查询商品</font></div>  
+    <div id="Layer24" style="position:absolute; width:80px; height:15px; z-index:2; left: 40; top: 18"> 
+      <select name="select2" size="1">
+        <option>HP</option>
+        <option>CANON</option>
+        <option>EPSON</option>
+        <option>XEROX</option>
+        <option>PANASONIC</option>
+        <option>SHARP</option>
+      </select>
+    </div>
+    <div id="Layer25" style="position:absolute; width:105px; height:20px; z-index:3; left: 165; top: 16"> 
+      <form name="form1">
+        <select name="menu2" onChange="MM_jumpMenu('parent',this,0)">
+          <option value="hp/1120c.htm">1120c</option>
+          <option value="hp/200cci.htm">200cci</option>
+          <option value="hp/610c.htm">610c</option>
+          <option value="hp/420c.htm">420c</option>
+          <option value="hp/670c.htm">670c</option>
+          <option value="hp/695cci.htm">695cci</option>
+        </select>
+        <input type="button" name="Button1" value="Go" onClick="MM_jumpMenuGo('menu2','parent',0)">
+      </form>
+    </div>
+    <div id="Layer26" style="position:absolute; width:30px; height:15px; z-index:4; left: 5; top: 20"><font face="黑体"><font color="#FFFFFF" size="2">品牌</font></font></div>
+    <div id="Layer27" style="position:absolute; width:30px; height:15px; z-index:5; left: 135; top: 20"><font face="黑体"><font color="#FFFFFF" size="2">型号</font></font></div>
+  </div>
+</div>
+</body>
+</html>

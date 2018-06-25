@@ -1,0 +1,169 @@
+<HTML><head>
+<title>W3Perl Description - FR</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1> Description de l'application</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD VALIGN=TOP>
+Le but de cette application est de produire des statistiques d'utilisation de
+votre serveur Web d'une mai&egrave;re simple et puissante. Pour cela, il est
+configurable &agrave; souhait.
+<P>
+Les informations sont dipos&eacute;es de mani&egrave;s textuelles et graphiques pour permettent une meilleures analyses des r&eacute;sultats.
+J'esp&egrave;re que cet outil vous permettra de rendre votre site Web encore
+plus performant et efficace.
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Caract&eacute;ristiques principales</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+<LI> Fichiers de sortie en <b>HTML</b>
+<LI> <b>Rapide</b> (fonctionne de mani&egrave;re incr&eacute;mentale)
+<LI> <b>R&eacute;ellement incr&eacute;mentale</b> (les relations entre variables sont sauvegard&eacute;es)
+<LI> <b>Multi-langage</b> (vous pouvez ajouter le votre facilement)
+<LI> Diff&eacute;rents types de sorties <b>graphiques et textuelles</b>
+<LI> Statistiques <b>heures par heures, journali&egrave;res, hebdomadaires et mensuelles</b>
+<LI> Statistiques sur les <b>pays, sites, pages, r&eacute;pertoires, domaines...</b>
+<LI> R&eacute;sultats <b>concis ou tr&egrave;s d&eacute;taill&eacute;es</b>
+<LI> Fichier de <b>configuration</b> par serveur (utilisez autant de fichiers de configuration que vous le voulez)
+<LI> Nombreuses options disponibles par <b>lignes de commandes</b>
+<LI> Fonctionne sur <b>tous les serveurs</B> que j'ai pu rencontr&eacute;s (Apache, NCSA, CERN, IIS, Netscape...)
+<LI> Fonctionne avec des fichiers de log au format <b>common, extended common, new extended ou IIS</b>
+
+<LI> <b>Pas d'acc&egrave;s root ou d'acc&egrave;s cgi-bin</b> n&eacute;cessaire. Peut &ecirc;tre utilis&eacute; depuis votre propre r&eacute;pertoire.
+<LI> Fonctionne avec des fichiers de log <b>compress&eacute;s</b> ou/et avec des fichiers de log <b>mensuels/quotidiens</B>
+<LI> Peut &ecirc;tre lan&ccedil;&eacute; chaque nuit de mani&egrave;re automatique par une <b>crontab</b>
+<LI> Traduction des URL grace aux <b>titres des documents HTML</b> 
+<LI> Statistiques sur les <B>r&eacute;f&eacute;rences et les fureteurs</B>
+<LI> Statistiques sur les <B>mots cl&eacute;s</B> utilis&eacute;s par les moteurs de recherche
+<LI> Statistiques sur les <B>erreurs</B>
+<LI> Statistiques sur les <B>scripts</B>
+<LI> Statistiques sur les <B>sessions</B>
+<LI> Statistiques sur les acc&egrave;s prot&eacute;g&eacute;s par <B>mot de passe</B>
+<LI> Statistiques sur votre <b>site Web</b> (arborescence, mauvais liens...)
+<LI> Fonctionne sur <B>tous types d'ordinateurs</B> (Unix, NT, Mac et Acorn test&eacute;s)
+<LI> Focntionne avec la <B>plupart des format de fichiers de logs</B> (vous pouvez en ajouter d'autres facilement)
+<LI> Support pour les <B>serveurs virtuels</B> dans les fichiers de log au format NECLF ou au format CLF et ECLF modifi&eacute;s
+<LI> Interface <B>d'adminstration &agrave; distance</B>
+<LI> Supporte les <B>noms de fichiers de log</B> quotidiens ou mensuels
+<LI> <B>Pas d'acc&egrave;s telnet</B> n&eacute;cessaire pour utiliser l'application
+<LI> <B>Statistiques journali&egrave;res</B> tr&egrave;s pr&eacute;cises.
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Structure</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+<P>
+Les derni&egrave;res versions de l'application stockent les informations dans
+des r&eacute;pertoires de la mani&egrave;re suivante :
+<P>
+<CENTER>
+<TABLE BORDER=1>
+<TR>
+<TD>data</TD>
+<TD>&nbsp;</TD>
+<TD><I>Structure temporelle</I></TD>
+</TR>
+<TR>
+<TD>graph</TD>
+<TD>&nbsp;</TD>
+<TD><I>Tous les graphes</I></TD>
+</TR>
+<TR>
+<TD>inc</TD>
+<TD>&nbsp;</TD>
+<TD><I>Donn&eacute;es incr&eacute;mentales</I></TD>
+</TR>
+<TR>
+<TD>tmp</TD>
+<TD>&nbsp;</TD>
+<TD><I>Utilis&eacute;s pour la g&eacute;n&eacute;ration des graphes</I></TD>
+</TR>
+<TR>
+<TD>uk</TD>
+<TD>date</TD>
+<TD><I>Pages HTML sur les dates</I></TD>
+</TR>
+<TR>
+<TD>&nbsp;</TD>
+<TD>days</TD>
+<TD><I>Pages HTML sur les jours</I></TD>
+</TR>
+<TR>
+<TD>&nbsp;</TD>
+<TD>document</TD>
+<TD><I>Pages HTML sur votre site Web</I></TD>
+</TR>
+<TR>
+<TD>&nbsp;</TD>
+<TD>frame</TD>
+<TD><I>Pages HTML pour les frames</I></TD>
+</TR>
+<TR>
+<TD>&nbsp;</TD>
+<TD>list</TD>
+<TD><I>Pages HTML sur les erreurs, fureteurs, r&eacute;f&eacute;rences et les r&eacute;pertoires</I></TD>
+</TR>
+<TR>
+<TD>&nbsp;</TD>
+<TD>page</TD>
+<TD><I>Pages HTML sur certaines pages</I></TD>
+</TR>
+<TR>
+<TD>&nbsp;</TD>
+<TD>pays</TD>
+<TD><I>Pages HTML sur les pays et les domaines</I></TD>
+</TR>
+<TR>
+<TD>&nbsp;</TD>
+<TD>session</TD>
+<TD><I>Pages HTML sur les sessions</I></TD>
+</TR>
+<TR>
+<TD>&nbsp;</TD>
+<TD>site</TD>
+<TD><I>Pages HTML sur les sites</I></TD>
+</TR>
+<TR>
+<TD>&nbsp;</TD>
+<TD>script</TD>
+<TD><I>Pages HTML sur les scripts</I></TD>
+</TR>
+</TABLE>
+</CENTER>
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="/chinaeoa/index.jsp"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

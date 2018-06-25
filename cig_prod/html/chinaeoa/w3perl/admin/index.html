@@ -1,0 +1,188 @@
+<HEAD>
+<TITLE>W3perl : Admin</TITLE>
+</HEAD>
+
+<BODY BACKGROUND="../docs/img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../docs/img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>W3Perl administration</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD VALIGN=TOP>
+<CENTER>
+<FONT SIZE=-1>
+Should be located in a restricted area
+<BR>
+<I>(Version 2.72)</I>
+</FONT>
+</CENTER>
+<BR>
+</TD>
+</TR>
+
+<TR>
+<TD WIDTH=120 ALIGN=LEFT VALIGN=TOP>
+<TABLE BORDER=1>
+<TR><TD>
+<FONT SIZE=+1><B>Config files</B></FONT>
+</TD></TR></TABLE>
+</TD>
+<TD>
+Before using this interface, you should have edit and run the install.pl script.
+<BR>
+Your first step will be to create a configuration file. 
+You can have
+several configuration files for one server or one configuration file for each
+of your server. This file have everything to customize your stats.
+
+
+<P>
+<TABLE WIDTH=100% CELLPADDING=5>
+<TR>
+<TD VALIGN=TOP>
+<CENTER><B><A HREF="/cgi-bin/w3perl/confstat.pl?action=BUILD&version=2.72">Make configuration files</A></B></CENTER>
+<P ALIGN=JUSTIFY>
+You could use as many configuration files as you need if you want to view different stats with the same logfile.
+<BR>
+The config file produced by the script should be allowed to be written in your install directory, so give permission to read, write in /config/.
+<BR>
+
+</TD>
+<TD VALIGN=TOP>
+<CENTER><B><A HREF="/cgi-bin/w3perl/confstat.pl?action=MODIFY&version=2.72">Modify configuration files</A></B></CENTER>
+<P ALIGN=JUSTIFY>
+Use this part if you just need to change some values in your configuration files.
+<BR>
+This part will load your current data and will allow you to change the values.
+<!-- It will warn you if the values you want to alter need to re-initialize
+the whole package. -->
+</TD>
+<TD VALIGN=TOP>
+<CENTER><B><A HREF="/cgi-bin/w3perl/confstat.pl?action=DELETE">Delete configuration files</A></B></CENTER>
+<BR>
+If you want to delete some of your configuration files, this is the right place.
+<BR>
+Be careful as there is no way to restore them.
+</TD>
+</TR>
+</TABLE>
+<P>
+<HR ALIGN=CENTER WIDTH=20% SIZE="1" NOSHADE COLOR="#39FFFF">
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 ALIGN=LEFT VALIGN=TOP>
+<A NAME="launch">
+<TABLE BORDER=1>
+<TR><TD>
+<FONT SIZE=+1><B>Launch</B></FONT>
+</TD></TR></TABLE>
+</TD>
+<TD>
+<CENTER><B><A HREF="/cgi-bin/w3perl/confstat.pl?action=LAUNCH">Launch scripts</A></B></CENTER>
+<P>
+If you don't have a telnet access or you are not allowed to have a 
+crontab, you can launch the scripts via a HTML page. For each scripts, options
+are available.
+<P>
+<HR ALIGN=CENTER WIDTH=20% SIZE="1" NOSHADE COLOR="#39FFFF">
+<P>
+</TD>
+</TR>
+
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<TABLE BORDER=1>
+<TR><TD>
+<FONT SIZE=+1><B>Upgrade/Install</B></FONT>
+</TD></TR>
+</TABLE>
+</TD>
+<TD VALIGN=TOP>
+<P>
+
+
+<P>
+<TABLE WIDTH=100% CELLPADDING=5>
+<TR>
+<TD VALIGN=TOP>
+<CENTER><B><A HREF="/cgi-bin/w3perl/confstat.pl?action=UPGRADE&version=2.72">Upgrade package</A></B></CENTER>
+<BR>
+If you want to upgrade to the latest release, please use this script which 
+will detect any change in the configuration file. It works from version 2.69
+<BR>
+</TD>
+<TD VALIGN=TOP>
+<CENTER><B><A HREF="/cgi-bin/w3perl/fixperlpath.pl?">Fix path scripts</A></B></CENTER>
+<P>
+If you have installed the package from a ftp client (without telnet) or
+you have upgraded w3perl from a previous version, you
+should run this script first to enable your cgi to run. It will fix
+path inside the scripts according to your setup.
+<P>
+</TD>
+</TR>
+</TABLE>
+<P>
+
+
+
+
+
+</TD>
+
+
+
+<!--
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<TABLE BORDER=1>
+<TR><TD>
+<FONT SIZE=+1><B>Scheduler</B></FONT>
+</TD></TR>
+</TABLE>
+</TD>
+<TD VALIGN=TOP>
+<P>
+<HR ALIGN=CENTER WIDTH=20% SIZE="1" NOSHADE COLOR="#39FFFF">
+<P>
+
+
+<CENTER><B><A HREF="/cgi-bin/w3perl/schedule.pl?action=CREATE">Create time table</A></B></CENTER>
+<BR>
+Define which scripts you need to run and when they should be running
+<BR>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR><TD></TD>
+<TD VALIGN=TOP>
+<CENTER><B><A HREF="/cgi-bin/w3perl/schedule.pl?action=MODIFY">Modify time table</A></B></CENTER>
+<BR>
+If you want change scheduler for each of your webserver.
+<BR>
+</TD>
+-->
+</TR>
+<TR>
+<TD>
+</TD>
+<TD ALIGN=CENTER>
+<P>
+<A HREF="../docs/html//chinaeoa/index.jsp"><IMG border=0 SRC="../docs/img/back.gif" ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

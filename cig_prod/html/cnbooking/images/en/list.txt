@@ -1,0 +1,47 @@
+accept.gif    <Accept>
+air_logo.gif  <Airline Tickets>
+banner.gif
+booking.gif  <Booking>
+cancel.gif   <Cancel>
+chabooking.gif
+co_ad.gif   <Advertisements>
+co_air.gif   <Airline Tickets>
+co_found.gif   <Franchises>
+co_hotel.gif    <Hotels>
+co_link.gif    <Links>
+co_web.gif  <Agencies>
+enter_air.gif  <Book Tickets>
+enter_air1.gif  <Confirm>
+hot_hotel.gif   <Pick of the Week>
+link_01a.gif   <Hotel Wholesale>
+link_01b.gif   <Hotel Wholesale>
+link_02a.gif   <Service Apartments>
+link_02b.gif   <Service Apartments>
+link_03a.gif   <City Tours>
+link_03b.gif   <City Tours>
+link_04a.gif   <Car Rentals>
+link_04b.gif   <Car Rentals>
+link_05a.gif   <Package Deals>
+link_05b.gif   <Package Deals>
+link_06a.gif   <Golf Packages>
+link_06b.gif   <Golf Packages>
+link_07a.gif   <Guide & Translators>
+link_07b.gif   <Guide & Translators>
+link_08a.gif   <Airline Tickets>
+link_08b.gif   <Airline Tickets>
+link_09a.gif   <Registration>
+link_09b.gif   <Registration>
+link_10a.gif   <Travel News>
+link_10b.gif   <Travel News>
+link_11a.gif   <How to Book>
+link_11b.gif   <How to Book>
+refuse.gif   <Reject>
+search-1.gif   <Hotel Search>
+search-2.gif   <Search  All>
+search.gif    <Search>
+sent.gif   <Submit>
+order_confirm.gif   <Confirm>
+top_bar.gif   <About Us       Jobs        Partners      Privacy Policy>
+enter_tour.gif   <Confirm>
+continue_booking.gif   <Continue Booking>
+modify_data.gif    <Modify>

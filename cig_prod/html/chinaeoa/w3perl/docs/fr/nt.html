@@ -1,0 +1,110 @@
+<HTML><head>
+<title>W3Perl - Serveur NT - FR</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1> Serveurs NT</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Historique</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+
+W3perl a &eacute;t&eacute; compl&egrave;tement test&eacute; sur un serveur 
+NT 4.0 grace &agrave; Alexandre Gefen.<BR>
+La premi&egrave;re tentative pour faire tourner w3perl sur un serveur NT a
+&eacute;t&eacute; faite avec succ&egrave;s par J-L Damez mais demandait
+alors de nombreuses arrangements manuels. Tout a &eacute;t&eacute; simplifi&eacute;
+depuis car il vous suffit juste de s&eacute;lectionner l'option NT dans le
+fichier de configuration.
+<BR>
+Vous devrez installer <A HREF="need.html">ActivePerl</A> et <A HREF="need.html">Fly.exe</A> pour faire tourner w3perl.
+<BR>
+Vous pouvez utiliser la commande <I>at</I> pour lancer les scripts. Cron-w3perl.pl ne peut
+pas &ecirc;tre utilis&eacute; car un serveur NT ne peut pas forker des processes comme sous
+Unix.<BR>
+Cron-pages sert juste une fois pour l'initialisation des stats. Chaque jour, lancez
+cron-inc, cron-day et cron-hour. Chaque semaine, lancez cron-week, cron-session. Finalement
+chaque mois, lancez cron-month.
+<BR>
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Installation</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+
+La proc&eacute;dure d'installation a &eacute;t&eacute; grandement simplifi&eacute;e sous
+NT depuis que j'ai pu faire par moi m&ecirc;me cette installation.
+Il semble qu'il n'est pas possible d'utiliser les variables d'environnement sur
+un serveur Microsoft :( donc vous devrez &eacute;diter fixperlpath.pl et modifiez
+la deuxi&egrave;me ligne en accord avec le chemin o&ugrave; se trouve w3perl sur votre
+machine. Il s'agit de la seule et unique sp&eacute;cificit&eacute; que vous ayez &agrave;
+faire pour l'installation, plus de d&eacute;tails sont disponibles dans la section d'
+<A HREF="install.html">installation</A>.
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Limitations</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+
+Les serveurs NT peuvent produire des fichiers de log au format
+CLF (Common Logfile Format) ou au format IIS format. W3Perl g&eacute;re ces deux formats, il
+est juste n&eacute;cessaire de s&eacute;lectionner lequel vous utilisez dans le fichier de
+configuration.
+<P>
+IIS 3.0 n'a pas de support pour le format extended CLF, par cons&eacute;quent les informations
+sur les fureteurs et les r&eacute;f&eacute;rences ne sont pas accessibles dans la
+distribution standard.
+Mais une personne m'a avertit de la possibilit&eacute; d'avoir ces informations dans le fichier
+de log de IIS 3.0 en t&eacute;l&eacute;chargeant une <A HREF="http://backoffice.microsoft.com/downloads/ext.zip">dll</A> 
+fournie par microsoft.
+<BR>
+W3Perl peut aussi bien utiliser des fichiers de log issus de serveurs IIS 4.0 que de serveurs IIS 3.0 
+(avec ou sans modification) pour effectuer des stats sur les fureteurs et les r&eacute;f&eacute;rences.
+<P>
+Les erreurs sur un serveur NT sont stock&eacute;es dans un gestionnaire d'&eacute;v&eacute;nements et
+par cons&eacute;quent aucun fichier n'est produit dans ce cas. Mais vous pouvez utiliser une
+redirection sur des pages HTML pour les diff&eacute;rents codes d'erreurs possibles, ainsi vous
+aurez les erreurs stock&eacute;es dans votre fichier de log.
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Nouveaut&eacute;s</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+Le support pour des fichiers utilisant la compression zip, le support pour les fichiers
+de log compress&eacute;s quotidiennement a &eacute;t&eacute; effectu&eacute; (les fichiers
+de log journaliers sont l'option par d&eacute;faut sur un serveur IIS).
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="/chinaeoa/index.jsp"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<HTML><head>
+<title>W3Perl Known bugs</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Known bugs and limitations</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Bugs</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+<LI>On system with <I><B>restricted length filename</B></I> (Mac, Win3.11 or Archimedes), you
+can't use the highest level of precision which is 4. Archimedes users can
+download the !X-Files application which is able to solve this.
+<P>
+<LI> Your logfile should have <I><B>at least one request by week</B></I>. If not, date may shift.
+<P>
+<LI> URL mapping may fail with some awful HTML files (Bill, buy a HTML book please !). Users public
+html directories are not parse by the script in some case (to be fix).
+<P>
+<LI> Symbolic links works only in a few case (to be fix).
+<P>
+<LI> Incremental data are not computed with compressed logfile when the logfile have
+been cut at the beginning of the month (fix done for cron-inc)
+<P>
+<LI> You need to get logfile at least two days long to compute something.
+<P>
+<!-- None as I'm killing them as soon as I'm aware of them ! ;) <BR> -->
+If you find a bug, please send me the following informations :
+<OL>
+<LI> Your w3perl URL 
+<LI> W3Perl version
+<LI> Which script failed and its version (cron-xxx.pl -v)
+<LI> Your config.pl file
+<LI> The name of your web server, your operating system
+<LI> The script output
+</OL>
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Limitations</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+<LI> W3Perl will exit if date format is not the english one (answer : export LANG="eng" or setenv LANG eng)
+<P>
+<LI> W3Perl produces holes in the countries HTML page.<br>
+  Update your pays-conv file to add the <A HREF="http://itl5.itlnet.com/isocodes.htm">new country</A>.
+<P>
+<LI> W3Perl can't cope with more than <I><B>120 crunched logfiles or 10 years</B></I> of logfiles. If
+you are using a webserver since 10 years, tell me !
+<P>
+
+Feel free to <A HREF="mailto:domisse@w3perl.com?subject='w3perl bug report'">send me</A> bug report. You can also show me my english mistakes !
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="/chinaeoa/index.jsp"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

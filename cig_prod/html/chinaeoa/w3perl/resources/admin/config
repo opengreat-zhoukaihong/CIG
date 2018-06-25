@@ -1,0 +1,104 @@
+version	2.72
+type_serveur	0
+server_used	0
+htmlext	.html
+gifext	.gif
+plext	.pl
+extension	html htm shtml xml
+extensionimage	gif jpeg jpg png
+logformat	standard
+date_format	
+logfile	CLF
+virtualfilter	
+virtualCLF	0
+zip	0
+zipcut	
+zipext	.gz
+stringlogfile	
+path	/home/httpd/html/chinaeoa/w3perl/
+pathinit	/home/httpd/html/chinaeoa/w3perl/
+pathserver	/home/httpd/html/chinaeoa/
+cgipath	/home/httpd/cgi-bin/
+fileroot	/etc/httpd/logs/
+prefixlog	access_log
+refererlog	referer_log
+agentlog	agent_log
+errorlog	error_log
+struct_compressed_logfile	%prefixlog
+GZIP	
+FLY	/home/httpd/cgi-bin/fly
+localserver	linux2
+localdomaine	192.168.0.14
+emailadr	webmaster@asdf
+exclude_frame	0
+exclude_robot	0
+tri	/
+country_filtering	
+nolog	
+selection	
+selecrepert	
+excluderepert	
+excludevirtual	
+precision	3
+locallog	0
+localonly	0
+topten	10
+seuilpage	10
+seuilsite	10
+seuilrepert	100
+seuilscript	10
+titlename	1
+defaulthomepage	index.html
+tildealias	
+reversedns	0
+yellowfile	
+optdirsize	2
+nbdays	50
+frame_updown	1
+topframelinks	<A HREF='http://$localserver$tri' TARGET='_top'>Home</A>
+fr	
+uk	1
+nl	
+sp	
+jp	
+fi	
+primarylang	uk
+graphs	tridim
+custom_text_red	00
+custom_text_green	00
+custom_text_blue	99
+custom_link_red	00
+custom_link_green	00
+custom_link_blue	80
+custom_vlink_red	80
+custom_vlink_green	00
+custom_vlink_blue	00
+bgcolor_blue	FF
+bgcolor_red	FF
+bgcolor_green	FF
+url_frame	
+url_doublon	
+url_absolute_link	
+url_symbolic_link	
+url_bad_link	1
+url_useless	1
+url_directory	1
+url_weight	1
+url_link	1
+url_image	1
+url_new_doc	1
+url_cdrom	
+url_img_tag	
+url_tree	1
+session_connection	1
+session_visit	1
+session_average	1
+session_login	
+session_description	1
+session_engine	
+session_reading	
+inc_host	1
+inc_page	1
+inc_directory	1
+inc_country	1
+inc_script	1

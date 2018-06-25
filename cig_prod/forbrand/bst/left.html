@@ -1,0 +1,272 @@
+<html>
+<head>
+<title>menu</title>
+<SCRIPT language=JavaScript>
+  var menuarray;
+  menur=7;
+  menuc=25;
+  menuselect="";
+  menuselects="";
+function mouseclick(lmname)
+  {
+  j=-1;
+  for(i=0;i<menur;i++)
+     {
+      if(lmname==menuarray[i][2])
+        {
+         menuselect=lmname;
+         if(menuarray[i][1]==1)
+           {
+           menuarray[i][1]=0;
+           menuselect="";
+           j=i;
+            }
+         else
+           {
+           menuarray[i][1]=1;
+           j=i;
+           }
+         }
+      else menuarray[i][1]=0;
+      }
+  document.all.menutable.outerHTML=drawmenu();
+  if(menuarray[j][0]==0)
+    {
+    menuselects="";
+    if(menuarray[j][1]==1)
+      {
+     
+
+      return(0);
+      }
+    }
+      
+  if(menuarray[j][1]==0 && menuselects!="")  
+      {
+      menuselects="";
+
+      return(0);
+      }
+  }
+
+function mouseclicks(lmname)
+  {
+  if(menuselects==lmname) 
+    menuselects="";
+  else 
+    menuselects=lmname;
+  document.all.menutable.outerHTML=drawmenu();
+  
+   for(i=0;i<menur;i++)
+     for(j=0;j<menuarray[i][0];j++)
+       if(lmname==menuarray[i][4+2*j])
+         {
+         if(menuselects=="")
+  
+           return(0);
+
+         else
+           {           
+           open(menuarray[i][4+2*j+1],"mainFrame");
+           return(0);
+           }
+         }
+  }
+function drawmenu()
+  {
+   var i,j,para;
+   para="";
+   para+='<table id="menutable" align="left" height=189 border=1 cellpadding=3 cellspacing=0  bordercolorlight=#000000 bordercolordark=#FFFFFF>';
+    for(i=0;i<menur;i++)
+       {
+       if(menuselect==menuarray[i][2])
+         para+='<tr><td id=td'+menuarray[i][2]+' align=left width=125 height=30   bgcolor=#4078e0><a style="CURSOR: hand" name='+menuarray[i][2]+' OnClick=mouseclick(name) OnMouseOver=mouseover(name) OnMouseOut=mouseout(name)> <font id=ft'+menuarray[i][2]+' face="Verdana, Arial, Helvetica, sans-serif" size=1 color=#ffffff>'+menuarray[i][3]+'</font></a></td></tr>';
+       else
+         para+='<tr><td id=td'+menuarray[i][2]+' align=left width=125 height=30 bgcolor=#4078e0> <a  style="CURSOR: hand" name='+menuarray[i][2]+' OnClick=mouseclick(name) OnMouseOver=mouseover(name) OnMouseOut=mouseout(name)><font id=ft'+menuarray[i][2]+' face="Verdana, Arial, Helvetica, sans-serif" size=1 color=#ffffff>'+menuarray[i][3]+'</font></a></td></tr>';
+       if(menuarray[i][1]==1)
+         {
+         for(j=0;j<menuarray[i][0];j++)
+           {
+            if(menuselects==menuarray[i][4+2*j])
+              para+='<tr><td id=td'+menuarray[i][4+2*j]+' align=left width=125 height=18  bgcolor=#FFCC33><a style="CURSOR: hand" name='+menuarray[i][4+2*j]+' OnClick=mouseclicks(name) OnMouseOver=mouseover(name) OnMouseOut=mouseout(name)><font id=ft'+menuarray[i][4+2*j]+' face="Verdana, Arial, Helvetica, sans-serif" size=1 color=#ffffff>'+menuarray[i][4+2*j]+'</font></a></td></tr>';
+            else
+              para+='<tr><td bgcolor=#FFCC33 id=td'+menuarray[i][4+2*j]+' align=left width=125 height=18 ><a style="CURSOR: hand" name='+menuarray[i][4+2*j]+' OnClick=mouseclicks(name) OnMouseOver=mouseover(name) OnMouseOut=mouseout(name)><font id=ft'+menuarray[i][4+2*j]+' face="Verdana, Arial, Helvetica, sans-serif" size=1 color=#cd5c5c>'+menuarray[i][4+2*j]+'</span></font></a></td></tr>';
+           }
+         } 
+       }
+  para+='</table>';
+  return(para);
+  }
+
+
+function mouseover(lmname)
+  {
+   if(lmname!=menuselect && lmname!=menuselects)
+     {
+     for(i=0;i<menur;i++)  if(lmname==menuarray[i][2]) break;
+     if(i<menur)
+       {
+       aaa="td"+lmname;
+       //document.all[aaa].background="menu/over.jpg";
+       aaa="ft"+lmname;
+       document.all[aaa].size=1;
+       }
+     else
+       {
+       aaa="td"+lmname;
+       //document.all[aaa].background="menu/sover.jpg";
+       aaa="ft"+lmname;
+       document.all[aaa].size=1;
+       }
+     }
+  }
+
+function mouseout(lmname)
+  {
+  if(lmname!=menuselect && lmname!=menuselects)
+     {
+     for(i=0;i<menur;i++)   if(lmname==menuarray[i][2]) break;
+     if(i<menur)
+       {
+       aaa="td"+lmname;
+      
+       aaa="ft"+lmname;
+       document.all[aaa].size=1;
+       }
+     else
+       {
+       aaa="td"+lmname;
+      
+       aaa="ft"+lmname;
+       document.all[aaa].size=1;
+       }
+     }
+  }
+
+function initmenu()
+{
+menuarray=new Array();
+for(i=0;i<menur;i++)
+menuarray[i]=new Array();
+menuarray[0][0]=3;
+menuarray[0][1]=0;
+menuarray[0][2]="0";
+menuarray[0][3]="SYSTEM MANAGERMENT";
+menuarray[0][4]="System-Config";
+menuarray[0][5]="configuration.jsp"; 
+menuarray[0][6]="Discount-Conversion";
+menuarray[0][7]="discountcalc.jsp";
+menuarray[0][8]="Catelog-Managerment";
+menuarray[0][9]="setdir.jsp";
+
+menuarray[1][0]=5;
+menuarray[1][1]=0;
+menuarray[1][2]="1";
+menuarray[1][3]="USER MANAGERMENT";
+menuarray[1][4]="Add-User";
+menuarray[1][5]="../operator/insertoperator.jsp";
+menuarray[1][6]="User-List";
+menuarray[1][7]="../operator/operatorlist.jsp";
+menuarray[1][8]="Role-Managerment";
+menuarray[1][9]="permission/roleAdd.jsp";
+menuarray[1][10]="Function-Managerment";
+menuarray[1][11]="permission/funcManager.jsp";
+menuarray[1][12]="Module-Managerment";
+menuarray[1][13]="permission/moduleManager.jsp";
+
+
+menuarray[2][0]=4;
+menuarray[2][1]=0;
+menuarray[2][2]="2";
+menuarray[2][3]="CATEGORY MANAGERMENT";
+menuarray[2][4]="Category";
+menuarray[2][5]="typemanager.jsp";
+menuarray[2][6]="Sub-Category";
+menuarray[2][7]="catemanager.jsp";
+menuarray[2][8]="Material";
+menuarray[2][9]="material.jsp";
+menuarray[2][10]="Occations";
+menuarray[2][11]="occasion.jsp";
+
+
+
+menuarray[3][0]=7;
+menuarray[3][1]=0;
+menuarray[3][2]="3";
+menuarray[3][3]="PRODUCT INFORMATION";
+menuarray[3][4]="Add";
+menuarray[3][5]="AddGift.jsp";
+menuarray[3][6]="Product-List";
+menuarray[3][7]="search.jsp";
+menuarray[3][8]="Hot-Sale";
+menuarray[3][9]="ht.html";
+menuarray[3][10]="Special";
+menuarray[3][11]="spec.html";
+menuarray[3][12]="Add-a-Manafacture";
+menuarray[3][13]="addmana.html";
+menuarray[3][14]="Manafacture-List";
+menuarray[3][15]="manalist.html";
+menuarray[3][16]="Price-Range";
+menuarray[3][17]="price.html";
+
+
+menuarray[4][0]=2;
+menuarray[4][1]=0;
+menuarray[4][2]="4";
+menuarray[4][3]="NEWS MANAGERMENT";
+menuarray[4][4]="Add-News";
+menuarray[4][5]="AddNews.jsp?id=0";
+menuarray[4][6]="News-List";
+menuarray[4][7]="DelNews.jsp";
+
+
+menuarray[5][0]=6;
+menuarray[5][1]=0;
+menuarray[5][2]="5";
+menuarray[5][3]="MISCELLANEOUS";
+menuarray[5][4]="Measurement";
+menuarray[5][5]="Unit.jsp";
+menuarray[5][6]="Measurement-Conversion";
+menuarray[5][7]="UnitConversion.jsp";
+menuarray[5][8]="Parameter Table";
+menuarray[5][9]="parameter.html";
+menuarray[5][10]="Country-Managerment";
+menuarray[5][11]="couman.htm";
+menuarray[5][12]="State-Managerment";
+menuarray[5][13]="stat.html";
+menuarray[5][14]="City-Managerment";
+menuarray[5][15]="city.htm";
+
+
+
+
+
+menuarray[6][0]=1;
+menuarray[6][1]=0;
+menuarray[6][2]="10";
+menuarray[6][3] ="EXIT";
+menuarray[6][4] ="Exit";
+menuarray[6][5] ="exit.jsp";
+}
+
+</SCRIPT>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+<table align=right border=0 cellpadding=0 cellspacing=0 width=155>
+  <tbody> 
+  <tr> 
+    <td> 
+      <script 
+      language=JavaScript>
+initmenu();
+document.write(drawmenu());
+</script>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,228 @@
+If you need some documentation, you'll find it in the docs/
+directory. Only HTML files are provided.
+Installation can be done if 
+
+A] cgi-bin and telnet
+B] no cgi-bin but telnet
+C] cgi-bin without telnet
+D] NT users
+
+INSTALL
+=======
+
+
+A] INSTALLATION FOR UNIX USER (cgi-bin and telnet) :
+----------------------------------------------------
+
+<webdir> is your server root directory
+<w3perldir> is the location where the w3perl package have been extracted
+
+1) Extract the package inside your web server tree
+
+cd /<webdir>/htdocs/
+tar -zxvf w3perl.tar.gz
+/<webdir>/htdocs/w3perl/ will be created (<w3perldir>)
+
+
+2) Edit the install.pl script and setup three variables
+
+a) the first line is your Perl path
+b) $pathcgi is the directory where the w3perl script will be placed : /<webdir>/cgi-bin/w3perl
+c) $pathw3perl is the directory where the w3perl package have been extracted
+(the directory where you are are reading this file from) : <w3perldir>
+
+3) Run install.pl
+
+4) Launch web interface
+
+Use your browser and go to /w3perl/admin/
+Select 'Make configuration files' (use default 'config' for filename)
+Fill the different forms..
+You will have to move the configuration file you have built
+from <w3perldir>/config/<configfile> to 
+/<webdir>/cgi-bin/w3perl/<configfile>
+
+5) Compute stats
+
+Run first cron-hour.pl either in telnet or from the admin interface.
+(Use your browser and go to /w3perl/admin/, Select 'Launch scripts', 
+Click on 'Hour stats')
+If no error is reported, run cron-w3perl.pl which will compute
+everything foy you.
+
+
+==========================================================================
+
+B] INSTALLATION FOR UNIX USER (no cgi-bin and telnet) :
+
+<webdir> is your server root directory
+<w3perldir> is the location where the w3perl package have been extracted
+
+1) Extract the package inside your web server tree
+
+cd /<webdir>/htdocs/
+tar -zxvf w3perl.tar.gz
+/<webdir>/htdocs/w3perl/ will be created (<w3perldir>)
+
+
+2) Edit the install.pl script and setup three variables
+
+a) the first line is your Perl path
+b) $pathcgi is the directory where the w3perl script will be placed. 
+As you don't have any cgi-bin directory, you should keep the current
+directory as the target : <w3perldir>
+c) $pathw3perl is the directory where the w3perl package have been extracted
+(the directory where you are are reading this file from) : <w3perldir>
+
+3) Run install.pl
+
+4) Configuration files
+
+User without cgi-bin access can't use the administration interface.
+You'll have to make your configuration files by yourself.
+cd <w3perldir>/config/
+Inside you'll find a default configuration file for unix, edit and
+modify it with your own walues.
+
+5) Compute stats
+
+Run first cron-hour.pl to check everything is ok.
+If no error is reported, run cron-w3perl.pl which will compute
+everything foy you.
+
+==========================================================================
+
+Basic installation need to move the scripts into your cgi-bin directory.
+Then edit fixperlpath.pl and config.pl file.
+Finally, launch the scripts.
+
+C] INSTALLATION FOR UNIX USER (cgi-bin without telnet) :
+--------------------------------------------------------
+
+<webdir> is your remote server root directory
+<local_w3perldir> is the location where the w3perl package have been extracted
+<w3perldir> is the remote directory where the w3perl package will be installed
+You'll have to use ftp to put w3perl files.
+
+1) Extract the package on your computer
+
+tar -zxvf w3perl.tar.gz
+<local_w3perldir> will be created 
+
+2) Install w3perl files
+
+	a) Create a /w3perl/ subdirectory in your remote server
+
+FTP : cd /<webdir>/www/ or whatever your www directory is.
+FTP : mkdir w3perl ==> <w3perldir>
+
+	b) Put files
+
+FTP : cd /<webdir>/www/w3perl
+FTP : put admin/*
+FTP : put config/*
+FTP : put docs/*
+FTP : put resources/*
+
+	c) Permission
+
+FTP : chmod 777 config
+FTP : chmod 777 resources/admin
+
+3) Edit install.pl
+
+a) the first line is your remote Perl path
+b) $pathcgi is the remote directory where the w3perl script will be placed : 
+/<webdir>/cgi-bin/w3perl/
+c) $pathw3perl is the remote directory where the w3perl package have been 
+installed : <w3perldir>
+
+4) Install w3perl scripts files
+
+	a) Create a /w3perl/ subdirectory in your remote cgi-bin
+
+FTP : cd /<webdir>/cgi-bin/
+FTP : mkdir w3perl
+
+	b) Move all the scripts in this cgi-bin subdirectory
+
+FTP : put *.pl /<webdir>/cgi-bin/w3perl/
+FTP : put *.sh  /<webdir>/cgi-bin/w3perl/
+FTP : put  cgi-bin/w3perl/* /<webdir>/cgi-bin/w3perl/
+
+	c) Executable
+
+Check all scripts are runnable. If not
+FTP : chmod +x *.pl
+FTP : chmod +x *.sh
+
+5) Configure path
+
+Use your browser and go to /w3perl/admin/
+Select 'Launch scripts'
+Click on 'Customisation'
+The list of files modified will be show.
+
+6) Launch web interface
+
+Go back
+Select 'Make configuration files' (use default 'config' for filename)
+Fill the different forms..
+You will have to move the configuration file you have built
+from /<w3perldir>/config/<configfile> to 
+/<webdir>/cgi-bin/w3perl/<configfile>
+
+--                                           --
+---- If the above failed                  -----
+---- Manual configuration                 -----
+---- (but best is to use admin interface) -----
+--                                           --
+
+Example available in <local_w3perldir>/config/config-unix.pl
+You will have to move it to <webdir>/cgi-bin/w3perl
+Use config.pl filename for default configuration file.
+
+
+7) Compute stats
+
+Run first cron-hour.pl from the admin interface.
+(Use your browser and go to /w3perl/admin/, Select 'Launch scripts', 
+Click on 'Hour stats')
+
+==========================================================================
+
+Advice : 
+
+a) best is to use the admin interface to generate your configuration
+file and to launch the scripts via telnet
+b) First test with one small script : cron-hour.pl
+c) If everything is OK, run cron-pages.pl for initialisation or
+cron-w3perl.pl -a to compute everything.
+
+D] NT users
+-----------
+
+a) Just run the w3perl.exe binary
+b) Before using the administration interface, be sure that the following 
+   directories are writeable by the server :
+   - /w3perl/ (if you want to launch stats via the admin interface)
+   - /config/
+   - /resources/admin/
+c) Create a configuration file and move it to the /cgi-bin/w3perl directory
+
+==========================================================================
+
+UPGRADE
+=======
+
+1) Make a copy of install.pl and fixperlpath.pl scripts
+2) Unpack the package over the previous one
+3) Restore install.pl and fixperlpath.pl scripts
+4) Go to the administration interface /w3perl/admin/
+5) Choose the upgrade facility
+6) Copy the upgraded configuration files to your cgi-bin directory.
+
+
+==========================================================================
+
+

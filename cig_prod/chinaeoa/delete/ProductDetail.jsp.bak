@@ -1,0 +1,520 @@
+<%@ page import="java.sql.*" %>
+<jsp:useBean id="Result" scope="page" class="com.cig.chinaeoa.ResultBean" />
+<html><!-- #BeginTemplate "/Templates/ceoa1.dwt" -->
+<head>
+<!-- #BeginEditable "doctitle" --> 
+<title>ChinaEOA.com</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="eoa.css" rel="stylesheet" type="text/css">
+<script
+language="JavaScript">
+<!--
+img1on = new Image();
+img1on.src = "images/temp/menu_1_0.gif"; 
+img2on = new Image();
+img2on.src = "images/temp/menu_2_0.gif";
+img3on = new Image();
+img3on.src = "images/temp/menu_3_0.gif";
+img4on = new Image();
+img4on.src = "images/temp/menu_4_0.gif";
+img5on = new Image();
+img5on.src = "images/temp/menu_5_0.gif";
+img6on = new Image();
+img6on.src = "images/temp/menu_6_0.gif";
+img7on = new Image();
+img7on.src = "images/temp/menu_r07_c1_f2.gif";
+img8on = new Image();
+img8on.src = "images/temp/menu_r08_c1_f2.gif";
+img9on = new Image();
+img9on.src = "images/temp/menu_r09_c1_f2.gif";
+img0on = new Image();
+img0on.src = "images/temp/menu_r10_c1_f2.gif";
+img1off = new Image();
+img1off .src = "images/temp/menu_1.gif"; 
+img2off = new Image();
+img2off .src = "images/temp/menu_2.gif";
+img3off = new Image();
+img3off .src = "images/temp/menu_3.gif";
+img4off = new Image();
+img4off .src = "images/temp/menu_4.gif";
+img5off = new Image();
+img5off .src = "images/temp/menu_5.gif";
+img6off = new Image();
+img6off .src = "images/temp/menu_6.gif";
+img7off = new Image();
+img7off .src = "images/temp/menu_7.gif";
+img8off = new Image();
+img8off .src = "images/temp/menu_r08_c1.gif";
+img9off = new Image();
+img9off .src = "images/temp/menu_r09_c1.gif";
+img0off = new Image();
+img0off .src = "images/temp/menu_r10_c1.gif";
+function imgOn (imgName) {
+if (document.images) {
+document[imgName].src = eval (imgName + "on.src");
+}
+}
+function imgOff (imgName) {
+if (document.images) {
+document[imgName].src = eval(imgName + "off.src");
+}
+}
+function MM_preloadImages() { //v3.0
+var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#F7FBFA" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" tracingsrc="file:///F%7C/ChinaEOA/ceoa.gif" tracingopacity="80" background="images/temp/bg.gif">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="1" bgcolor="#000000" >
+  <tr> 
+    <td><img src="images/spacer.gif" width="1" height="1"></td>
+  </tr>
+</table>
+<script language="JavaScript" src="javascript/title1.js">
+</script>
+<%
+   String wSql = "";
+   String Descr = "";
+   String Spec = "";
+   String SpecDesc = "";
+   String ShortDesc = "";
+   String CategoryId = "";
+   String CategoryName = "";
+   String Brand = "";
+   String ProductName = "";
+   String ProductNo = "";
+   String BrandId = "";
+   String PicDir1 = "";
+   String PicFile1 = "";
+   String ListPrice = "";
+   String MemberPrice = "";
+   String MemberClass = "1";
+   String ProdId = request.getParameter("ProdId");
+   String LangCode = request.getParameter("LangCode");
+   String ColorName;
+   String ImageFile;
+   if (ProdId == null)
+     ProdId = "78";
+   wSql = "select l.shortdesc, l.descr, p.*, b.name, c.catename, d.dir from " +
+          " product p, product_l l, brand b, category c, dir_setting d  where p.prodid = l.prodid " +
+          " and l.lang_code = '" + LangCode + "' and p.brandid = b.brandid and b.lang_code = l.lang_code " +
+          " and  p.cateid = c.cateid and c.lang_code = l.lang_code and p.prodid ='" +
+           ProdId + "' and  p.picdir1 = d.dirid(+) ";
+   ResultSet rs = Result.getRS(wSql);
+   int i = 0;
+   if (rs==null)
+   {
+     out.println("rs=null");
+   }
+   else
+   {
+     //out.println("con = true");
+     while (rs.next())
+     {
+        Descr = rs.getString("Descr");
+        ShortDesc = rs.getString("ShortDesc");
+        CategoryName = rs.getString("CateName");
+        CategoryId = rs.getString("CateId");
+        BrandId = rs.getString("BrandId");
+        Brand = rs.getString("Name");
+        ProductNo = rs.getString("ProductNo");
+        PicDir1 = rs.getString("Dir");
+        PicFile1 = rs.getString("FileName1");
+        ListPrice = rs.getString("ListPrice");
+        MemberPrice = rs.getString("Price" + MemberClass);
+        if (ListPrice == null)
+          ListPrice = "价格未定";
+        if (MemberPrice == null)
+          MemberPrice = "价格未定";
+        ProductName =  Brand + " " + ProductNo + CategoryName;
+        break;
+     }
+   }
+   
+%>
+<table width="640" border="0" cellspacing="0" cellpadding="0" >
+  <tr> 
+    <td valign="top" width="14"> <img src="images/temp/left_bar.gif" width="14" height="2"></td>
+    <td valign="top" colspan="2"><!-- #BeginEditable "body" --> 
+      <table border="0" cellspacing="0" cellpadding="0" align="center" width="600">
+        <tr> 
+          <td colspan="2" height="20"> <img src="images/temp/path.gif" width="49" height="13"> 
+            <img src="images/arrow.gif" width="7" height="11"> <a href="index.html">首页</a> 
+            <img src="images/arrow.gif" width="7" height="11"> <font title="里边有什么好东西呢"><a href="product_centre.htm">产品中心</a> 
+            <img src="images/arrow.gif" width="7" height="11"> <a href="copier_search.htm">复印机展示中心</a></font> 
+            <font title="里边有什么好东西呢"><img src="images/arrow.gif" width="7" height="11"></font> 
+            <a href="javascript:history.go(-1);">产品列表</a> <font title="里边有什么好东西呢"><img src="images/arrow.gif" width="7" height="11"></font> 
+            产品详情</td>
+        </tr>
+      </table>
+      <table width="500" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr> 
+          <td> <a name="top"></a> 
+            <table width="600" border="0" cellspacing="0" cellpadding="0">
+              <tr align="right"> 
+                <td colspan="2"> <img src="images/temp/check.gif" width="17" height="16" align="absbottom"> 
+                  <a href="#">订单查询</a><img src="images/temp/car.gif" width="19" height="16" align="absbottom"> 
+                  <a href="#">查看购物车</a></td>
+              </tr>
+            </table>
+            <table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+              <tr> 
+                <td colspan="2" rowspan="2" valign="top" align="center">
+                  <%
+                    ImageFile = PicDir1+PicFile1;
+                    if (ImageFile != null && ImageFile.equals(""))
+                      out.println("<img src=\"" + ImageFile + "\" width=\"225\" height=\"133\" >");
+                    else
+                      out.println("暂无图片");
+                  %>
+                </td>
+                <td rowspan="2" width="35">&nbsp;</td>
+                <td width="314"><img src="images/intro.gif" width="93" height="23"></td>
+              </tr>
+              <tr> 
+                <td width="314" height="127"> 
+                  <p class="d20">
+                  <%
+                  while (ShortDesc.indexOf("\n")>=0)
+                  {
+                    i = ShortDesc.indexOf("\n");
+                    SpecDesc = ShortDesc.substring(0,i).trim();
+                    ShortDesc = ShortDesc.substring(i+1);
+                    out.println(SpecDesc + "<br>");
+                  }
+                  out.println(ShortDesc);
+                  %>
+                    </p>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="2" align="center"><%=ProductName%></td>
+                <td colspan="2">&nbsp; </td>
+              </tr>
+              <tr> 
+                <td width="100" rowspan="2">&nbsp;</td>
+                <td width="191">&nbsp;</td>
+                <td align="right" rowspan="3" colspan="2"> <a href="#three"> </a>
+                  <table width="300" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td rowspan="3" width="172"> 
+                        <table width="150" border="0" cellspacing="0" cellpadding="0" align="left">
+                          <tr> 
+                            <td width="191">数量： 
+                              <input type="text" name="textfield" class="font1" size="8">
+                              件 </td>
+                          </tr>
+                          <tr align="center"> 
+                            <td width="191"><a href="#"><img src="images/temp/order.gif" width="90" height="17" border="0"></a></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td width="78" align="right"><a href="#one">规格&nbsp;&nbsp;&nbsp;&lt;&lt;</a> 
+                        <a href="#two"> </a> <a href="#two"></a></td>
+                    </tr>
+                    <tr> 
+                      <td width="78" align="right"><a href="#two">耗材 &nbsp;&nbsp;&lt;&lt;</a> 
+                        <a href="#three"></a></td>
+                    </tr>
+                    <tr> 
+                      <td width="78" align="right"><a href="#three">选购件 &lt;&lt;</a></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td width="191">网上价格：<%=ListPrice%>元</td>
+              </tr>
+              <tr> 
+                <td width="100">&nbsp;</td>
+                <td width="191">代理价格：<%=MemberPrice%>元</td>
+              </tr>
+            </table>
+            <table width="600" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td class="font3">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td class="font3">本系列其它商品</td>
+              </tr>
+              <tr> 
+                <td> 
+                  <hr >
+                </td>
+              </tr>
+              <tr> 
+                <td width="565"> 
+                  <table border="1" cellspacing="2" cellpadding="0" bordercolor="#666666" width="600">
+                    <%
+                      rs = Result.getRS("select l.ShortDesc, l.Descr, p.*, b.name, c.catename from " +
+                        " product p, product_l l, brand b, category c  where p.prodid = l.prodid and " +
+                        " l.lang_code = '" + LangCode + "' and p.brandid = '" + BrandId + "' and p.cateid = '" +
+                        CategoryId  +  "' and " + " p.prodId <> '" + ProdId + "' and " +
+                        " p.brandid = b.brandid and b.lang_code = l.lang_code and  " +
+                        " p.cateid = c.cateid and c.lang_code = l.lang_code ");
+                      if (rs != null)
+                      {
+                        //out.println("con = true");
+                        while (rs.next())
+                        {
+                          CategoryName = rs.getString("CateName");
+                          Brand = rs.getString("Name");
+                          ProdId = rs.getString("ProdId");
+                          ProductNo = rs.getString("ProductNo");
+                          ProductName =  Brand + " " + ProductNo + CategoryName;
+                          %>
+                          <tr>
+                          <td><img src="images/dianc.gif" width="15" height="15">
+                            <a href="/chinaeoa/ProductDetail.jsp?ProdId=<%=ProdId%>&LangCode=<%=LangCode%>"><%=ProductName%></a></td>
+
+                          <%
+                          if (rs.next())
+                          {
+                            CategoryName = rs.getString("CateName");
+                            Brand = rs.getString("Name");
+                            ProductNo = rs.getString("ProductNo");
+                            ProductName =  Brand + " " + ProductNo + CategoryName;
+                          }
+                          else
+                            ProductNo = "&nbsp;";
+                          %>
+                          <td><img src="images/dianc.gif" width="15" height="15">
+                            <a href="/chinaeoa/ProductDetail.jsp?ProdId=<%=ProdId%>"><%=ProductName%></a></td>
+                          </tr>
+                          <%
+                        }
+                      }
+                    %>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <hr  >
+                </td>
+              </tr>
+            </table>
+            <table width="500" cellspacing="0" cellpadding="2" border="0">
+              <tr> 
+                <td rowspan="11" width="78">&nbsp;</td>
+                <td colspan="2" width="560"><a name="one"></a></td>
+              </tr>
+              <tr> 
+                <td height="14" colspan="2" width="560"><img src="images/rule.gif" width="93" height="23"></td>
+              </tr>
+              <tr> 
+                <td height="31" colspan="2" width="560"> 
+                  <table border=0 cellpadding=2 cellspacing=2 width="600">
+                    <tbody>
+   <%
+   if ((Descr != "") && (Descr !=null))
+   {
+     boolean DisplayColor = false;
+     ColorName = "#DDF1FF";
+     Descr = Descr + "\n";
+     while (Descr.indexOf("\n")>=0)
+     {
+       i = Descr.indexOf("\n");
+       SpecDesc = Descr.substring(0,i).trim();
+       Descr = Descr.substring(i+1);
+       if (SpecDesc.indexOf("|") >= 0)
+       {
+         i = SpecDesc.indexOf("|");
+         Spec = SpecDesc.substring(0,i).trim();
+         SpecDesc = SpecDesc.substring(i + 1).trim();
+         if (ColorName.equals("#B0D3FF"))
+           ColorName = "#DDF1FF";
+         else
+           ColorName = "#B0D3FF";
+       }
+       else
+       {
+         Spec = "&nbsp;";
+       }
+       %>
+       <tr bgcolor="<%=ColorName%>">
+            <td ><%=Spec%></td>
+            <td ><%=SpecDesc%></td>
+       </tr>
+       <%
+     }
+   }
+   %>
+
+
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td height="13" colspan="2" width="560">&nbsp; </td>
+              </tr>
+              <tr> 
+                <td height="21" colspan="2" width="560"><a name="two"></a><b>耗材</b></td>
+              </tr>
+              <tr> 
+                <td colspan="2" height="8" width="560"> 
+                  <table border=0 cellpadding=2 cellspacing=2 width="600" height="41">
+                    <tbody>
+
+
+                    <% rs = Result.getRS("select p.*, c.catename from product p, " +
+                         " Prod_part pp, category c  where  p.cateid = c.cateid and " +
+                         " c.lang_code = '" + LangCode +
+                         "' and p.prodid = pp.partprodid and p.typeid = 4 and pp.prodid = " + ProdId);
+                       ColorName = "00";
+                       if (rs != null)
+                       {
+                         while (rs.next())
+                         {
+                           if (ColorName.equals("00"))
+                           {
+                           %>
+                           <tr align="center">
+                            <td bgcolor=#669FDF width="9%" height="2"> 品名<br></td>
+                            <td bgcolor=#669FDF width="17%" height="2" nowrap> 型号 </td>
+                            <td bgcolor=#669FDF width="17%" height="2" nowrap> 价格<br>
+                           （单位：元） </td>
+                           </tr>
+                           <%
+                           }
+                           if (ColorName.equals("#B0D3FF"))
+                             ColorName = "#DDF1FF";
+                           else
+                             ColorName = "#B0D3FF";
+                           %>
+                           <tr align="center">
+                           <td bgcolor=<%=ColorName%> width="9%" height="2"><%=rs.getString("CateName")%></td>
+                           <td bgcolor=<%=ColorName%> width="17%"><%=rs.getString("ProductNo")%></td>
+                           <td bgcolor=<%=ColorName%> width="17%"><%=rs.getString("ListPrice")%></td>
+                           </tr>
+                         <%
+                         }
+                       }
+                       
+                    %>
+
+                   
+                    </tbody> 
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="2" height="13" width="560">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td colspan="2" height="8" width="560"><a name="three"></a><b>选购件</b></td>
+              </tr>
+              <tr> 
+                <td height="2" colspan="2" width="560"> 
+                  <table width="600" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td colspan="3"> 
+                        <table width="600" border="0">
+                          <tr> 
+                            <td valign="top" height="101"> 
+
+                              <table border=0 cellpadding=2 cellspacing=2 width="600">
+            <%
+            rs = Result.getRS("select  l.shortdesc, l.descr, p.*, c.catename, " +
+                     " d.dir from product p,product_l l, Prod_part pp, category c, dir_setting d " +
+                     " where  p.cateid = c.cateid and p.prodId = l.prodid  and l.lang_Code = '" +
+                     LangCode + "' and p.picdir1 = d.dirid(+) and c.lang_code = 'GB' and p.prodid " +
+                     " = pp.partprodid and pp.prodid = " + ProdId + " and p.typeid= 6 ");
+            if (rs != null)
+            {
+              while (rs.next())
+              {
+                Descr = rs.getString("ShortDesc");
+                PicDir1 = rs.getString("Dir");
+                PicFile1 = rs.getString("FileName1");
+                if (ColorName.equals("#B0D3FF"))
+                  ColorName = "#DDF1FF";
+                else
+                  ColorName = "#B0D3FF";
+                Descr = Descr + "\n";
+                %>
+                <tr bgcolor="<%=ColorName%>">
+
+                <td ><%=rs.getString("CateName")+rs.getString("ProductNo")%></td>
+                <td   height="60">
+                <%
+
+                  ImageFile = PicDir1+PicFile1;
+                  if ((ImageFile != null) && (PicDir1 != null))
+                  {
+                   out.println("<img src=" + ImageFile +
+                   " width=\"80\" height=\"50\"> ");
+                  }
+                  else
+                    out.println("暂无图片");
+                %>
+                </td>
+                </tr>
+                <%
+                while (Descr.indexOf("\n")>=0)
+                {
+                  i = Descr.indexOf("\n");
+                  SpecDesc = Descr.substring(0,i).trim();
+                  Descr = Descr.substring(i+1);
+                  if (SpecDesc.indexOf("|") >= 0)
+                  {
+                    i = SpecDesc.indexOf("|");
+                    Spec = SpecDesc.substring(0,i).trim();
+                    SpecDesc = SpecDesc.substring(i + 1).trim();
+                  }
+                  else
+                  {
+                    Spec = "&nbsp;";
+                  }
+                  %>
+                  <tr bgcolor="<%=ColorName%>">
+                  <td ><%=Spec%></td>
+                  <td ><%=SpecDesc%></td>
+                  </tr>
+                  <%
+                }
+              }
+            }
+              %>
+                              </table>
+
+                            </td>
+                          </tr>
+                          <tr> 
+                            <td valign="top">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td height="2" colspan="2" width="560" bgcolor="#669FDF">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td height="21" colspan="2" width="560" align="center">
+                  <table width="600" border="0" cellspacing="0" cellpadding="0">
+                    <tr align="center"> 
+                      <td height="30"><a href="#top"><img src="images/temp/top.gif" width="60" height="17" border="0"></a></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- #EndEditable --> </td>
+  </tr>
+</table>
+<script language="JavaScript" src="javascript/foot1.js">
+</script>
+</body>
+<!-- #EndTemplate --></html>

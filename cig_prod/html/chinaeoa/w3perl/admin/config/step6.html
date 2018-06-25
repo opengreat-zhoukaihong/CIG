@@ -1,0 +1,199 @@
+<HTML><head>
+<title>W3Perl Forms- Step 6</TITLE>
+</head>
+
+<BODY BACKGROUND="<!-- BG -->" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<FORM METHOD=POST ACTION="<!-- cgiurl -->/confstat.pl">
+
+<INPUT NAME="step" VALUE="6" TYPE="HIDDEN">
+
+<!-- HIDDEN -->
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="<!-- LINE -->" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Configuration - Step 6</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD ALIGN=CENTER VALIGN=TOP>
+ </TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD>
+
+A few more options to select filters. The seuil numbers are useful if you
+don't want to load huge HTML pages.
+
+</TD>
+</TR>
+<TR><TD BGCOLOR="#AAAAAA" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Display options</FONT></I>
+</TD>
+<TD VALIGN=TOP BGCOLOR="#DDDDDD">
+
+<TABLE WIDTH=100% BORDER=0>
+<TR><TD>
+Level of precision
+</TD><TD>
+<INPUT NAME="precision" TYPE="radio" VALUE="4">4 (high)
+<INPUT NAME="precision" TYPE="radio" VALUE="3">3 (medium)
+<INPUT NAME="precision" TYPE="radio" VALUE="2">2 (minimum)
+<INPUT NAME="precision" TYPE="radio" VALUE="1">1 (low)
+
+</TD></TR>
+<TR>
+<TD COLSPAN=2>
+<FONT SIZE=-1>
+<I>(For more info, read the docs, but medium is the best on most server)</I>
+</FONT>
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR><TD>
+Domain stats :
+</TD><TD>
+<INPUT NAME="locallog" TYPE="radio" VALUE="1"> Yes
+<INPUT NAME="locallog" TYPE="radio" VALUE="0"> No
+</TD></TR>
+<TR>
+<TD COLSPAN=2>
+<FONT SIZE=-1>
+<I>(If enable, stats about your local domain will be shown)</I>
+</FONT>
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+
+<TR><TD>
+Domain stats only :
+</TD><TD>
+<INPUT NAME="localonly" TYPE="radio" VALUE="1"> Yes
+<INPUT NAME="localonly" TYPE="radio" VALUE="0"> No
+</TD></TR>
+<TR>
+<TD COLSPAN=2>
+<FONT SIZE=-1>
+<I>(If enable, stats will show ONLY your domain, useful for Intranet)</I>
+</FONT>
+</TD></TR>
+</TABLE>
+
+</TD>
+</TR>
+<TR><TD BGCOLOR="#AAAAAA" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Seuil</FONT></I>
+</TD>
+<TD BGCOLOR="#DDDDDD">
+
+
+<TABLE WIDTH=100%>
+<TR><TD>
+Top display :
+</TD><TD>
+<INPUT NAME="topten" TYPE="text" VALUE="">
+</TD></TR>
+<TR><TD COLSPAN=2>
+<FONT SIZE=-1>
+<I>(Only the first Top item (pages, hosts, directories, countries...) will be displayed)</I>
+</FONT>
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+
+<TR><TD>
+Pages seuil :
+</TD><TD>
+<INPUT NAME="seuilpage" TYPE="text" VALUE="">
+</TD></TR>
+<TR>
+<TD COLSPAN=2>
+<FONT SIZE=-1>
+<I>(To avoid a long list, only item with more than this seuil will be shown)</I>
+</FONT>
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+
+<TR><TD>
+Hosts seuil :
+</TD><TD>
+<INPUT NAME="seuilsite" TYPE="text" VALUE="">
+</TD></TR>
+<TR>
+<TD COLSPAN=2>
+<FONT SIZE=-1>
+<I>(To avoid a long list, only item with more than this seuil will be shown)</I>
+</FONT>
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+
+<TR><TD>
+Directories seuil :
+</TD><TD>
+<INPUT NAME="seuilrepert" TYPE="text" VALUE="">
+</TD></TR>
+<TR>
+<TD COLSPAN=2>
+<FONT SIZE=-1>
+<I>(To avoid a long list, only item with more than this seuil will be shown)</I>
+</FONT>
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+
+<TR><TD>
+Scripts seuil :
+</TD><TD>
+<INPUT NAME="seuilscript" TYPE="text" VALUE="">
+</TD></TR>
+<TR>
+<TD COLSPAN=2>
+<FONT SIZE=-1>
+<I>(To avoid a long list, only item with more than this seuil will be shown)</I>
+</FONT>
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+
+<TR><TD>
+Number of days to display :
+</TD><TD>
+<INPUT NAME="nbdays" TYPE="text" VALUE="">
+</TD></TR>
+<TR>
+<TD COLSPAN=2>
+<FONT SIZE=-1>
+<I>(Graphs and table will shown these last number of day (use 0 for a year))</I>
+</FONT>
+</TD></TR>
+</TABLE>
+
+</TD>
+</TR>
+</TABLE>
+
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD>
+
+<CENTER>
+<INPUT TYPE="SUBMIT" VALUE="Submit">
+<INPUT TYPE="RESET" VALUE="Reset">
+</CENTER>
+</TD>
+
+</TR>
+</TABLE>
+
+</FORM>
+
+</body>
+</html>

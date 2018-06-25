@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<TITLE></TITLE>
+</HEAD>
+<BODY>
+<SCRIPT LANGUAGE=javascript>
+<!--
+var wStr
+function PostForm()
+{
+  wStr = "";
+  for (j=0;j<fm.elements.length;++j)
+  { 
+    if (fm.elements[j].type == "checkbox")
+    {
+     if (fm.elements[j].checked == true)
+      {
+        wStr = wStr + "'" + fm.elements[j].value + "',"; 
+      }
+    }
+  }
+  alert(wStr + "'0'");
+}
+//-->
+</SCRIPT>
+
+<P>
+<FORM name=fm action=""  method=post ><INPUT  
+name=ck type=checkbox value = "1" checked><INPUT  name=ck type=checkbox value =2>
+<INPUT name=ck type=checkbox value=3><INPUT name=ck
+ type = checkbox value=4><INPUT type="button" value="Button" id=button1 name=button1 onclick="PostForm()" > <INPUT 
+id=text1 name=text1>
+  <input type="hidden" name="textfield" >
+</FORM><p></p>
+<P><TEXTAREA id=TEXTAREA1 name=TEXTAREA1>dfdsfsd
+dsfdsf
+</TEXTAREA><SELECT id=select1 name=select1 size=2> 
+<OPTION></OPTION></SELECT>
+<SELECT id=select2 name=select2 
+style="HEIGHT: 22px; WIDTH: 34px"> 
+<OPTION  
+  value=1 selected 
+ style="HEIGHT: 22px; WIDTH: 60px">sdfsd</OPTION><OPTION 
+  value=2 style="HEIGHT: 22px; WIDTH: 60px">sdfdsf</OPTION><OPTION value=3 style="HEIGHT: 22px; WIDTH: 60px">dfhfg</OPTION><OPTION 
+value=""></OPTION></SELECT><INPUT id=text2 
+name=text2 type="hiden"><INPUT id=password1 name=password1 
+type=hiden></P>
+
+</BODY>
+</HTML>

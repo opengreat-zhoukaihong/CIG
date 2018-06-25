@@ -1,0 +1,53 @@
+<HTML><head>
+<title>W3Perl newhttpdlog script</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Squeezing the log file</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD VALIGN=TOP>
+The aim of squeezelog is to squeeze huge httpd log file to save
+disk space.<br>
+Every first day of each month , squeezelog should be called in a
+crontab to cut and compressed the current log file. It can be only
+used by root as logfiles are usually root files.<P>
+(Eg : 01 00 1 * * /usr/bin/sh /norfolk/www/w3perl/squeezelog)
+<P>
+<B> Configuring squeezelog :</B>
+
+<UL>
+<LI>LOGDIR is the full path where the log file are stored<br>
+<LI>LOG is the name of your log file<br>
+<LI>You should give the full path for gzip (Eg : /opt/bin/gzip)<br>
+</UL>
+
+<B> Altering squeezelog : </b>
+<UL>
+<LI> If you have a error log file, you can also compress it (delete the
+rem in the squeezelog file)
+<LI> You may also want to restart the httpd daemon<br>
+(see the last line in rem, '/home/local/WWW/server_root/httpd-pid' is the
+file where is located the httpd pid)
+</UL>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="/chinaeoa/index.jsp"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+
+</body>
+</html>

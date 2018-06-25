@@ -1,0 +1,304 @@
+<%@ page import="java.sql.*" %>
+<jsp:useBean id="LookUp" scope="page" class="com.cig.chinaeoa.LookUpBean" />
+<jsp:useBean id="Result" scope="page" class="com.cig.chinaeoa.ResultBean" />
+<%
+String TypeId = request.getParameter("TypeId");
+String LangCode = request.getParameter("LangCode");
+String SQL = "";
+String SelectName = "";
+String DisplayField = "";
+String ValueField = "";
+String SpecId = "";
+String SpecName = "";
+SQL = "select * from spec where lang_code ='" + LangCode + "' and  typeid = '" + TypeId + "' and query = 'A' order by specID";
+ResultSet rs = Result.getRS(SQL);
+%>
+<html><!-- #BeginTemplate "/Templates/ceoa1.dwt" -->
+<head>
+<!-- #BeginEditable "doctitle" --> 
+<title>ChinaEOA.com</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="eoa.css" rel="stylesheet" type="text/css">
+<script
+language="JavaScript">
+<!--
+img1on = new Image();
+img1on.src = "images/temp/menu_1_0.gif"; 
+img2on = new Image();
+img2on.src = "images/temp/menu_2_0.gif";
+img3on = new Image();
+img3on.src = "images/temp/menu_3_0.gif";
+img4on = new Image();
+img4on.src = "images/temp/menu_4_0.gif";
+img5on = new Image();
+img5on.src = "images/temp/menu_5_0.gif";
+img6on = new Image();
+img6on.src = "images/temp/menu_6_0.gif";
+img7on = new Image();
+img7on.src = "images/temp/menu_r07_c1_f2.gif";
+img8on = new Image();
+img8on.src = "images/temp/menu_r08_c1_f2.gif";
+img9on = new Image();
+img9on.src = "images/temp/menu_r09_c1_f2.gif";
+img0on = new Image();
+img0on.src = "images/temp/menu_r10_c1_f2.gif";
+img1off = new Image();
+img1off .src = "images/temp/menu_1.gif"; 
+img2off = new Image();
+img2off .src = "images/temp/menu_2.gif";
+img3off = new Image();
+img3off .src = "images/temp/menu_3.gif";
+img4off = new Image();
+img4off .src = "images/temp/menu_4.gif";
+img5off = new Image();
+img5off .src = "images/temp/menu_5.gif";
+img6off = new Image();
+img6off .src = "images/temp/menu_6.gif";
+img7off = new Image();
+img7off .src = "images/temp/menu_7.gif";
+img8off = new Image();
+img8off .src = "images/temp/menu_r08_c1.gif";
+img9off = new Image();
+img9off .src = "images/temp/menu_r09_c1.gif";
+img0off = new Image();
+img0off .src = "images/temp/menu_r10_c1.gif";
+function imgOn (imgName) {
+if (document.images) {
+document[imgName].src = eval (imgName + "on.src");
+}
+}
+function imgOff (imgName) {
+if (document.images) {
+document[imgName].src = eval(imgName + "off.src");
+}
+}
+function MM_preloadImages() { //v3.0
+var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+<script language="JavaScript">
+<!--
+<!--
+provinceArray = new Array(
+<%=LookUp.getDynamicLookUp("select p.brandId,p.productno,P.prodid from product p ," + 
+" brand b where p.brandid = b.brandid and b.lang_code = '" + LangCode  + "' order by brandid",3)%>);//
+  //cityArray = new Array("1.1.guangzhou.1","1.1.shenzheng.2","1.2.xiamen.3","1.2.fuzhou.4");
+  dropDownItem = new String();
+
+  function changeProvinceInfo(countryBox,provinceBox)
+  {
+    var countryItem = countryBox.value;
+    var itemCount;
+
+    if(countryItem>0)
+    {
+      provinceBox.length=1;
+     // cityBox.length=1;
+      for(var i=0;i<provinceArray.length;i++)
+      {
+        dropDownItem = provinceArray[i].split(".");
+        if(countryItem==dropDownItem[0])
+        {
+          itemCount = provinceBox.length;
+          provinceBox.length += 1;
+          provinceBox.options[itemCount].value = dropDownItem[2];
+          provinceBox.options[itemCount].text = dropDownItem[1];
+        }
+      }
+    }
+  }
+
+//-->
+</script>
+
+</head>
+
+<body bgcolor="#F7FBFA" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" tracingsrc="file:///F%7C/ChinaEOA/ceoa.gif" tracingopacity="80" background="images/temp/bg.gif">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="1" bgcolor="#000000" >
+  <tr> 
+    <td><img src="images/spacer.gif" width="1" height="1"></td>
+  </tr>
+</table>
+<script language="JavaScript" src="javascript/title1.js">
+</script>
+<table width="640" border="0" cellspacing="0" cellpadding="0" >
+  <tr> 
+    <td valign="top" width="14"> <img src="images/temp/left_bar.gif" width="14" height="2"></td>
+    <td valign="top" colspan="2"><!-- #BeginEditable "body" --> 
+      <table border="0" cellspacing="0" cellpadding="0" width="626">
+        <tr> 
+          <td width="190" valign="top"> 
+            <table border="0" cellspacing="0" cellpadding="0">
+              <tr valign="top"> 
+                <td><img src="images/temp/product_menu.gif" width="176" height="242" usemap="#Map" border="0"><map name="Map"><area shape="circle" coords="86,51,19" href="ProductSearch.jsp?TypeId=3&LangCode=GB"><area shape="circle" coords="86,111,23" href="ProductSearch.jsp?TypeId=1&LangCode=GB"><area shape="circle" coords="84,168,22" href="ProductSearch.jsp?TypeId=2&LangCode=GB"><area shape="circle" coords="35,88,24" href="#"><area shape="circle" coords="32,145,24" href="ProductSearch.jsp?TypeId=4&LangCode=GB"><area shape="circle" coords="31,202,24" href="ProductSearch.jsp?TypeId=5&amp;LangCode=GB"></map></td>
+              </tr>
+            </table>
+          </td>
+          <td align="center" width="269" valign="top"> 
+            <table width="250" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td colspan="2" height="20"> <img src="images/temp/path.gif" width="49" height="13"> 
+                  <img src="images/arrow.gif" width="7" height="11"> <a href="index.html">首页</a> 
+                  <img src="images/arrow.gif" width="7" height="11"> <font title="里边有什么好东西呢"><a href="product_centre.htm">产品中心</a> 
+                  </font></td>
+              </tr>
+            </table>
+            <table border="0" cellspacing="1" width="250">
+              <form name="fmSearch" method="post"  action="SearchProdList.jsp?LangCode=GB&TypeId=<%=TypeId%>">
+                <tr align="center"> 
+                  <td colspan="2" height="30" class="font4b">
+                  <% if (TypeId.equals("1"))
+                       out.println("打印机");
+                     else if (TypeId.equals("2"))
+                       out.println("传真机");
+                     else if (TypeId.equals("3"))
+                       out.println("复印机");
+                     else if (TypeId.equals("4"))
+                       out.println("耗材");
+                     else if (TypeId.equals("5"))
+                       out.println("零件");
+                     else if (TypeId.equals("6"))
+                       out.println("选购件");
+
+
+                  %>展示中心 </td>
+                </tr>
+                <tr> 
+                  <td>品牌</td>
+                  <td width="191"><font size="2"> 
+                    <select name="Brand" size="1" onChange="changeProvinceInfo(Brand,ProductNo)">
+                      <option value="0" selected>-请选择-</option>
+                      <%=LookUp.getLookUp("select * from brand  where lang_code = '" +
+            LangCode  + "' order by brandid","name","brandid")%> 
+                    </select>
+                    </font></td>
+                </tr>
+                <tr> 
+                  <td height="9">产品型号</td>
+                  <td width="191" height="9"><font size="2"> 
+                    <select name="ProductNo" size="1">
+                      <option value="0" selected>-请选择-</option>
+                    </select>
+                    </font></td>
+                </tr>
+                <tr> 
+                  <td>产品类别</td>
+                  <td width="191"><font size="2"> 
+                    <select name="Category">
+                      <option value="0" selected>-请选择-</option>
+                      <%=LookUp.getLookUp("select * from category  where lang_code = '" +
+            LangCode  + "' and typeid='" + TypeId  + "' order by cateid","CateName","CateId")%> 
+                    </select>
+                    </font></td>
+                </tr>
+                <tr> 
+                  <td>价格范围 </td>
+                  <td width="191"><font size="2"> 
+                    <select name="PriceRange">
+                      <option value="0" selected>-请选择-</option>
+                      <option value="0~1000">1,000元以下</option>
+                      <option value="1000~2000">1,000~2,000元</option>
+                      <option value="2000~3000">2,000~3,000元</option>
+                      <option value="3000~4000">3,000~4,000元</option>
+                      <option value="4000~5000">4,000~5.000元</option>
+                      <option value="5000~6000">5,000~6,000元</option>
+                      <option value="6000~7000">6,000~7,000元</option>
+                      <option value="7000~8000">7,000~8,000元</option>
+                      <option value="8000~9000">8,000~9,000元</option>
+                      <option value="9000~10000">9,000~10,000元</option>
+                      <option value="10000~10000000">10,000元以上</option>
+                    </select>
+                    </font></td>
+                </tr>
+                <%
+    if (rs != null) 
+    {
+      while (rs.next())
+      {
+        SpecId = rs.getString("SpecId");
+        SpecName = rs.getString("Name");
+        out.println("<tr>");
+        out.println("<td width=\"107\"><font size=\"2\">" + SpecName + "</font></td>");
+        out.println("<td width=\"191\"><font size=\"2\">");
+        out.println("<select name=\"" + SpecId + "\">");
+          out.println("<option value=\"0\">-请选择-</option>");
+          out.println(LookUp.getLookUp("select distinct value1 from prod_spec where SpecId = '" +
+            SpecId  + "' and Value1 <> '0'  order by Value1","Value1","Value1"));
+        out.println("</select>");
+        out.println("</font>");
+        out.println("</td>");
+        out.println("</tr>");
+      }
+
+    }
+    %>
+                <tr> 
+                  <td colspan="2"><b>您可以根据您的需要进行单项或多项查询</b> </td>
+                </tr>
+                <tr align="center"> 
+                  <td colspan="2" height="50"><font size="2"> <a href="javascript:fmSearch.submit();"><img src="images/temp/b_search.gif" width="44" height="17" border="0"></a> 
+                    </font></td>
+                </tr>
+              </form>
+            </table>
+          </td>
+          <td align="right" valign="top" width="167"> 
+            <table width="154" border="0" cellspacing="0" cellpadding="0">
+              <tr align="center"> 
+                <td colspan="2" height="20"> <img src="images/temp/arrow_red.gif" width="7" height="11"> 
+                  <a href="#">订单查询</a> <img src="images/temp/arrow_red.gif" width="7" height="11"> 
+                  <a href="#">查看购物车</a></td>
+              </tr>
+            </table>
+            <table width="154" border="0" cellspacing="0" cellpadding="0">
+              <tr align="center"> 
+                <td valign="top" width="154"><img src="images/temp/title_hot.gif" width="154" height="28"></td>
+              </tr>
+              <tr align="center"> 
+                <td width="154"> 
+                  <table width="154" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="3" valign="top"><img src="images/temp/left_bars.gif" width="3" height="76"></td>
+                      <td width="149"> 
+                        <table width="149" border="0" cellspacing="0" cellpadding="0">
+                          <tr align="center"> 
+                            <td colspan="2"><a href="ProductDetail.jsp?ProdId=5791&amp;LangCode=GB"><img src="images/temp/hot_product.gif" width="149" height="89" border="0"></a></td>
+                          </tr>
+                          <tr align="center"> 
+                            <td colspan="2"><img src="images/temp/hot_text.gif" width="149" height="55"></td>
+                          </tr>
+                          <tr align="center"> 
+                            <td colspan="2">&nbsp;</td>
+                          </tr>
+                          <tr align="center"> 
+                            <td width="75"><a href="ProductDetail.jsp?ProdId=5791&amp;LangCode=GB"><img src="images/temp/b_detail.gif" width="44" height="17" border="0"></a></td>
+                            <td width="74"><a href="#"><img src="images/temp/b_buy.gif" width="44" height="17" border="0"></a></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td width="2" valign="top"><img src="images/temp/right_bars.gif" width="2" height="76"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <br>
+      <br>
+      <!-- #EndEditable --> </td>
+  </tr>
+</table>
+<script language="JavaScript" src="javascript/foot1.js">
+</script>
+</body>
+<!-- #EndTemplate --></html>

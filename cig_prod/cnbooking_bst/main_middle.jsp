@@ -1,0 +1,50 @@
+<html>
+<head>
+
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.font9 {  color: #ff8000; font-size: 9pt}
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF">
+<script language="JavaScript">
+function PostForm()
+{
+ fmLogin.submit();
+}
+</script>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="79">&nbsp; </td>
+    <td class="font9" width="278"> 
+      <form Name=fmLogin method="post" action="/cnbooking_bst/after_login.jsp">
+        <p>&nbsp;</p><table width="300" border="1" cellspacing="2" cellpadding="5" bordercolordark="#FFFFFF" bordercolorlight="#F9C026">
+          <tr> 
+            <td width="100" class="font9"> 登录姓名：</td>
+            <td> 
+              <input type="text" name="username">
+            </td>
+          </tr>
+          <tr> 
+            <td width="100" class="font9">密码：</td>
+            <td> 
+              <input type="password" name="password">
+            </td>
+          </tr>
+        </table>
+        <table width="300" border="0" cellspacing="0" cellpadding="0">
+          <tr align="center"> 
+            <td height="50"><a href="JavaScript:PostForm()"> <img src="/images/botton_login.gif" width="68" height="26" border="0" ></a> 
+            </td>
+          </tr>
+        </table>
+      </form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,73 @@
+Unknown 0
+Archive 1
+Document 2
+Graphics 3
+Multimedia 4
+Scripts 5
+HTML 6
+Secure Hyper Text Markup Language (.shtml) 6
+Hyper Text Markup Language (.html) 6
+Hyper Text Markup Language (.htm) 6
+Extensible Markup Language (.xml) 6
+NCSA map file (.map) 6
+Tar file (.tar) 1
+Zip archive (.zip) 1
+Gzip compressed files (.gz) 1
+Macintosh archives (.hqx) 1
+Unix Compress (.z) 1
+RAR Compress (.rar) 1
+Adobe Portable Document Format (.pdf) 2
+Plain text (.txt) 2
+PostScript (.ps) 2
+PowerPoint Document (.ppt) 2
+Word (.doc) 2
+Excel (.xls) 2
+Rich Text Format (.rtf) 2
+Information text (.info) 2
+Logfile (.log) 2
+DVI (.dvi) 2
+AUX (.aux) 2
+TeX (.tex) 2
+Comma Separated Variables (.csv) 2
+JPEG graphics (.jpeg) 3
+JPEG graphics (.jpg) 3
+GIF graphics (.gif) 3
+BMP graphics (.bmp) 3
+X11 bitmap (.xbm) 3
+PNG graphics (.png) 3
+ICO graphics (.ico) 3
+TIFF graphics (.tif) 3
+MPG movie file (.mpg) 4
+MOV movie file (.mov) 4
+MPG movie file (.mpeg) 4
+MP2 music file (.mp2) 4
+MP3 music file (.mp3) 4
+WAV sound (.wav) 4
+Sun sound (.au) 4
+Real Audio (.ram) 4
+Midi Audio (.mid) 4
+Vivo video (.viv) 4
+Flash movie (.swf) 4
+AVI movie (.avi) 4
+Active(Movie) Streaming Format (.asf) 4
+PC binary (.exe) 5
+Perl script (.pl) 5
+Common Gateway Interface (.cgi) 5
+Java archive (.jar) 5
+Javascript (.js) 5
+Cascading Style Sheets (.css) 5
+Java source (.java) 5
+Java Server Page (.jsp) 5
+Java Class (.class) 5
+RedHat Package Manager (.rpm) 5
+C source (.c) 5
+C++ source (.cpp) 5
+Fortran source (.f77) 5
+Header source (.h) 5
+Interactive Data Language (.idl) 5
+PHP (.php) 5
+PHP3 (.php3) 5
+PHP (.phtml) 5
+ASP (.asp) 5
+Dynamic Link Library (.dll) 5
+PHP Source (.phps) 5

@@ -1,0 +1,171 @@
+<HTML><head>
+<title>W3Perl installation</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE WIDTH=100% CELLSPACING=5 BORDER=0>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Installation</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=CENTER>
+</TD>
+<TD VALIGN=TOP>
+
+You first need to install the Fly package which will compute graphics
+for w3perl. Then installation is just a matter of editing three lines
+of one file and using the administration interface to customize your
+output.
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=CENTER>
+<I><FONT SIZE=+1><B>NT</B></FONT><HR width=50%></I>
+</TD>
+<TD VALIGN=TOP>
+
+The installation have been greatly enhanced. The files are installed
+with the <A HREF="http://hammer.prohosting.com/~aghost/ENG//chinaeoa/index.jsp">Ghost Installer</A> application. <BR>
+Please read <A HREF="nt.html">this new manual</A> for full instructions.
+
+
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD><HR ALIGN=CENTER WIDTH=30%></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=CENTER>
+<I><FONT SIZE=+1><B>Unix</B></FONT><HR width=50%></I>
+</TD>
+<TD VALIGN=TOP>
+
+<CENTER>
+<TABLE BORDER=1>
+<TR><TH ALIGN=CENTER>
+Fly
+</TH></TR></TABLE>
+</CENTER>
+<P>
+1 - Download the Fly package from <A HREF="http://www.unimelb.edu.au/fly/">Australia</A> 
+or from a mirror site in <A HREF="http://www.w3perl.com/fly/">USA</A> (source and binary both available)
+<P>
+2 - Extract the files (tar -xzvf fly.tgz on Unix)
+<P>
+3 - Compile the package or use the binary files.
+<P>
+
+<CENTER>
+<TABLE BORDER=1>
+<TR><TH ALIGN=CENTER>
+W3Perl
+</TH></TR></TABLE>
+</CENTER>
+
+<BR>
+I've find three different ways to install the package :
+<P>
+<TABLE BORDER=1 WIDTH=100%>
+<TR>
+<TH>&nbsp;</TH>
+<TH>Telnet</TH>
+<TH>Cgi-bin</TH>
+<TH>Crontab</TH>
+</TR>
+<TR>
+<TD><A HREF="provider.html">FTP</A></TD>
+<TD ALIGN=CENTER>No</TD>
+<TD ALIGN=CENTER>Yes</TD>
+<TD ALIGN=CENTER>Option</TD>
+</TR>
+<TR>
+<TD><A HREF="user.html">User</A></TD>
+<TD ALIGN=CENTER>Yes</TD>
+<TD ALIGN=CENTER>No</TD>
+<TD ALIGN=CENTER>Option</TD>
+</TR>
+<TR>
+<TD><A HREF="webmaster.html">Webmaster</A></TD>
+<TD ALIGN=CENTER>Yes</TD>
+<TD ALIGN=CENTER>Yes</TD>
+<TD ALIGN=CENTER>Yes</TD>
+</TR>
+</TABLE>
+<P>
+Installation can be split into five different parts :
+<UL>
+1 - <I>Installation of the files</I>
+</UL>
+<P>
+The package can be installed either on the server root or in
+a cgi-bin directory. Default installation supposed you can
+create a subdirectory /w3perl/ inside your cgi-bin directory.
+You'll have the edit the first three lines of one script and run it.<BR>
+Ensure that <I>/resources/admin/</I> and <I>/config/</I> are writable by 
+the server if you want to use the adminstration interface, they
+should have world permission (chmod 777).
+<P>
+
+<UL>
+2 - <I>Making configuration file</I>
+</UL>
+<P>
+The package need a configuration file to load. This file have
+informations about the stats options you need to customize the
+output.<BR>
+Configuration files can be made via an administration interface or 
+by hand if you don't have access to a cgi-bin directory.
+<P>
+<UL>
+3 - <I>Initialisation</I>
+</UL>
+<P>
+Launch some scripts to check your configuration file and make some
+test output. All stats can be done by only one script if you are on
+a Unix server.
+<P>
+<UL>
+4 - <I>Crontab use</I>
+</UL>
+<P>
+Add an entry in your crontab to compute stats each night. All you
+need to do later is to watch the results in your browser each morning !
+<P>
+<UL>
+5 - <I>Greetings</I>
+</UL>
+<P>
+At last, please tell me you're using w3perl.
+When you let me know you are using w3perl, you help me justify the time 
+spent in maintaining and improving it. If the results are 
+publicly visible on the web, a URL is a wonderful thing to receive, but
+if it's not a publicly visible project, a simple note is just 
+as welcome.
+<P>
+
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+See the <A HREF="faq.html">FAQ</A> and <A HREF="bugs.html">bug</A> report if something's wrong or <A HREF="mailto:domisse@w3perl.com">email me</A>.
+<BR>
+If you have any trouble when installing the package, send me an email about
+what's wrong. Try to be as much precise as you can.<BR>
+
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="/chinaeoa/index.jsp"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

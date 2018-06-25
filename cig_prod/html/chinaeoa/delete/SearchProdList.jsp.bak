@@ -1,0 +1,264 @@
+<%@ page import="java.sql.*" %>
+<jsp:useBean id="Result" scope="page" class="com.cig.chinaeoa.ResultBean" />
+<jsp:useBean id="ResultSpec" scope="page" class="com.cig.chinaeoa.ResultBean" />
+<html><!-- #BeginTemplate "/Templates/ceoa1.dwt" -->
+<head>
+<!-- #BeginEditable "doctitle" --> 
+<title>ChinaEOA.com</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="eoa.css" rel="stylesheet" type="text/css">
+<script
+language="JavaScript">
+<!--
+img1on = new Image();
+img1on.src = "images/temp/menu_1_0.gif"; 
+img2on = new Image();
+img2on.src = "images/temp/menu_2_0.gif";
+img3on = new Image();
+img3on.src = "images/temp/menu_3_0.gif";
+img4on = new Image();
+img4on.src = "images/temp/menu_4_0.gif";
+img5on = new Image();
+img5on.src = "images/temp/menu_5_0.gif";
+img6on = new Image();
+img6on.src = "images/temp/menu_6_0.gif";
+img7on = new Image();
+img7on.src = "images/temp/menu_r07_c1_f2.gif";
+img8on = new Image();
+img8on.src = "images/temp/menu_r08_c1_f2.gif";
+img9on = new Image();
+img9on.src = "images/temp/menu_r09_c1_f2.gif";
+img0on = new Image();
+img0on.src = "images/temp/menu_r10_c1_f2.gif";
+img1off = new Image();
+img1off .src = "images/temp/menu_1.gif"; 
+img2off = new Image();
+img2off .src = "images/temp/menu_2.gif";
+img3off = new Image();
+img3off .src = "images/temp/menu_3.gif";
+img4off = new Image();
+img4off .src = "images/temp/menu_4.gif";
+img5off = new Image();
+img5off .src = "images/temp/menu_5.gif";
+img6off = new Image();
+img6off .src = "images/temp/menu_6.gif";
+img7off = new Image();
+img7off .src = "images/temp/menu_7.gif";
+img8off = new Image();
+img8off .src = "images/temp/menu_r08_c1.gif";
+img9off = new Image();
+img9off .src = "images/temp/menu_r09_c1.gif";
+img0off = new Image();
+img0off .src = "images/temp/menu_r10_c1.gif";
+function imgOn (imgName) {
+if (document.images) {
+document[imgName].src = eval (imgName + "on.src");
+}
+}
+function imgOff (imgName) {
+if (document.images) {
+document[imgName].src = eval(imgName + "off.src");
+}
+}
+function MM_preloadImages() { //v3.0
+var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#F7FBFA" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" tracingsrc="file:///F%7C/ChinaEOA/ceoa.gif" tracingopacity="80" background="images/temp/bg.gif">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="1" bgcolor="#000000" >
+  <tr> 
+    <td><img src="images/spacer.gif" width="1" height="1"></td>
+  </tr>
+</table>
+<script language="JavaScript" src="javascript/title1.js">
+</script>
+<table width="640" border="0" cellspacing="0" cellpadding="0" >
+  <tr> 
+    <td valign="top" width="14"> <img src="images/temp/left_bar.gif" width="14" height="2"></td>
+    <td valign="top" colspan="2"><!-- #BeginEditable "body" --> 
+      <table border="0" cellspacing="0" cellpadding="0" align="center" width="600">
+        <tr> 
+          <td> 
+            <table border="0" cellspacing="0" cellpadding="0" align="center" width="600">
+              <tr> 
+                <td width="20" height="20">&nbsp; </td>
+                <td height="20"><img src="images/temp/path.gif" width="49" height="13"> 
+                  <img src="images/arrow.gif" width="7" height="11"> <a href="index.html">首页</a> 
+                  <img src="images/arrow.gif" width="7" height="11"> <a href="product_centre.htm">产品中心</a> 
+                  <img src="images/arrow.gif" width="7" height="11"> <a href="fax_search.htm">传真机展示中心</a> 
+                  <img src="images/arrow.gif" width="7" height="11"> 产品列表</td>
+              </tr>
+            </table>
+            <table border="0" cellspacing="0" cellpadding="0" width="600" align="center">
+              <tr align="right"> 
+                <td colspan="2" height="20"><img src="images/temp/arrow_red.gif" width="7" height="11"> 
+                  <a href="#">订单查询</a> <img src="images/temp/arrow_red.gif" width="7" height="11"> 
+                  <a href="#">查看购物车</a></td>
+              </tr>
+            </table>
+            <br>
+<%
+String TypeId = request.getParameter("TypeId");
+String LangCode = request.getParameter("LangCode");
+String Category = request.getParameter("Category");
+String Brand = request.getParameter("Brand");
+String PriceRange = request.getParameter("PriceRange");
+String ProdId="";
+String SQL = "";
+String CateName = request.getParameter("CateName");
+String SpecIds[] = {"0","0","0","0","0","0","0","0"};
+String SpecValue1 = "";
+String wStr = "";
+int i;
+int SpecCount;
+ResultSet rs;
+ResultSet rsSpec;
+//out.println(SQL);
+%>
+            <table border="0" cellspacing="2" cellpadding="2" boder="thin mediun thick none" align="center" width="600">
+              <tr align="center"> 
+                <td bgcolor="#99CCFF"> <a name="one"></a>品牌</td>
+               
+                <td bgcolor="#99CCFF"> 型号</td>
+                <%
+                SpecCount = 0;
+                rs = Result.getRS("select * from spec where typeid =" + TypeId + " and query= 'A' and lang_code = '" + LangCode  + "' order by specid");
+                //out.println("select * from spec where typeid =" + TypeId + " and query= 'A' and lang_code = '" + LangCode  + "' order by specid");
+                SQL = "";
+                if (rs != null)
+                {
+                  while (rs.next())
+                  {
+                    SpecIds[SpecCount] = rs.getString("SpecId");
+                    SpecValue1 = request.getParameter(SpecIds[SpecCount]);
+                    if (SpecValue1 == null)
+                      SpecValue1 = "0";
+                    if (!SpecValue1.equals("0"))
+                    {
+                      if (SQL == "")
+                        SQL = SQL + "Select prodid from Prod_spec where SpecId='" + SpecIds[SpecCount]
+                            + "' and value1 ='" + SpecValue1 + "'";
+                      else
+                        SQL = SQL + " intersect Select prodid from Prod_spec where SpecId='" + SpecIds[SpecCount]
+                          + "' and value1 ='" + SpecValue1 + "'";
+                    }
+                    SpecCount++;
+                   out.println("<td bgcolor=\"#99CCFF\">" + rs.getString("Name")  + "</td>");
+
+                  }
+                }
+                if (SQL != "")
+                {
+                  SQL = "(" + SQL + ") s";
+                  SQL = "select rownum, l.shortdesc, l.descr, p.*, b.name, c.catename from product p, product_l l, brand b, category c, "
+                    + SQL + " where p.prodid = l.prodid and l.lang_code = '" + LangCode + "' and p.brandid = b.brandid and b.lang_code = l.lang_code "
+                    + " and  p.cateid = c.cateid and c.lang_code = l.lang_code and p.prodid = s.prodid";
+                }
+                else
+                {
+                  SQL = "select rownum, l.shortdesc, l.descr, p.*, b.name, c.catename from product p, product_l l, brand b, category c "
+                    + " where p.prodid = l.prodid and l.lang_code = '" + LangCode + "' and p.brandid = b.brandid and b.lang_code = l.lang_code "
+                    + " and  p.cateid = c.cateid and c.lang_code = l.lang_code ";
+                }
+
+                wStr = "";
+                //out.println(TypeId);
+
+                if (!TypeId.equals("0"))
+                  wStr = " and  p.TypeID = '" + TypeId + "'";
+                if (!Brand.equals("0"))
+                  wStr = wStr + " and  p.BrandID = '" + Brand + "'";
+                if (!Category.equals("0"))
+                  wStr = wStr + " and  p.CateId = '" + Category + "'";
+                if (!PriceRange.equals("0"))
+                {
+                  i = PriceRange.indexOf("~");
+                  wStr = wStr + " and  p.ListPrice >= " + PriceRange.substring(0,i).trim()
+                    + " and  p.ListPrice <= " + PriceRange.substring(i + 1).trim();
+                }
+                SQL = SQL + wStr + " order by p.brandid, p.cateid ";
+
+                //out.println(SQL);
+                %>
+
+                <td bgcolor="#99CCFF"> 价格(元)</td>
+                <td bgcolor="#99CCFF"> 订购数量</td>
+                <td nowrap bgcolor="#99CCFF"> 放进购物车</td>
+
+              </tr>
+              <%
+              rs = Result.getRS(SQL);
+              String ColorName = "#F4FCFF";
+              boolean IsColor = false;
+              if (rs != null)
+              {
+                while (rs.next())
+                {
+                  if (IsColor)
+                  {
+                    IsColor = false;
+                    ColorName = "#F4FCFF";
+                  }
+                  else
+                  {
+                    IsColor = true;
+                    ColorName = "#DFEEFF";
+                  }
+                  ProdId = rs.getString("ProdId");
+                  %>
+                  <tr>
+                    <td bgcolor="<%=ColorName%>" align="center"> <%=rs.getString("Name")%></td>
+                    <td bgcolor="<%=ColorName%>" align="center"> <font color="#333333">
+                     <a href="ProductDetail.jsp?ProdId=<%=rs.getString("ProdId")%>&LangCode=<%=LangCode%>">
+                      <%= rs.getString("ProductNo") + rs.getString("CateName")%></a></font></td>
+                    <%
+                    for (i=0; i<SpecCount; i++)
+                    {
+                      rsSpec = ResultSpec.getRS("select value1, value2 from prod_spec where prodid = " + ProdId  + " and specid = " + SpecIds[i] );
+                      //out.println("select value1, value2 from prod_spec where prodid = " + ProdId  + " and specid = " + SpecIds[i]);
+                      if (rsSpec != null)
+                      {
+                        while (rsSpec.next())
+                        {
+                          SpecValue1 = rsSpec.getString("Value1");
+                        }
+                      }
+                      out.println("<td bgcolor=\"" + ColorName + "\" align=\"center\">" + SpecValue1 + "</td>");
+                    }
+                    %>
+                    <td bgcolor="<%=ColorName%>" align="center">
+                     <%if (rs.getString("ListPrice") != null)
+         				  out.println(rs.getString("ListPrice"));
+                       %></td>
+                    <td bgcolor="<%=ColorName%>" align="center"><input type="text" name="OrderQty" size="3"></td>
+                    <td bgcolor="<%=ColorName%>" align="center">
+                    <input type="image" src="images/temp/b_ok.gif" name="Submit1" value="确定" width="41" height="17">
+                   </td>
+                 </tr>
+                 <%
+                }
+              }
+              %>
+              
+            </table>
+            <table width="600" border="0" cellspacing="0" cellpadding="0">
+              <tr align="center"> 
+                <td height="30"><a href="#top"><img src="images/temp/top.gif" width="60" height="17" border="0"></a></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- #EndEditable --> </td>
+  </tr>
+</table>
+<script language="JavaScript" src="javascript/foot1.js">
+</script>
+</body>
+<!-- #EndTemplate --></html>

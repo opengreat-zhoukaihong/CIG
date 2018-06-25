@@ -1,0 +1,154 @@
+<HTML><head>
+<title>W3Perl Webmaster installation</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE WIDTH=100% CELLSPACING=5 BORDER=0>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP>
+<CENTER>
+<FONT COLOR="#0000FF"><H1>Webmaster installation</H1></FONT>
+<P>
+<!-- <H3>Webmaster Installation</H3> -->
+</CENTER>
+<P>
+
+<BR>
+<BR>
+The installation process have been modify to be easier than previous (well,
+I hope so ! ;)
+The steps are the following : extract the package, edit the install script and
+run it
+and then build a configuration file to customize your stats.
+<BR>
+<FONT COLOR="#20A0A0">W3Perl installation directory</FONT><BR>
+<FONT COLOR="#A02020">Your Cgi-bin directory</FONT>
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=CENTER>
+<I><FONT SIZE=+1><B>Cgi-bin<BR>directory</B></FONT><HR width=50%></I>
+</TD>
+<TD VALIGN=TOP>
+1.1 - <B>Extract</B><P>
+Download the <A HREF="http://www.w3perl.com/download//chinaeoa/index.jsp">W3Perl package</A>. Unzip and extract it on your server root (w3perl files should
+be readable by your browser), it
+will create a <FONT COLOR="#20A0A0"><I>/w3perl/</I></FONT> directory. Feel free to change the name of that directory to whatever you want (you could change for <FONT COLOR="#20A0A0"><I>/stats/</I></FONT> for example).
+<P>
+
+1.2 - <B>Permission</B><P>
+Give execution permission to the scripts (chmod +x *.pl)
+<BR> Two directories shoud be readable/writeable by the server if you
+want to use the administration interface : 
+<FONT COLOR="#20A0A0"><I>/w3perl/config/</I></FONT> and <FONT COLOR="#20A0A0"><I>/w3perl/resources/admin/</I></FONT>, so chmod 777 if not.
+<P>
+
+1.3 - <B>Installation</B><P>
+Edit the install.pl script. Modify if needed the perl location in the
+first line. Then change $pathcgi and $pathw3perl according to your system.
+$pathcgi is the location where the scripts will be installed, default is
+<FONT COLOR="#A02020">/path_to_your_cgi-bin/cgi-bin/w3perl/</FONT>.
+$pathw3perl is the directory where the package have been extracted :
+<FONT COLOR="#20A0A0">/path_to_your_server_root/w3perl/</FONT>
+<BR>
+Run install.pl If your cgi-bin is root owner, you'll have to run
+the script as root.
+<P>
+
+<!--
+1.3 - Create a subdirectory called <FONT COLOR="#A02020"><I>/w3perl/</I></FONT> inside your cgi-bin directory and move all the w3perl scripts inside it (it means <FONT COLOR="#20A0A0">/w3perl/*.pl scripts</FONT> but also 
+<FONT COLOR="#20A0A0">/w3perl/cgi-bin/w3perl/*.pl scripts</FONT>).
+<BR>So all w3perl scripts should be now located in your 
+<FONT COLOR="#A02020">/cgi-bin/w3perl/</FONT> directory.
+<P>
+1.4 - Edit the first line of <FONT COLOR="#A02020">fixperlpath.pl</FONT> to reflect the Perl location on your host (most use /usr/local/bin/perl). 
+<BR>Edit the <FONT COLOR="#A02020">second line</FONT> to reflect the full path of the libw3perl.pl script
+ (eg : /usr/local/etc/cgi-bin/w3perl/libw3perl.pl).
+<BR>
+ Then edit the <FONT COLOR="#20A0A0">third line</FONT> to reflect the location of the w3perl resources.
+<BR>  Please don't remove the comment in front of these lines.
+<P>
+-->
+
+
+<!--
+1.7 - Select the 'Customization' link to fix the path used by the package. Another way is to run fixperlpath.pl at the command line. NT users have to use
+the command line. 
+<P>
+-->
+
+1.4 - <B>Configuration file</B><P>
+Use your favourite browser and go to www.yourwebsite.com/<FONT COLOR="#20A0A0">w3perl/admin/</FONT> . You'll see the w3perl administration interface.
+<BR>
+Select 'Make configuration file' and fill the different forms.
+Use default config filename. If you get into trouble, you could also fill 
+the <A HREF="config.html">configuration file</A> by hand. The configuration
+file have to be moved (not copied !) into your <FONT COLOR="#A02020">/path_to_your_cgi-bin/cgi-bin/w3perl/</FONT> (because server owner can't write to
+/cgi-bin/ due to security restriction)
+<P>
+1.5 - <B>Compute stats</B><P>
+Now you're ready to <A HREF="firstuse.html">compute your stats</A> ! 
+You can use the 'Launch scripts' in the administration interface and
+click on the different scripts to launch them or use the command
+line to run the scripts. It's up to you. Better is to use the command
+line to avoid server timeout.
+<BR>
+Launch cron-hour.pl to check everything is right. If no error
+is reported, launch the initialisation script cron-pages.pl, it could
+take ages if your logfile is huge so please be patient (or use a
+smaller file for primary test).
+<P>
+1.6 - <B>Crontab</B><P>
+If everything is right, edit cron-w3perl.pl, choose when 
+you want to launch the different scripts and finally add it in
+your <A HREF="crontab.html">crontab</A>. If launch at command line with the -a flag, cron-w3perl 
+will compute all stats for you.
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=CENTER></TD>
+<TD ALIGN=CENTER><HR WIDTH=30%></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=CENTER>
+<I><FONT SIZE=+1><B>Hints</B></FONT><HR width=50%></I>
+</TD>
+<TD VALIGN=TOP>
+1 - Read carefully the documentation. Many questions are answered
+in the files provided, use also the -h flag for more informations for
+each script.
+<P>
+2 - If you are hosting several web servers on the same host, you
+don't need to install the package for each server.
+<P>
+3 - You can build as many configuration files you need. Just use the
+-c flag to load them
+<P>
+4 - Don't forget numerous option are available via the -h flag
+for each scripts.
+<P>
+5 - Install a password in the <FONT COLOR="#20A0A0">/w3perl/admin/</FONT>
+ to avoid everyone to change your stats settings.
+<P>
+<P>
+6 -If you can't create subdirectory inside your cgi-bin, you'll have edit all links in <FONT COLOR="#20A0A0">/w3perl/admin/</FONT> files (change the
+links from /cgi-bin/w3perl/ to /cgi-bin/)
+<P>
+7 - If you have 'Internal error' problem, it should be related to 
+permission access to the files. Read the last line of your error_log
+to get more informations.
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="install.html"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

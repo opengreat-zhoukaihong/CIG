@@ -1,0 +1,438 @@
+<HTML><head>
+<title>W3Perl Forms- Step 8</TITLE>
+</head>
+
+<BODY BACKGROUND="<!-- BG -->" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<FORM METHOD=POST ACTION="<!-- cgiurl -->/confstat.pl">
+
+<INPUT NAME="step" VALUE="8" TYPE="HIDDEN">
+
+<!-- HIDDEN -->
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="<!-- LINE -->" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Configuration - Step 8</H1></FONT>
+</TD>
+</TR>
+
+<TR>
+<TD WIDTH=120 VALIGN=TOP><FONT SIZE=+2></FONT>
+</TD>
+<TD ALIGN=CENTER VALIGN=TOP>
+</TD>
+</TR>
+
+<TR>
+<TD WIDTH=120>
+</TD>
+<TD>
+
+This is the last and final stage for configuration. You will choose your
+own ouput files.
+
+</TD>
+</TR>
+<TR><TD BGCOLOR="#AAAAAA" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Display text</FONT></I>
+</TD>
+<TD VALIGN=TOP BGCOLOR="#DDDDDD">
+
+	<TABLE WIDTH=100% BORDER=0>
+	<TR>
+	<TD>
+	Frames display :
+	</TD>
+	<TD>
+	<SELECT NAME="frame_updown">
+	</SELECT>
+	</TD>
+	</TR>
+
+	<TR>
+	<TD COLSPAN=2>
+	<FONT SIZE=-1>
+	<I>(You can choose between vertical or horizontal frames)</I>
+	</FONT>
+	</TD>
+	</TR>
+
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+
+	<TR>
+	<TD>
+	Top frame text constumization :
+	</TD>
+	<TD>
+	<INPUT NAME="topframelinks" SIZE=30 TYPE="text" VALUE="">
+	</TD>
+	</TR>
+
+	<TR>
+	<TD COLSPAN=2>
+	<FONT SIZE=-1>
+	<I>(Put here whatever html code you want to show, example show an URL to the homepage, use ' instead of " in html tag)</I><BR>
+	</FONT>
+	<P>
+	Ex : <SELECT NAME="ex">
+	<OPTION SELECTED>&lt;A HREF="http://$localserver$tri" TARGET="_top"&gt;HPLyot&lt;/A&gt;
+	<OPTION>HPLyot
+	</SELECT>
+	</TD>
+	</TR>
+
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+
+	<TR>
+	<TD>
+	Language used :
+	</TD>
+	<TD>
+
+		<TABLE>
+		<TR><TD>
+		<INPUT NAME="fr" TYPE="checkbox" VALUE="1"> French
+		</TD><TD>
+		<INPUT NAME="uk" TYPE="checkbox" VALUE="1"> English
+		</TD><TD>
+		<INPUT NAME="nl" TYPE="checkbox" VALUE="1"> Dutch
+		</TD><TD>
+		<INPUT NAME="de" TYPE="checkbox" VALUE="1"> German
+		</TD></TR><TR><TD>
+		<INPUT NAME="jp" TYPE="checkbox" VALUE="1"> Japanese
+		</TD><TD>
+		<INPUT NAME="sp" TYPE="checkbox" VALUE="1"> Spanish
+		</TD><TD>
+		<INPUT NAME="fi" TYPE="checkbox" VALUE="1"> Finnish
+		</TD><TD>
+		</TD></TR>
+		</TABLE>
+
+	</TD>
+	</TR>
+
+	<TR>
+	<TD COLSPAN=2>
+	<FONT SIZE=-1>
+	<I>(Stats will be available in these languages also)</I>
+	</FONT>
+	</TD>
+	</TR>
+
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+		
+	<TR>
+	<TD>
+	Default language :
+	</TD>
+	<TD>
+	
+		<TABLE>
+		<TR><TD>
+		<INPUT NAME="primarylang" TYPE="radio" VALUE="fr"> French
+		</TD><TD>
+		<INPUT NAME="primarylang" TYPE="radio" VALUE="uk"> English
+		</TD><TD>
+		<INPUT NAME="primarylang" TYPE="radio" VALUE="nl"> Dutch
+		</TD><TD>
+		<INPUT NAME="primarylang" TYPE="radio" VALUE="de"> German
+		</TD></TR><TR><TD>
+		<INPUT NAME="primarylang" TYPE="radio" VALUE="sp"> Spanish
+		</TD><TD>
+		<INPUT NAME="primarylang" TYPE="radio" VALUE="jp"> Japanese
+		</TD><TD>
+		<INPUT NAME="primarylang" TYPE="radio" VALUE="fi"> Finnish
+		</TD><TD>		
+		</TD></TR>
+		</TABLE>	
+	
+	</TD>
+	</TR>		
+	</TABLE>
+
+</TD>
+</TR>
+<TR><TD BGCOLOR="#AAAAAA" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+
+
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Display graphic</FONT></I>
+</TD>
+<TD VALIGN=TOP BGCOLOR="#DDDDDD">
+
+	<TABLE WIDTH=100% BORDER=0>
+	<TR>
+	<TD>
+	Graphs output :
+	</TD>
+	<TD>
+
+		<TABLE>
+		<TR><TD>
+		<INPUT NAME="graphs" TYPE="radio" VALUE="bargraph"> Bar chart
+		</TD><TD>
+		<INPUT NAME="graphs" TYPE="radio" VALUE="tridim"> 3D bar chart
+		</TD></TR><TR><TD>
+		<INPUT NAME="graphs" TYPE="radio" VALUE="linegraph"> Lines
+		</TD><TD>
+		<INPUT NAME="graphs" TYPE="radio" VALUE="fillgraph"> Filled lines
+		</TD></TR>
+		</TABLE>
+
+	</TD>
+	</TR>
+
+	<TR>
+	<TD COLSPAN=2>
+	<FONT SIZE=-1>
+	<I>(Choose one of the graphic way of displaying data)</I>
+	</FONT>
+	</TD>
+	</TR>
+
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+
+	<TR>
+	<TD>
+	Text output :
+	</TD>
+	<TD>
+
+		<TABLE>
+		<TR><TD>
+		Text color  
+		</TD><TD>
+		Red : <INPUT NAME="custom_text_red" TYPE="text" VALUE="" SIZE=3>
+		</TD><TD>
+		Green : <INPUT NAME="custom_text_green" TYPE="text" VALUE="" SIZE=3>
+		</TD><TD>
+		Blue : <INPUT NAME="custom_text_blue" TYPE="text" VALUE="" SIZE=3>
+		</TD></TR>
+		<TR><TD>
+		<A HREF="step9.html">Link color</A> 
+		</TD><TD>
+		Red : <INPUT NAME="custom_link_red" TYPE="text" VALUE="" SIZE=3>
+		</TD><TD>
+		Green : <INPUT NAME="custom_link_green" TYPE="text" VALUE="" SIZE=3>
+		</TD><TD>
+		Blue : <INPUT NAME="custom_link_blue" TYPE="text" VALUE="" SIZE=3>
+		</TD></TR>
+		<TR><TD>
+		<A HREF="step8.html">Visited link color</A>
+		</TD><TD>
+		Red : <INPUT NAME="custom_vlink_red" TYPE="text" VALUE="" SIZE=3>
+		</TD><TD>       
+		Green : <INPUT NAME="custom_vlink_green" TYPE="text" VALUE="" SIZE=3>
+		</TD><TD>
+		Blue : <INPUT NAME="custom_vlink_blue" TYPE="text" VALUE="" SIZE=3>
+		</TD></TR>
+		</TABLE>
+
+	</TD>
+	</TR>
+
+	<TR>
+	<TD COLSPAN=2>
+	<FONT SIZE=-1>
+	<I>(Use hexadecimal value from 0 (dark) to FF (bright))</I>
+	</FONT>
+	</TD>
+	</TR>
+	
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+
+	<TR>
+	<TD>
+	Background :
+	</TD>
+	<TD>
+	
+		<TABLE>
+		<TR>
+		<TD>	
+		<INPUT NAME="background" TYPE="checkbox" VALUE="1"> Image
+		</TD>
+		<TD>
+		File : <INPUT NAME="background_file" TYPE="text" VALUE="">
+		<SELECT NAME="ex">
+		<OPTION VALUE="0" SELECTED>example
+		<OPTION>/img/background.gif
+		<OPTION>http://www.foo.com/img/star.jpg
+		<OPTION>/w3perl/resources/backstats.jpg
+		</SELECT>		
+		</TD>
+		</TR>
+		<TR>
+		<TD>
+		Color 
+		</TD>
+		<TD>
+		Red : <INPUT NAME="bgcolor_red" TYPE="text" VALUE="" SIZE=3>
+		Green : <INPUT NAME="bgcolor_green" TYPE="text" VALUE="" SIZE=3>
+		Blue : <INPUT NAME="bgcolor_blue" TYPE="text" VALUE="" SIZE=3>		
+		</TD>
+		</TR>
+		</TABLE>
+	
+	</TD>
+	</TR>
+
+	<TR>
+	<TD COLSPAN=2>
+	<FONT SIZE=-1>
+	<I>(Use hexadecimal value from 0 (dark) to FF (bright), background file should be
+	stored in the w3perl resources directory)</I>
+	</FONT>
+	</TD>
+	</TR>	
+	</TABLE>
+
+</TD>
+</TR>
+
+<TR><TD BGCOLOR="#AAAAAA" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Display menu</FONT></I>
+</TD>
+<TD VALIGN=TOP BGCOLOR="#DDDDDD">
+
+	<TABLE WIDTH=100% BORDER=0>
+	<TR>
+	<TD>
+	HTML webserver stats
+	</TD>
+	<TD>
+
+		<TABLE>
+		<TR><TD>
+		<INPUT NAME="url_frame" TYPE="checkbox" VALUE="1"> HTML framed files
+		</TD><TD>
+		<INPUT NAME="url_doublon" TYPE="checkbox" VALUE="1"> HTML files with same title and without
+		</TD></TR><TR><TD>
+		<INPUT NAME="url_absolute_link" TYPE="checkbox" VALUE="1"> Absolute links
+		</TD><TD>
+		<INPUT NAME="url_symbolic_link" TYPE="checkbox" VALUE="1"> Symbolic links
+		</TD></TR><TR><TD>
+		<INPUT NAME="url_bad_link" TYPE="checkbox" VALUE="1"> Bad links
+		</TD><TD>
+		<INPUT NAME="url_useless" TYPE="checkbox" VALUE="1"> HTML files never used
+		</TD></TR><TR><TD>
+		<INPUT NAME="url_directory" TYPE="checkbox" VALUE="1"> Directories stats
+		</TD><TD>
+		<INPUT NAME="url_weight" TYPE="checkbox" VALUE="1"> HTML weight files
+		</TD></TR><TR><TD>
+		<INPUT NAME="url_link" TYPE="checkbox" VALUE="1"> HTML links stats
+		</TD><TD>
+		<INPUT NAME="url_image" TYPE="checkbox" VALUE="1"> HTML image stats
+		</TD></TR><TR><TD>
+		<INPUT NAME="url_new_doc" TYPE="checkbox" VALUE="1"> New HTML files
+		</TD><TD>
+		<INPUT NAME="url_cdrom" TYPE="checkbox" VALUE="1"> Links on directories
+		</TD></TR><TR><TD>
+		<INPUT NAME="url_img_tag" TYPE="checkbox" VALUE="1"> Image tags used
+		</TD><TD>
+		<INPUT NAME="url_tree" TYPE="checkbox" VALUE="1"> Server's tree
+		</TD><TD>
+		</TD></TR>
+		</TABLE>
+
+	</TD>
+	</TR>
+	
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+
+	<TR>
+	<TD>
+	Session stats
+	</TD>
+	<TD>
+
+		<TABLE>
+		<TR><TD>
+		<INPUT NAME="session_connection" TYPE="checkbox" VALUE="1"> Hosts session
+		</TD><TD>
+		<INPUT NAME="session_visit" TYPE="checkbox" VALUE="1"> Number of visits
+		</TD></TR><TR><TD>
+		<INPUT NAME="session_average" TYPE="checkbox" VALUE="1"> Day and hour average
+		</TD><TD>
+		<INPUT NAME="session_login" TYPE="checkbox" VALUE="1"> Session with login
+		</TD></TR><TR><TD>
+		<INPUT NAME="session_description" TYPE="checkbox" VALUE="1"> Session descriptions
+		</TD><TD>
+		<INPUT NAME="session_engine" TYPE="checkbox" VALUE="1"> Search engine session
+		</TD></TR><TR><TD>
+
+		<INPUT NAME="session_reading" TYPE="checkbox" VALUE="1"> Average page reading time
+		</TD><TD>
+		</TD></TR>
+		</TABLE>
+
+	</TD>
+	</TR>
+
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+	
+	<TR>
+	<TD>
+	Main stats
+	</TD>
+	<TD>
+
+		<TABLE>
+		<TR><TD>
+		<INPUT NAME="inc_host" TYPE="checkbox" VALUE="1"> Hosts stats
+		</TD><TD>
+		<INPUT NAME="inc_page" TYPE="checkbox" VALUE="1"> HTML pages stats
+		</TD></TR><TR><TD>
+		<INPUT NAME="inc_directory" TYPE="checkbox" VALUE="1"> Directories stats
+		</TD><TD>
+		<INPUT NAME="inc_country" TYPE="checkbox" VALUE="1"> Countries stats
+		</TD></TR><TR><TD>
+		<INPUT NAME="inc_script" TYPE="checkbox" VALUE="1"> Scripts stats
+		</TD><TD>
+		</TD><TD>
+		</TD></TR></TABLE>
+
+	</TD>
+	</TR>
+
+	<TR>
+	<TD COLSPAN=2>
+	<FONT SIZE=-1>
+	<I>(Select which part of the script will be activated)</I>
+	</FONT>
+	</TD>
+	</TR>
+
+
+
+	</TABLE>
+
+</TD>
+</TR>
+
+<TR>
+<TD WIDTH=120></TD>
+<TD>
+
+<CENTER>
+<INPUT TYPE="SUBMIT" VALUE="Submit">
+<INPUT TYPE="RESET" VALUE="Reset">
+</CENTER>
+</TD>
+
+</TR>
+</TABLE>
+
+</FORM>
+
+</body>
+</html>

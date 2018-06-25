@@ -1,0 +1,42 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>paperec.com</title>
+<!--<meta http-equiv="refresh" content="0;URL=http://www.paperec.com/PaperEC/index.jsp">
+-->
+</head>
+
+<body topmargin="5" leftmargin="0" bgcolor="#FFFFFF">
+<div align="center"><center>
+  </center>
+</div>
+<div align="center">
+  <center>
+    <div align="center"></div>
+</center></div>
+<script language="javascript">
+//  document.writeln(navigator.appName);
+  var site = "http://www.paperec.com/PaperEC/index.jsp";
+  var browserName = navigator.appName;     
+  if (browserName == "Netscape") 
+  {
+    if (navigator.language == 'cn')
+      site = "http://www.paperec.com/PaperEC/index.jsp";
+    else
+      site = "http://www.paperec.com/PaperEC/paperec_en/index.jsp";
+  }
+  else if (browserName == "Microsoft Internet Explorer")
+  { 
+    if (navigator.browserLanguage == 'zh-cn')
+      site = "http://www.paperec.com/PaperEC/index.jsp";
+    else
+      site = "http://www.paperec.com/PaperEC/paperec_en/index.jsp";
+  }
+
+ window.location = site;
+</script>
+
+</body>
+</html>
+

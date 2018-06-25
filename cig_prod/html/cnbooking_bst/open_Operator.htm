@@ -1,0 +1,152 @@
+<html>
+<head>
+<title>CNHotelBooking.com后台管理工具</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.font9 {  font-size: 9pt; color: #FF8000; font-weight: normal}
+.font12 {  font-size: 12pt; color: #FF8000; font-weight: bold}
+        A:link {text-decoration: none; font-family: "宋体"}
+        A:visited {text-decoration: none; font-family: "宋体"}
+        A:active {text-decoration: none; font-family: "宋体"}
+        A:hover {text-decoration: underline; color: #FFCC33}
+-->
+</style>
+</head>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var wStr
+function PostForm(I)
+{
+  if ( I ==3)
+  {
+	wStr = "";
+	for (j=0;j<fmOpen.elements.length;++j)
+	{ 
+	  if (fmOpen.elements[j].type == "checkbox")
+	  {
+        if (fmOpen.elements[j].checked == true)
+        {
+          wStr = wStr + "'" + fmOpen.elements[j].value + "',"; 
+        }
+      }
+    }
+    //alert(wStr + "'0'");
+    if (wStr == "")
+    {
+      alert ("请选择删除的记录!");
+      return;
+    }
+    wStr = wStr + "'0'";
+    fmOpen.method="post";
+    fmOpen.action = "/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstDelRow?TableName=Operator_gb&ID=" + wStr;
+    fmOpen.submit();
+  }
+  else if ( I == 1)
+  {
+    fmOpen.action = "cnhotel/bst/open_Dir.jsp?PageFlag=PREV";
+    fmOpent.submit();
+  }
+  else if ( I == 2)
+  {
+    fmOpen.action = "cnhotel/bst/open_Dir.jsp?PageFlag=NEXT";
+    fmOpen.submit();
+  }
+  
+}
+
+//-->
+</SCRIPT>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<span class="font9"></span> <span class="font9"></span> 
+<table width="592" border="0" cellspacing="0" cellpadding="0" height="216">
+  <tr>
+    <td width="58">&nbsp;</td>
+    <td width="534"> 
+      <table border="0" cellpadding="0" cellspacing="0" width="525">
+        <tr> 
+          <td width="1">&nbsp; </td>
+          <td width="524"> 
+            <form name=fmOpen  action="">
+              <table width="518" border="0" cellspacing="2" cellpadding="5" height="40">
+                <tr> 
+                  <td class="font12">查询结果(修改请按ID号)</td>
+                </tr>
+              </table>
+              <table width="519" border="1" cellspacing="2" cellpadding="5" bordercolorlight="#f9c026" bordercolordark="#FFFFFF">
+                
+<tr align="center"> 
+                  <td class="font9" width="51">代号</td>
+                  <td class="font9" width="91">登录名称</td>
+                  <td class="font9" width="71">口令</td>
+                  <td class="font9" width="71">姓名</td>
+                  <td class="font9" width="71">角色</td>
+                  <td class="font9" width="76">说明</td>
+                </tr>
+<tr align="center"> 
+                  <td class="font9" width="51"><a href="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstGetOperator?ID=101" class="font9"> 
+                    <input type="checkbox" name="ckID" value="101">
+                    101</a></td>
+                  <td class="font9" width="91">xfy</td>
+                  <td class="font9" width="71">******</td>
+                  <td class="font9" width="71">xu</td>
+                  <td class="font9" width="71">操作员</td>
+                  <td class="font9" width="76">null</td>
+                </tr>
+<tr align="center"> 
+                  <td class="font9" width="51"><a href="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstGetOperator?ID=21" class="font9"> 
+                    <input type="checkbox" name="ckID" value="21">
+                    21</a></td>
+                  <td class="font9" width="91">zkh</td>
+                  <td class="font9" width="71">******</td>
+                  <td class="font9" width="71">周开宏</td>
+                  <td class="font9" width="71">管理员</td>
+                  <td class="font9" width="76">zkh</td>
+                </tr>
+<tr align="center"> 
+                  <td class="font9" width="51"><a href="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstGetOperator?ID=22" class="font9"> 
+                    <input type="checkbox" name="ckID" value="22">
+                    22</a></td>
+                  <td class="font9" width="91">abc</td>
+                  <td class="font9" width="71">******</td>
+                  <td class="font9" width="71">null</td>
+                  <td class="font9" width="71">操作员</td>
+                  <td class="font9" width="76">null</td>
+                </tr>
+<tr align="center"> 
+                  <td class="font9" width="51"><a href="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstGetOperator?ID=41" class="font9"> 
+                    <input type="checkbox" name="ckID" value="41">
+                    41</a></td>
+                  <td class="font9" width="91">cdy</td>
+                  <td class="font9" width="71">******</td>
+                  <td class="font9" width="71">陈芸</td>
+                  <td class="font9" width="71">操作员</td>
+                  <td class="font9" width="76">null</td>
+                </tr>
+<tr align="center"> 
+                  <td class="font9" width="51"><a href="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstGetOperator?ID=42" class="font9"> 
+                    <input type="checkbox" name="ckID" value="42">
+                    42</a></td>
+                  <td class="font9" width="91">wj</td>
+                  <td class="font9" width="71">******</td>
+                  <td class="font9" width="71">王静</td>
+                  <td class="font9" width="71">操作员</td>
+                  <td class="font9" width="76">null</td>
+                </tr>
+<tr align="center"> 
+                  <td class="font9" colspan="6">
+<a href="open_Operator.jsp?PageFlag=NEXT"><img src="images/botton_next.gif" width="68" height="26" border="0"></a>
+<img src="images/dot.gif" width="50" height="1">
+<a href="javascript:PostForm(3)"><img src="images/deltree.gif" width="68" height="26" border="0" ></a></td>
+                </tr>
+              </table>
+            </form>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

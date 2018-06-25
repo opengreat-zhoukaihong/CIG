@@ -1,0 +1,129 @@
+#
+## value for option tag
+## first one is the default value
+#
+type_serveur
+Unix	0
+NT	1
+Acorn	2
+Mac	3
+server_used
+Apache	0
+NCSA	1
+Netscape	2
+CERN	3
+IIS	4
+Lotus	5
+Others	6
+optdirsize
+HTML files - External	2
+HTML files - Total	1
+HTML files - Local	3
+All files - Total	4
+All files - External	5
+All files - Local	6
+extension
+html htm shtml xml	html htm shtml xml
+html htm shtml	html htm shtml
+html htm	html htm
+html	html
+htm	htm
+shtml	shtml
+xml	xml
+extensionimage
+gif jpeg jpg png	gif jpeg jpg png
+gif jpg png	gif jpg png
+gif jpeg jpg	gif jpeg jpg
+gif jpg	gif jpg
+logfile
+Common Log File (CLF)	CLF
+Extended Common Logfile File	ECLF
+New Extended Common Log File	NECLF
+Microsoft	Microsoft
+W3C	W3C
+zipext
+.gz	.gz
+.zip	.zip
+.rar	.rar
+frame_updown
+Top - Bottom	1
+Left - Right	0
+#
+## default values for radio button
+#
+logformat	standard	0
+virtualCLF	0	0
+zip	0	0
+precision	3	0
+locallog	0	0
+localonly	0	0
+titlename	1	0
+reversedns	0	0
+exclude_frame	0	0
+exclude_robot	0	0
+fr	1	0
+uk	1	0
+nl	0	0
+jp	0	0
+sp	0	0
+fi	0	0
+de	0	0
+primarylang	uk	0
+graphs	tridim	0
+background	0	0
+#
+## default values for checkbox button 
+#
+url_no_title	0	0
+url_doublon	0	0
+url_absolute_link	0	0
+url_symbolic_link	0	0
+url_bad_link	1	0
+url_useless	1	0
+url_directory	1	0
+url_weight	1	0
+url_link	1	0
+url_image	1	0
+url_new_doc	1	0
+url_cdrom	0	0
+url_img_tag	0	0
+url_tree	1	0
+session_connection	1	0
+session_visit	1	0
+session_average	1	0
+session_login	0	1
+session_description	1	0
+sesson_engine	1	0
+inc_host	1	0
+inc_page	1	0
+inc_directory	1	0
+inc_country	1	0
+inc_script	1	0
+#
+## default values for text button
+#
+struct_compressed_logfile	%prefixlog	0
+configfile	config	0
+stringdateformat	%month%day%year	0
+tri	/	0
+topten	10	0
+seuilpage	10	0
+seuilsite	10	0
+seuilscript	10	0
+seuilrepert	100	0
+nbdays	50	0
+emailadr	webmaster@	0
+defaulthomepage	index.html	0
+topframelinks	<A HREF='http://$localserver$tri' TARGET='_top'>Home</A>	0
+custom_text_red	0	0
+custom_text_green	0	0
+custom_text_blue	99	0
+custom_link_red	0	0
+custom_link_green	0	0
+custom_link_blue	80	0
+custom_vlink_red	80	0
+custom_vlink_green	0	0
+custom_vlink_blue	0	0
+bgcolor_red	FF	0
+bgcolor_green	FF	0
+bgcolor_blue	FF	0

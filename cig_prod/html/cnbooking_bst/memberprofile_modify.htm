@@ -1,0 +1,142 @@
+<html>
+<head>
+<title>CNHotelBooking.com后台管理工具</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.font9 {  font-size: 9pt; color: #FF8000; font-weight: normal}
+.font12 {  font-size: 12pt; color: #FF8000; font-weight: bold}
+-->
+</style>
+</head>
+<SCRIPT LANGUAGE=javascript>
+<!--
+
+
+function PostForm()
+{
+  if ((fmMember.txtName.value == "")||(fmMember.txtCity.value == ""))
+  {	
+	alert("请输入名称和城市!");
+	return;
+  }
+  fmMember.submit();
+}
+//-->
+</SCRIPT>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<span class="font9"></span> <span class="font9"></span> 
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td width="30" height="418">&nbsp; </td>
+    <td width="503" height="418"> 
+      <form name= fmMember method="post" action="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstUpdateMember">
+        <table width="515" border="0" cellspacing="2" cellpadding="5" height="40">
+          <tr> 
+            <td class="font12">更新会员资料</td>
+          </tr>
+        </table>
+      <table width="515" border="1" cellspacing="2" cellpadding="5" bordercolorlight="#F9C026" bordercolordark="#FFFFFF">
+          <tr> 
+            <td width="68" class="font9"> <font size="-1">ID：</font></td>
+            <td width="144" class="font9"> 
+1706 <input TYPE="HIDDEN" name="txtID" value="1706" size="10"> 
+            </td>
+            <td width="68" class="font9"> <font size="-1">姓名：</font></td>
+            <td width="144"> 
+              <input type="text" name="txtName" value="lqm" size="20">
+            </td>
+          </tr>
+          <tr> 
+            <td width="68" class="font9"> <font size="-1">登陆名：</font></td>
+            <td width="144" size="30"> 
+              <input type="text" name="txtLogin" value="lqm11"  size="20">
+            </td>
+            <td width="68" class="font9"> <font size="-1">口令：</font></td>
+            <td width="144"> 
+              <input type="text" name="txtPasswd" value="lqm"  size="20">
+            </td>
+          </tr>
+          <tr> 
+            <td width="68" class="font9"> <font size="-1">地址：</font></td>
+            <td width="144"> 
+              <input type="text" name="txtAdd" value=""  size="20">
+            </td>
+            <td width="68" class="font9"> <font size="-1">城市：</font></td>
+            <td width="144"><font size="-1"><font size="-1"><font size="-1"> 
+              <input type="text" name="txtCity" value="北京"  size="20">
+              </font></font></font> </td>
+          </tr>
+          <tr> 
+            <td width="68" class="font9"> <font size="-1">省份：</font></td>
+            <td width="144"> 
+              <input type="text" name="txtState" value=""  size="20">
+            </td>
+            <td width="68" class="font9"> <font size="-1">国家：</font></td>
+            <td width="144"> 
+              <input type="text" name="txtCtryCode" value="1" size="20">
+            </td>
+          </tr>
+          <tr> 
+            <td width="68" class="font9"> <font size="-1">电话：</font></td>
+            <td width="144"> 
+              <input type="text" name="txtTel" value="3691823" size="20">
+            </td>
+            <td width="68" class="font9"> <font size="-1">传真：</font></td>
+            <td width="144"> 
+              <input type="text" name="txtFax" value="" size="20">
+            </td>
+          </tr>
+          <tr> 
+            <td width="68" class="font9"> <font size="-1">电子邮件：</font></td>
+            <td width="144"> 
+              <input type="text" name="txtEmail" value="lqm@cig.com.cn" size="20">
+            </td>
+            <td width="68" class="font9"> <font size="-1">邮政编码：</font></td>
+            <td width="144"> 
+              <input type="text" name="txtUrl" value="" size="20">
+            </td>
+          </tr>
+          <tr> 
+            <td width="68" class="font9"> <font size="-1">创建日期：</font></td>
+            <td width="144" class="font9">2000-11-16</td>
+            <td width="68" class="font9"> <font size="-1">发送信息：</font></td>
+            <td width="144"> 
+              <input type="radio" name="rdNewFlag" value="Y" checked>
+              <font size="-1" class="font9">是</font>　　 
+              <input type="radio" name="rdNewFlag" value="N">
+              <font class="font9">否</font> </td>
+          </tr>
+          <tr> 
+            <td width="68" class="font9"> <font size="-1">被点次数：</font></td>
+            <td width="144" class="font9">0</td>
+            <td width="68" class="font9"> <font size="-1">性别：</font></td>
+            <td width="144"> 
+              <input type="radio" name="rdGender" value="M" checked>
+              <font size="-1" class="font9">男</font>　　 
+              <input type="radio" name="rdGender" value="W">
+              <font class="font9">女</font> </td>
+          </tr>
+          <tr> 
+          <tr> 
+            <td width="68" class="font9"> <font size="-1">描述：</font></td>
+            <td colspan="3"> 
+              <textarea name=txtDesc cols="50"></textarea>
+            </td>
+          </tr>
+        </table>
+        
+        <table width="515" border="0" cellspacing="0" cellpadding="0" height="50">
+          <tr align="center"> 
+            <td height="50"><a href="javascript:PostForm()"><img src="images/botton_update.gif" width="68" height="26" border="0"></a><img src="images/dot.gif" width="50" height="1"> 
+              <a href="javascript:fmMember.reset()"><img src="images/botton_restore.gif" width="68" height="26" border="0"></a> 
+            </td>
+          </tr>
+        </table>
+        <br>
+      </form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

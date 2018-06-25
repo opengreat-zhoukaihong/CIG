@@ -1,0 +1,257 @@
+*******************
+
+Microsoft ScanDisk for Windows
+
+注意：如果用 MS-DOS 程序查看这个文件，部分字符
+可能无法正确显示。请用 Windows 程序，例如“记事本。
+
+日志文件产生在 13:38 于 2000-9-3。
+
+“磁盘扫描程序”使用下面的选项:
+  标准测试
+
+驱动器  (F:) 发生以下错误:
+
+“磁盘扫描程序”在此驱动器没有找到任何错误。
+
+-------------------
+
+
+
+Microsoft ScanDisk
+
+
+Log file generated at 01:57PM on Sunday, September 03, 2000.
+
+ScanDisk checked drive E for problems, with the following results:
+
+Directory structure
+
+         ScanDisk did not find any problems.
+     
+File allocation table
+
+         The media byte was missing.
+         ScanDisk successfully replaced the FAT media byte.
+     
+         Copy #1 of the FAT was out of date.
+         ScanDisk successfully updated the duplicate FAT.
+     
+         Directory entry E:\ had an invalid FAT chain.
+         ScanDisk did not correct the FAT chain.
+     
+File system
+
+         There were 13,183 lost clusters in 10,000 chains.
+         ScanDisk reclaimed the lost clusters as free space.
+     
+Surface scan
+
+         ScanDisk did not perform any tests.
+     
+
+
+Microsoft ScanDisk
+
+
+Log file generated at 01:59PM on Sunday, September 03, 2000.
+
+ScanDisk checked drive C for problems, with the following results:
+
+Directory structure
+
+         ScanDisk did not find any problems.
+     
+File allocation table
+
+         ScanDisk did not find any problems.
+     
+File system
+
+         ScanDisk did not find any problems.
+     
+Surface scan
+
+         ScanDisk did not find any problems.
+     
+
+
+Microsoft ScanDisk
+
+
+Log file generated at 02:01PM on Sunday, September 03, 2000.
+
+ScanDisk checked drive E for problems, with the following results:
+
+Directory structure
+
+         ScanDisk did not find any problems.
+     
+File allocation table
+
+         The media byte was missing.
+         ScanDisk successfully replaced the FAT media byte.
+     
+         Copy #2 of the FAT was out of date.
+         ScanDisk successfully updated the duplicate FAT.
+     
+File system
+
+         There were 12,772 lost clusters in 9,629 chains.
+         ScanDisk reclaimed the lost clusters as free space.
+     
+Surface scan
+
+         ScanDisk did not find any problems.
+     
+
+
+Microsoft ScanDisk
+
+
+Log file generated at 09:06AM on Monday, September 04, 2000.
+
+ScanDisk checked drive C for problems, with the following results:
+
+Directory structure
+
+         ScanDisk did not find any problems.
+     
+File allocation table
+
+         ScanDisk did not find any problems.
+     
+File system
+
+         ScanDisk did not find any problems.
+     
+Surface scan
+
+         ScanDisk did not perform any tests.
+     
+
+
+Microsoft ScanDisk
+
+
+Log file generated at 09:08AM on Wednesday, September 06, 2000.
+
+ScanDisk checked drive C for problems, with the following results:
+
+Directory structure
+
+         Directory entry C:\WINDOWS\SYSTEM\WBX.EMB had an incorrect size.
+         ScanDisk successfully corrected the directory entry.
+     
+File allocation table
+
+         ScanDisk did not find any problems.
+     
+File system
+
+         ScanDisk did not find any problems.
+     
+Surface scan
+
+         ScanDisk did not perform any tests.
+     
+
+
+Microsoft ScanDisk
+
+
+Log file generated at 09:04AM on Friday, September 08, 2000.
+
+ScanDisk checked drive C for problems, with the following results:
+
+Directory structure
+
+         ScanDisk did not find any problems.
+     
+File allocation table
+
+         ScanDisk did not find any problems.
+     
+File system
+
+         ScanDisk did not find any problems.
+     
+Surface scan
+
+         ScanDisk did not perform any tests.
+     
+
+
+Microsoft ScanDisk
+
+
+Log file generated at 09:14AM on Monday, September 11, 2000.
+
+ScanDisk checked drive C for problems, with the following results:
+
+Directory structure
+
+         ScanDisk did not find any problems.
+     
+File allocation table
+
+         ScanDisk did not find any problems.
+     
+File system
+
+         ScanDisk did not find any problems.
+     
+Surface scan
+
+         ScanDisk did not perform any tests.
+     
+
+
+Microsoft ScanDisk
+
+
+Log file generated at 07:25PM on Monday, September 11, 2000.
+
+ScanDisk checked drive C for problems, with the following results:
+
+Directory structure
+
+         ScanDisk did not find any problems.
+     
+File allocation table
+
+         ScanDisk did not find any problems.
+     
+File system
+
+         ScanDisk did not find any problems.
+     
+Surface scan
+
+         ScanDisk did not perform any tests.
+     
+
+
+Microsoft ScanDisk
+
+
+Log file generated at 09:36AM on Wednesday, September 13, 2000.
+
+ScanDisk checked drive C for problems, with the following results:
+
+Directory structure
+
+         ScanDisk did not find any problems.
+     
+File allocation table
+
+         ScanDisk did not find any problems.
+     
+File system
+
+         ScanDisk did not find any problems.
+     
+Surface scan
+
+         ScanDisk did not perform any tests.
+     

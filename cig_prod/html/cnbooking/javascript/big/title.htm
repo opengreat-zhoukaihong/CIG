@@ -1,0 +1,67 @@
+<html>
+<body>
+<table border="0" width="468" height="60" cellspacing="0" cellpadding="0">
+<tr>
+<td width="100%">
+<div id="selfdiv1" style="position:absolute; width:468px; height:60px; z-index:1; visibility: visible">
+<a href="http://www.cnbooking.com" target="_blank"><img src="/images/gb/banner.gif" width="468" height="60" border="0"></a>
+</div>
+<div id="advertisediv" style="position:relative; width:468px; height:60px; z-index:2; visibility: hidden">
+<a href="http://www.hotvoice.com" target="_blank"><img src="/images/gb/banner1.gif" width="468" height="60" border="0"></a>
+</div>
+</td>
+<div id="advertisediv2" style="position:absolute; width:468px; height:60px; z-index:3; visibility: hidden">
+<script language=Javascript1.1 src=http://images.adtrace.net/GetAdContent.dll?49|1|1|12|0></script>
+</div>
+</tr>
+</table>
+<script LANGUAGE="JavaScript">
+<!-- Hide from JavaScript-Impaired Browsers
+var pos = 0;
+function chgAdvert() { 
+if (pos==0) {
+if(navigator.appVersion.indexOf("MSIE") != -1){
+document.all.selfdiv1.style.visibility='hidden';
+document.all.advertisediv.style.visibility='hidden';
+document.all.advertisediv2.style.visibility='visible';
+}
+else{
+document.main.document.selfdiv1.visibility='hide';
+document.main.document.advertisediv.visibility='hide';
+document.main.document.advertisediv2.visibility='show';
+}
+pos=1;
+}
+else if (pos==1) {
+if(navigator.appVersion.indexOf("MSIE") != -1){
+document.all.selfdiv1.style.visibility='hidden';
+document.all.advertisediv.style.visibility='visible';
+document.all.advertisediv2.style.visibility='hidden';
+}
+else{
+document.main.document.selfdiv1.visibility='hide';
+document.main.document.advertisediv.visibility='show';
+document.main.document.advertisediv2.visibility='hide';
+}
+pos=2;
+}
+else if (pos==2) {
+if(navigator.appVersion.indexOf("MSIE") != -1){
+document.all.selfdiv1.style.visibility='visible';
+document.all.advertisediv.style.visibility='hidden';
+document.all.advertisediv2.style.visibility='hidden';
+}
+else{
+document.main.document.selfdiv1.visibility='show';
+document.main.document.advertisediv.visibility='hide';
+document.main.document.advertisediv2.visibility='hide';
+}
+pos=0;
+}
+setTimeout("chgAdvert()",10000);
+ }
+setTimeout("chgAdvert()",6000);
+//-->
+</script>
+</body>
+</html>

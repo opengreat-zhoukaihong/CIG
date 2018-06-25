@@ -1,0 +1,246 @@
+<HTML><head>
+<title>W3Perl One/several file</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Logfile options</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1><B>One logfile</B></FONT></I>
+</TD>
+<TD VALIGN=TOP>
+Usually, httpd server are logging requests in one log file.
+<br>
+On NCSA or Apache server, log name is access_log<br>
+On CERN server, log name is httpd-log<br>
+In the config.pl file, you have to edit : $zip = 0
+<P>
+With traffic increase, most provider now support compressed logfile to save
+disk space. Some use daily compressed logile, others use monthly compressed
+logfiles. W3Perl is able to cope with both of them.
+</TD>
+</TR>
+
+<TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=60%><P></TD>
+</TR>
+
+
+
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1><B>Several logfiles</B></FONT></I>
+</TD>
+<TD VALIGN=TOP>
+Introduced in v2.30, current version can cope with various filename string.
+<BR> Select in the configuration file the filename log format you are using.
+<P>
+<B>Log filename string can be whatever you want :</B>
+<P>
+<UL>
+<LI> <I>filename</I> is the constant string in your logfile (ex : access_log),<BR>
+<LI> <I>day</I> is a digits number (from 01 to 31),<BR>
+<LI> <I>month</I> is a 2 digits number (from 01 to 12),<BR>
+<LI> <I>lettermonth</I> is a 3 letters string with first upper  (from Jan to Dec),<BR>
+<LI> <I>smallyear</I> is 2 digits number (ex : 98)<BR>
+<LI> <I>year</I> is 4 digits number (ex : 1998)<BR>
+<LI> and <I>suffix</I> is the compression extension used by on your system (ex : gz or zip).
+</UL>
+<P>
+Example of supported string filename :
+<UL>
+<LI> <I>access_log.1998Mar.gz</I>
+<LI> <I>1998.03.10.raw.zip</I>
+<LI> <I>log.03-12-1998.gz</I>
+<LI> <I>in.9904</I>
+</UL>
+<P>
+
+
+</TD>
+</TR>
+
+
+<TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Daily gzip files</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+A number of ISP are providing logfile in a daily compressed format.<BR>
+Use $zip = 1 and $zipcut = 2 in the configuration file to select the use of 
+daily compressed logfiles.
+<P>
+
+
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP>
+<I><FONT SIZE=+1>Day to day logfiles</FONT></I>
+
+</TD>
+<TD>
+The package require that the logfile have more than one day's data.<br>
+But if your site is pretty busy and you decide to clear the log files each day,
+it's still possible to use w3perl.<br> You'll need to move your logfile
+at midnight to another filename, w3perl will update stats by reading
+the moved logfile.
+
+Follow the next instructions.<br>
+<OL>
+<LI> At midnight, move your current logfile (access_log) to logfile.old (access_log_old)<br> In your W3Perl configuration file, you should use this moved file (prefixlog should be access_log_old).
+
+<LI> Run your stats and then delete your moved logfile (access_log_old).
+
+<LI> First day, run cron-pages.pl.<br>
+Next day use cron-inc.pl....<br>
+Cron-inc.pl will scan only the previous day so you need only to
+keep the previous day log and then destroy it.
+
+<LI> Don't forget to run also cron-hour every hour, cron-day once a day,
+cron-week once a week.
+You can't use cron-month.pl, sorry.
+</OL>
+
+<B>Example :</B>
+<P>
+<UL>
+<I>Day 1</I><br>
+log file log_current is running from 00 h to 23 h 59
+<P>
+<I>Day 2</I><br>
+move your log_current to log_previous at 00 h 00<br>
+A new file log_current is running from 00 h to 23 h 59<br>
+run cron-pages.pl (scanning the log_previous file) and then rm log_previous
+<P>
+<I>Day 3</I><br>
+move log_current to log_previous at 00 h 00<br>
+A new file log_current is running from 00 h to 23 h 59<br>
+run cron-inc.pl (scanning the log_previous file) and then rm log_previous
+<P>
+<I>Day 4</I><br>
+same as Day 3 
+<br>
+....
+</UL>
+<P>
+You will have incremental stats with only a one day logfile.
+Of course, choose carefully the options in your config file as logfile are
+destroyed so stats can't be compute back.
+
+<P>
+
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>                           
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Monthly gzip files</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+Log files are growing very fast (especially for NCSA log file
+which can't disable local requests logging). In the config.pl file, you have to 
+edit : $zip = 1 and $zipcut = 1 to select the use of monthly compressed logfiles.
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Do it yourself</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+W3Perl have been using monthly compressed logfile for many years. If you want to
+cut your logfile each month and use the compressed log file mode, follow the next
+lines :
+<P>
+<B>To alter your old log files in the new format, use :</B>
+<P> 
+<UL>
+<LI>grep "/&lt;month&gt;/&lt;year&gt;"  &lt;logfile&gt; > &lt;logfile&gt;.&lt;monthdigits&gt;-&lt;year&gt;
+<br>
+where month is only 3 letters long (first letter is upper), 
+<br> 
+year 4 digits long <br>and monthdigits is the month number in two digits format.
+<br>
+(eg : grep "/Dec/1994" access_log &gt; access_log.12-1994)
+<p>
+<LI>gzip &lt;logfile&gt;.&lt;monthdigits&gt;-&lt;year&gt;
+<br>
+(eg : gzip access_log.12-1995)
+<br>
+At the end, you should have in your log directory, files like for example :
+<P>
+<UL>
+           access_log.10-1994.gz
+<br>       access_log.11-1994.gz
+<br>       access_log.12-1994.gz
+<br>       access_log.01-1995.gz
+</UL>
+<P>
+</UL>
+The gziped files should be in the <b>same directory</B> as the current logging
+file.<br>
+It will save you a lots of space disks as log file are growing very fast !
+<P>
+NT users can use zip instead of gzip. It will give you for example access_log.01-1995.zip
+intead of access_log.01-1995.gz.
+<P>
+<P><HR ALIGN=CENTER WIDTH=20%><P>
+<B>Use squeezelog to cut and compress your logfile each month</B> :
+<P>
+
+I'm using a small script <A HREF="newhttpd.html">squeezelog</A> to
+cut and compress the log file each month.
+Compression rate is around 90% of the initial file saving a 
+lots of disk space.<br>
+These replace the rotate-log utility provided with httpd server. 
+If you are running IIS, using a monthly logfile would be my best choice.
+<BR>
+W3Perl will also run faster as it will have only to scan the
+current month logfile.
+<P>
+You need to edit <A HREF="newhttpd.html">squeezelog file</A> and configure it with your own
+system. The prog should be added in your crontab and
+executed once every first day of each month.
+<P>
+Example :<br>
+01 00 1 * * /usr/local/bin/perl /norfolk/www-data/w3perl/squeezelog
+<P>
+(if the logs files are root, you should ask your administration system 
+to install squeezelog).
+
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="/chinaeoa/index.jsp"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

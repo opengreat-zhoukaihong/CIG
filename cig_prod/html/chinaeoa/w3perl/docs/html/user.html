@@ -1,0 +1,114 @@
+<HTML><head>
+<title>W3Perl User installation</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE WIDTH=100% CELLSPACING=5 BORDER=0>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP>
+<CENTER>
+<FONT COLOR="#0000FF"><H1>User installation</H1></FONT>
+<P>
+<!-- <H3>User Installation</H3> -->
+</CENTER>
+<P>
+<BR>
+<BR>
+You don't have any access to a cgi-bin directory on your host but
+would like to have a stats report. No problem, the scripts don't
+need to be installed in the cgi-bin directory. Some features like
+the administration interface are not available to you but everything
+can be done by hand (only once, don't worry !). I supposed you have a
+telnet access, if not go to the <A HREF="provider.html">Provider Installation</A>
+section.
+<BR>
+<FONT COLOR="#20A0A0">W3Perl installation directory</FONT><BR>
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=CENTER>
+<I><FONT SIZE=+1><B>With<BR> crontab</B></FONT><HR width=50%></I>
+</TD>
+<TD VALIGN=TOP>
+1.1 - Download the <A HREF="http://www.w3perl.com/download//chinaeoa/index.jsp">W3Perl package</A> on your own host. Usually put it on
+your server root.
+<P>
+1.2 - Uncompress the package and extract all the files. It will create a
+<FONT COLOR="#20A0A0"><I>/w3perl/</I></FONT> directory where all the files are stored.
+<P>
+1.3 - Give execution permission to the scripts (chmod +x *.pl) [Unix only]
+<P>
+1.4 - Edit the first line of install.pl to reflect the Perl location on your host (most use /usr/local/bin/perl). Modify also $pathcgi and $pathw3perl to the
+location of your <FONT COLOR="#20A0A0"><I>/w3perl/</I></FONT> directory
+<P>
+1.5 - Forget the /w3perl/cgi-bin/ directory ! No use to you.
+<P>
+1.6 - Launch install.pl to fix the path used by the package.
+<P>
+1.7 - Edit the <A HREF="config.html">config.pl</A> file and customize it as your wishes.
+<BR> (in /docs/conf/ you'll be able to find a example of config file for Mac, Acorn and NT, standard is an Unix one).
+<P>
+1.8 - Launch cron-hour.pl to check everything is right. If no error
+is reported, launch the initialisation script cron-pages.pl, it could
+take ages if your logfile is huge so please be patient (or use a
+smaller file for primary test).
+<P>
+1.9 - If everything is right, edit cron-w3perl.pl, choose when 
+you want to launch the different scripts and finally add it in
+your crontab. If launch at command line with the -a flag, cron-w3perl 
+will initialize all stats for you.
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=CENTER>
+<I><FONT SIZE=+1><B>Without<BR> crontab</B></FONT><HR width=50%></I>
+</TD>
+<TD VALIGN=TOP>
+<P>
+Some sysadmin don't allow you to use a crontab to launch scripts to 
+avoid excessive CPU usage.
+<BR> 
+Best is to launch the scripts by hand, the incremental script
+cron-inc.pl should be launch at least once a week but other can be
+run less often. Edit the /admin/weblaunch.html file and change the URL
+of the links to reflect the location of the scripts and you'll be able
+to use this page to run the stats.
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=CENTER>
+<I><FONT SIZE=+1><B>Hints</B></FONT><HR width=50%></I>
+</TD>
+<TD VALIGN=TOP>
+1 - Read carefully the documentation. Many questions are answered
+in the files provided, use also the -h flag for more informations for
+each script.
+<P>
+2 - NT users can't use cron-w3perl.pl as NT can fork processes. But the
+at command can do the job for you.
+<P>
+3 - You can build as many configuration files you need. Just use the
+-c flag to load them
+<P>
+4 - Don't forget numerous option are available via the -h flag
+for each scripts.
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="install.html"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

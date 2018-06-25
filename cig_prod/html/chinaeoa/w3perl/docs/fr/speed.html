@@ -1,0 +1,152 @@
+<HTML><head>
+<title>W3Perl - Software - Speed - FR</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 WIDTH=100% CELLSPACING=5>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Vitesse de W3Perl</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD VALIGN=TOP>
+Une des critiques les plus justifi&eacute;e concernant l'utilisation
+de W3Perl reste la vitesse d'&eacute;x&eacute;cution. Bien sur, le logiciel
+n'est pas capable de rivaliser avec ceux &eacute;crits en C.<BR>
+Vous trouvez ici quelques tests effectu&eacute;s sur plusieurs ordinateurs.
+Le r&eacute;sultat indique une vitesse de traitement de l'ordre de 1000 
+lignes par seconde.
+<P>
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2>Lignes par secondes</FONT>
+</TD>
+<TD VALIGN=TOP>
+<CENTER>
+<IMG SRC="../img/cpu.gif" WIDTH=500 HEIGHT=300 ALT="w3perl size">
+
+</CENTER>
+<P>
+Les statistiques ont &eacute;t&eacute; calcul&eacute;es sur un Pentium III 
+450 Mhz 128 Mo sous Linux.<BR>
+Le nombre de lignes rejet&eacute;es n'ont pas &eacute;t&eacute; pris en compte, ce qui signifie que seules les lignes trait&eacute;es sont
+affich&eacute;es.
+<P>
+Un point correspond &agrave; un jour, donc une journ&eacute;e demande entre
+3 et 20 secondes de calcul. 
+Pour donner un ordre d'id&eacute;e sur les acc&eacute;s, il y a 10 000 hits
+par jour, ou alors le fichier de log a une taille d'environ 1,8 Mo.
+Huit mois de log ont &eacute;t&eacute; calcul&eacute;.
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=80%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2>CPU timing</FONT>
+</TD>
+<TD VALIGN=TOP>
+Si vous d&eacute;sirez m'envoyer vos temps de calcul, n'h&eacute;sitez pas.<BR>
+Un fichier est produit dans /data/cputime, libre &agrave; vous de me l'envoyer.
+<P>
+<CENTER>
+<TABLE BORDER=1>
+<TR>
+<TH ALIGN=CENTER>Site Web</TH>
+<TH ALIGN=CENTER>Intervalle</TH>
+<TH ALIGN=CENTER>Taille du log<BR><FONT SIZE=-1><I>(compress&eacute;)</I></FONT></TH>
+<TH ALIGN=CENTER>Hits / jour</TH>
+<TH ALIGN=CENTER>CPU <BR><FONT SIZE=-1><I>(r&eacute;solution dns off)</I></FONT></TH>
+<TH ALIGN=CENTER>OS</TH>
+<TH ALIGN=CENTER>Vitesse<BR><FONT SIZE=-1><I>(lignes / sec)</I></FONT></TH>
+</TR><TR>
+
+<TD>W3Perl</TD>
+<TD>73 jours</TD>
+<TD ALIGN=RIGHT>3,5 Mo</TD>
+<TD ALIGN=RIGHT>5,000</TD>
+<TD ALIGN=RIGHT>3 min 55</TD>
+<TD>PIII 450 (Linux)</TD>
+<TD ALIGN=RIGHT>1000</TD>
+</TR><TR>
+<TD>W3Perl</TD>
+<TD>421 jours<BR><FONT SIZE=-1>(14 mois)</FONT></TD>
+<TD ALIGN=RIGHT>11 Mo</TD>
+<TD ALIGN=RIGHT>2,000</TD>
+<TD ALIGN=RIGHT>16 min 20</TD>
+<TD>PIII 450 (Linux)</TD>
+<TD ALIGN=RIGHT>1000</TD>
+</TR><TR>
+<TD>INRP</TD>
+<TD>30 jours</TD>
+<TD ALIGN=RIGHT>3,6 Mo</TD>
+<TD ALIGN=RIGHT>10,000</TD>
+<TD ALIGN=RIGHT>4 min 59</TD>
+<TD>PIII 450 (Linux)</TD>
+<TD ALIGN=RIGHT>1000</TD>
+</TR><TR>
+<TD>INRP</TD>
+<TD>244 jours <BR><FONT SIZE=-1>(8 mois)</FONT></TD>
+<TD ALIGN=RIGHT>47 Mo</TD>
+<TD ALIGN=RIGHT>10,000</TD>
+<TD ALIGN=RIGHT>36 min 00</TD>
+<TD>PIII 450 (Linux)</TD>
+<TD ALIGN=RIGHT>1000</TD>
+</TR>
+</TABLE>
+</CENTER>
+<P>
+Pour donner un ordre de grandeur, les fichiers de log compress&eacute;s 
+sont 90% plus petit ques des fichiers non compress&eacute;s.
+<P> 
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=80%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2>Conseils</FONT>
+</TD>
+<TD VALIGN=TOP>
+
+Pour augmenter la vitesse de traitement :
+<UL>
+<LI> N'utilisez pas l'option de r&eacute;solution dns. Interroger un
+serveur dns peut prendre plusieurs secondes pour chaque requ&ecirc;tes 
+malgr&egrave; le fait que les donn&eacute;es sont stock&eacute;es dans
+un cache ult&eacute;rieurement. On peut gagner un facteur de trois &agrave;
+cinq en vitesse.
+<BR> 
+Si votre fichier de log ne contient que des adresses IP non r&eacute;solues,
+les statistiques sur les pays ne pourront pas &ecirc;tre calcul&eacute;es sans
+actionner cette option de r&eacute;solution dns.
+<LI> Ne s&eacute;lectionez pas trop de pages dans la variable @selection.
+<LI> N'utilisez qu'une seule sortie de langage.
+</UL>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="/chinaeoa/index.jsp"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

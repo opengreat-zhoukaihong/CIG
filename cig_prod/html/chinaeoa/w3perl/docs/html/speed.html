@@ -1,0 +1,143 @@
+<HTML><head>
+<title>W3Perl - Software - Speed</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 WIDTH=100% CELLSPACING=5>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>W3Perl speed</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD VALIGN=TOP>
+Major w3perl criticism come from the speed to deliver stats. Of course, the
+package is not able to compute as fast as package written in C.<BR>
+You'll find here some test speed from several computers. Results show 
+around 1000 lines processed by second.
+<P>
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2>Lines / sec</FONT>
+</TD>
+<TD VALIGN=TOP>
+<CENTER>
+<IMG SRC="../img/cpu.gif" WIDTH=500 HEIGHT=300 ALT="w3perl size">
+
+</CENTER>
+<P>
+Stats have been computed on a Pentium III 450 Mhz 128 Mb under Linux.<BR>
+The number of lines which have been rejected by the user configuration
+are not counted, it means in fact that only lines processed are displayed.
+<P>
+One point is one day, so a day took
+between 3 and 20 seconds to compute. To give an idea of access, there are
+around 10,000 hits a day or logfiles are around 1800 Kb large. Eight months of logfiles have been computed.
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=80%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2>CPU timing</FONT>
+</TD>
+<TD VALIGN=TOP>
+If you want to send me your timing, feel free to email me your configuration.<BR>
+A file is produced in your /data/cputime, you could send it to me.
+<P>
+<CENTER>
+<TABLE BORDER=1>
+<TR>
+<TH ALIGN=CENTER>Website</TH>
+<TH ALIGN=CENTER>Intervalle</TH>
+<TH ALIGN=CENTER>Logfile size<BR><FONT SIZE=-1><I>(compressed)</I></FONT></TH>
+<TH ALIGN=CENTER>Hits / day</TH>
+<TH ALIGN=CENTER>CPU <BR><FONT SIZE=-1><I>(reverse dns off)</I></FONT></TH>
+<TH ALIGN=CENTER>OS</TH>
+<TH ALIGN=CENTER>Speed<BR><FONT SIZE=-1><I>(lines / sec)</I></FONT></TH>
+</TR><TR>
+
+<TD>W3Perl</TD>
+<TD>73 days</TD>
+<TD ALIGN=RIGHT>3,5 Mb</TD>
+<TD ALIGN=RIGHT>5,000</TD>
+<TD ALIGN=RIGHT>3 min 55</TD>
+<TD>PIII 450 (Linux)</TD>
+<TD ALIGN=RIGHT>1000</TD>
+</TR><TR>
+<TD>W3Perl</TD>
+<TD>421 days<BR><FONT SIZE=-1>(14 months)</FONT></TD>
+<TD ALIGN=RIGHT>11 Mb</TD>
+<TD ALIGN=RIGHT>2,000</TD>
+<TD ALIGN=RIGHT>16 min 20</TD>
+<TD>PIII 450 (Linux)</TD>
+<TD ALIGN=RIGHT>1000</TD>
+</TR><TR>
+<TD>INRP</TD>
+<TD>30 days</TD>
+<TD ALIGN=RIGHT>3,6 Mb</TD>
+<TD ALIGN=RIGHT>10,000</TD>
+<TD ALIGN=RIGHT>4 min 59</TD>
+<TD>PIII 450 (Linux)</TD>
+<TD ALIGN=RIGHT>1000</TD>
+</TR><TR>
+<TD>INRP</TD>
+<TD>244 days <BR><FONT SIZE=-1>(8 months)</FONT></TD>
+<TD ALIGN=RIGHT>47 Mb</TD>
+<TD ALIGN=RIGHT>10,000</TD>
+<TD ALIGN=RIGHT>36 min 00</TD>
+<TD>PIII 450 (Linux)</TD>
+<TD ALIGN=RIGHT>1000</TD>
+</TR>
+</TABLE>
+</CENTER>
+<P>
+To give an idea, compressed logfiles are 90% smaller than uncompressed ones.
+<P> 
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=80%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2>Hints</FONT>
+</TD>
+<TD VALIGN=TOP>
+
+If you want to increase speed :
+<UL>
+<LI> Don't use the reverse dns option, querying dns server could take
+several seconds for each IP address. Results are stored in a file for
+the next calls but it really make things very slow. You could win
+a three to five speed increase.<BR> 
+If your logfile have only IP address, the 'countries' stats could not
+be computed without dns reverse on.
+<LI> Don't select too much pages in the @selection variable.
+<LI> Use only one language output. 
+</UL>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="/chinaeoa/index.jsp"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<HTML><head>
+<title>W3Perl - Fr - Description des programmes 1</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE WIDTH=100% CELLSPACING=5 BORDER=0>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Description des scripts</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD VALIGN=TOP>
+Tous les scripts utilisent un fichier de configuration config.pl pour
+connaitre quels sont les options que vous avez choisi. Il n'est jamais
+n&eacute;cessaire de modifier les sources des scripts.
+<P>
+Cron-pages sert &agrave; initialiser les stats g&eacute;n&eacute;rales, il
+ne doit &ecirc;tre lanc&eacute; qu'une seule fois except&eacute; si vous
+modifiez le fichier de configuration.
+<P>
+
+Liste des scripts :
+<P>
+<UL>
+<LI> Stats sur les Pages, R&eacute;pertoires, Pays, Sites et Scripts 
+
+<UL>
+<LI><A HREF="#pages">cron-pages.pl</A>
+<LI><A HREF="#inc">cron-inc.pl</A>
+</UL>
+
+</UL> 
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+<A NAME="pages">
+<table border=1>
+<tr>
+<th align=middle colspan=2>
+Cron-pages.pl
+</th>
+</tr>
+<tr>
+<td>
+But
+</td>
+<td>
+Initialisation<br>
+G&eacute;n&eacute;ration des stats sur l'ensemble du fichier de log,
+except&eacute; la journ&eacute;e courante
+</td>
+</tr>
+<tr>
+<td>
+Fr&eacute;quence
+</td>
+<td>
+Une seule fois. Doit &ecirc;tre relanc&eacute; si vous modifiez le
+fichier de configuration car les donn&eacute;s issues de cron-pages
+sont utilis&eacute;es par la suite par le script incr&eacute;mental.
+</td>
+</tr>
+<tr>
+<td>
+Temps de calcul
+</td>
+<td>
+D&eacute;pend de la taille de votre fichier, de votre fichier de
+configuration et de la vitesse de votre machine.
+Cela peut prendre entre quelques minutes juqu'&agrave; plusieurs heures.<BR>
+Si votre fichier de log est vraiment tr&egrave;s gros, je vous sugg&egrave;re de le <A HREF="logfile.html">compresser</A> en plusieurs parts ou de tester
+en premier lieu la sortie avec un fichier de log de petite taille.
+</td>
+</tr>
+<tr>
+<td>
+Fonctionnement
+</td>
+<td>
+Cr&eacute;ation de la structure de l'application, sortie des valeurs
+incr&eacute;mentales, g&eacute;n&eacute;ration des fichiers HTML et
+sauvegarde des donn&eacute;es temporelles.
+</td>
+</tr>
+
+<tr>
+<td>
+Options
+</td>
+<td>
+
+<table>
+<tr>
+<th>-c &lt;file&gt;</th><td>charge un fichier de configuration</td></tr><tr>
+<th>-d &lt;nbdays&gt;</th><td>ne balaye que les nbdays derniers jours</td></tr><tr>
+<th>-i &lt;file&gt;</th><td>fichier de log d'entr&eacute;e</td></tr><tr>
+<th>-p &lt;level&gt;</th><td>niveau de pr&eacute;cision</td></tr><tr>
+<th>-l &lt;language&gt;</th><td>langages utilis&eacute;s</td></tr><tr>
+<th>-q &lt;string&gt;</th><td>filtre sur ce sous r&eacute;pertoire</td></tr><tr>
+<th>-r &lt;date&gt;</th><td>date de fin</td></tr><tr>
+<th>-s &lt;date&gt;</th><td>date de d&eacute;but</td></tr><tr>
+<th>-t &lt;toplist&gt;</th><td>affichage des toplist meilleurs fichiers</td></tr><tr>
+<th>-u</th><td>mise &agrave; jour de la page d'accueil</td></tr><tr>
+<th>-x</th><td>montre les valeurs par d&eacute;faut</td></tr><tr>
+<th>-v</th><td>version</td></tr><tr>
+<th>-z</th><td>utilisation du mode compress&eacute;</td>
+</tr></table>
+
+</td>
+</tr>
+
+<tr>
+<td>
+Notes
+</td>
+<td>
+Le graphe sur les acc&egrave;s sur les r&eacute;pertoires n'est pas
+calcul&eacute; par cron-pages mais par cron-week. Vous devrez attendre
+d'avoir au moins deux semaines de donn&eacute;es avant que celui-ci
+n'apparaisse.
+</td>
+</tr>
+</table>
+
+
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+
+<A NAME="inc">
+<table  border=1>
+<tr>
+<th align=middle colspan=2>
+Cron-inc.pl
+</th>
+</tr>
+<tr>
+<td>
+But
+</td>
+<td>
+Stats incr&eacute;mentales<br>
+Ne caclule que les statistiques sur la journ&eacute;e pr&eacute;c&eacute;dente
+</td>
+</tr>
+<tr>
+<td>
+Fr&eacute;quence
+</td>
+<td>
+Une fois par jour.<br>
+<P>
+Pas d'acc&egrave;s &agrave; une crontab :<br>
+Si vous oubliez de lancer cron-inc.pl pendant moins d'une semaine,
+cron-inc.pl sera capable de rattraper les jours manquants. Si l'oubli
+est sup&eacute;rieur &agrave; une semaine, vous devrez alors 
+relancer cron-pages.pl pour tout recalculer depuis le premier jour.<BR>
+Vous pouvez modifier cette valeur de 7 jours dans le code du script mais
+dans ce cas, le temps de calcul peut &ecirc;tre plus long qu'une simple
+r&eacute;initialisation....&agrave; tester.
+<BR>
+Conseil : utilisez moins de 10% de nombre de jours totals depuis le
+d&eacute;but du fichier de log.
+</td>
+</tr>
+<tr>
+<td>
+Temps de calcul
+</td>
+<td>
+Typiquement, quelques minutes.<BR>
+</td>
+</tr>
+<tr>
+<td>
+Fonctionnement
+</td>
+<td>
+Chargement des valeurs incr&eacute;mentales, balayage de la journ&eacute;e
+pr&eacute;c&eacute;dente pour extraction des statistiques, calcul des
+nouvelles stats r&eacute;sultantes et sauvegarde des nouvelles valeurs
+incr&eacute;mentales. Puis g&eacute;n&eacute;ration des pages HTML et
+mise &agrave; jour des valeurs temporelles.
+</td>
+</tr>
+<tr>
+<td>
+Options
+</td>
+<td>
+
+<table>
+<tr>
+<th>-c</th><td>charge un fichier de configuration</td></tr><tr>
+<th>-i &lt;file&gt;</th><td>fichier de log d'entr&eacute;e</td></tr><tr>
+<th>-j &lt;dd/Mmm/yyyy&gt;</th><td>statistiques uniquement sur un jour
+particulier</td></TR>
+
+<th>-l &lt;language&gt;</th><td>langages de sortie</td></tr><tr>
+<th>-p &lt;level&gt;</th><td>niveau de pr&eacute;cision</td></tr><tr>
+<th>-s &lt;nbdays&gt;</th><td>balayage des nbdays jours pr&eacute;c&eacute;dents (la valeur par d&eacute;faut est 7)</td></tr><tr>
+<th>-t &lt;toplist&gt;</th><td>affiche que les toplist fichiers</td></tr><tr>
+<th>-x</th><td>montre les valeurs par d&eacute;faut</td></tr><tr>
+<th>-v</th><td>version</td>
+</tr></table>
+
+</td>
+</tr>
+<tr>
+<td>
+Notes
+</td>
+<td>
+Vous pouvez utiliser cron-inc.pl pour ne calculer les statistiques
+que sur une journ&eacute;e bien pr&eacute;cise grace &agrave; l'option
+<I>cron-inc.pl -j dd/Mmm/yyyy</I> 
+(dd est le jour avec deux chiffres, Mmm les trois premi&egrave;res lettres de chaque mois en anglais avec la premi&egrave;re lettre en majuscule, yyyy
+l'ann&eacute;e avec 4 chiffres).<BR>
+Les valeurs incr&eacute;mentales ne sont pas d&eacte;truites en cas
+d'utilisation de cette option.
+</td>
+</tr>
+</table>
+
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="contents.html"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

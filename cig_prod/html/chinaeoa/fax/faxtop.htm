@@ -1,0 +1,181 @@
+<html>
+<head>
+<title>orderhome</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script language="JavaScript">
+<!--
+function MM_timelineGoto(tmLnName, fNew, numGotos) { //v2.0
+  //Copyright 1997 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,lastKeyFr,propNum,theObj;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (numGotos != null)
+    if (tmLn.gotoCount == null) tmLn.gotoCount = 1;
+    else if (tmLn.gotoCount++ >= numGotos) {tmLn.gotoCount=0; return}
+  jmpFwd = (fNew > tmLn.curFrame);
+  for (i = 0; i < tmLn.length; i++) {
+    sprite = (jmpFwd)? tmLn[i] : tmLn[(tmLn.length-1)-i]; //count bkwds if jumping back
+    if (sprite.charAt(0) == "s") {
+      numKeyFr = sprite.keyFrames.length;
+      firstKeyFr = sprite.keyFrames[0];
+      lastKeyFr = sprite.keyFrames[numKeyFr - 1];
+      if ((jmpFwd && fNew<firstKeyFr) || (!jmpFwd && lastKeyFr<fNew)) continue; //skip if untouchd
+      for (keyFrm=1; keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]; keyFrm++);
+      for (j=0; j<sprite.values.length; j++) {
+        props = sprite.values[j];
+        if (numKeyFr == props.length) propNum = keyFrm-1 //keyframes only
+        else propNum = Math.min(Math.max(0,fNew-firstKeyFr),props.length-1); //or keep in legal range
+        if (sprite.obj != null) {
+          if (props.prop2 == null) sprite.obj[props.prop] = props[propNum];
+          else        sprite.obj[props.prop2][props.prop] = props[propNum];
+      } }
+    } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+  }
+  tmLn.curFrame = fNew;
+  if (tmLn.ID == 0) eval('MM_timelinePlay(tmLnName)');
+}
+
+function MM_timelinePlay(tmLnName, myID) { //v1.2
+  //Copyright 1997 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,propNum,theObj,firstTime=false;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (myID == null) { myID = ++tmLn.ID; firstTime=true;}//if new call, incr ID
+  if (myID == tmLn.ID) { //if Im newest
+    setTimeout('MM_timelinePlay("'+tmLnName+'",'+myID+')',tmLn.delay);
+    fNew = ++tmLn.curFrame;
+    for (i=0; i<tmLn.length; i++) {
+      sprite = tmLn[i];
+      if (sprite.charAt(0) == 's') {
+        if (sprite.obj) {
+          numKeyFr = sprite.keyFrames.length; firstKeyFr = sprite.keyFrames[0];
+          if (fNew >= firstKeyFr && fNew <= sprite.keyFrames[numKeyFr-1]) {//in range
+            keyFrm=1;
+            for (j=0; j<sprite.values.length; j++) {
+              props = sprite.values[j]; 
+              if (numKeyFr != props.length) {
+                if (props.prop2 == null) sprite.obj[props.prop] = props[fNew-firstKeyFr];
+                else        sprite.obj[props.prop2][props.prop] = props[fNew-firstKeyFr];
+              } else {
+                while (keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]) keyFrm++;
+                if (firstTime || fNew==sprite.keyFrames[keyFrm-1]) {
+                  if (props.prop2 == null) sprite.obj[props.prop] = props[keyFrm-1];
+                  else        sprite.obj[props.prop2][props.prop] = props[keyFrm-1];
+        } } } } }
+      } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+      if (fNew > tmLn.lastFrame) tmLn.ID = 0;
+  } }
+}
+
+function MM_initTimelines() {
+    //MM_initTimelines() Copyright 1997 Macromedia, Inc. All rights reserved.
+    var ns = navigator.appName == "Netscape";
+    document.MM_Time = new Array(1);
+    document.MM_Time[0] = new Array(1);
+    document.MM_Time["Timeline1"] = document.MM_Time[0];
+    document.MM_Time[0].MM_Name = "Timeline1";
+    document.MM_Time[0].fps = 15;
+    document.MM_Time[0][0] = new String("behavior");
+    document.MM_Time[0][0].frame = 46;
+    document.MM_Time[0][0].value = "MM_timelineGoto('Timeline1','1')";
+    document.MM_Time[0].lastFrame = 46;
+    for (i=0; i<document.MM_Time.length; i++) {
+        document.MM_Time[i].ID = null;
+        document.MM_Time[i].curFrame = 0;
+        document.MM_Time[i].delay = 1000/document.MM_Time[i].fps;
+    }
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+.unnamed1 {  font-size: xx-small; line-height: 18pt; left: 30px; clip:   rect(   ); font-family: "Arial", "Helvetica", "sans-serif", "宋体"}
+.unnamed2 {  font-size: xx-small}
+.unnamed3 {  font-size: 9pt}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" onLoad="MM_timelinePlay('Timeline1')">
+<div id="Layer2" style="position:absolute; left:0px; top:18px; width:505px; height:195px; z-index:3"> 
+  <div id="Layer3" style="position:absolute; left:0px; top:0px; width:505px; height:27px; z-index:4; background-color: #9F433F; layer-background-color: #9F433F; border: 1px none #000000"><img src="image/faxtitle.gif" width="150" height="27"></div>
+  <div id="Layer3" style="position:absolute; left:36px; top:46px; width:287px; height:144px; z-index:9"> 
+    <table width="307" border="0" cellspacing="1" height="140">
+      <tr> 
+        <td width="107"><font size="2" color="#333333">按品牌查询</font></td>
+        <td width="191"><font size="2"> 
+          <select name="select" size="1">
+            <option selected>品牌</option>
+            <option>施乐/XEROX</option>
+            <option>佳能/CANON</option>
+            <option>惠普/HP</option>
+            <option>爱普生/EPSON</option>
+            <option>OKI</option>
+            <option>利盟/LEXMARK</option>
+          </select>
+          </font></td>
+      </tr>
+      <tr> 
+        <td width="107"><font size="2" color="#333333">选择某一产品</font></td>
+        <td width="191"><font size="2"> 
+          <select name="select2" size="1">
+            <option selected>产品型号</option>
+            <option>HP-6L</option>
+            <option>XJ4C</option>
+          </select>
+          </font></td>
+      </tr>
+      <tr> 
+        <td width="107"><font size="2" color="#333333">选择产品类别</font></td>
+        <td width="191"><font size="2"> 
+          <select name="select7">
+            <option>选择全部产品</option>
+            <option>热敏纸传真机</option>
+            <option>普通纸传真机</option>
+          </select>
+          </font></td>
+      </tr>
+      <tr> 
+        <td width="107"><font size="2">灰度</font></td>
+        <td width="191"><font size="2"> 
+          <select name="select5">
+            <option>16级</option>
+            <option>32级</option>
+            <option>64级</option>
+          </select>
+          </font></td>
+      </tr>
+      <tr> 
+        <td width="107"><font size="2" color="#333333">选择价格范围 </font></td>
+        <td width="191"><font size="2"> 
+          <select name="select3">
+            <option selected>查询价格</option>
+            <option>&lt;1,000</option>
+            <option>1,000&lt;=&amp;&lt;2,000</option>
+            <option>2,000&lt;=&amp;&lt;3,000</option>
+            <option>3,000&lt;=&amp;&lt;4,000</option>
+            <option>4,000&lt;=&amp;&lt;5.000</option>
+            <option>5,000&lt;=&amp;&lt;6,000</option>
+            <option>6,000&lt;=&amp;&lt;7,000</option>
+            <option>&gt;7,000</option>
+          </select>
+          </font></td>
+      </tr>
+      <tr> 
+        <td colspan="2" height="30"><font size="2"><font color="#712662" face="宋体"><b><font color="#9D433F">您可以根据您的需要进行单项或多项查询</font></b></font> 
+          </font></td>
+      </tr>
+    </table>
+  </div>
+  <div id="Layer2" style="position:absolute; left:348px; top:101px; width:57px; height:26px; z-index:8"><font size="2"> 
+    <input type="submit" name="Submit" value="查 询">
+    </font></div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div id="Layer5" style="position:absolute; width:505px; height:45px; z-index:1; top: 0px; left: 0px"> 
+  <div id="Layer8" style="position:absolute; width:505px; height:18px; z-index:4; left: 0; top: 0"><img src="file://///Zhangjj/e/zhang/product/image/navigation.gif" width="505" height="18" usemap="#Map2" border="0"><map name="Map2"><area shape="rect" coords="-10,2,46,14" href="file://///Zhangjj/e/zhang/index.htm" target="_parent"><area shape="rect" coords="406,2,474,21" href="#"><area shape="rect" coords="332,2,402,20" href="#"><area shape="rect" coords="50,2,119,15" href="file://///Zhangjj/e/zhang/product/product.htm" target="_parent"><area shape="rect" coords="197,2,253,17" href="file://///Zhangjj/e/zhang/dealer/dealer.htm" target="_parent"><area shape="rect" coords="123,2,192,17" href="#"></map></div>
+  
+</div>
+</body>
+</html>

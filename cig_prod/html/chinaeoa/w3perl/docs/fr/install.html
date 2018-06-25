@@ -1,0 +1,157 @@
+<HTML><head>
+<title>W3Perl installation</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE WIDTH=100% CELLSPACING=5 BORDER=0>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Installation</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=CENTER>
+</TD>
+<TD VALIGN=TOP>
+Vous devez en premier lieu installer le logiciel Fly qui vous permettra
+d'obtenir des graphes pour w3perl. Ensuite, l'installation ne consiste
+qu'en l'edition de 3 lignes dans un fichier de configuration et 
+l'utilisation d'une interface d'adminstration pour param&eacute;trer vos sorties.
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=CENTER>
+<I><FONT SIZE=+1><B>Fly</B></FONT><HR width=50%></I>
+</TD>
+<TD VALIGN=TOP>
+
+
+1 - T&eacute;l&eacute;chargez le logiciel Fly sur <A HREF="http://www.unimelb.edu.au/fly/">Australie</A> ou depuis un site mirroir aux <A HREF="http://www.w3perl.com/fly/">USA</A> (source et binaire disponibles)
+<P>
+2 - D&eacute;compressez le fichier t&eacute;l&eacute;charg&eacute; (tar -xzvf fly.tgz sous Unix ou unzip fly.zip sous NT)
+<P>
+3 - Compilez le logiciel ou utilisez l'ex&eacute;cutable t&eacute;l&eacute;charg&eacute;.
+<P>
+
+
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD><HR ALIGN=CENTER WIDTH=30%></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=CENTER>
+<I><FONT SIZE=+1><B>W3Perl</B></FONT><HR width=50%></I>
+</TD>
+<TD VALIGN=TOP>
+
+<P>
+<!--
+NT users can have some trouble as it seems NT servers have some
+problem to read server environnement variable !
+-->
+
+La proc&eacute;dure d'installation peut &ecirc;tre divis&eacute;ee en 5 parties diff&eacute;rentes :
+<UL>
+1 - <I>Installation des fichiers</I>
+</UL>
+<P>
+L'application peut aussi bien &ecirc;tre install&eacute;e aussi bien dans
+le r&eacute;pertoire associ&eacute; &agrave; votre serveur ou dans votre
+r&eacute;pertoire cgi-bin. L'installation standard suppose que vous pouvez
+cr&eacute;er un sous r&eacute;pertoire /w3perl/ au sein
+de votre r&eacute;pertoire cgi-bin. Vous devez &eacute;diter les trois
+premi&egrave;res lignes d'un script et le lancer pour terminer l'installation.
+<P>
+J'ai trouv&eacute; trois mani&egrave;res diff&eacute;rentes d'installer l'application :
+<P>
+<TABLE BORDER=1 WIDTH=100%>
+<TR>
+<TH></TH>
+<TH>Telnet</TH>
+<TH>Cgi-bin</TH>
+<TH>Crontab</TH>
+</TR>
+<TR>
+<TD><A HREF="provider.html">H&eacute;bergeur</A></TD>
+<TD ALIGN=CENTER>Non</TD>
+<TD ALIGN=CENTER>Oui</TD>
+<TD ALIGN=CENTER>Optionnel</TD>
+</TR>
+<TR>
+<TD><A HREF="user.html">Utilisateur</A></TD>
+<TD ALIGN=CENTER>Oui</TD>
+<TD ALIGN=CENTER>Non</TD>
+<TD ALIGN=CENTER>Optionel</TD>
+</TR>
+<TR>
+<TD><A HREF="webmaster.html">Webmaster</A></TD>
+<TD ALIGN=CENTER>Oui</TD>
+<TD ALIGN=CENTER>Oui</TD>
+<TD ALIGN=CENTER>Oui</TD>
+</TR>
+</TABLE>
+<P>
+<UL>
+2 - <I><A HREF="config.html">Edition du fichier de configuration</A></I>
+</UL>
+<P>
+Les fichiers de configuration peut &ecirc;tre construit avec l'aide d'un
+script si vous avez acc&egrave;s &agrave; un r&eacute;pertoire cgi-bin ou 
+alors &agrave; la main. 
+<P>
+<UL>
+3 - <I><A HREF="firstuse.html">Initialisation</A></I>
+</UL>
+<P>
+Lancement de quelques scripts afin de v&eacute;rifier votre
+fichier de configuration et de valider vos choix de sortie. Toutes
+les stats peuvent &ecirc;tre lanc&eacute;es de mani&egrave;re
+automatique avec un seul script si vous &ecirc;tes sous un serveur Unix.
+<P>
+<UL>
+4 - <I><A HREF="crontab.html">Utilisation de la crontab</A></I>
+</UL>
+<P>
+Ajoutez un script dans votre crontab pour que les statistiques soient
+lanc&eacute;es de mani&egrave;re compl&eacute;tement automatique chaque
+nuit. Il ne vous reste plus qu'&agrave; regarder les r&eacute;sultats
+dans votre navigateur pr&eacute;f&eacute;r&eacute;e de temps en temps.
+<P>
+<UL>
+5 - <I>Remerciements</I>
+</UL>
+<P>
+Enfin, informez moi s'il vous plait que vous avez choisi w3perl. Lorsque
+vous m'avertissez que vous avez s&eacute;lectionn&eacute; w3perl, cela
+justifie le temps que je passe dessus &agrave; la maintenance et &agrave;
+son am&eacute;lioration. Si vos stats sont visibles sur le Net, une simple URL
+est la bienvenue mais si elles ne sont pas accessibles, un petit email me fera
+bien plaisir.
+
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+Regardez la <A HREF="faq.html">FAQ</A> et la section <A HREF="bugs.html">bug</A> si quelque chose ne 
+fonctionne pas ou envoyez moi un <A HREF="mailto:domisse@w3perl.com">email</A>.
+<BR>
+Si vous avez des probl&egrave;mes lors de l'installation de l'application, envoyez moi
+un email en m'expliquant les probl&egrave;mes le plus pr&eacute;cisemment possible.
+<BR>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="/chinaeoa/index.jsp"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

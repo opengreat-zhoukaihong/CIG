@@ -1,0 +1,283 @@
+<html>
+<head>
+
+
+<SCRIPT language=JavaScript>
+  var menuarray;
+  menur=11;
+  menuc=25;
+  menuselect="";
+  menuselects="";
+function mouseclick(lmname)
+  {
+  j=-1;
+  for(i=0;i<menur;i++)
+     {
+      if(lmname==menuarray[i][2])
+        {
+         menuselect=lmname;
+         if(menuarray[i][1]==1)
+           {
+           menuarray[i][1]=0;
+           menuselect="";
+           j=i;
+            }
+         else
+           {
+           menuarray[i][1]=1;
+           j=i;
+           }
+         }
+      else menuarray[i][1]=0;
+      }
+  document.all.menutable.outerHTML=drawmenu();
+  if(menuarray[j][0]==0)
+    {
+    menuselects="";
+    if(menuarray[j][1]==1)
+      {
+     
+
+      return(0);
+      }
+    }
+      
+  if(menuarray[j][1]==0 && menuselects!="")  
+      {
+      menuselects="";
+
+      return(0);
+      }
+  }
+
+function mouseclicks(lmname)
+  {
+  if(menuselects==lmname) 
+    menuselects="";
+  else 
+    menuselects=lmname;
+  document.all.menutable.outerHTML=drawmenu();
+  
+   for(i=0;i<menur;i++)
+     for(j=0;j<menuarray[i][0];j++)
+       if(lmname==menuarray[i][4+2*j])
+         {
+         if(menuselects=="")
+  
+           return(0);
+
+         else
+           {           
+           open(menuarray[i][4+2*j+1],"mainFrame");
+           return(0);
+           }
+         }
+  }
+function drawmenu()
+  {
+   var i,j,para;
+   para="";
+   para+='<table id="menutable" align="center" height=308 border=1 cellpadding=0 cellspacing=0  bordercolorlight=#000000 bordercolordark=#FFFFFF>';
+    for(i=0;i<menur;i++)
+       {
+       if(menuselect==menuarray[i][2])
+         para+='<tr><td id=td'+menuarray[i][2]+' align=center width=125 height=27   bgcolor=#DBA619><a style="CURSOR: hand" name='+menuarray[i][2]+' OnClick=mouseclick(name) OnMouseOver=mouseover(name) OnMouseOut=mouseout(name)> <font id=ft'+menuarray[i][2]+' face=宋体 size=2 color=#ffffff>'+menuarray[i][3]+'</font></a></td></tr>';
+       else
+         para+='<tr><td id=td'+menuarray[i][2]+' align=center width=125 height=27 bgcolor=#DBA619> <a  style="CURSOR: hand" name='+menuarray[i][2]+' OnClick=mouseclick(name) OnMouseOver=mouseover(name) OnMouseOut=mouseout(name)><font id=ft'+menuarray[i][2]+' face=宋体 size=2 color=#ffffff>'+menuarray[i][3]+'</font></a></td></tr>';
+       if(menuarray[i][1]==1)
+         {
+         for(j=0;j<menuarray[i][0];j++)
+           {
+            if(menuselects==menuarray[i][4+2*j])
+              para+='<tr><td id=td'+menuarray[i][4+2*j]+' align=center width=125 height=21  bgcolor=#FFD850><a style="CURSOR: hand" name='+menuarray[i][4+2*j]+' OnClick=mouseclicks(name) OnMouseOver=mouseover(name) OnMouseOut=mouseout(name)><font id=ft'+menuarray[i][4+2*j]+' face=宋体 size=2 color=#ffffff>'+menuarray[i][4+2*j]+'</font></a></td></tr>';
+            else
+              para+='<tr><td bgcolor=#FFD850 id=td'+menuarray[i][4+2*j]+' align=center width=125 height=21 ><a style="CURSOR: hand" name='+menuarray[i][4+2*j]+' OnClick=mouseclicks(name) OnMouseOver=mouseover(name) OnMouseOut=mouseout(name)><font id=ft'+menuarray[i][4+2*j]+' face=宋体 size=2 color=#cd5c5c>'+menuarray[i][4+2*j]+'</span></font></a></td></tr>';
+           }
+         } 
+       }
+  para+='</table>';
+  return(para);
+  }
+
+
+function mouseover(lmname)
+  {
+   if(lmname!=menuselect && lmname!=menuselects)
+     {
+     for(i=0;i<menur;i++)  if(lmname==menuarray[i][2]) break;
+     if(i<menur)
+       {
+       aaa="td"+lmname;
+       //document.all[aaa].background="menu/over.jpg";
+       aaa="ft"+lmname;
+       document.all[aaa].size=2;
+       }
+     else
+       {
+       aaa="td"+lmname;
+       //document.all[aaa].background="menu/sover.jpg";
+       aaa="ft"+lmname;
+       document.all[aaa].size=2;
+       }
+     }
+  }
+
+function mouseout(lmname)
+  {
+  if(lmname!=menuselect && lmname!=menuselects)
+     {
+     for(i=0;i<menur;i++)   if(lmname==menuarray[i][2]) break;
+     if(i<menur)
+       {
+       aaa="td"+lmname;
+      
+       aaa="ft"+lmname;
+       document.all[aaa].size=2;
+       }
+     else
+       {
+       aaa="td"+lmname;
+      
+       aaa="ft"+lmname;
+       document.all[aaa].size=2;
+       }
+     }
+  }
+
+function initmenu()
+{
+menuarray=new Array();
+for(i=0;i<menur;i++)
+menuarray[i]=new Array();
+menuarray[0][0]=2;
+menuarray[0][1]=0;
+menuarray[0][2]="0";
+menuarray[0][3]="订单管理";
+menuarray[0][4]="显示所有订单";
+menuarray[0][5]="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstChkLogin?GoPage=cnhotel/bst/open_order_view.jsp"; 
+menuarray[0][6]="查询订单";
+menuarray[0][7]="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstChkLogin?GoPage=order_search.htm";
+
+
+menuarray[1][0]=4;
+menuarray[1][1]=0;
+menuarray[1][2]="1";
+menuarray[1][3]="区域管理";
+menuarray[1][4]="查询区域";
+menuarray[1][5]="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstChkLogin?GoPage=area_search.htm";
+menuarray[1][6]="添加新区域";
+menuarray[1][7]="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstChkLogin?GoPage=cnhotel/bst/newarea_add.jsp";
+menuarray[1][8]="查询城市";
+menuarray[1][9]="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstChkLogin?GoPage=cnhotel/bst/city_search.jsp";
+menuarray[1][10]="添加新城市";
+menuarray[1][11]="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstChkLogin?GoPage=cnhotel/bst/newcity_add.jsp";
+
+
+
+menuarray[2][0]=2;
+menuarray[2][1]=0;
+menuarray[2][2]="2";
+menuarray[2][3]="酒店管理";
+menuarray[2][4]="查询酒店";
+menuarray[2][5]="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstChkLogin?GoPage=hotel_search.htm";
+menuarray[2][6]="添加新酒店";
+menuarray[2][7]="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstChkLogin?GoPage=cnhotel/bst/hotelprofile_add.jsp";
+
+menuarray[3][0]=1;
+menuarray[3][1]=0;
+menuarray[3][2]="3";
+menuarray[3][3]="会员管理";
+menuarray[3][4]="查询会员";
+menuarray[3][5]="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstChkLogin?GoPage=membersearch.htm";
+
+
+
+
+
+menuarray[4][0]=2;
+menuarray[4][1]=0;
+menuarray[4][2]="4";
+menuarray[4][3]="国家设置";
+menuarray[4][4]="显示所有国家";
+menuarray[4][5]="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstChkLogin?GoPage=cnhotel/bst/open_Country.jsp";
+menuarray[4][6]="添加国家";
+menuarray[4][7]="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstChkLogin?GoPage=Country_add.htm";
+
+
+menuarray[5][0]=2;
+menuarray[5][1]=0;
+menuarray[5][2]="5";
+menuarray[5][3]="图片目录";
+menuarray[5][4]="显示图片目录";
+menuarray[5][5]="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstChkLogin?GoPage=cnhotel/bst/open_Dir.jsp";
+menuarray[5][6]="添加图片目录";
+menuarray[5][7]="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstChkLogin?GoPage=Dir_add.htm";
+
+
+menuarray[6][0]=2;
+menuarray[6][1]=0;
+menuarray[6][2]="6";
+menuarray[6][3]="客房类别";
+menuarray[6][4]="显示客房类别";
+menuarray[6][5]="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstChkLogin?GoPage=cnhotel/bst/open_RoomType.jsp";
+menuarray[6][6]="添加客房类别";
+menuarray[6][7]="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstChkLogin?GoPage=RoomType_add.htm";
+
+menuarray[7][0]=1;
+menuarray[7][1]=0;
+menuarray[7][2]="7";
+menuarray[7][3]="热门酒店";
+menuarray[7][4]="设置热门酒店";
+menuarray[7][5]="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstChkLogin?GoPage=cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstGetHot";
+
+
+
+menuarray[8][0]=3;
+menuarray[8][1]=0;
+menuarray[8][2]="8";
+menuarray[8][3]="精选酒店";
+menuarray[8][4]="生成设置页面";
+menuarray[8][5]="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstChkLogin?GoPage=cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstHotHotel";
+menuarray[8][6]="设置精选酒店";
+menuarray[8][7]="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstChkLogin?GoPage=cnhotel/bst/top15.jsp";
+menuarray[8][8]="生成酒店主页";
+menuarray[8][9]="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstChkLogin?GoPage=cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstGenerateMainPage?Filename=/home/httpd/html/cnhotel/chinese/index.html";
+
+
+menuarray[9][0]=2;
+menuarray[9][1]=0;
+menuarray[9][2]="9";
+menuarray[9][3]="操作员管理";
+menuarray[9][4]="显示所有操作员";
+menuarray[9][5]="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstChkLogin?GoPage=cnhotel/bst/open_Operator.jsp";
+menuarray[9][6]="添加操作员";
+menuarray[9][7]="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstChkLogin?GoPage=Operator_add.htm";
+
+
+menuarray[10][0]=1;
+menuarray[10][1]=0;
+menuarray[10][2]="10";
+menuarray[10][3]="退出管理系统";
+menuarray[10][4]="退出管理系统";
+menuarray[10][5]="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstLogout";
+}
+
+</SCRIPT>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+</head>
+
+<body bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" cellspacing="0" cellpadding="0" align="right" width="125" height="308">
+  <tr > 
+    <td height="338"> 
+      <script language=JavaScript>
+initmenu();
+document.write(drawmenu());
+</script>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

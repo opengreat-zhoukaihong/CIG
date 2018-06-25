@@ -1,0 +1,106 @@
+<HEAD>
+<TITLE>W3perl : Web Launch - Global stats</TITLE>
+</HEAD>
+
+<BODY BACKGROUND="<!-- BG -->" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="<!-- LINE -->" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Global stats</H1></FONT>
+</TD>
+</TR>
+
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD ALIGN=CENTER VALIGN=TOP>
+ </TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD>                   
+This page display the default flag option for the script. You can choose either to load
+another configuration file or to alter the flag provided.
+</CENTER>
+
+<FORM METHOD=POST ACTION="<!-- cgiurl -->/runconf.pl">  
+
+<TABLE BORDER=0>
+<TR>
+<TH>&nbsp;</TH>
+<TH><FONT SIZE=-1>Flag</FONT></TH>
+<TH><FONT SIZE=-1>Description</FONT></TH>
+<TH><FONT SIZE=-1>Value</FONT></TH>
+</TR><TR>
+<!--
+<TD BGCOLOR="#D9D9D9"><FONT SIZE=-1><INPUT NAME="c" TYPE="checkbox" VALUE="1"></FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>-c &lt;file&gt;</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>load another configuration file</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1><INPUT TYPE="text" NAME="conf" VALUE=""></FONT></TD>
+</TR><TR>
+-->
+<TD BGCOLOR="#D9D9D9"><FONT SIZE=-1><INPUT NAME="d" TYPE="checkbox" VALUE="1"></FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>-d &lt;days&gt;</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>number of days to scan</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>
+<INPUT NAME="nbdays" TYPE="text" VALUE=""></FONT>
+</TD>
+</TR><TR>
+<TD BGCOLOR="#D9D9D9"><FONT SIZE=-1><INPUT NAME="e" TYPE="checkbox" VALUE="1"></FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>-e</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>incremental run for all scripts</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>
+&nbsp;
+</TD>
+</TR><TR>
+<TD BGCOLOR="#D9D9D9"><FONT SIZE=-1><INPUT NAME="a" TYPE="checkbox" VALUE="1"></FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>-a</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>reset stats</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>
+&nbsp;</FONT>
+</TD>
+<!--
+</TR><TR>
+<TD BGCOLOR="#D9D9D9"><FONT SIZE=-1><INPUT NAME="l" TYPE="checkbox" VALUE="1"></FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>-l</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>language output</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>
+<INPUT NAME="fr" TYPE="radio" VALUE="1">&nbsp;french
+<INPUT NAME="uk" TYPE="radio" VALUE="1">&nbsp;english
+<INPUT NAME="nl" TYPE="radio" VALUE="1">&nbsp;dutch
+<INPUT NAME="jp" TYPE="radio" VALUE="1">&nbsp;japanese
+<INPUT NAME="sp" TYPE="radio" VALUE="1">&nbsp;spanish
+<INPUT NAME="fi" TYPE="radio" VALUE="1">&nbsp;finnish
+<INPUT NAME="de" TYPE="radio" VALUE="1">&nbsp;german</FONT>
+</TD>
+</TR><TR>
+<TD BGCOLOR="#D9D9D9"><FONT SIZE=-1><INPUT NAME="p" TYPE="checkbox" VALUE="1"></FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>-p</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>precision level</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>
+<INPUT NAME="precision" TYPE="radio" VALUE="1">&nbsp;minimal
+<INPUT NAME="precision" TYPE="radio" VALUE="2">&nbsp;basic
+<INPUT NAME="precision" TYPE="radio" VALUE="3">&nbsp;medium
+<INPUT NAME="precision" TYPE="radio" VALUE="4">&nbsp;high</FONT>
+</TD>
+-->
+</TR>
+</TABLE>
+<FONT SIZE=-1>
+<P>
+<!-- hidden -->
+<P>
+<CENTER>
+<INPUT TYPE="submit" NAME="Submit" VALUE="Go">    
+</CENTER>
+</FONT>
+</FORM>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+</BODY>
+</HTML>

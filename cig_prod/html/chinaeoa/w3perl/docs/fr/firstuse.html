@@ -1,0 +1,121 @@
+<HTML><head>
+<title>W3Perl - Initialisation - FR</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE WIDTH=100% CELLSPACING=5 BORDER=0>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP>
+<CENTER>
+<FONT COLOR="#0000FF"><H1>Premi&egrave;re utilisation</H1></FONT>
+<P>
+</CENTER>
+<P>
+<BR>
+<BR>
+Si vous pouvez utiliser cron-w3perl.pl, allez y ! Lancer cron-w3perl.pl -h
+pour voir les diff&eacute;rentes options disponibles.
+<P>
+Si vous ne pouvez pas utiliser cron-w3perl.pl (sites sous NT), suivez les
+instructions suivantes pour ex&eacute;cuter les scripts dans le bon ordre.
+Ne lancer pas tous les scripts en m&ecirc;me temps car certains utilisent
+des fichiers temporaires ou des sorties d'autres scripts.
+<P>
+utilisez l'intrface d'administration &agrave; distance pour lancer les
+scripts except&eacute; bien sur si vous n'avez pas d'acc&egrave;s &agrave;
+un r&eacute;pertoire cgi-bin.
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=CENTER>
+<I><FONT SIZE=+1><B>Test de sortie</B></FONT><HR width=50%></I>
+</TD>
+<TD VALIGN=TOP>
+Lancezuniquement cron-hour.pl afin de v&eacute;rifier qu'aucune erreur
+n'est survenue dans votre configuration.
+<BR>
+Ensuite lancez cron-pages.pl en utilisant un petit fichier de log afin
+de ne pas attendre un long moment avant de vous rendre compte d'un
+probl&egrave;me &eacute;ventuel.
+(ou vous pouvez sp&eacute;cifier un intervalle de quelques jours avec cron-pages
+en utilisant les options disponibles : voir cron-pages.pl -h pour l'aide en ligne)
+<P>
+Modifiez votre fichier de configuration pour changer quelques valeurs, ajouter
+des r&eacute;pertoires, peaufiner votre tri...et relancer cron-pages.pl
+<BR>
+Lorsque votre param&eacute;risation est parfaite, vous &ecirc;tes pr&ecirc;t
+pour lancer l'ensemble des scripts dans le tableau 'First use' de l'interface
+d'administration. Si par la suite, vous modifier le fichier de configuration, 
+vous devrez &agrave; nouveau relancer cron-pages (sauf par exemple, si seules
+les valeurs li&eacute;es &agrave; l'aspect graphique sont alt&eacute;r&eacute;es).
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=CENTER>
+<I><FONT SIZE=+1><B>Premi&egrave;re <BR> utilisation</B></FONT><HR width=50%></I>
+</TD>
+<TD VALIGN=TOP>
+
+<TABLE WIDTH=100% CELLPADDING=5>
+<TR>
+<TD>cron-url.pl</TD>
+<TD> correspondance entre les noms de fichiers et leur titre</TD>
+</TR><TR>
+<TD>cron-pages.pl</TD>
+<TD> initialisation des stats principales</TD>
+</TR><TR>
+<TD>others scripts</TD>
+<TD> lancement des autres scripts</TD>
+</TR><TR>
+<TD>cron-pages.pl -u </TD>
+<TD> Mise &agrave; jour de la page d'accueil des stats uniquement</TD>
+</TR>
+</TABLE>
+
+<P>
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=CENTER>
+<I><FONT SIZE=+1><B>Uitilisation <BR>quotidienne</B></FONT><HR width=50%></I>
+</TD>
+<TD VALIGN=TOP>
+
+Il n'est pas n&eacute;cessaire de lancer tous les scripts tous les jours.
+Les stats sur les mois ne sont utilement calcul&eacute;es que le premier
+jour de chaque mois, les stats sur les semaines qu'une fois par semaine.
+Les stats sur votre site Web (cron-url.pl) peuvent n'&ecirc;tre lanc&eacute;es
+qu'une fois par semaine si vos mises &agrave; jour de votre site Web n'est 
+pas journali&egrave;re. 
+Referer, agent et error peuvent &ecirc;tre ex&eacute;cut&eacute;s tous les jours
+car ils tournent de mani&egrave;re incr&eacute;mentale et que leurs informations
+sont vraiment pertinentes.
+<P>
+
+<TABLE WIDTH=100% CELLPADDING=5>
+<TR>
+<TD>cron-inc.pl</TD>
+<TD> Calcule les stats incr&eacute;mentales quotidiennes</TD>
+</TR><TR>
+<TD>others scripts</TD>
+<TD> Ex&eacute;cute les autres scripts</TD>
+</TR>
+</TABLE>
+
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="install.html"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+
+</body>
+</html>

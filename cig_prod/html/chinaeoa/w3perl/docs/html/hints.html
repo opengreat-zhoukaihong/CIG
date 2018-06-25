@@ -1,0 +1,71 @@
+<HTML><head>
+<title>W3Perl hints</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Hints and tips</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD VALIGN=TOP>
+If you have any question related to w3perl, you can choose between :
+<OL>
+<LI><A HREF="mailto:domisse@w3perl.com">ask me</A>
+<LI>see the <A HREF="faq.html">FAQ</A> file
+<!-- <LI>subscribe to the <A HREF="mailing.html">w3perl mailing list</A> and ask there -->
+</OL>
+
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+Installation :
+<UL>
+<LI> See the <A HREF="upgrade.html">upgrade</A> file if you want to install a more recent version
+<LI> Choose carefully your configuration option.
+<LI> Run the package on a small logfile to verify all is right
+<LI> If you run accidentally some scripts several time, don't worry, it
+won't produce bad values but rather a warning message !
+</UL>
+<P>
+Configuration :
+<UL>
+<LI> There are some configuration files for mac and risc-os available in /doc/conf/
+<LI> if you are running virtual web servers, install the package only once, make
+as much as you need config-<web>.pl files and call the scripts via the -c flag to load
+them.
+<LI> if you don't want to log your user, use <I>@exclurepert = ('/~');</I>
+<LI> You can use regex expression, for example, if you don't want to log
+users from a provider, use <I>@nolog = ('/ppp*.club-internet.fr/');</I> <BR>
+(people from club-internet have an dynamic IP like ppp&lt;string&gt;.club-internet.fr
+<LI> Don't use <I>@selecrepert = ('/');</I> ! It should be directories in the
+same depth level
+<LI> If you have a large logfile and only want to scan few days before, use option
+available in cron-pages.pl. You can choose starting and ending days.
+<LI> Don't forget cron-xxx.pl -h for list of available options.
+<LI> If your logfile is updated only few time a day (and not in real time as
+most do), the best time to run cron-inc is just before midnight.
+<LI> Unix users are advised to launch cron-w3perl.pl -u to compute stats
+for initialisation.
+</UL>
+</CENTER>
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="/chinaeoa/index.jsp"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+
+</body>
+</html>

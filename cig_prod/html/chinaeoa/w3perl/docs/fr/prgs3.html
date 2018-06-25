@@ -1,0 +1,565 @@
+<HTML><head>
+<title>W3Perl - Description des programmes 3</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Scripts description</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD VALIGN=TOP>
+These scripts allow you to monitor additional informations than the usual
+hits and pages statistics. The first three scripts will scan their own
+logfiles (or the standard one if you're using an extended logfile format).
+<P>
+You'll be able to watch out :
+<UL>
+<LI> which browsers are used when people visits your Web.
+<LI> where are they coming from and where do they access your Web.
+<LI> which words people are using in search engine to reach your pages.
+<LI> deleted pages people are asking for or bad links in your HTML pages.
+</UL>
+<P>
+Two optional scripts (for registered user) will allow you to understand
+HOW people are visiting your Web and HOW to optimize your HTML pages.
+<P>
+All scripts are using the configuration file config.pl to know the options
+you have choosen. You don't have to modify in any case the scripts.
+<P>
+Command line are supplied to run the script with specific needs. The '-x'
+flag will display default values.
+
+<P>
+
+List of scripts :
+<P>
+<UL>
+
+<LI> Agent, referer and error log
+<UL>
+<LI><A HREF="#agent">cron-agent.pl</A> <I>(Optional)</I>
+<LI><A HREF="#refer">cron-refer.pl</A> <I>(Optional)</I>
+<LI><A HREF="#error">cron-error.pl</A> <I>(Optional)</I>
+</UL>
+<P>
+<LI> Session and Documents structures 
+<UL>
+<LI><A HREF="#session">cron-session.pl</A> <I>(Optional)</I>
+<LI><A HREF="#url">cron-url.pl</A> <I>(Optional)</I>
+</UL>
+</UL>
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+
+<A NAME="agent">
+<table border=1>
+<tr>
+<th align=middle colspan=2>
+Cron-agent.pl
+</th>
+</tr>
+<tr>
+<td>
+Aim
+</td>
+<td>
+Agent log stats<br>
+Compute browsers stats by scanning the agent log file.
+</td>
+</tr>
+<tr>
+<td>
+Frequency
+</td>
+<td>
+None.<br>
+You can run the script when you want. I run it once every week or sometimes daily.
+</td>
+</tr>
+<tr>
+<td>
+Time taken
+</td>
+<td>
+A few seconds to one or two minutes depending of the size of the agent log file.<br>
+</td>
+</tr>
+<tr>
+<td>
+Options
+</td>
+<td>
+
+<table>
+<tr>
+<th>-a</th><td> show all browser</td>
+</tr><tr>
+<th>-b</th><td> re-initialize everything</td>
+</tr><tr>
+<th>-c &lt;file&gt;</th><td> load configuration file</td>
+</tr><tr>
+<th>-d &lt;number&gt;</th><td> number of days to scan (Extended NCSA logfile only)</td>
+</tr><tr>
+<th>-g &lt;graphics&gt;</th><td> different graphic option available</td>
+</tr><tr>
+<th>-l &lt;language&gt;</th><td> select language output</td>
+</tr><tr>
+<th>-i</th><td> input logfile</td>
+</tr><tr>
+<th>-f</th><td> scan only HTML files (Extended NCSA logfile only)</td>
+</tr><tr>
+<th>-x</th><td> display default values for flag options</td>
+</tr><tr>
+<th>-t &lt;toplist&gt;</th><td> display only toplist browsers</td>
+</tr><tr>
+<th>-z</th><td> use compressed logfiles</td>
+</tr><tr>
+<th>-v</th><td> display version </td>
+</tr></table>
+
+</td>
+</tr>
+
+<tr>
+<td>
+How it works
+</td>
+<td>
+It scan the agent log file to extract the most commonly used browser
+and operating system.
+</tr>
+<tr>
+<td>
+Notes
+</td>
+<td>
+Graphs is only produced with Extended Common Logfile or Extended IIS format. It
+show you browsers version versus time. For each browser, you can watch 
+percentage of each version.</td>
+</tr>
+</table>
+
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+
+<A NAME="refer">
+<table  border=1>
+<tr>
+<th align=middle colspan=2>
+Cron-refer.pl
+</th>
+</tr>
+<tr>
+<td>
+Aim
+</td>
+<td>
+Referer log stats<br>
+Compute the pages where come most people.<br>
+It could be very useful to know which sites have a link to
+your web site (if you have to move to another URL for example).
+</td>
+</tr>
+<tr>
+<td>
+Frequency
+</td>
+<td>
+None.<br>
+You can run the script when you want. I run it once every week.
+</td>
+</tr>
+<tr>
+<td>
+Time taken
+</td>
+<td>
+A few seconds to one or two minutes depending of the size of the
+referer log file.<br>
+</td>
+</tr>
+<tr>
+<td>
+Options
+</td>
+<td>
+
+<table>
+<tr>
+<th>-b</th><td> re-initialize everything</td>
+</tr><tr>
+<th>-c &lt;file&gt;</th><td> load configuration file</td>
+</tr><tr>
+<th>-l &lt;language&gt;</th><td> select language output</td>
+</tr><tr>
+<th>-i &lt;file&gt;</th><td> input agent logfile</td>
+</tr><tr>
+<th>-f</th><td>local references include</td>
+</tr><tr>
+<th>-p &lt;page&gt;</th><td> referer for this page</td>
+</tr><tr>
+<th>-t &lt;toplist&gt;</th><td> display only toplist files</td>
+</tr><tr>
+<th>-x</th><td> display default values for flag options</td>
+</tr><tr>
+<th>-z</th><td> use compressed logfile</td>
+</tr><tr>
+<th>-v</th><td> display version </td>
+</tr></table>
+
+</td>
+</tr>
+<tr>
+<td>
+How it works
+</td>
+<td>
+It scan the referer log file to extract where come people
+accessing your pages. It output the most frequent sites and pages
+where people come from and where they arrived in your site. Also the most
+common words used in search engine are computed.
+</tr>
+<tr>
+<td>
+Notes
+</td>
+<td>
+View how your site have been referenced across the Web and how to improve it
+with selected words in your html code.
+</td>
+</tr>
+</table>
+
+
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+
+<A NAME="error">
+<table  border=1>
+<tr>
+<th align=middle colspan=2>
+Cron-error.pl
+</th>
+</tr>
+<tr>
+<td>
+Aim
+</td>
+<td>
+Error log stats<br>
+It display the most common error from your web server.<br>
+A list of error due to files not found is produced also to check
+if the files are really missing.
+</td>
+</tr>
+<tr>
+<td>
+Frequency
+</td>
+<td>
+None.<br>
+You can run the script when you want. I run it once every week.
+</td>
+</tr>
+<tr>
+<td>
+Time taken
+</td>
+<td>
+A few seconds to one or two minutes depending of the size of the
+error log file.<br>
+</td>
+</tr>
+<tr>
+<td>
+Options
+</td>
+<td>
+
+<table>
+<tr>
+<th>-r &lt;tildealias&gt;</th><td> substitue ~ by the path alias</td>
+</tr><tr>
+<th>-b</th><td> re-initialize everything</td>
+</tr><tr>
+<th>-c &lt;file&gt;</th><td> load configuration file</td>
+</tr><tr>
+<th>-i &lt;file&gt;</th><td> input error logfile</td>
+</tr><tr>
+<th>-d &lt;number&gt;</th><td> number of days to scan</td>
+</tr><tr>
+<th>-j &lt;date&gt;</th><td> stats for this date only</td>
+</tr><tr>
+<th>-g &lt;graphics&gt;</th><td> select graphics output</td>
+</tr><tr>
+<th>-l &lt;language&gt;</th><td> select language output</td>
+</tr><tr>
+<th>-f</th><td> 'file does not exist', HTML files only</td>
+</tr><tr>
+<th>-q &lt;tri&gt;</th><td> 'file does not exist', matching string only</td>
+</tr><tr>
+<th>-k</th><td> 'file does not exist', show referer page</td>
+</tr><tr>
+<th>-s &lt;seuil&gt;</th><td> error with at least seuil requests is shown for 'file not found'</td>
+</tr><tr>
+<th>-t &lt;toplist&gt;</th><td> display only toplist most found errors</td>
+</tr><tr>
+<th>-x</th><td> display default values for flag options</td>
+</tr><tr>
+<th>-z</th><td> use compressed logfile</td>
+</tr><tr>
+<th>-v</th><td> display version </td>
+</tr></table>
+
+</td>
+</tr>
+<tr>
+<td>
+How it works
+</td>
+<td>
+It scan the error log file to extract the most common error server.
+It output also the documents your server is unable to futfill.
+</tr>
+<tr>
+<td>
+Notes
+</td>
+<td>
+You can add in the code other error message produced by your server.
+But be sure, your error message you'll add is not a part of another one.
+Graphs is produced showing you the error versus time. The aim is to have
+the most lower graphs with almost no 'file not found' error.<BR>
+The page where come the missing file is also printed.<P>
+You don't have to wait for error happening to rectify wrong links in your
+pages....cron-url.pl is able to scan your documents tree and tell you about
+missing files in your links avoiding error log to become too big.<BR>
+NT users can use cron-error if they use redirection files.
+</td>
+</tr>
+</table>
+
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+
+<A NAME="session">
+<table  border=1>
+<tr>
+<th align=middle colspan=2>
+Cron-session.pl
+</th>
+</tr>
+<tr>
+<td>
+Aim
+</td>
+<td>
+Session log stats<br>
+It compute how long people stay on your web by scanning the
+log file. Full session for each user is shown with other bonus
+informations.
+</td>
+</tr>
+<tr>
+<td>
+Frequency
+</td>
+<td>
+None.<br>
+You can run the script when you want.
+</td>
+</tr>
+<tr>
+<td>
+Time taken
+</td>
+<td>
+From a few minutes to a several hours depending of the size of the
+log file.<br>
+</td>
+</tr>
+<tr>
+<td>
+Options
+</td>
+<td>
+
+<table>
+<tr>
+<th>-a</th><td> include robot session</td>
+</tr><tr>
+<th>-c &lt;file&gt;</th><td> load configuration file</td>
+</tr><tr>
+<th>-d &lt;number&gt;</th><td> number of days to scan</td>
+</tr><tr>
+<th>-g &lt;graphics&gt;</th><td> select graphics output</td>
+</tr><tr>
+<th>-l &lt;language&gt;</th><td> select language output</td>
+</tr><tr>
+<th>-i &lt;file&gt;</th><td>input logfile</td>
+</tr><tr>
+<th>-m</th><td> update only robot detection</td>
+</tr><tr>
+<th>-t &lt;min&gt;</th><td>session maximum length</td>
+</tr><tr>
+<th>-r &lt;min&gt;</th><td>maximum time to read a page</td>
+</tr><tr>
+<th>-s &lt;min&gt;</th><td>display session longer than this value</td>
+</tr><tr>
+<th>-x</th><td> display default values for flag options</td>
+</tr><tr>
+<th>-z</th><td> use compressed logfile</td>
+</tr></table>
+
+</td>
+</tr>
+<tr>
+<td>
+How it works
+</td>
+<td>
+It's very hard to know how long people stay on your web as they
+can access a page, going to lunch and have a second access two
+hours later. But people usually have a more or less longer look
+at your web and only come back another day.<br>
+In the script, you have a maximum <I>time limit session</I> variable.
+If an access is made within this time, it's still the same session.<BR>
+Another way is to select a <I>time limit when reading a page</I>. Usually,
+people doesn't need more than one hour to read a HTML page ! <BR>
+Accesses from network spider (robots) are removed (well, I try !)
+</tr>
+<tr>
+<td>
+Notes
+</td>
+<td>
+If you have a dynamic IP address (Internet provider for example),
+different people can come with the same IP address and it become
+very hard to know about session users !<BR>
+The script will also output the average requests by hour and by the
+day of the week.<P>
+This script does not yet support incremental mode.
+</td>
+</tr>
+</table>
+
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+<P>
+
+<A NAME="url">
+<table  border=1>
+<tr>
+<th align=middle colspan=2>
+Cron-url.pl
+</th>
+</tr>
+<tr>
+<td>
+Aim
+</td>
+<td>
+Documents stats<br>
+Compute how your web is looking. Do you have a multimedia,
+ graphical and heavy web ?<BR>
+It will also translate the URL to the TITLE of the file and show
+you the most recent html files on your web.<BR>
+Also a detailled server tree is output.
+</td>
+</tr>
+<tr>
+<td>
+Frequency
+</td>
+<td>
+None.<br>
+You can run the script when you want. I run it once a week.
+</td>
+</tr>
+<tr>
+<td>
+Time taken
+</td>
+<td>
+From a few minutes to one hour depending of the size of your web.
+.<br>
+</td>
+</tr>
+<tr>
+<td>
+Options
+</td>
+<td>
+
+<table>
+<tr>
+<th>-c &lt;file&gt;</th><td> load configuration file</td>
+</tr><tr>
+<th>-d &lt;nbdays&gt;</th><td>show file newest than nbdays days</td>
+</tr><tr>
+<th>-g &lt;graphics&gt;</th><td> select graphics output</td>
+</tr><tr>
+<th>-l &lt;language&gt;</th><td> select language output</td>
+</tr><tr>
+<th>-t &lt;topten&gt;</th><td> show only toplist files</td>
+</tr><tr>
+<th>-x</th><td> show default values</td>
+</tr><tr>
+<th>-v</th><td> display version </td>
+</tr></table>
+
+</td>
+</tr>
+<tr>
+<td>
+How it works
+</td>
+<td>
+It scans your web structure, counting for files, opening each
+file. Histograms showing how many links, images per document is
+produced and also a graphs showing you the documents size
+distribution.<BR>
+A histogram show the most recent file updated in your web.<BR>
+A translation table is made between the URL of a document and
+its name (found inside the TITLE tag).<BR>
+The structure (tree) of your web is also show with detail about
+HTML pages inside each part of the tree.<BR>
+It also check every links and report missing files.
+</tr>
+<tr>
+<td>
+Notes
+</td>
+<td>
+Could be useful if you want to check every HTML document have
+a TITLE tag and is unique.
+Could also show you if you have heavy pages !<BR>
+People could go directly to new html documents in the tree server or from
+the 'new documents' pages.<BR>
+</td>
+</tr>
+</table>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<BR>
+<A HREF="contents.html"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

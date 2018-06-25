@@ -1,0 +1,270 @@
+<HTML><head>
+<title>W3Perl upgrade</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Glossary</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD VALIGN=TOP>
+We'll find here some useful definitions to be able to understand
+your stats reports. If you need more help, contact me !
+<P>
+<BR>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1></FONT></I></TD>
+<TD VALIGN=TOP>
+
+<TABLE BORDER=0 WIDTH=80% BGCOLOR="#000000" CELLSPACING=0 CELLPADDING=0>
+<TR>
+<TD>
+<TABLE BORDER=0 WIDTH=100% CELLSPACING=2 CELLPADDING=4>
+<TR>        
+<TD BGCOLOR="#e0e0e0" COLSPAN=2>
+<B>Access - Page view</B></TD>      
+</TR>
+<TR>
+<TD WIDTH="10%" BGCOLOR="#FFFFFF">
+<BR>
+</TD>
+<TD BGCOLOR="#F0F0F0" WIDTH="90%">
+Count HTML pages only <BR>
+<I>This is far more accurate than the hits as it's so easy to add 'pixel' images into your HTML file to increase hits (many HTML editors use 'pixel' images
+to build complex layout)</I>
+</TD>
+</TR>
+
+<TR>        
+<TD BGCOLOR="#e0e0e0" COLSPAN=2>
+<B>Requests - Hits</B></TD>      
+</TR>
+<TR>
+<TD WIDTH="10%" BGCOLOR="#FFFFFF">
+<BR>
+</TD>
+<TD BGCOLOR="#F0F0F0" WIDTH="90%">
+Count all file requests<BR>
+<I>Just to give an idea about your stats. The ration Hits/Access give you
+the number of files loaded by the user when viewing one page.</I>
+</TD>
+</TR>
+
+<TR>        
+<TD BGCOLOR="#e0e0e0" COLSPAN=2>
+<B>Hosts - Site</B></TD>      
+</TR>
+<TR>
+<TD WIDTH="10%" BGCOLOR="#FFFFFF">
+<BR>
+</TD>
+<TD BGCOLOR="#F0F0F0" WIDTH="90%">
+IP address<BR>
+<I>
+This number can give you a rough estimation of your visitors. But
+don't forget this is not very accurate due to proxy or ISP works.
+Local hosts are machines inside your domain name, external hosts come 
+from outside. It allows you to get stats also within your domain.
+</I>
+</TD>
+</TR>
+
+<TR>        
+<TD BGCOLOR="#e0e0e0" COLSPAN=2>
+<B>Traffic</B></TD>      
+</TR>
+<TR>
+<TD WIDTH="10%" BGCOLOR="#FFFFFF">
+<BR>
+</TD>
+<TD BGCOLOR="#F0F0F0" WIDTH="90%">
+The bandwith used<BR>
+<I>
+It could be a very useful data to count the number of Mb people are
+downloading from your site. Detect the files which take most of your
+bandwith.
+</I>
+</TD>
+</TR>
+
+<TR>        
+<TD BGCOLOR="#e0e0e0" COLSPAN=2>
+<B>Proxy</B></TD>      
+</TR>
+<TR>
+<TD WIDTH="10%" BGCOLOR="#FFFFFF">
+<BR>
+</TD>
+<TD BGCOLOR="#F0F0F0" WIDTH="90%">
+Check requested from a proxy<BR>
+<I>
+When people use a proxy, most requests come from this proxy which check
+if the file requested is uptodate. If yes, the proxy send the file to the
+user and no request is made from your website (except about asking if
+the page is still uptodate). If not, another request is made to get the
+file requested and this request is counted as a hits. So this number is the proxy 
+requests about data check.  
+</I>
+</TD>
+</TR>
+
+<TR>        
+<TD BGCOLOR="#e0e0e0" COLSPAN=2>
+<B>Not found</B></TD>      
+</TR>
+<TR>
+<TD WIDTH="10%" BGCOLOR="#FFFFFF">
+<BR>
+</TD>
+<TD BGCOLOR="#F0F0F0" WIDTH="90%">
+Request for a missing file<BR>
+<I>
+This is the number of requests for a file which have been deleted or
+misspelled from your website. try to get this number as low as possible.
+Check the error stats and the bad links section to rectify.
+</I>
+</TD>
+</TR>
+
+<TR>        
+<TD BGCOLOR="#e0e0e0" COLSPAN=2>
+<B>Forbidden</B></TD>      
+</TR>
+<TR>
+<TD WIDTH="10%" BGCOLOR="#FFFFFF">
+<BR>
+</TD>
+<TD BGCOLOR="#F0F0F0" WIDTH="90%">
+Request for a protected file<BR>
+<I>
+Some area of your site may be protected against unsollicited people. When
+your server answer 'you are not allowed to get this file', this number is increased.
+</I>
+</TD>
+</TR>
+
+<TR>        
+<TD BGCOLOR="#e0e0e0" COLSPAN=2>
+<B>Scripts</B></TD>      
+</TR>
+<TR>
+<TD WIDTH="10%" BGCOLOR="#FFFFFF">
+<BR>
+</TD>
+<TD BGCOLOR="#F0F0F0" WIDTH="90%">
+Requests about CGI<BR>
+<I>
+If you are using some dynamic pages on your site, you may use CGI. When
+URL is based on a POST method, script arguments could be splited and
+some stats can be computed. 
+</I>
+</TD>
+</TR>
+
+<TR>        
+<TD BGCOLOR="#e0e0e0" COLSPAN=2>
+<B>Internal</B></TD>      
+</TR>
+<TR>
+<TD WIDTH="10%" BGCOLOR="#FFFFFF">
+<BR>
+</TD>
+<TD BGCOLOR="#F0F0F0" WIDTH="90%">
+Single level directory<BR>
+<I>
+Only statistics for a specific directory is printed. If you want to 
+count also sub-directories, you should use the 'Global' section.
+</I>
+</TD>
+</TR>
+
+<TR>        
+<TD BGCOLOR="#e0e0e0" COLSPAN=2>
+<B>Global</B></TD>      
+</TR>
+<TR>
+<TD WIDTH="10%" BGCOLOR="#FFFFFF">
+<BR>
+</TD>
+<TD BGCOLOR="#F0F0F0" WIDTH="90%">
+Multi level directories<BR>
+<I>
+Statistics including all sub-directories are counted. if you have a root
+directory for each language (/uk/, /fr/...), you could easily see
+which language is used the most.
+</I>
+</TD>
+</TR>
+
+<TR>        
+<TD BGCOLOR="#e0e0e0" COLSPAN=2>
+<B>Session</B></TD>      
+</TR>
+<TR>
+<TD WIDTH="10%" BGCOLOR="#FFFFFF">
+<BR>
+</TD>
+<TD BGCOLOR="#F0F0F0" WIDTH="90%">
+Visitors number<BR>
+<I>
+There is no session on Internet but it can computed with some basic rules.
+People don't stay too long on the same page to read it (30 minutes is the
+limit) and robot don't scan your website during the whole day. Then session
+can be extracted from the data. This is not the number of hosts but it
+should be close (many people can get the same IP over time (ISP) or the
+same IP can be shared by many people (proxy))
+</I>
+</TD>
+</TR>
+
+<TR>        
+<TD BGCOLOR="#e0e0e0" COLSPAN=2>
+<B>Robot</B></TD>      
+</TR>
+<TR>
+<TD WIDTH="10%" BGCOLOR="#FFFFFF">
+<BR>
+</TD>
+<TD BGCOLOR="#F0F0F0" WIDTH="90%">
+Web spider<BR>
+<I>
+Some site like Altavista, Inktomi, Google use their own robot to
+scan the web to feed their database search engine. The first request
+from a robot is for a file called 'robot.txt' which give the rules
+(permission) to access your website. If no file is found, the robot
+assume it can scan everything. So when this file is requested, the
+session is assumed to be a robot one. People which use tools to 
+download a whole website use also robot session.
+</I>
+</TD>
+</TR>
+
+
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="/chinaeoa/index.jsp"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

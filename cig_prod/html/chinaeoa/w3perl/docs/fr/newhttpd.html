@@ -1,0 +1,55 @@
+<HTML><head>
+<title>W3Perl newhttpdlog script - FR</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Compresser le fichier de log</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD VALIGN=TOP>
+Le but de squeezelog est de compresser votre &eacute;norme fichier de log
+pour gagner de la place sur votre disque.<br>
+Chaque premier jour de chaque mois, squeezelog doit &ecirc;tre lanc&eacute; dans
+une crontab pour couper et compresser le fichier de log courant. Il ne peut
+&ecirc;tre lancer qu'un super utilisateur car les fichiers de log sont le
+plus souvent des fichiers syst&egrave;mes.
+<P>
+(Ex : 01 00 1 * * /usr/bin/sh /norfolk/www/w3perl/squeezelog)
+<P>
+<B> Configurer squeezelog :</B>
+
+<UL>
+<LI>LOGDIR est le chemin o&ugrave; sont situ&eacute;s les fichier de log<br>
+<LI>LOG est le nom de fichier de log<br>
+<LI>Vous devez donner le chemin complet pour gzip (Ex : /opt/bin/gzip)<br>
+</UL>
+
+<B> Modifier squeezelog : </b>
+<UL>
+<LI> Si vous avez un fichier de log d'erreur, vous pouvez aussi le compresser 
+(effacez les commenataires dans le fichier squeezelog)
+<LI> Vous pouvez aussi relancer le daemon httpd<br>
+(voir la derni&egrave;re ligne en commentaire, '/home/local/WWW/server_root/httpd-pid'
+est le fichier o&ugrave; se trouve le pid du daemon httpd).
+</UL>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="/chinaeoa/index.jsp"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+
+</body>
+</html>

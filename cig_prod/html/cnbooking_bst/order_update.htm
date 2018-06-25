@@ -1,0 +1,180 @@
+<html>
+<head>
+<title>CNHotelBooking.com后台管理工具</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.font9 {  font-size: 9pt; color: #FF8000; font-weight: normal}
+.font12 {  font-size: 12pt; color: #FF8000; font-weight: bold}
+-->
+</style>
+</head>
+<SCRIPT LANGUAGE=javascript>
+<!--
+
+
+function PostForm(I)
+{
+  if (I==1)
+  {
+    fmOrderResult.method="post"
+    fmOrderResult.action = "/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstUpdateOrder";
+    
+    fmOrderResult.submit();
+  }
+  else if (I==2)
+  {
+    //fmOrderResult.method="get"
+	//fmOrderResult.action = "cnhotel/bst/order_update.jsp?ID=" + fmOrderResult.txtID.value ;
+    
+    //fmOrderResult.submit();
+    fmOrderResult.reset();
+  }
+  else if (I==3)
+  {
+    fmOrderResult.method="post"
+    fmOrderResult.action = "/servlet/com.dreamerland.cnhotelbooking.bst.CbstConfirm";
+    
+    fmOrderResult.submit();
+  } 
+    
+}
+//-->
+</SCRIPT>
+<body bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+
+<span class="font9"></span> <span class="font9"></span> 
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="30" height="407">&nbsp; </td>
+    <td width="495" valign="top" height="407"> 
+      <form name=fmOrderResult method="" action="">
+
+<table width="545" border="0" cellspacing="2" cellpadding="5" height="40">
+          <tr> 
+            <td class="font12">订单更新</td>
+          </tr>
+        </table>
+        <table width="547" border="1" cellspacing="2" cellpadding="5" bordercolorlight="#f9c026" bordercolordark="#ffffff">
+          <tr> 
+            <td class="font9" height="30" width="75">订单编号：</td>
+            <td class="font9" height="30" width="150"> 983
+              <INPUT 
+            type="hidden" name=txtID style="HEIGHT: 22px; WIDTH: 22px" value="983">
+            </td>
+            <td class="font9" height="30" width="75">酒店名称：</td>
+            <td class="font9" height="30" width="150">九龙酒店 </td>
+          </tr>
+          <tr> 
+            <td class="font9" height="30" width="75">顾客：</td>
+            <td class="font9" height="30" width="150">张林</td>
+            <td class="font9" height="30" width="75">顾客编号：</td>
+            <td class="font9" height="30" width="150">1808</td>
+          </tr>
+          <tr> 
+            <td class="font9" height="30" width="75">城市：</td>
+            <td class="font9" height="30" width="150">香港</td>
+            <td class="font9" height="30" width="75">要求日期：</td>
+            <td class="font9" height="30" width="150">2000-11-25</td>
+          </tr>
+          <tr> 
+            <td class="font9" height="30" width="75">结算方式：</td>
+            <td class="font9" height="30" width="150">现金支付</td>
+            <td class="font9" height="30" width="75">结算货币：</td>
+            <td class="font9" height="30" width="150">RMB</td>
+          </tr>
+          <tr> 
+            <td class="font9" height="30" width="75">入住人(中文)：</td>
+            <td class="font9" height="30" width="150">张林</td>
+            <td class="font9" height="30" width="75">入住人(拼音)：</td>
+            <td class="font9" height="30" width="150">zhanglin</td>
+          </tr>
+          <tr> 
+            <td class="font9" height="30" width="75">联系人：</td>
+            <td class="font9" height="30" width="150">张林</td>
+            <td class="font9" height="30" width="75">电话：</td>
+            <td class="font9" height="30" width="150">0086-010-64350964</td>
+          </tr>
+          <tr> 
+            <td class="font9" height="30" width="75">传真：</td>
+            <td class="font9" height="30" width="150">&nbsp;</td>
+            <td class="font9" height="30" width="75">电子邮件：</td>
+            <td class="font9" height="30" width="150">mslxx@sohu.com</td>
+          </tr>
+          <tr> 
+            <td class="font9" height="30" width="75">更新日期：</td>
+            <td class="font9" height="30" width="150">2000-11-25
+            </td>
+            <td class="font9" height="30" width="75">状态：</td>
+            <td class="font9" height="30" width="150">&nbsp;<SELECT name=sltStatus>
+   <OPTION  selected value=N>预订</OPTION>
+   <OPTION  value=C>确认</OPTION>
+   <OPTION  value=I>入住</OPTION>
+   <OPTION value=O>离开</OPTION>
+                        </SELECT>
+            </td>
+          </tr>
+<tr> 
+            <td colspan="10" class="font9">
+              <table width="100%" border="1" cellspacing="2" cellpadding="5" bordercolorlight="#f9c026" bordercolordark="#ffffff">
+                <tr> 
+                  <td class="font9">房型</td>
+                  <td class="font9">数量</td>
+                  <td class="font9">入住时间</td>
+                  <td class="font9">离开时间</td>
+                  <td class="font9">单价</td>
+                  <td class="font9">小计</td>
+                  <td class="font9">币种</td>
+                  <td class="font9">吸烟</td>
+                </tr>
+                <tr> 
+                  <td class="font9"><a href="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstGetOrderDetail?ID=983&RoomType=1&HotelName=九龙酒店" class="font9"> 
+双人标准房</a> </td>
+                  <td class="font9">1</td>
+                  <td class="font9">2000-12-02</td>
+                  <td class="font9">2000-12-03</td>
+                  <td class="font9">650</td>
+                  <td class="font9">null</td>
+                  <td class="font9">H</td>
+                  <td class="font9">N</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr> 
+            <td class="font9" height="30" width="75">操作员：</td>
+            <td class="font9" height="30" width="150">&nbsp;</td>
+            <td class="font9" height="30" width="75">操作日期：</td>
+            <td class="font9" height="30" width="150">2000-01-01 </td>
+          </tr>
+          <tr> 
+            <td class="font9" height="95" width="75">顾客留言：</td>
+            <td class="font9" height="95" colspan="3"><TEXTAREA cols=60 name=txtCusNotes rows=3>&nbsp;</TEXTAREA>
+            </td>
+          </tr>
+          <tr> 
+            <td width="83" class="font9">操作员记录：</td>
+            <td colspan="3"> 
+              <table width="164" border="0" cellspacing="0" cellpadding="0" height="90">
+                <tr> 
+                  <td><TEXTAREA cols=60 name=txtOpNotes rows=3>&nbsp;</TEXTAREA>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <table width="506" border="0" cellspacing="0" cellpadding="0">
+          <tr align="middle"> 
+            <td height="30"> <A href="javascript:PostForm(1)"><IMG border=0 height=26 src="images/botton_update.gif" width=68></A><IMG height=8 src="images/dot.gif" width=50> 
+              <A href="javascript:PostForm(2)"><IMG border=0 height=27 src="images/botton_restore.gif" width=67></A> 
+              <img height=8 src="images/dot.gif" width=50> <a href="javascript:PostForm(3)"><img border=0 height=26 src="images/enter.gif" width=68></a></td>
+          </tr>
+        </table>
+      </form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

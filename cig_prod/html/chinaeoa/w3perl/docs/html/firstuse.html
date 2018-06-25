@@ -1,0 +1,114 @@
+<HTML><head>
+<title>W3Perl First use</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE WIDTH=100% CELLSPACING=5 BORDER=0>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP>
+<CENTER>
+<FONT COLOR="#0000FF"><H1>First use</H1></FONT>
+<P>
+</CENTER>
+<P>
+<BR>
+<BR>
+If you can run cron-w3perl.pl, just use it ! Run cron-w3perl.pl -h
+to view what options are available to you.
+<P>
+If you can't use cron-w3perl.pl (NT users), follow
+this instruction to launch the scripts in the right order.
+Don't launch all scripts together as some scripts are using temporary
+files (especially for graph output).
+<P>
+Use the administration interface to launch the scripts except if
+you don't have a cgi-bin access of course.
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=CENTER>
+<I><FONT SIZE=+1><B>Test ouput</B></FONT><HR width=50%></I>
+</TD>
+<TD VALIGN=TOP>
+
+Just run cron-hour.pl to check no error is reported.
+<BR>
+Then run cron-pages.pl using a small logfile to avoid a long wait.
+(or you can specify a short date intervalle with the cron-pages
+option available : see cron-pages.pl -h for help).
+<P>
+Update your config.pl file to change value, add directories, unselect
+hosts....and rerun cron-pages.pl.
+<BR>
+When your tunning is fine, let's go to the 'First use'. If you modify the
+configuration file later, you'll need to rerun cron-pages (except if
+you change only data which affect graphical ouput)!
+
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=CENTER>
+<I><FONT SIZE=+1><B>First use</B></FONT><HR width=50%></I>
+</TD>
+<TD VALIGN=TOP>
+
+<TABLE WIDTH=100% CELLPADDING=5>
+<TR>
+<TD>cron-url.pl</TD>
+<TD> Will map URL to title</TD>
+</TR><TR>
+<TD>cron-pages.pl</TD>
+<TD> Will conpute the main stats</TD>
+</TR><TR>
+<TD>others scripts</TD>
+<TD> Will conpute others stats</TD>
+</TR><TR>
+<TD>cron-pages.pl -u </TD>
+<TD> Will update your stats homepage</TD>
+</TR>
+</TABLE>
+
+<P>
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP ALIGN=CENTER>
+<I><FONT SIZE=+1><B>Daily use</B></FONT><HR width=50%></I>
+</TD>
+<TD VALIGN=TOP>
+
+You don't have to run all scripts every day, monthly stats can be
+computed only the first day of each month, weekly stats only once
+a week. Document stats (cron-url.pl) can be launch only once a
+week if you don't update your web everyday. Referer, agent and error
+can be run everyday as they are running in a incremental way and
+their informations are really useful.
+<P>
+
+<TABLE WIDTH=100% CELLPADDING=5>
+<TR>
+<TD>cron-inc.pl</TD>
+<TD> Will conpute the main stats</TD>
+</TR><TR>
+<TD>others scripts</TD>
+<TD> Will conpute others stats</TD>
+</TR>
+</TABLE>
+
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="install.html"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+
+</body>
+</html>

@@ -1,0 +1,299 @@
+<%@ page import="java.sql.*, java.util.Hashtable,java.util.Enumeration" %>
+<jsp:useBean id="Order" scope="session" class="com.cig.chinaeoa.OrderBean" />
+<jsp:useBean id="Result" scope="page" class="com.cig.chinaeoa.ResultBean" />
+<jsp:useBean id="LookUp" scope="page" class="com.cig.chinaeoa.LookUpBean" />
+<%
+     String MemberId  = (String)session.getValue("cneoa.MemberId");
+     String MemberType = (String)session.getValue("cneoa.MemberType");
+   String UserLevel = (String)session.getValue("cneoa.UserLevel");
+
+   if (MemberId == null) 
+   {
+   %>
+ 	<jsp:forward page="/LoginError.htm" />
+
+   <%
+   }
+
+   String Qty = request.getParameter("Qty");
+   String ProdId = request.getParameter("ProdId");
+   String Brand = "";
+   String ProductNo = "";
+   String Category = "";
+   String LangCode = request.getParameter("LangCode");
+   String Type = request.getParameter("Type");
+   float Price = 0;
+   float Total = 0;
+   float SumTotal = 0;
+   String ProdIds = "";
+   String Amount = "0";
+   String Supplier = "";
+   Hashtable hash;
+   hash = Order.getHash();
+   Enumeration enumProd = hash.keys();
+   Object obj;
+   ResultSet rs;
+   while (enumProd.hasMoreElements())
+   {		
+        obj = enumProd.nextElement();
+	    ProdIds = ProdIds + (String)obj + ",";
+	    //Qty = (String)hash.get(obj);
+   }
+   ProdIds = "(" + ProdIds + "0" + ")";
+   rs = Result.getRS("select  p.*, b.name, c.catename from " +
+          			" product p,  brand b, category c  where " +
+          			"  B.lang_code = '" + LangCode + "' and p.brandid = b.brandid  " +
+          			" and  p.cateid = c.cateid and c.lang_code = B.lang_code and p.prodid in " +  ProdIds + " order by p.supplier,p.cateid,p.prodid");
+ %>
+
+<html>
+<head>
+<script language="JavaScript">
+<!--
+function Post(fmList)
+{
+  //alert(fmList.Payment.checked);
+  if (fmList.ShipId.value == "0")
+  {
+    alert ("请选择送货地址!");
+       return;
+  }
+  if (fmList.ShipDate.value == "")
+  {
+    alert ("请输入送货日期!");
+       return;
+  }
+  if (fmList.RequDate.value == "")
+  {
+    alert ("请输入收货日期!");
+       return;
+  }
+  if (fmList.Payment.value == "1")
+  {
+    if ((fmList.Amount.value - fmList.SumTotal.value) < 0) 
+    {
+      alert ("信用余额不足,请选用其他付款方式或减小订购数量!");
+      return;
+	}
+  }
+
+  fmList.action = "OrderResult.jsp?LangCode=<%=LangCode%>";
+  fmList.method = "post";
+  fmList.submit();
+}
+
+//-->
+</script>
+
+<title>我的购物车</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="eoa.css" rel="stylesheet" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<%
+if (rs != null)
+{
+   boolean isLast = false;
+   rs.next();
+  while (!isLast)
+  {
+      
+%>
+<form method="post" action="" name="fmList<%=rs.getString("Supplier")%>">
+
+  <table width="500" border="0" cellspacing="1" cellpadding="2" topmargin="0" align="center">
+    <tr> 
+      <td colspan="6" class="font3b">结帐:</td>
+    </tr>
+    <tr> 
+      <td height="84" colspan="6"> 
+        <table width="500" border="0" cellspacing="0" cellpadding="1" bgcolor="#2078CB">
+          <tr> 
+            <td> 
+              <table border="0" cellspacing="1" cellpadding="2" height="64" width="500">
+                <tr bgcolor="#FFFFFF" class="font1b"> 
+                  <td height="29" nowrap width="80"> 
+                    <div align="center">供应商:</div>
+                  </td>
+                  <td height="29" nowrap colspan="5"> 
+                    <div align="center"><%=Order.getSupplierName(rs.getString("Supplier"),LangCode)%>
+                      <input type="hidden" name="Supplier" value="<%=rs.getString("Supplier")%>">
+                    </div>
+                    <div align="center"></div>
+                    <div align="center"></div>
+                  </td>
+                </tr>
+                <tr bgcolor="#FFFFFF" class="font1b"> 
+                  <td height="28" nowrap width="80"> 
+                    <div align="center">品牌</div>
+                  </td>
+                  <td height="28" nowrap width="124"> 
+                    <div align="center">型号</div>
+                  </td>
+                  <td height="28" nowrap width="130"> 
+                    <div align="center">单价</div>
+                  </td>
+                  <td height="28" nowrap colspan="2"> 
+                    <div align="center">数量</div>
+                  </td>
+                  <td height="28" width="70" nowrap align="center">小计</td>
+                </tr>
+                <%
+		       Supplier = rs.getString("Supplier");
+			   Amount = Order.getAmount(Supplier,MemberId);
+		       Total = 0;
+		       SumTotal = 0;
+		       
+                   while (Supplier.equals(rs.getString("Supplier")))
+                   {    
+			obj = rs.getString("Prodid");
+    			Qty = (String)hash.get(obj);		
+			Brand = rs.getString("Name");
+			ProductNo = rs.getString("ProductNo") + "<br> " + rs.getString("CateName");
+		            Price = rs.getFloat("ListPrice");
+			Total =  Integer.parseInt(Qty) * Price;
+			SumTotal = SumTotal + Total;
+			
+			
+			
+
+		   				
+
+                %> 
+                <tr bgcolor="#FFFFFF"> 
+                  <td height="22" width="80"> 
+                    <div align="center"><%=Brand%></div>
+                  </td>
+                  <td height="22" width="124"> 
+                    <div align="center"><%=ProductNo%></div>
+                  </td>
+                  <td height="22" width="130"> 
+                    <div align="center"><%=Price%></div>
+                  </td>
+                  <td height="22" colspan="2" align="center"> 
+                    <div align="center"> </div>
+                    <a href="javascript:Update(<%=ProdId%>)"></a><%=Qty%></td>
+                  <td width="70" height="22" align="right"><%=Total%></td>
+                </tr>
+                <%
+			if (!rs.next())
+			{ 
+            		  isLast = true;	   	  
+			  break;	
+			}			    	
+    		      }
+		   %> 
+                <tr bgcolor="#FFFFFF"> 
+                  <td height="27" align="right" colspan="5"> 
+                    <div align="center"></div>
+                    <font color="#FF3333"><b>合计金额:</b></font> </td>
+                  <td height="27" width="70" align="right"><%=SumTotal%></td>
+                </tr>
+                <tr bgcolor="#FFFFFF" > 
+                  <td height="28" nowrap width="80" class="font1b"> 
+                    <div align="center">送货地址:</div>
+                  </td>
+                  <td height="28" nowrap colspan="5"> 
+                    <select name="ShipId" size="1" >
+                      <option value="0" selected>-请选择-</option>
+                      <%=LookUp.getLookUp("select s.shipid, " +  " p.Name||c.name||l.shipname||l.address1||l.address2 as ShipName " + 
+ " from  shipment s , shipment_l l,  city c, province p " +
+ " where s.shipid = l.shipid and l.lang_code ='" + LangCode + "' and s.cityid = c.cityid " +
+ " and  c.lang_code = l.lang_code and p.ProvinceId =S.ProvinceId and P.Lang_code = " +
+ " l.Lang_code and memberid = '" + MemberId + "'","ShipName","ShipId")%> 
+                    </select>
+                    <font color="#FF3333">*</font> <font color="#FF0033"><a href="#"> 
+                    增加</a></font></td>
+                </tr>
+                <tr bgcolor="#FFFFFF" > 
+                  <td height="28" nowrap width="80" class="font1b"> 
+                    <div align="center">送货方式:</div>
+                  </td>
+                  <td height="28" colspan="5"> 
+                    <input type="radio" name="ShipMethod" value="1" checked>
+                    自提 
+                    <input type="radio" name="ShipMethod" value="2" onClick="alert(this.value)">
+                    铁路 
+                    <input type="radio" name="ShipMethod" value="3">
+                    航空 
+                    <input type="radio" name="ShipMethod" value="4">
+                    汽车 </td>
+                </tr>
+                <tr bgcolor="#FFFFFF" > 
+                  <td height="28" nowrap width="80" class="font1b"> 
+                    <div align="center">送货日期:</div>
+                  </td>
+                  <td height="28" nowrap colspan="5"> 
+                    <input type="text" name="ShipDate" size="18" maxlength="10">
+                    <font color="#FF0033">[输入格式 YYYY-MM-DD，2000-03-06] </font></td>
+                </tr>
+                <tr bgcolor="#FFFFFF" > 
+                  <td height="28" nowrap width="80" class="font1b"> 
+                    <div align="center">收货日期:</div>
+                  </td>
+                  <td height="28" nowrap colspan="5"> 
+                    <input type="text" name="RequDate" size="18" maxlength="10">
+                    <font color="#FF0033"> [输入格式 YYYY-MM-DD，2000-03-06] </font></td>
+                </tr>
+                <tr bgcolor="#FFFFFF" > 
+                  <td height="28" nowrap width="80" class="font1b"> 
+                    <div align="center">付款方式:</div>
+                  </td>
+                  <td height="28" nowrap colspan="3"> 
+                    <input type="radio" name="Payment" value="1" checked>
+                    信用 
+                    <input type="radio" name="Payment" value="2">
+                    汇票 
+                    <input type="radio" name="Payment" value="3">
+                    支票 
+                    <input type="radio" name="Payment" value="4">
+                    电汇 
+                    <input type="radio" name="Payment" value="5">
+                    现金 </td>
+                  <td height="28" nowrap align="center" width="60" class="font1b">信用余额:</td>
+                  <td height="28" nowrap width="70"><% 
+
+out.println(Amount);
+%></td>
+                </tr>
+                <tr bgcolor="#FFFFFF" class="font1b"> 
+                  <td height="28" nowrap width="80"> 
+                    <div align="center">客户订单号 :</div>
+                  </td>
+                  <td height="28" nowrap colspan="5"> 
+                    <input type="text" name="PO">
+                    <input type="hidden" name="Amount" value="<%=Amount%>">
+                    <input type="hidden" name="SumTotal" value="<%=SumTotal%>">
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr> 
+      <td width="1" height="27">&nbsp;</td>
+      <td width="270" height="27">&nbsp; </td>
+      <td width="73" height="27"> 
+        <input type="button" name="Button2" value="提  交" onClick="javascript:Post(fmList<%=Supplier%>);">
+      </td>
+      <td width="82" height="27"> 
+        <input type="button" name="Button22" value="返  回" onClick="javascript:window.history.go(-1);">
+      </td>
+      <td width="47" height="27">&nbsp;</td>
+      <td width="78" height="27">&nbsp;</td>
+    </tr>
+  </table>
+</form>
+<%
+       
+  }
+}
+%>
+<p>&nbsp;</p>
+</body>
+</html>
+
+

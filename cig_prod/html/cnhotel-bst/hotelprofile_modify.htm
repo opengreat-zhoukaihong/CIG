@@ -1,0 +1,281 @@
+<html>
+<head>
+<title>CNHotelBooking.com后台管理工具</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.font9 {  font-size: 9pt; color: #FF8000; font-weight: normal}
+.font12 {  font-size: 12pt; color: #FF8000; font-weight: bold}
+-->
+</style>
+</head>
+<body bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<SCRIPT LANGUAGE=javascript>
+<!--
+
+
+function PostForm()
+{
+  if ((fmAddHotel.txtName.value == "")||(fmAddHotel.txtCity.value == ""))
+  {	
+	alert("请输入名称和城市!");
+	return;
+  }
+  fmAddHotel.submit();
+}
+//-->
+</SCRIPT>
+<span class="font9"></span> <span class="font9"></span> 
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="26">&nbsp; </td>
+    <td width="564"> 
+      <form name= fmAddHotel method="post" action="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstUpdateHotel">
+        <table width="563" border="0" cellspacing="2" cellpadding="5" height="40">
+          <tr> 
+            <td height="30" class="font12"> 更新酒店资料</td>
+          </tr>
+        </table>
+        <table width="564" border="1" cellspacing="2" cellpadding="5" bordercolorlight="#f9c026" bordercolordark="#ffffff">
+          <tr class="font9"> 
+            <td width="81" class="font9">酒店编号：</td>
+            <td width="171" class="font9">8976 
+              <input type="hidden" name="txtID">
+            </td>
+            <td width="78" class="font9">操作员：</td>
+            <td width="174"> op</td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9" height="35">中文名称：</td>
+            <td class="font9" height="35" width="171"> 
+              <input name="txtName" 
+           >
+              * </td>
+            <td class="font9" height="35" width="78">英文名称：</td>
+            <td class="font9" height="35" width="174"> 
+              <input name="txtNameEN" 
+           >
+            </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">区域：</td>
+            <td width="171"> 
+              <select name="sltArea" size="1">
+<jsp:include page="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstLookUp" flush="true" />              </select>
+              * </td>
+            <td width="78" class="font9">地址：</td>
+            <td width="174"> 
+              <input name="txtAddress" 
+           >
+              &nbsp;* </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">具体位置：</td>
+            <td width="171"> 
+              <input name="txtLocation" 
+           >
+            </td>
+            <td width="78" class="font9">城市：</td>
+            <td width="174"> 
+              <input name="txtCity" 
+           >
+              &nbsp;* </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">邮政编号：</td>
+            <td width="171"> 
+              <input name="txtPostCode" 
+           >
+              &nbsp;* </td>
+            <td width="78">省份：</td>
+            <td width="174"> 
+              <input name="txtState" 
+           >
+              &nbsp;* </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9" height="37">国家：</td>
+            <td width="171" height="37"> 
+              <select name="sltCtryCode" size="1">
+<jsp:include page="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstLookUp" flush="true" />              </select>
+              * </td>
+            <td width="78" class="font9" height="37">电话：</td>
+            <td width="174" height="37"> 
+              <input name="txtTelephone" 
+           >
+              * </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">传真：</td>
+            <td width="171"> 
+              <input name="txtFax" 
+           >
+            </td>
+            <td width="78" class="font9">电子信箱：</td>
+            <td width="174"> 
+              <input name="txtEmail" 
+           >
+            </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">酒店主页：</td>
+            <td width="171"> 
+              <input name="txtUrl" 
+           >
+            </td>
+            <td width="78" class="font9">联系人：</td>
+            <td width="174"> 
+              <input name="txtContact" 
+           >
+            </td>
+          </tr>
+          <tr> 
+            <td width="81" class="font9">价格等级：</td>
+            <td width="171"> 
+              <select name="sltPriceRange" size="1">
+<jsp:include page="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstLookUp" flush="true" />              </select>
+            </td>
+            <td width="78" class="font9">星级：</td>
+            <td width="174" class="font9"> 
+              <select name="sltStarating" size="1">
+<jsp:include page="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstLookUp" flush="true" />              </select>
+              * </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">图片路径：</td>
+            <td width="171"> 
+              <select name="sltImageDir" size="1">
+<jsp:include page="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstLookUp" flush="true" />              </select>
+            </td>
+            <td width="78" class="font9">图片文件1：</td>
+            <td width="174"> 
+              <input name="txtImageFile1" 
+           >
+            </td>
+          </tr>
+          <tr> 
+            <td width="81" class="font9">图片文件2：</td>
+            <td width="171" class="font9"> 
+              <input name="txtImageFile2" >
+            </td>
+            <td width="78" class="font9">图片文件3</td>
+            <td width="174"> 
+              <input name="txtImageFile3" 
+           >
+            </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">地图目录：</td>
+            <td width="171"> 
+              <select name="sltMapDir" size="1">
+<jsp:include page="/cnhotel/servlet/com.dreamerland.cnhotelbooking.bst.CbstLookUp" flush="true" />              </select>
+            </td>
+            <td width="78">地图文件：</td>
+            <td width="174"> 
+              <input name="txtMapFile" >
+            </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">要求推荐：</td>
+            <td width="171"> 
+              <input type="radio" name="rdPromotion" value="Y">
+              是 
+              <input type="radio" name="rdPromotion" value="N" checked>
+              否 </td>
+            <td width="78">免费早餐：</td>
+            <td width="174"> 
+              <input type="radio" name="rdFreeBreakfast" value="Y">
+              是 
+              <input type="radio" name="rdFreeBreakfast" value="N" checked>
+              否 </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">优惠服务：</td>
+            <td width="171"> 
+              <input type="radio" name="rdService" value="Y">
+              是 
+              <input type="radio" name="rdService" value="N" checked>
+              否</td>
+            <td width="78">建立预订：</td>
+            <td width="174"> 
+              <input type="radio" name="rdStatus" value="Y">
+              是 
+              <input type="radio" name="rdStatus" value="N" checked>
+              否</td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">餐饮设施：</td>
+            <td colspan="3"> 
+              <textarea cols=50 name=txtFacilityDrink></textarea>
+            </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">娱乐设施：</td>
+            <td colspan="3"> 
+              <textarea cols=50 name=txtFacilityEnt></textarea>
+            </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">服务设施：</td>
+            <td colspan="3"> 
+              <textarea cols=50 name=txtFacilityServ></textarea>
+            </td>
+          </tr>
+          <tr> 
+            <td width="81" class="font9">简短描述：</td>
+            <td colspan="3"> 
+              <table width="109" border="0" cellspacing="0" cellpadding="0">
+                <tr align="middle"> 
+                  <td> 
+                    <textarea cols=50 name=txtSDesc></textarea>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">详细描述：</td>
+            <td colspan="3"> 
+              <textarea cols=50 name=txtFDesc></textarea>
+            </td>
+          </tr>
+          <tr class="font9"> 
+            <td width="81" class="font9">合作日期：</td>
+            <td colspan="3"> 
+              <input name="txtCreateDate" 
+           >
+              [输入格式 YYYY-MM-DD，2000-03-06] </td>
+          </tr>
+          <tr class="font9"> 
+            <td colspan="4" class="font9">
+              <table width="100%" border="1" cellspacing="2" cellpadding="5" bordercolorlight="#F9C026" bordercolordark="#FFFFFF">
+                <tr> 
+                  <td class="font9">客房类别</td>
+                  <td class="font9">客房单价</td>
+                  <td class="font9">币种</td>
+                  <td class="font9">图片目录</td>
+                  <td class="font9">图片文件</td>
+                </tr>
+                <tr> 
+                  <td class="font9">客房类别</td>
+                  <td class="font9">客房单价</td>
+                  <td class="font9">币种</td>
+                  <td class="font9">图片目录</td>
+                  <td class="font9">图片文件</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <table width="550" border="0" cellspacing="0" cellpadding="0">
+          <tr align="middle"> 
+            <td height="40"> <A href="JavaScript:PostForm()"><IMG border=0 height=26 src="images/botton_update.gif" width=68></A><IMG height=1 src="images/dot.gif" width=50> 
+              <A href="http://bst.cnbooking.com/Hotelprofile_add.htm"><IMG border=0 height=26 src="images/botton_restore.gif" width=68></a></td>
+          </tr>
+        </table>
+      </form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

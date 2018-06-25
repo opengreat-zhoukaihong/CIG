@@ -1,0 +1,98 @@
+<HEAD>
+<TITLE>W3perl - Help - Logfile</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<CENTER>
+<TABLE BORDER=0 CELLSPACING=0 WIDTH=100%>
+<TR>
+<TD VALIGN=TOP ALIGN=CENTER>
+
+<TABLE BORDER=0 CELLSPACING=0 WIDTH=100%>
+<TR>
+<TH><FONT COLOR="#0000FF">Logfile format</FONT></TH>
+<TD>                   
+<CENTER>
+You can define your own logfile format :
+</CENTER>
+</TD>
+</TR>
+</TABLE>
+</TD>
+<TR>
+<TD ALIGN=CENTER>
+<P><BR>
+<TABLE BORDER=0 CELLPADDING=3>
+<TR>
+<TH><FONT SIZE=-1>Field</FONT></TH>
+<TH><FONT SIZE=-1>Description</FONT></TH>
+<TH><FONT SIZE=-1>Value (ex)</FONT></TH>
+</TR><TR>
+<TH BGCOLOR="#D9D9D9"><FONT SIZE=-1>%host</FONT></TH>
+<TD ALIGN=LEFT><FONT SIZE=-1>The name or IP of the remote host</FONT></TD>
+<TD ALIGN=RIGHT><FONT SIZE=-1><I>www.lyot.obspm.fr or 145.238.44.5</I></FONT></TD>
+</TR><TR>
+<TH BGCOLOR="#D9D9D9"><FONT SIZE=-1>%date</FONT></TH>
+<TD ALIGN=LEFT><FONT SIZE=-1>Date as Day:Hour or just Day</FONT></TD>
+<TD ALIGN=RIGHT><FONT SIZE=-1><I>01/Jan/97:23:12:24 or 1998-02-02</I></FONT></TD>
+</TR><TR>
+<TH BGCOLOR="#D9D9D9"><FONT SIZE=-1>%time</FONT></TH>
+<TD ALIGN=LEFT><FONT SIZE=-1>Hour</FONT></TD>
+<TD ALIGN=RIGHT><FONT SIZE=-1><I>23:12:24</I></FONT></TD>
+</TR><TR>
+<TH BGCOLOR="#D9D9D9"><FONT SIZE=-1>%hourshift</FONT></TH>
+<TD ALIGN=LEFT><FONT SIZE=-1>Shift from GMT</FONT></TD>
+<TD ALIGN=RIGHT><FONT SIZE=-1><I>+0200</I></FONT></TD>
+</TR><TR>
+<TH BGCOLOR="#D9D9D9"><FONT SIZE=-1>%method</FONT></TH>
+<TD ALIGN=LEFT><FONT SIZE=-1>Method requested to send the file</FONT></TD>
+<TD ALIGN=RIGHT><FONT SIZE=-1><I>GET</I></FONT></TD>
+</TR><TR>
+<TH BGCOLOR="#D9D9D9"><FONT SIZE=-1>%page</FONT></TH>
+<TD ALIGN=LEFT><FONT SIZE=-1>The file requested</FONT></TD>
+<TD ALIGN=RIGHT><FONT SIZE=-1><I>//chinaeoa/index.jsp or /sky/astro.gif</I></FONT></TD>
+</TR><TR>
+<TH BGCOLOR="#D9D9D9"><FONT SIZE=-1>%protocol</FONT></TH>
+<TD ALIGN=LEFT><FONT SIZE=-1>Protocole used</FONT></TD>
+<TD ALIGN=RIGHT><FONT SIZE=-1><I>HTTP 1.0</I></FONT></TD>
+</TR><TR>
+<TH BGCOLOR="#D9D9D9"><FONT SIZE=-1>%status</FONT></TH>
+<TD ALIGN=LEFT><FONT SIZE=-1>The status code</FONT></TD>
+<TD ALIGN=RIGHT><FONT SIZE=-1><I>200</I></FONT></TD>
+</TR><TR>
+<TH BGCOLOR="#D9D9D9"><FONT SIZE=-1>%requetesize</FONT></TH>
+<TD ALIGN=LEFT><FONT SIZE=-1>The byte transfered for the requested file</FONT></TD>
+<TD ALIGN=RIGHT><FONT SIZE=-1><I>1345</I></FONT></TD>
+</TR><TR>
+<TH BGCOLOR="#D9D9D9"><FONT SIZE=-1>%agent</FONT></TH>
+<TD ALIGN=LEFT><FONT SIZE=-1>Browser and OS of the remote host</FONT></TD>
+<TD ALIGN=RIGHT><FONT SIZE=-1><I>Mozilla/4.01 (X11; I; SunOS 5.3 sun4m)</I></FONT></TD>
+</TR><TR>
+<TH BGCOLOR="#D9D9D9"><FONT SIZE=-1>%refer</FONT></TH>
+<TD ALIGN=LEFT><FONT SIZE=-1>The page the request come from</FONT></TD>
+<TD ALIGN=RIGHT><FONT SIZE=-1><I>http://www.google.com/</I></FONT></TD>
+</TR><TR>
+<TH BGCOLOR="#D9D9D9"><FONT SIZE=-1>%virtualhost</FONT></TH>
+<TD ALIGN=LEFT><FONT SIZE=-1>Name of the server the request was</FONT></TD>
+<TD ALIGN=RIGHT><FONT SIZE=-1><I>www.lyot.obspm.fr</I></FONT></TD>
+</TR><TR>
+<TH BGCOLOR="#D9D9D9"><FONT SIZE=-1>%query</FONT></TH>
+<TD ALIGN=LEFT><FONT SIZE=-1>Arguments from the request</FONT></TD>
+<TD ALIGN=RIGHT><FONT SIZE=-1><I>q=w3perl&meta=lr%3D%26hl%3Den</I></FONT></TD>
+</TR><TR>
+<TH BGCOLOR="#D9D9D9"><FONT SIZE=-1>%null</FONT></TH>
+<TD ALIGN=LEFT><FONT SIZE=-1>Anything not in this list !</FONT></TD>
+<TD ALIGN=RIGHT><FONT SIZE=-1><I>-</I></FONT></TD>
+</TR>
+</TABLE>
+<BR><FONT SIZE=-1>
+For example, to get a CLF format, you should use :<BR>
+<B>%host %null %login %date %hourshift %method %page %protocol %status %requetesize</B>
+</FONT>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+</BODY>
+</HTML>

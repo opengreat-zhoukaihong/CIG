@@ -1,0 +1,187 @@
+<HTML><head>
+<title>W3Perl Automatic/manual use</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Automatic/manual use</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>With a crontab</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+<LI><B>Unix</B>
+<P>You should have permission to execute cron commands (ask your administration system if you can't). 
+You need to write the full pathname for the files to run.
+<P>
+cron-w3perl.pl have been introduced to avoid lots of lines
+in your crontab and it will compute the scripts in the right order.
+<BR>
+Edit this file and give your own value for scripts day/hour timelaunch.
+<BR>
+You only have to add this line in your crontab :
+<BR>
+01 00 * * * /usr/local/httpd/htdocs/w3perl/cron-w3perl.pl -e &gt; /dev/null
+<CENTER><BR>or<BR></CENTER>
+01 00 * * * /usr/local/httpd/htdocs/w3perl/cron-w3perl.pl -e -c /norfolk/www/w3perl/config-oj.pl &gt; /dev/null
+<BR>
+if you need to load a configuration file.
+<BR>
+Redirection to /dev/null is used to cancel messages report.
+
+<P>
+<LI><B>NT</B>
+<P>
+NT users can't use cron-w3perl so they need to add one line for each script
+in their scheduler event (Unix look like :)
+
+<table width=100%>
+<tr>
+<th colspan=2>Core scripts</th>
+</tr>
+<tr>
+<td>10 00 * * *</td>
+<td>/norfolk/www/w3perl/cron-inc.pl &gt; /dev/null</td>
+</tr>
+<tr>
+<td>01 * * * *</td>
+<td>/norfolk/www/w3perl/cron-hour.pl &gt; /dev/null</td>
+</tr>
+<tr>
+<td>00 01 * * *</td>
+<td>/norfolk/www/w3perl/cron-day.pl &gt; /dev/null</td>
+</tr>
+<tr>
+<td>30 01 * * 1</td>
+<td>/norfolk/www/w3perl/cron-week.pl &gt; /dev/null</td>
+</tr>
+<tr>
+<td>00 02 1 * *</td>
+<td>/norfolk/www/w3perl/cron-month.pl &gt; /dev/null</td>
+</tr>
+</table>
+
+<LI> Cron-inc will be run each night at 00:10, it should be the first
+to run as it produces results files for the other programs except cron-hour.pl
+<b>You should have run cron-pages.pl once before after installing the package !</b>
+<LI> Cron-hour.pl is running every hour.
+<LI> Others programs should be run later when cron-inc has finished its works. 
+<P>
+
+<table width=100%>
+<tr>
+<th colspan=2>Optionnal scripts</th>
+</tr>
+<tr>
+<td>03 00 * * 1</td>
+<td>/norfolk/www/w3perl/cron-url.pl &gt; /dev/null</td>
+</tr>
+<tr>
+<td>30 02 * * 1</td>
+<td>/norfolk/www/w3perl/cron-session.pl &gt; /dev/null</td>
+</tr>
+<tr>
+<td>35 03 * * 1</td>
+<td>/norfolk/www/w3perl/cron-agent.pl &gt; /dev/null</td>
+</tr>
+<tr>
+<td>40 03 * * 1</td>
+<td>/norfolk/www/w3perl/cron-refer.pl &gt; /dev/null</td>
+</tr>
+<tr>
+<td>45 03 * * 1</td>
+<td>/norfolk/www/w3perl/cron-error.pl &gt; /dev/null</td>
+</tr>
+</table>
+
+<LI> Cron-url.pl will output a file for URL to document's title conversion.
+You could run it every day just before cron-inc.pl. I've choose to run it
+only once a week as I don't have a lots of new html pages every day !
+<LI> cron-refer, cron-agent don't have to be run if you don't use a httpd which
+log the referer and agent information.
+<LI> Cron-session can take a while if you have very large log file.
+<P>
+
+You will receive an email on the morning telling you what's wrong if 
+you've got trouble.
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Without a crontab</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+<LI><B>Unix</B>
+<P>
+<TABLE WIDTH=100% BORDER=1>
+<TR>
+<TD>
+<P>
+<B>New in version 2.40</B>, cron-w3perl.pl can be launch to run all
+incremental script one by one. NT can't use cron-w3perl, sorry.
+<P>
+You'll need to call it via the -e flag (cron-w3perl.pl -e).
+<P>
+You need to launch it once a week.
+</TD>
+</TR>
+</TABLE>
+<P>
+<LI><B>NT</B>
+<P>
+Execute the program at the commands line. Use '-h' to see options available.<BR>
+After having configured the config.pl script, you can run cron-pages.pl.
+Wait for the process to finish and check the result.
+Never use again cron-pages now, use instead cron-inc.pl, it will compute
+incremental stats by scanning only the previous day.
+Cron-inc is able to scan the 7 last previous day, so you don't have to run it daily
+if you want. If you forget to run it for a week or more, run cron-pages or use the
+-s option in cron-inc (but it will be faster to use cron-pages if you are very late).<BR>
+So run :
+<UL>
+<LI>cron-pages for the first time or if you forget to run cron-inc for a while.
+<LI>cron-inc for a daily incremental stats
+</UL>
+Then run :
+<UL>
+<LI>cron-hour to have hourly stats (each hour)
+<LI>cron-day to have daily stats (once a day)
+<LI>cron-week to have weekly stats (once a week)
+<LI>cron-month to have monthly stats (once a month)
+</UL>
+Except for hourly stats, the results will be updated from the last time you ran
+the scripts...you won't loose any data if you don't run the scripts every day.
+<P>
+If you don't see a link for the monthly or weekly stats, the reason is your logfile
+doesn't contains enough data to compute them at the moment.
+To have more information, you can run optionnal scripts :
+<UL>
+<LI>cron-agent to have agent stats
+<LI>cron-refer to have referer stats
+<LI>cron-url to have stats about your web pages (a map between url and name of the HTML document is also done)
+<LI>cron-session to have session stats
+<LI>cron-error to have error stats
+</UL>
+You can run them when you want ; once a week is enough for me.
+You will need to wait a day for having a link from the homepage as the update is made by cron-inc.
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="install.html"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<HTML><head>
+<title>W3Perl FAQ</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>FAQ</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Questions</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+
+
+<B><LI>Customisation</B>
+<OL>
+<LI> I would like to replace the logo in the w3perl homepage, how do I proceed ?
+<LI> I don't have any <A HREF="#graphs">graphs</A> in the HTML pages. What's wrong ?
+<LI> I would like w3perl to output reports in my own language.
+</OL>
+<B><LI>Installation</B>
+<OL>
+<LI> Can I use w3perl with my virtual server ?
+<LI> Can I install all the package in my cgi-bin ?
+<LI> I would like to install w3perl on my provider. What do I need ?
+<LI> Your configuration file seems to be too complex for a beginner like me.
+</OL>
+<B><LI>Setup</B>
+<OL>
+<LI> W3Perl is <A HREF="#open">unable to open</A> the log file...
+
+<LI> There are several text holes in the <A HREF="#countries">countries list</A>. Why ?
+<LI> I don't find <A HREF="#myhost">my hosts server</A> in the file produced. Why ?
+<LI> I've choosen to log the domain activity but the package show no activity from my <A HREF="#domain">domain accesses</A>.
+<LI> Cron-pages.pl stop with a message that <A HREF="#oneday">nothing will be output</A>
+<LI> <A HREF="#nofiles">No files</A> are produced.
+<LI> The initialisation is very <A HREF="#slow">slow</A> (cron-pages.pl)
+<LI> I just need to run stats <A HREF="#between">between two date</A> or I want stats about a <A HREF="#between">specific day</A>.
+<LI> The daily graph show me only <A HREF="#fewdays">few days</A> ago but I would like to view stats  deeply in the past.
+<LI> I would like to exclude stats from some <A HREF="#mycountry">countries</A>.
+</OL>
+<B><LI>NT</B>
+<OL>
+<LI> Does W3Perl run on Windows 2000 ?
+</OL>
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Answers</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+
+<B> I would like to replace the logo in the w3perl homepage, how do I proceed ?</B>
+<P>
+<I> This image is located in $drawstat variable , the file is /resources/stats.gif, you'll need to put your image with this name in /resources/.
+Take care about the width and height attributes, you may also need to
+change them in cron-pages and cron-inc if your image have a different size
+</I>
+<P>
+<A NAME="graphs">
+<B>I don't have any graphs in the HTML pages. What's wrong ?</B>
+<P>
+<I>Something is missing....make sure you have <A HREF="need.html">fly</A> somewhere in your system. Check also the path for Fly in your <A HREF="config.html">config.pl file</A>.</I>
+<P>
+<B> I would like w3perl to output reports in my own language</B>
+<P>
+<I>
+Everything is located in the /resources/lang/ directory. Copy the uk.pl to
+another file to replace the second part of each line with your own words.
+When everything have been done, contact me to include your work in the
+next release.
+</I>
+
+<P><HR width=30%><P>
+
+
+<B> Can I use w3perl with my virtual server ?</B>
+<P>
+<I>
+Of course you can. You just need one separate configuration file for
+each of your server. W3Perl will load your configuration file and save data for
+each server according to your configuration choices. W3Perl need to be
+installed only once.
+</I>
+<P>
+<B> Can I install all the package in my cgi-bin ?</B>
+<P>
+<I>
+No, part of the package need to be located in your webserver tree. This
+include HTML files for documentation or graphics files. 
+</I>
+<P>
+<B> I would like to install w3perl on my provider. What do I need ?</B>
+<P>
+<I>
+You'll need to use the 'provider' installation. First ask your
+provider if you have a cgi-bin directory (are you allowed to launch 
+scripts ?), where are located the logfiles (access to data), where is Perl (is
+Perl installed ?) and your server path (where your server have been installed).
+</I>
+<P>
+<B> Your configuration file seems to be too complex for a beginner like me.</B>
+<P>
+<I>
+Use the administration interface. If you find something unclear, ask me and
+I'll add a javascript help.
+</I>
+<P>
+
+<A NAME="open">
+<B> W3Perl is unable to open the log file...</B>
+<P>
+<I>The httpd log file should be readable by users (but not writeable
+of course !). Ask nicely your admistrator system to rectify this.
+A 'chmod 644' on the log file is enough to run w3perl.
+</I>
+<P><HR width=30%><P>
+<A NAME="countries">
+<B>There are several text holes in the countries list. Why ?</B>
+<P>
+<I>There are <A HREF="http://itl5.itlnet.com/isocodes.htm">missing country codes</A> in "pays-conv" (found in the resources directory). Run the 
+cron-inc.pl manually or delete the redirection output "> /dev/null 2>&1"
+in the crontab, it will inform you about the missing codes. Mail me
+about this and I'll fix this ASAP.
+</I>
+<P>
+<A NAME="myhost">
+<B>I don't find my hosts server in the file produced. Why ?</B>
+<P>
+<I>
+* You should first scan your local domain ($locallog = 1). <br>
+* Maybe have you put your host in the nolog option ? Remove it so. <br>
+* Or maybe your host don't have a right reverse DNS table. In this case,
+you should find your host in the unknow country list. <br>
+* The package assume name site are no longer than 9 fields.
+</I>
+<P>
+<A NAME="domain">
+<B>I've choosen to log the domain activity but the package show no 
+activity from my domain accesses.</B>
+<P>
+<I>
+Well, two possibilities : nobody use your server from your
+local domain or maybe you have made a mistake in the $localserver
+variable. <A HREF="config.html">Check this.</A>
+</I>
+<P>
+<A NAME="oneday">
+<B>Cron-pages.pl stop telling me nothing will be output</B>
+<P>
+<I>
+* Check your $tri variable. It should be "/" if you want to scan all
+your log file or a subdirectory to scan only a part of your log file. Perhaps
+you try to scan the logfile with a directory you don't have in your server.<br>
+* Maybe you are excluding all your server from being scanned ! Check @excluderepert in
+config.pl<br>
+* Log file should be more than one day long to run cron-pages.pl.
+Wait the next day to have a bigger logfile.<br>
+* If you are using a <A HREF="multiple.html">one day long logfile</A>.
+You should use w3perl in this way :<br>
+<UL>
+First day : at midnight, move your logfile to logfile.old and then use
+ cron-pages.pl on logfile.old<br>
+Day + 1 : at midnight delete logfile.old, move the current logfile to logfile.old and run
+cron-inc.pl<br>
+Day + 2 : same as day + 1....
+</UL>
+</I>
+<P>
+<A NAME="nofiles">
+<B>No files are produced.</B>
+<P>
+<I>Are your directories writeable ? Have you selected one language ouput in @lang ?
+</I>
+<P>
+<A NAME="slow">
+<B>The initialisation is very slow (cron-pages.pl)</B>
+<P>
+<I>
+Check your configuration file. Avoid to use the reverse dns option as each
+lines of your logfile could take seconds to proceed ! If you have large
+logfile, use a precision level lower (from 4 to 3). You can also 
+<A HREF="multiple.html">compress</A> your logfile to speed up computations.
+</I>
+<P>
+<A NAME="between">
+<B> I just need to run stats between two date or I want stats about a specific day</A>.</B>
+<P>
+<I>
+Use cron-page.pl -s &lt;date1&gt; -r &lt;date2&gt; where date1 and date2 have the following syntax : &lt;day&gt;-&lt;month&gt;-&lt;year&gt;
+(day, month and year are two digits number).
+<BR>
+Use cron-inc.pl -j &lt;date&gt; where date have the following syntax : dd/Mmm/yyyy
+dd is the day in two digits format, Mmm is the month with first letter upper and yyyy the year in
+a 4 digits format.
+</I>
+<P>
+<A NAME="fewdays">
+<B> The daily graph show me only few days</A> ago but I would like to view stats deeply in the past.</B>
+<P>
+<I>
+Use cron-day.pl with the -d flag. Specify the number of days you want to get
+back in past.
+</I>
+<P>
+<A NAME="mycountry">
+<B>I would like to exclude stats from some <A HREF="#mycountry">countries</A>.</B>
+<P>
+<I> 
+In your configuration file, your should add in the @nolog variable, the name
+of the countries you want to exclude. (@nolog = ('.fr') to exclude french stats)
+</I>
+<P><HR width=30%><P>
+<B> Does W3Perl run on Windows 2000 ?</B>
+<P>
+<I>
+Yes. Be careful to the logfile format used as Microsoft can genere a lots
+of different logfile format.
+</I>
+<P>
+<HR size=3 width=80%>
+<br>
+Please do not hesitate to <A HREF="mailto:domisse@w3perl.com">contact me</A> 
+if you have any suggestions or general feedback (including bug reports).
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="/chinaeoa/index.jsp"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

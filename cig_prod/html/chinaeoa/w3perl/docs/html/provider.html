@@ -1,0 +1,200 @@
+<HTML><head>
+<title>W3Perl ftp installation</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE WIDTH=100% CELLSPACING=5 BORDER=0>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP>
+<CENTER>
+<FONT COLOR="#0000FF"><H1>Provider installation</H1></FONT>
+<P>
+
+This manual have been written thanks to <I>Lawrence Gray</I>
+
+<P>
+
+<FONT COLOR="#0000FF"><H3>HOW TO USE FTP TO SET UP THE W3PERL SCRIPT ON YOUR WEB SITE</H3></FONT>
+</CENTER>
+<BR>
+<BR>
+<FONT COLOR="#A020A0"><LI><B>1st STAGE</B></FONT> : <FONT COLOR="#A02020">Pre-requis</FONT>
+<P>
+- Things to check :
+<P>
+<UL>
+<LI>First of all, do you have access to your log files ?
+<LI>Do you know the path to your log files ?
+<LI>Do you have cgi-bin rights ?
+</UL>
+<P>
+If the answer is yes, then you can use this script.
+<P>
+- The next thing to know is the <FONT COLOR="#20A0A0">PATH</FONT> to your account.
+<BR>
+- If you do not know what the path is, ask your ISP. It's the most basic piece
+of information that you need for setting up CGI scripts.
+<BR>
+- Now make two directories called w3perl in your web.  Make one for your
+cgi-bin and one for your root directory.
+<P>
+<FONT COLOR="#A020A0"><LI><B>2nd STAGE</B></FONT> : <FONT COLOR="#A02020">Install the scripts</FONT>
+<P>
+- Next you need the w3perl.tar file. 
+<A HREF="http://www.w3perl.com/download/">Download</A> and unzip this.
+<BR>
+- What you have here may confuse you because various files are scattered
+through a number of directories, but essentially find all the .pl files in
+the collection and put them into your cgi-bin's w3perl directory.
+<BR>
+- Here are the files that I use in my cgi-bin and I assume that if you have
+them then yours will also work:
+<P>
+<TABLE>
+<TR>
+<TD VALIGN=TOP>
+<UL>
+
+<LI>cron-agent.pl
+<LI>cron-day.pl
+<LI>cron-error.pl
+<LI>cron-hour.pl
+<LI>cron.inc.pl
+<LI>cron-month.pl
+<LI>cron-pages.pl
+</UL>
+</TD>
+<TD VALIGN=TOP>
+<UL>
+<LI>cron-history.pl
+<LI>cron-refer.pl
+<LI>cron-session.pl
+<LI>cron-url.pl
+<LI>cron-w3perl.pl
+<LI>cron-week.pl
+</UL>
+</TD>
+<TD VALIGN=TOP>
+<UL>
+<LI>config-unix.pl
+<LI>fixerlpath.pl
+<LI>install.pl
+<LI>libw3perl.pl
+<LI>confstat.pl
+<LI>delconf.pl
+<LI>init.pl
+</UL>
+</TD>
+</TR>
+</TABLE>
+
+<P>
+- Upload them in <FONT COLOR="#20A0A0">ASCII</FONT> not Binary mode.
+<BR>
+- Set them all to <FONT COLOR="#20A0A0">CHMOD 755</FONT>
+<P>
+<FONT COLOR="#A020A0"><LI><B>3rd STAGE</B></FONT> : <FONT COLOR="#A02020">Install the resource files</FONT>
+<P>
+- In the w3perl directory in your root directory load in the following directories:
+<P>
+<UL>
+<LI>admin
+<LI>config
+<LI>docs
+<LI>resources
+<LI>tools
+</UL>
+<P>
+With all their contents!
+<BR>
+- Set them all at <FONT COLOR="#20A0A0">CHMOD 777</FONT>
+<BR>
+- This is something a blanket approach because you will find files that are
+duplicated in different languages and some functional files that are for
+people using NT servers rather than UNIX and so on.
+<BR>
+- But for simplicity's sake put them all in. You can rationalise once you have
+everything working.
+<P>
+
+<FONT COLOR="#A020A0"><LI><B>4th STAGE</B></FONT> : <FONT COLOR="#A02020">Graphic tool installation</FONT>
+<P>
+- If you want a Graphical display of your statistics you need a programme
+called <FONT COLOR="#20A0A0">FLY</FONT>
+<BR>
+- Ask your ISP what Operation System they are using and then go to <A HREF="http://www.unimelb.edu.au/fly/fly.html">http://www.unimelb.edu.au/fly/fly.html</A>
+<BR>
+- Download the <FONT COLOR="#20A0A0">READY COMPILED BINARY</FONT> for that operating system. If they do not
+have one for your particular operation system then you can try asking the
+people there or you can get hold of the SOURCE file and give it to your ISP
+and ask them to do you one.
+<BR>
+- If you can get hold of a <FONT COLOR="#20A0A0">READY COMPILED BINARY</FONT> all you need do is download
+the zipped package,
+<BR>
+- Unzip and ignore everything in the package apart from one file called FLY.
+<BR>
+- Place this in your cgi-bin and <FONT COLOR="#20A0A0">CHMOD it 775</FONT>
+<BR>
+- Remember where you put it because you will have to fill that in during the
+configuration process.
+<BR>
+- If you cannot get hold of a copy, the programme will still work except you
+won't be able to see some nice histograms and pie charts.
+<P>
+<FONT COLOR="#A020A0"><LI><B>5th STAGE</B></FONT> : <FONT COLOR="#A02020">Configure path</FONT>
+<P>
+- Now open <FONT COLOR="#20A0A0">install.pl</FONT> in notepad or use the WSFTP edit function.
+<BR>
+- Check your <FONT COLOR="#20A0A0">Perl path</FONT> is right (first line)
+<BR>
+- Set <FONT COLOR="#20A0A0">$pathcgi</FONT> = "/www/yourpath/cgi-bin/w3perl"; and <FONT COLOR="#20A0A0">$pathw3perl</FONT> = "/www/yourpath/w3perl";
+<BR>
+- Replace in <FONT COLOR="#20A0A0">cgi-bin/w3perl</FONT>
+<P>
+
+<FONT COLOR="#A020A0"><LI><B>6th STAGE</B></FONT> : <FONT COLOR="#A02020">Build configuration file</FONT>
+<P>
+- Now open up your browser and go to http://your_url/w3perl/admin
+<BR>
+- Click on <FONT COLOR="#20A0A0">Make configuration file</FONT> and follow the procedures outlined. By
+filling in the details you will create a file called <FONT COLOR="#20A0A0">config.pl</FONT>
+<BR>
+- Once created, look for this file in http://your_url/w3perl/config and move
+it to the w3perl directory in your cgi_bin,
+<BR>
+- <FONT COLOR="#20A0A0">CHMOD to 755</FONT>
+<P>
+<FONT COLOR="#A020A0"><LI><B>7th STAGE</B></FONT> : <FONT COLOR="#A02020">Ready</FONT>
+<P>
+- Return to your browser. Go to admin and run <FONT COLOR="#20A0A0">Customization</FONT>
+<BR>
+- This will set all the paths in all the files.
+<BR>
+- You should now be able to analyse your logs.
+<BR>
+- In admin go through the <FONT COLOR="#20A0A0">FIRST USE</FONT> links that will start your statistics from
+zero.
+<BR>
+- Then run the incremental statistics function every week to accumulate your
+statistics.
+<BR>
+- In order to read them  go to http://your_url/w3perl/stats
+<P>
+
+
+
+
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="install.html"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

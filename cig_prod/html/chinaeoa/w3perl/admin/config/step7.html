@@ -1,0 +1,170 @@
+<HTML><head>
+<title>W3Perl Forms- Step 7</TITLE>
+</head>
+
+<BODY BACKGROUND="<!-- BG -->" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<FORM METHOD=POST ACTION="<!-- cgiurl -->/confstat.pl">
+
+<INPUT NAME="step" VALUE="7" TYPE="HIDDEN">
+
+<!-- HIDDEN -->
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="<!-- LINE -->" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Configuration - Step 7</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD ALIGN=CENTER VALIGN=TOP>
+
+
+
+ </TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD>
+
+Few more options to affine your output.
+
+</TD>
+</TR>
+<TR><TD BGCOLOR="#AAAAAA" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Display options</FONT></I>
+</TD>
+<TD VALIGN=TOP BGCOLOR="#DDDDDD">
+
+<TABLE WIDTH=100% BORDER=0>
+<TR><TD>
+URL Mapping
+</TD><TD>
+<INPUT NAME="titlename" TYPE="radio" VALUE="1"> Yes
+<INPUT NAME="titlename" TYPE="radio" VALUE="0"> No
+</TD></TR>
+<TR>
+<TD COLSPAN=2>
+<FONT SIZE=-1>
+<I>(You will have the name of the html file (title) instead of the URL, you
+will need to launch cron-url)</I>
+</FONT>
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR><TD>
+Default homepage
+</TD><TD>
+<INPUT NAME="defaulthomepage" SIZE=15 TYPE="text" VALUE="">
+</TD></TR>
+<TR>
+<TD>
+<FONT SIZE=-1>
+<I>(The name of the file called when accessing a directory<BR>
+Leave this field blank if your URL doesn't contains a tilde (~))</I>
+</FONT>
+</TD>
+<TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>/chinaeoa/index.jsp
+<OPTION>default.htm
+</SELECT>
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+
+<TR><TD>
+User alias
+</TD><TD>
+<INPUT NAME="tildealias" SIZE=15 TYPE="text" VALUE="">
+</TD></TR>
+<TR>
+<TD>
+<FONT SIZE=-1>
+<I>(The directory name user can stored their own HTML files)</I>
+</FONT>
+</TD>
+<TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>public_html
+<OPTION>www
+</SELECT>
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+
+<TR><TD>
+Reverse DNS :
+</TD><TD>
+<INPUT NAME="reversedns" TYPE="radio" VALUE="1"> Yes
+<INPUT NAME="reversedns" TYPE="radio" VALUE="0"> No
+</TD></TR>
+<TR>
+<TD COLSPAN=2>
+<FONT SIZE=-1>
+<I>(Will convert IP address to WWW nameserver but slow !)</I>
+</FONT>
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+
+<TR><TD>
+Path of your yellow file :
+</TD><TD>
+<INPUT NAME="yellowfile" SIZE=15 TYPE="text" VALUE="">
+</TD></TR>
+<TR>
+<TD>
+<FONT SIZE=-1>
+<I>(Name server resource for a local network)</I>
+</FONT>
+</TD>
+<TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>-
+<OPTION>/usr/local/nis (Unix)
+</SELECT>
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+
+<TR><TD>
+Graphic traffic graph :
+</TD><TD>
+<SELECT NAME="optdirsize">
+</SELECT>
+</TD></TR>
+<TR>
+<TD COLSPAN=2>
+<FONT SIZE=-1>
+<I>(The graph will show you HTML or all files traffic for external, local or
+both)</I>
+</FONT>
+</TD></TR>
+</TABLE>
+
+</TD>
+</TR>
+
+
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD>
+
+<CENTER>
+<INPUT TYPE="SUBMIT" VALUE="Submit">
+<INPUT TYPE="RESET" VALUE="Reset">
+</CENTER>
+</TD>
+
+</TR>
+</TABLE>
+
+</FORM>
+
+</body>
+</html>

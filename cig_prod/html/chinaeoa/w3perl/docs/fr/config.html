@@ -1,0 +1,280 @@
+<HTML><head>
+<title>W3Perl Configuration - FR</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Configuration</H1></FONT>
+<BR><BR>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD VALIGN=TOP>
+Si vous avez un r&eacute;pertoire cgi-bin, utilisez le formulaire
+disponible dans /DIR_STAT/admin/ pour g&eacute;n&eacute;rer votre
+fichier de configuration.<BR>
+Notez que si vous utilisez cette interface, il n'est pas n&eacute;cessaire
+de remplir tous les champs si vous ne d&eacute;sirer modifier un fichier
+de configuration d&eacute;j&egrave; existant. S&eacute;lectionner 'upgrade'
+&agrave; la place.
+<P>
+
+Les personnes n'ayant pas de r&eacute;pertoire cgi-bin doivent &eacute;diter
+le fichier config.pl. <BR>
+
+Ne mettez jamais en commentaire les variables utilis&eacute;es. Si vous
+ignorez quelle valeur donn&eacute;e, ne changez rien. L'application a
+besoin de connaitre les valeurs associ&eacute;es &agrave; ces variables.
+<P>
+Quelques fichiers de configuration sont fournis dans le r&eacute;pertoire
+
+/docs/conf/ pour NT, Archimedes et Mac (les derniers &eacute;tant un peu 
+obsol&egrave;tes). En cas de probl&egrave;me, n'h&eacute;sitez pas &agrave;
+me contacter en m'envoyant votre fichier de configuration, je pourrais ainsi
+v&eacute;rifier vos valeurs.
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Fichier de log</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+<LI>$type_serveur : type de serveur utilis&eacute;<br>
+(Eg : $type_serveur = 0 sous Unix)
+<P>
+<LI>$dirsep : caract&egrave;re qui s&eacute;pare les chemins<br>
+(Eg : $dirsep = "/" sous Unix)
+<P>
+<LI>$htmlext : extension HTML<br>
+(Eg : $htmlext = ".html" sous Unix)
+<P>
+<LI>$gifext : extension GIF<br>
+(Eg : $gifext = ".gif" sous Unix)
+<P>
+<LI>$plext : extension Perl<br>
+(Eg : $plext = ".pl" sous Unix)
+<P>
+<LI>$zipext : extension de compression<br>
+(Eg : $zipext = ".gz" sous Unix)
+<P>
+<LI>$struct_logfile : format du fichier de log<br> Otez le commentaire en face de celui que vous allez utiliser.<BR>
+(Eg : $struct_logfile = "%host %null %login %date %hourshift %method %page %protocol %status %requetesize" pour un fichier au format CLF)
+<P>
+<LI>$struct_compressed_logfile : format du nom du fichier de log<br>
+(Eg : $struct_compressed_logfile = "%year.%month.%day.%prefixlog" pour
+un fichier de log tel que 1998.03.20.access_log)
+
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Initialisation</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+Vous devez initialiser ces variables pour ajuster le fonctionnement de w3perl<P>
+<P>
+<LI>$path est le chemin complet o&ugrave; seront stcok&eacute;s les fichiers de sortie<br>
+(Eg : $path = "/export/home/www/htdocs/w3perl/")
+<P>
+<LI>$pathinit est le chemin complet du r&eacute;pertoire w3perl (emplacement o&ugrave; l'application a &ecute;t&eacute; install&eacute;e)<br>
+(Eg : $pathinit = "/export/home/www/htdocs/w3perl/")
+<P>
+<LI>$linkpathinit est l'URL en absolu vers le r&eacute;pertoire w3perl depuis la racine du serveur<br>
+(Eg : $linkpathinit = "/w3perl/")
+<P>
+<LI>$pathserver est le chemin complet o&ugrave; sont stcok&eacute;s les fichiers de votre serveur Web<br>
+(Eg : $pathserver = "/export/home/www/htdocs/")
+<P>
+<LI>$linkpathserver est le chemin relatif o&ugrave; sont stcok&eacute;s les fichiers de votre serveur Web<br>
+Usually $linkpathserver is / except for personal pages<br>
+(Eg : $linkpathserver = "/")
+<P>
+<LI>$cgipath est le chemin complet o&ugrave; se trouve votre r&eacute;pertoire cgi-bin<br>
+(Eg : $cgipath = "/export/home/www/cgi-bin/")
+<P>
+<LI>$fileroot est le chemin complet du r&eacute;pertoire contenant vos fichiers de log<br>
+(Eg : $fileroot = "/export/home/www/apache/logs/";
+<P>
+<LI>$prefixlog est le nom de votre fichier de log ou sa partie constante (situ&eacute; dans $fileroot)
+<br>en g&eacute;n&eacute;ral 'access_log' pour un serveur Apache ou NCSA et 'httpd-log' pour un serveur CERN<br>
+(Eg : $prefixlog = "access_log")
+<P>
+<LI>$referlog est le nom de votre fichier de r&eacute;f&eacute;rence (situ&eacute; dans $fileroot)
+<br>si ce fichier n'existe pas, ne modifier rien.<br>
+(Eg : $referlog = "referer_log")
+<P>
+<LI>$agentlog est le nom du fichier de fureteur (situ&eacute; dans $fileroot)
+<br>si ce fichier n'existe pas, ne modifier rien.<br>
+(Eg : $agentlog = "agent_log")
+<P>
+<LI>$errorlog est le nom de fichier d'erreur (situ&eacute; dans $fileroot)
+<br>si ce fichier n'existe pas, ne modifier rien.<br>
+(Eg : $errorlog = "error_log")
+<P>
+<LI>Chemin complet pour vos applications gzip/zip et fly
+<br>Ex&eacute;cutez 'whereis &lt;command&gt;' ou 'which &lt;command&gt;' pour connaitre ce chemin.<br>
+N'effacez pas l'option '-dc' pour gzip !<br>
+(Eg : $GZIP = "/opt/bin/gzip -dc" sous Unix ou $GZIP = "d:\\bin\\unzip" sous NT)
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Sortie</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+Vous devez initialiser ces variables pour configurer de w3perl<P>
+<LI>$localserver est le nom de votre serveur Web<br>
+(Eg : $localserver = "www.orstom.fr")
+<P>
+<LI>$tri est utilis&eacute; pour filtrer un r&eacute;pertoire de votre fichier de log<br>
+(Eg : $tri = "/sousr&eacute;pertoire/")
+<P>
+<LI>$nolog pour ne pas tenir compte de certaines machines sur le Net<br>
+(Eg : @nolog = ('194.51.174','.grolier.') exclus 194.51.174.* et 
+toutes les machines provenant du domaine grolier)
+<P>
+<A NAME="selection">
+<LI>@selection : liste de pages HTML avec des stats d&eacute;taill&eacute;es ... &eacute;vitez d'en mettre trop !<br>
+(Eg : @selection = ('/raydream//chinaeoa/index.jsp'))
+<P>
+<LI>@selecrepert : sortie graphique pour ces sous r&eacute;pertoires, ils doivent se situer au m&ecirc;me niveau d'arborescence<br>
+(Eg : @selecrepert = ('/raydream/','/astro/'))
+<P>
+<LI>@excluderepert : exclus des stats ces sous r&eacute;pertoires<br>
+(Eg : @excluderepert = ('/private/'))
+<P>
+<LI>$precision configure le niveau de <A HREF="accuracy.html">pr&eacute;cision</A><br>
+(Eg : $precision = 1 &agrave; 4)
+<P>
+<LI>$locallog si vous d&eacute;sirez avoir des stats sur votre domaine local<br>
+(Eg : $locallog = 1 tiendra compte de votre domaine local)
+<P>
+<LI>$localonly si vous ne d&eacute;sirez des stats QUE sur votre domaine local<br>
+(Eg : $locallog = 1 ne tiendra compte que des acc&egrave;s depuis votre domaine local)
+<P>
+<LI>$zip utilise un fichier de log ou des fichiers de log compress&eacute;s (voir <A HREF="newhttpd.html">squeezelog</A>)<br>
+(Eg : $zip = 0 pour un seul fichier ou $zip = 1 pour des fichiers compress&eacute;s)
+<P>
+<LI>$zipcut utilise des fichiers compress&eacute;s mensuellement (1) ou quotidiennement (2)<br>
+(Eg : $zipcut = 0)
+<P>
+<LI>$topten nombre affich&eacute; pour les meilleurs de chaque cat&eacute;gorie<br>
+(Eg : $topten = 10)
+<P>
+<LI>$seuilpage : n'affiche que les pages avec plus de $seuilpage requ&ecirc;tes.<br>
+Cela permet d'&eacute;viter d'avoir des pages de sortie trop lourdes.
+(Eg : $seuilpage = 100)
+<P>
+<LI>$seuilsite : n'affiche que les sites avec plus de $seuilsite requ&ecirc;tes<br>
+(Eg : $seuilsite = 9 pour afficher les sites avec 10 acc&egrave;s et plus)
+<P>
+<LI>$seuilscript : n'affiche que les scripts avec plus de $seuilscript requ&ecirc;tes<br>
+(Eg : $seuilscript = 5 pour afficher les scripts avec plus de 5 requ&ecirc;tes)
+<P>
+<LI>$seuilrepert : n'affiche que les r&eacute;pertoires avec plus de $seuilrepert requ&ecirc;tes<br>
+(Eg : $seuilrepert = 0 pour voir tous les r&eacute;pertoires)
+<P>
+<LI>$optdirsize : pour choisir le type de graphe pour le traffic sur les sous r&eacute;pertoires<br>
+1-2-3 html (total, externe, local)<br>
+4-5-6 tout  (total, externe, local)<br>
+(Eg : $optdirsize = 4 montre le traffic pour les acc&egrave;s externe et interne (HTML, GIF...))
+<P>
+
+<LI>$nbdays : nombre de jours pour les graphes (0 pour une ann&eacute;e)<br>
+(Eg : $nbdays = 50)
+<P>
+<LI>$virtualserver : permet de filtrer un serveur virtuel dans un fichier
+au format NECLF (s'applique uniquement avec les fichiers de log NECLF)<br>
+(Eg : $virtualserver = "www.detector.com")
+<P>
+<LI>$defaulthomepage : la page HTML par d&eacute;faut sur votre serveur<br>
+(Eg : $defaulthomepage = "index" (la plupart du temps))
+<P>
+<LI>$titlename : convertit les URL en une chaine qui se trouve dans le titre du fichier HTML<br>
+(Eg : $titlename = 1 si actif)
+<P>
+<LI>Ne tient compte que des fichiers avec ces extensions<br>
+(Eg : @extension = ('html','htm')) <br>
+(Eg : @extensionimage = ('gif','jpg','jpeg'))<br>
+<P>
+<LI>$localdomaine : ajoutez ici les machines avec leur IP appartenant &agrave; votre domaine (si ces machines n'ont pas de reverse DNS)<br>
+(Eg : $localdomaine = "$localdomainename|^145\.238\.44\.[4567]" les machines issus des IP 145.238.44.4 &agrave; 7 sont consid&eacute;r&eacute;s comme locals)
+<P>
+<LI>$mailadr : votre adresse email.<br>
+Si certaines personnes veulent des infos pr&eacute;cises sur certaines
+de leurs pages, ajoutez leur URL dans <A HREF="#selection">@selection</A> 
+au niveau du fichier de configuration<br>
+(Eg : $mailadr = "webmaster\@hplyot.obspm.fr")
+<P>
+<LI>$tildealias : l'alias utilis&eacute; par le serveur pour servir les pages personnels de vos utilisateurs<br>
+(Eg : $tildealias = "public_html" ou "www")
+<P>
+<LI>$yellowfile : utile uniquement si vous utilisez les pages jaunes sur votre NIS dans le cas d'intranet<br>
+(Eg : $yellowfile = "" n'utilise pas les pages jaunes)
+<P>
+<LI>$reverse_dns : conversion des adresses IP en nom de machine (<B>ATTENTION</B> : tr&egrave;s lent !!!)<br>
+(Eg : $reverse_dns = 1 est actif)
+<P>
+<LI>@lang : vos langages de sortie<br>
+(Eg : @lang = ('uk') pour une sortie uniquement en anglais)
+<P>
+<LI>@homepages : les noms de fichiers pour ces diff&eacute;rents langages<br>
+Vous devez avoir le m&ecirc;me nombre d'&eacute;l&eacute;ments que dans la
+variable @lang<br>
+(Eg : @lang = ('index') si vous ne choississez qu'une seule langue)
+<P>
+<LI>$frame_updown : choississez entre un affichage horizontale ou verticale des frames<br>
+(Eg : $frame_updown = 1 frames haut-bas)
+<P>
+<LI>$topframelinks : configure le lien situ&eacute; dans la frame du haut<br>
+(Eg : $topframelinks = "My_server")
+<P>
+<LI>$bargraph $tridim $linegraph $fillgraph : donnez une valeur &agrave; 1 pour le type de graphes (barres, barres 3D, lignes, lignes remplies)<br>
+(Eg : $tridim = 1)
+<P>
+<LI>$custom_text : couleur du texte<br>
+(Eg : $custom_text = "#000000" texte en noir)
+<P>
+<LI>$custom_link : couleur des liens<br>
+(Eg : $custom_link = "#000080")
+<P>
+<LI>$custom_vlink : couleur des liens visit&eacute;s<br>
+(Eg : $custom_vlink = "#800000")
+<P>
+<LI>$background : choississez une image de fond<br>
+Ce fichier de fond doit se situer dans le r&eacute;pertoire /w3perl/resources/ ou utilisez un lien symbolique<br>
+(Eg : $background = "background.gif")
+<P>
+<P>
+<LI>$backgrd : choix d'une image de fonds ou d'une couleur de fonds<br>
+Otez les commentaires dans le cas du choix d'une image de fonds<br>
+(Eg : $backgrd = "BACKGROUND=\"$background\"")
+
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="install.html"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

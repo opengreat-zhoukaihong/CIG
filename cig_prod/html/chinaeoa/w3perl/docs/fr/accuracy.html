@@ -1,0 +1,146 @@
+<HTML><head>
+<title>W3Perl - niveau de precision - FR</title>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Niveau de pr&eacute;cision</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD VALIGN=TOP>
+Les r&eacute;sultats fournis par l'application d&eacute;pendront du niveau
+de pr&ecute;cision que vous choisirer. Plus la pr&eacute;cision sera &eacute;lev&eacute;e,
+plus le temps de calcul sera important.
+<BR>
+Le niveau de pr&eacute;cision est contenu dans la variable $precision. Vous
+pouvez augmenter sa valeur en cours du temps mais pas la dimninuer sans
+r&eacute;initialiser toutes les stats.
+<BR>
+Les machines utilisant des syst&egrave;mes d'exploitation ne g&eacute;rant pas
+les noms de fichiers longs ne doivent pas utiliser le mode de pr&eacute;cision 4 sauf
+si vous utilisez bien sur des programmes qui contournent ses limitations.
+<P>
+La plupart des serveurs utilisent le mode 3, n'utilisez le mode 4 que pour des sites
+avec un traffic faible.<BR>
+Les scripts optionnels (error, agent, refer, session et url) ont des sorties
+ind&eacute;pendante de la pr&eacute;cision choisie.
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+1>Simple</FONT><BR>
+<FONT SIZE=2>($precision = 1)</FONT>
+</TD>
+<TD VALIGN=TOP>
+Seul cron-inc est n&eacute;cessaire dans ce mode.<br>
+Auncune information sur l'&eacute;volution temporelle n'est donn&eacute;e.<br>
+la sortie ne consiste qu'en une page unique avec les informations suivantes :
+<UL>
+<LI> Les pages les plus lues.
+<LI> Les sites ayant acc&eacute;d&eacute;s le plus votre site
+<LI> Le nombre de sites, de pays et de requ&ecirc;tes
+</UL>
+ </TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+1>Minimal</FONT><BR>
+<FONT SIZE=2>($precision = 2)</FONT>
+</TD>
+<TD VALIGN=TOP>
+<LI>Stats sur les heures : seuls les acc&egrave;s sur les sites par heures et les meilleures pages sont affich&eacute;s.<br>
+<LI>Stats sur les jours : seul le graphe sur les requ&ecirc;tes est produit.<br>
+<LI>Stats sur les semaines : seul le graphe sur les requ&ecirc;tes est produit.<BR>
+<LI>Stats sur les mois : seul le graphe sur les requ&ecirc;tes est produit ainsi que les r&eacute;sum&eacute;s pour chaque mois.<BR>
+<LI>Stats sur les pages : seuls les pages lues et les sites sont affich&eacute;s. Auncun d&eacute;tail sur les sites.<BR>
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+1>Moyenne</FONT><BR>
+<FONT SIZE=2>($precision = 3)</FONT>
+</TD>
+<TD VALIGN=TOP>
+<LI>Stats sur les heures :
+<UL>
+                  <LI> Sites, pages HTML et traffic par heures
+                  <LI> Requ&ecirc;tes totales
+                  <LI> Liste des sites
+                  <LI> Les pages les plus lues
+                  <LI> Informations sur le traffic
+</UL>
+<LI>Stats sur les jours :
+<UL>
+                  <LI> Graphes sur les requ&ecirc;tes avec version texte
+                  <LI> Informations sur le traffic et les r&eacute;pertoires
+                  <LI> R&eacute;sum&eacute; jour par jour
+</UL>
+<LI>Stats sur les semaines :
+<UL>
+                  <LI> Graphes sur les requ&ecirc;tes avec version texte
+                  <LI> Graphes sur les sites avec version texte
+</UL>
+<LI>Stats sur les mois :
+<UL>
+                  <LI> Graphes sur les requ&ecirc;tes avec version texte
+                  <LI> Graphes sur les sites avec version texte
+                  <LI> R&eacute;sum&eacute; mois par mois
+</UL>
+<LI>Stats sur les pages :
+<UL> 
+                  <LI> Informations sur les pages lues
+                  <LI> Informations sur les sites
+                  <LI> Informations sur les r&eacute;pertoires
+                  <LI> Informations sur les pays et le domaine local
+</UL>
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+1>Elev&eacute;</FONT><BR>
+<FONT SIZE=2>($precision = 4)</FONT>
+</TD>
+<TD VALIGN=TOP>
+A utiliser que de temps en temps<br>
+<UL>
+<LI>Heures, jours, semaines et mois : idem au niveau 3<br>
+
+<LI>Stats sur les pages :
+<UL>
+                 <LI> Informations d&eacute;taill&eacute;es sur les pages lues (quand, quels sites, combien de fois)
+                 <LI> Informations d&eacute;taill&eacute;es sur les sites (pages lues par sites)
+                 <LI> Informations sur les r&eacute;pertoires
+                 <LI> Informations sur les pays et le domaine local
+</UL>
+</UL>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="/chinaeoa/index.jsp"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

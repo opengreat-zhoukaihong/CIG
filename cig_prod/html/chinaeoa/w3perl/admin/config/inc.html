@@ -1,0 +1,144 @@
+<HEAD>
+<TITLE>W3perl : Web Launch - Incremental stats</TITLE>
+
+<SCRIPT LANGUAGE="Javascript">
+
+var popup_help = null;
+
+function HelpDisplay(file,xwin,ywin) {
+        popup_help = window.open("","popDialog2","height="+ywin+",width="+xwin+",scrollbar=no")
+        popup_help.location.href="<!-- HELP -->/"+file+".html";
+        popup_help.document.close();
+        popup_help.focus();
+}
+
+
+</SCRIPT>
+
+</HEAD>
+
+<BODY BACKGROUND="<!-- BG -->" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="<!-- LINE -->" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Incremental stats</H1></FONT>
+</TD>
+</TR>
+
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD ALIGN=CENTER VALIGN=TOP>
+ </TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD>                   
+This script will update your main stats area. You can choose to alter
+few values as :
+
+</CENTER>
+
+<FORM METHOD=POST ACTION="<!-- cgiurl -->/runconf.pl">  
+
+<TABLE BORDER=0>
+<TR>
+<TH>&nbsp;</TH>
+<TH><FONT SIZE=-1>Flag</FONT></TH>
+<TH><FONT SIZE=-1>Description</FONT></TH>
+<TH><FONT SIZE=-1>Value</FONT></TH>
+</TR><TR>
+<!--
+<TD BGCOLOR="#D9D9D9"><FONT SIZE=-1><INPUT NAME="c" TYPE="checkbox" VALUE="1"></FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>-c &lt;file&gt;</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>load another configuration file</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1><INPUT TYPE="text" NAME="conf" VALUE=""></FONT></TD>
+</TR><TR>
+-->
+<TD BGCOLOR="#D9D9D9"><FONT SIZE=-1><INPUT NAME="s" TYPE="checkbox" VALUE="1"></FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>-s &lt;nbdays&gt;</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>scan for the nbdays previous days</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1><INPUT NAME="diffmax" TYPE="text" VALUE=""></FONT></TD>
+<TD BGCOLOR="#D9D9D9">
+<INPUT TYPE=BUTTON VALUE="Help" OnClick="HelpDisplay('inc','500','250')">
+</TD>
+</TR><TR>
+<TD BGCOLOR="#D9D9D9"><FONT SIZE=-1><INPUT NAME="i" TYPE="checkbox" VALUE="1"></FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>-i &lt;file&gt;</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>input logfile</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>
+<INPUT NAME="fileroot" TYPE="text" VALUE="">
+<INPUT NAME="prefixlog" SIZE="30" TYPE="text" VALUE=""></FONT>
+</TD>
+</TR><TR>
+<TD BGCOLOR="#D9D9D9"><FONT SIZE=-1><INPUT NAME="p" TYPE="checkbox" VALUE="1"></FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>-p</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>precision level</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>
+<INPUT NAME="precision" TYPE="radio" VALUE="1">&nbsp;minimal
+<INPUT NAME="precision" TYPE="radio" VALUE="2">&nbsp;basic
+<INPUT NAME="precision" TYPE="radio" VALUE="3">&nbsp;medium
+<INPUT NAME="precision" TYPE="radio" VALUE="4">&nbsp;high</FONT>
+</TD>
+</TR><TR>
+<TD BGCOLOR="#D9D9D9"><FONT SIZE=-1><INPUT NAME="l" TYPE="checkbox" VALUE="1"></FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>-l</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>language output</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>
+<INPUT NAME="fr" TYPE="checkbox" VALUE="1">&nbsp;french
+<INPUT NAME="uk" TYPE="checkbox" VALUE="1">&nbsp;english
+<INPUT NAME="nl" TYPE="checkbox" VALUE="1">&nbsp;dutch
+<INPUT NAME="jp" TYPE="checkbox" VALUE="1">&nbsp;japanese
+<INPUT NAME="sp" TYPE="checkbox" VALUE="1">&nbsp;spanish
+<INPUT NAME="fi" TYPE="checkbox" VALUE="1">&nbsp;finnish
+<INPUT NAME="de" TYPE="checkbox" VALUE="1">&nbsp;german</FONT>
+</TD>
+</TR><TR>
+<TD BGCOLOR="#D9D9D9"><FONT SIZE=-1><INPUT NAME="j" TYPE="checkbox" VALUE="1"></FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>-j &lt;date&gt;</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>stats for dd/Mmm/yyyy</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>
+<INPUT NAME="r1" SIZE=2 MAXLENGTH=2 TYPE="text" VALUE="">
+/
+<INPUT NAME="r2" SIZE=3 MAXLENGTH=3 TYPE="text" VALUE="">
+/
+<INPUT NAME="r3" SIZE=4 MAXLENGTH=4 TYPE="text" VALUE=""></FONT>
+</TD>
+</TR><TR>
+<TD BGCOLOR="#D9D9D9"><FONT SIZE=-1><INPUT NAME="t" TYPE="checkbox" VALUE="1"></FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>-t</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>Display toplist files</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1><INPUT NAME="topten" TYPE="text" VALUE=""></FONT></TD>
+<!--
+</TR><TR>
+<TD BGCOLOR="#D9D9D9"><FONT SIZE=-1><INPUT NAME="z" TYPE="checkbox" VALUE="1"><</FONT>/TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>-z <file></FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>Use compressed logfile</FONT></TD>
+<TD BGCOLOR="#C0C0C0"><FONT SIZE=-1>
+<INPUT NAME="zip" TYPE="radio" VALUE="1">&nbsp;Yes
+<INPUT NAME="zip" TYPE="radio" VALUE="0">&nbsp;No</FONT>
+</TD>
+-->
+</TR>
+</TABLE>
+<FONT SIZE=-1>
+
+<P>
+<!-- hidden -->
+
+<P><CENTER>
+<INPUT TYPE="submit" NAME="Submit" VALUE="Go">    
+</CENTER>
+</FONT>
+
+
+</FORM>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+</BODY>
+</HTML>

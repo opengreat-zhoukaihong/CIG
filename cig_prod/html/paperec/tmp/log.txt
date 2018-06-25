@@ -1,0 +1,795 @@
+Tue Nov 07 17:36:07 CST 2000: ??·¨×??áJDBC???????ò: oracle.jdbc.driver.OracleDriver, ?í?ó: java.lang.ClassNotFoundException: oracle.jdbc.driver.OracleDriver
+Tue Nov 07 17:36:07 CST 2000: ???????¨??????cneoa
+Tue Nov 07 17:36:07 CST 2000: ??·¨???¨????URL??????: jdbc:odbc:cneoa
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.dreamerland.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cig.chinaeoa.LookUpBean.<init>(LookUpBean.java:24)
+	at java.lang.Class.newInstance0(Native Method)
+	at java.lang.Class.newInstance(Unknown Source)
+	at java.beans.Beans.instantiate(Unknown Source)
+	at _0002findex_0002ejspindex_jsp_1._jspService(_0002findex_0002ejspindex_jsp_1.java, Compiled Code)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java, Compiled Code)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java, Compiled Code)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Unknown Source)
+Tue Nov 07 17:36:07 CST 2000: ??·¨???¨????URL??????: jdbc:odbc:cneoa
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.dreamerland.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cig.chinaeoa.ResultBean.<init>(ResultBean.java:24)
+	at java.lang.Class.newInstance0(Native Method)
+	at java.lang.Class.newInstance(Unknown Source)
+	at java.beans.Beans.instantiate(Unknown Source)
+	at _0002findex_0002ejspindex_jsp_1._jspService(_0002findex_0002ejspindex_jsp_1.java, Compiled Code)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java, Compiled Code)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java, Compiled Code)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Unknown Source)
+Tue Nov 07 17:37:36 CST 2000: ??·¨???¨????URL??????: jdbc:odbc:cneoa
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.dreamerland.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cig.chinaeoa.ResultBean.<init>(ResultBean.java:24)
+	at java.lang.Class.newInstance0(Native Method)
+	at java.lang.Class.newInstance(Unknown Source)
+	at java.beans.Beans.instantiate(Unknown Source)
+	at _0002fProductCentre_0002ejspProductCentre_jsp_1._jspService(_0002fProductCentre_0002ejspProductCentre_jsp_1.java, Compiled Code)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java, Compiled Code)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java, Compiled Code)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java, Compiled Code)
+	at java.lang.Thread.run(Unknown Source)
+Tue Nov 07 17:37:36 CST 2000: ??·¨???¨????URL??????: jdbc:odbc:cneoa
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.dreamerland.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cig.chinaeoa.LookUpBean.<init>(LookUpBean.java:24)
+	at java.lang.Class.newInstance0(Native Method)
+	at java.lang.Class.newInstance(Unknown Source)
+	at java.beans.Beans.instantiate(Unknown Source)
+	at _0002fProductCentre_0002ejspProductCentre_jsp_1._jspService(_0002fProductCentre_0002ejspProductCentre_jsp_1.java, Compiled Code)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java, Compiled Code)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java, Compiled Code)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java, Compiled Code)
+	at java.lang.Thread.run(Unknown Source)
+Tue Nov 07 17:42:53 CST 2000: ??·¨×??áJDBC???????ò: oracle.jdbc.driver.OracleDriver, ?í?ó: java.lang.ClassNotFoundException: oracle.jdbc.driver.OracleDriver
+Tue Nov 07 17:42:53 CST 2000: ???????¨??????cneoa
+Tue Nov 07 17:42:53 CST 2000: ??·¨???¨????URL??????: jdbc:odbc:cneoa
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.dreamerland.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cig.chinaeoa.LookUpBean.<init>(LookUpBean.java:24)
+	at java.lang.Class.newInstance0(Native Method)
+	at java.lang.Class.newInstance(Unknown Source)
+	at java.beans.Beans.instantiate(Unknown Source)
+	at _0002findex_0002ejspindex_jsp_1._jspService(_0002findex_0002ejspindex_jsp_1.java, Compiled Code)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java, Compiled Code)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java, Compiled Code)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Unknown Source)
+Tue Nov 07 17:42:53 CST 2000: ??·¨???¨????URL??????: jdbc:odbc:cneoa
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.dreamerland.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cig.chinaeoa.ResultBean.<init>(ResultBean.java:24)
+	at java.lang.Class.newInstance0(Native Method)
+	at java.lang.Class.newInstance(Unknown Source)
+	at java.beans.Beans.instantiate(Unknown Source)
+	at _0002findex_0002ejspindex_jsp_1._jspService(_0002findex_0002ejspindex_jsp_1.java, Compiled Code)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java, Compiled Code)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java, Compiled Code)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Unknown Source)
+Tue Nov 07 17:43:06 CST 2000: ??·¨???¨????URL??????: jdbc:odbc:cneoa
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.dreamerland.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cig.chinaeoa.LookUpBean.<init>(LookUpBean.java:24)
+	at java.lang.Class.newInstance0(Native Method)
+	at java.lang.Class.newInstance(Unknown Source)
+	at java.beans.Beans.instantiate(Unknown Source)
+	at _0002fProductSearch_0002ejspProductSearch_jsp_0._jspService(_0002fProductSearch_0002ejspProductSearch_jsp_0.java, Compiled Code)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java, Compiled Code)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java, Compiled Code)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Unknown Source)
+Tue Nov 07 17:43:06 CST 2000: ??·¨???¨????URL??????: jdbc:odbc:cneoa
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.dreamerland.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cig.chinaeoa.ResultBean.<init>(ResultBean.java:24)
+	at java.lang.Class.newInstance0(Native Method)
+	at java.lang.Class.newInstance(Unknown Source)
+	at java.beans.Beans.instantiate(Unknown Source)
+	at _0002fProductSearch_0002ejspProductSearch_jsp_0._jspService(_0002fProductSearch_0002ejspProductSearch_jsp_0.java, Compiled Code)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java, Compiled Code)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java, Compiled Code)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Unknown Source)
+Tue Nov 07 17:43:06 CST 2000: ??·¨???¨????URL??????: jdbc:odbc:cneoa
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.dreamerland.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cig.chinaeoa.LookUpBean.<init>(LookUpBean.java:24)
+	at java.lang.Class.newInstance0(Native Method)
+	at java.lang.Class.newInstance(Unknown Source)
+	at java.beans.Beans.instantiate(Unknown Source)
+	at _0002fProductSearch_0002ejspProductSearch_jsp_0._jspService(_0002fProductSearch_0002ejspProductSearch_jsp_0.java, Compiled Code)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java, Compiled Code)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java, Compiled Code)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Unknown Source)
+Tue Nov 07 17:43:22 CST 2000: ??·¨???¨????URL??????: jdbc:odbc:cneoa
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.dreamerland.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cig.chinaeoa.LookUpBean.<init>(LookUpBean.java:24)
+	at java.lang.Class.newInstance0(Native Method)
+	at java.lang.Class.newInstance(Unknown Source)
+	at java.beans.Beans.instantiate(Unknown Source)
+	at java.beans.Beans.instantiate(Unknown Source)
+	at _0002fOrderOnLine_0002ejspOrderOnLine_jsp_0._jspService(_0002fOrderOnLine_0002ejspOrderOnLine_jsp_0.java:71)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java, Compiled Code)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java, Compiled Code)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Unknown Source)
+Tue Nov 07 17:43:27 CST 2000: ??·¨???¨????URL??????: jdbc:odbc:cneoa
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.dreamerland.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cig.chinaeoa.ResultBean.<init>(ResultBean.java:24)
+	at java.lang.Class.newInstance0(Native Method)
+	at java.lang.Class.newInstance(Unknown Source)
+	at java.beans.Beans.instantiate(Unknown Source)
+	at java.beans.Beans.instantiate(Unknown Source)
+	at _0002fMyEoa_0002ejspMyEoa_jsp_0._jspService(_0002fMyEoa_0002ejspMyEoa_jsp_0.java:73)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java, Compiled Code)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java, Compiled Code)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Unknown Source)
+Tue Nov 07 17:43:33 CST 2000: ??·¨???¨????URL??????: jdbc:odbc:cneoa
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.dreamerland.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cig.chinaeoa.LookUpBean.<init>(LookUpBean.java:24)
+	at java.lang.Class.newInstance0(Native Method)
+	at java.lang.Class.newInstance(Unknown Source)
+	at java.beans.Beans.instantiate(Unknown Source)
+	at _0002findex_0002ejspindex_jsp_1._jspService(_0002findex_0002ejspindex_jsp_1.java, Compiled Code)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java, Compiled Code)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java, Compiled Code)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Unknown Source)
+Tue Nov 07 17:43:33 CST 2000: ??·¨???¨????URL??????: jdbc:odbc:cneoa
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.dreamerland.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cig.chinaeoa.ResultBean.<init>(ResultBean.java:24)
+	at java.lang.Class.newInstance0(Native Method)
+	at java.lang.Class.newInstance(Unknown Source)
+	at java.beans.Beans.instantiate(Unknown Source)
+	at _0002findex_0002ejspindex_jsp_1._jspService(_0002findex_0002ejspindex_jsp_1.java, Compiled Code)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java, Compiled Code)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java, Compiled Code)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Unknown Source)
+Tue Nov 07 17:43:36 CST 2000: ??·¨???¨????URL??????: jdbc:odbc:cneoa
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.dreamerland.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cig.chinaeoa.ResultBean.<init>(ResultBean.java:24)
+	at java.lang.Class.newInstance0(Native Method)
+	at java.lang.Class.newInstance(Unknown Source)
+	at java.beans.Beans.instantiate(Unknown Source)
+	at _0002fProductCentre_0002ejspProductCentre_jsp_1._jspService(_0002fProductCentre_0002ejspProductCentre_jsp_1.java, Compiled Code)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java, Compiled Code)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java, Compiled Code)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Unknown Source)
+Tue Nov 07 17:43:36 CST 2000: ??·¨???¨????URL??????: jdbc:odbc:cneoa
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.dreamerland.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cig.chinaeoa.LookUpBean.<init>(LookUpBean.java:24)
+	at java.lang.Class.newInstance0(Native Method)
+	at java.lang.Class.newInstance(Unknown Source)
+	at java.beans.Beans.instantiate(Unknown Source)
+	at _0002fProductCentre_0002ejspProductCentre_jsp_1._jspService(_0002fProductCentre_0002ejspProductCentre_jsp_1.java, Compiled Code)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java, Compiled Code)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java, Compiled Code)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Unknown Source)
+Tue Nov 07 17:43:38 CST 2000: ??·¨???¨????URL??????: jdbc:odbc:cneoa
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.dreamerland.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cig.chinaeoa.LookUpBean.<init>(LookUpBean.java:24)
+	at java.lang.Class.newInstance0(Native Method)
+	at java.lang.Class.newInstance(Unknown Source)
+	at java.beans.Beans.instantiate(Unknown Source)
+	at java.beans.Beans.instantiate(Unknown Source)
+	at _0002fOrderOnLine_0002ejspOrderOnLine_jsp_0._jspService(_0002fOrderOnLine_0002ejspOrderOnLine_jsp_0.java:71)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java, Compiled Code)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java, Compiled Code)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Unknown Source)
+Tue Nov 07 17:43:40 CST 2000: ??·¨???¨????URL??????: jdbc:odbc:cneoa
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.dreamerland.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cig.chinaeoa.ResultBean.<init>(ResultBean.java:24)
+	at java.lang.Class.newInstance0(Native Method)
+	at java.lang.Class.newInstance(Unknown Source)
+	at java.beans.Beans.instantiate(Unknown Source)
+	at _0002fProductCentre_0002ejspProductCentre_jsp_1._jspService(_0002fProductCentre_0002ejspProductCentre_jsp_1.java, Compiled Code)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java, Compiled Code)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java, Compiled Code)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Unknown Source)
+Tue Nov 07 17:43:40 CST 2000: ??·¨???¨????URL??????: jdbc:odbc:cneoa
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.dreamerland.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cig.chinaeoa.LookUpBean.<init>(LookUpBean.java:24)
+	at java.lang.Class.newInstance0(Native Method)
+	at java.lang.Class.newInstance(Unknown Source)
+	at java.beans.Beans.instantiate(Unknown Source)
+	at _0002fProductCentre_0002ejspProductCentre_jsp_1._jspService(_0002fProductCentre_0002ejspProductCentre_jsp_1.java, Compiled Code)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java, Compiled Code)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java, Compiled Code)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Unknown Source)
+Tue Nov 07 17:43:42 CST 2000: ??·¨???¨????URL??????: jdbc:odbc:cneoa
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.dreamerland.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cig.chinaeoa.member.AreaInfo.getDatas(AreaInfo.java:37)
+	at _0002fregistration_0002ejspregistration_jsp_1._jspService(_0002fregistration_0002ejspregistration_jsp_1.java, Compiled Code)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java, Compiled Code)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java, Compiled Code)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java:156)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java:338)
+	at java.lang.Thread.run(Unknown Source)
+Tue Nov 07 18:14:59 CST 2000: ??·¨???¨????URL??????: jdbc:odbc:cneoa
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.dreamerland.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cig.chinaeoa.LookUpBean.<init>(LookUpBean.java:24)
+	at java.lang.Class.newInstance0(Native Method)
+	at java.lang.Class.newInstance(Unknown Source)
+	at java.beans.Beans.instantiate(Unknown Source)
+	at _0002findex_0002ejspindex_jsp_1._jspService(_0002findex_0002ejspindex_jsp_1.java, Compiled Code)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java, Compiled Code)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java, Compiled Code)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java, Compiled Code)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java, Compiled Code)
+	at java.lang.Thread.run(Unknown Source)
+Tue Nov 07 18:15:00 CST 2000: ??·¨???¨????URL??????: jdbc:odbc:cneoa
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.dreamerland.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cig.chinaeoa.ResultBean.<init>(ResultBean.java:24)
+	at java.lang.Class.newInstance0(Native Method)
+	at java.lang.Class.newInstance(Unknown Source)
+	at java.beans.Beans.instantiate(Unknown Source)
+	at _0002findex_0002ejspindex_jsp_1._jspService(_0002findex_0002ejspindex_jsp_1.java, Compiled Code)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java, Compiled Code)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java, Compiled Code)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java, Compiled Code)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java, Compiled Code)
+	at java.lang.Thread.run(Unknown Source)
+Tue Nov 07 18:15:03 CST 2000: ??·¨???¨????URL??????: jdbc:odbc:cneoa
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.dreamerland.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cig.chinaeoa.LookUpBean.<init>(LookUpBean.java:24)
+	at java.lang.Class.newInstance0(Native Method)
+	at java.lang.Class.newInstance(Unknown Source)
+	at java.beans.Beans.instantiate(Unknown Source)
+	at _0002findex_0002ejspindex_jsp_1._jspService(_0002findex_0002ejspindex_jsp_1.java, Compiled Code)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java, Compiled Code)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java, Compiled Code)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java, Compiled Code)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java, Compiled Code)
+	at java.lang.Thread.run(Unknown Source)
+Tue Nov 07 18:15:03 CST 2000: ??·¨???¨????URL??????: jdbc:odbc:cneoa
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.dreamerland.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.dreamerland.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cig.chinaeoa.ResultBean.<init>(ResultBean.java:24)
+	at java.lang.Class.newInstance0(Native Method)
+	at java.lang.Class.newInstance(Unknown Source)
+	at java.beans.Beans.instantiate(Unknown Source)
+	at _0002findex_0002ejspindex_jsp_1._jspService(_0002findex_0002ejspindex_jsp_1.java, Compiled Code)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.jasper.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:174)
+	at org.apache.jasper.runtime.JspServlet.serviceJspFile(JspServlet.java:261)
+	at org.apache.jasper.runtime.JspServlet.service(JspServlet.java, Compiled Code)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at org.apache.tomcat.core.ServletWrapper.handleRequest(ServletWrapper.java, Compiled Code)
+	at org.apache.tomcat.core.ContextManager.service(ContextManager.java:559)
+	at org.apache.tomcat.service.connector.Ajp12ConnectionHandler.processConnection(Ajp12ConnectionHandler.java, Compiled Code)
+	at org.apache.tomcat.service.TcpConnectionThread.run(SimpleTcpEndpoint.java, Compiled Code)
+	at java.lang.Thread.run(Unknown Source)
+Fri Nov 17 14:03:26 CST 2000: 成功注册JDBC驱动程序oracle.jdbc.driver.OracleDriver
+Fri Nov 17 14:03:26 CST 2000: 成功创建连接池cnhotel
+Fri Nov 17 14:23:37 CST 2000: 成功注册JDBC驱动程序oracle.jdbc.driver.OracleDriver
+Fri Nov 17 14:23:37 CST 2000: 成功创建连接池cnhotel
+Fri Nov 17 14:25:11 CST 2000: 成功注册JDBC驱动程序oracle.jdbc.driver.OracleDriver
+Fri Nov 17 14:25:11 CST 2000: 成功创建连接池cnhotel
+Fri Nov 17 14:25:12 CST 2000: 连接池cnhotel创建一个新的连接
+Fri Nov 17 14:27:41 CST 2000: 连接池cnhotel创建一个新的连接
+Fri Nov 17 14:32:43 CST 2000: 无法关闭连接池cnhotel中的连接
+java.sql.SQLException: Descriptor not a socket: socket write error
+	at oracle.jdbc.dbaccess.DBError.check_error(DBError.java)
+	at oracle.jdbc.driver.OracleResultSet.internal_close(OracleResultSet.java)
+	at oracle.jdbc.driver.OracleStatement.close(OracleStatement.java)
+	at oracle.jdbc.driver.OracleConnection.close_statements(OracleConnection.java, Compiled Code)
+	at oracle.jdbc.driver.OracleConnection.close(OracleConnection.java)
+	at com.cig.db.DBConnectionManager$DBConnectionPool.release(DBConnectionManager.java, Compiled Code)
+	at com.cig.db.DBConnectionManager.release(DBConnectionManager.java, Compiled Code)
+	at com.cnbooking.hotel.Database.closeConection(Database.java:54)
+	at com.cnbooking.hotel.Database.finalize(Database.java:60)
+	at java.lang.ref.Finalizer.invokeFinalizeMethod(Native Method)
+	at java.lang.ref.Finalizer.runFinalizer(Finalizer.java:90)
+	at java.lang.ref.Finalizer.access$1(Finalizer.java:82)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:175)
+Fri Nov 17 14:32:43 CST 2000: 关闭连接池cnhotel中的一个连接
+Fri Nov 17 14:32:44 CST 2000: 撤销JDBC驱动程序 oracle.jdbc.driver.OracleDriver的注册
+Fri Nov 17 14:32:52 CST 2000: 从连接池cnhotel删除一个无效连接
+Fri Nov 17 14:32:52 CST 2000: 连接池cnhotel创建一个新的连接
+Fri Nov 17 14:33:49 CST 2000: 成功注册JDBC驱动程序oracle.jdbc.driver.OracleDriver
+Fri Nov 17 14:33:49 CST 2000: 成功创建连接池cnhotel
+Fri Nov 17 14:33:50 CST 2000: 连接池cnhotel创建一个新的连接
+Fri Nov 17 14:33:51 CST 2000: 关闭连接池cnhotel中的一个连接
+Fri Nov 17 14:33:51 CST 2000: 撤销JDBC驱动程序 oracle.jdbc.driver.OracleDriver的注册
+Fri Nov 17 15:37:39 CST 2000: 成功注册JDBC驱动程序oracle.jdbc.driver.OracleDriver
+Fri Nov 17 15:37:39 CST 2000: 成功创建连接池cnhotel
+Fri Nov 17 15:37:41 CST 2000: 连接池cnhotel创建一个新的连接
+Fri Nov 17 15:37:41 CST 2000: 连接池cnhotel创建一个新的连接
+Fri Nov 17 15:37:41 CST 2000: 关闭连接池cnhotel中的一个连接
+Fri Nov 17 15:37:41 CST 2000: 关闭连接池cnhotel中的一个连接
+Fri Nov 17 15:37:41 CST 2000: 撤销JDBC驱动程序 oracle.jdbc.driver.OracleDriver的注册
+Fri Nov 17 15:37:42 CST 2000: 连接池cnhotel创建一个新的连接
+Fri Nov 17 15:37:42 CST 2000: 关闭连接池cnhotel中的一个连接
+Fri Nov 17 15:37:42 CST 2000: 撤销JDBC驱动程序 oracle.jdbc.driver.OracleDriver的注册
+Fri Nov 17 15:48:40 CST 2000: 成功注册JDBC驱动程序oracle.jdbc.driver.OracleDriver
+Fri Nov 17 15:48:40 CST 2000: 成功创建连接池cnhotel
+Fri Nov 17 15:48:41 CST 2000: 连接池cnhotel创建一个新的连接
+Fri Nov 17 15:48:42 CST 2000: 关闭连接池cnhotel中的一个连接
+Fri Nov 17 15:48:42 CST 2000: 撤销JDBC驱动程序 oracle.jdbc.driver.OracleDriver的注册
+Fri Nov 17 15:48:42 CST 2000: 连接池cnhotel创建一个新的连接
+Fri Nov 17 15:48:42 CST 2000: 关闭连接池cnhotel中的一个连接
+Fri Nov 17 15:48:42 CST 2000: 撤销JDBC驱动程序 oracle.jdbc.driver.OracleDriver的注册
+Fri Nov 17 15:50:37 CST 2000: 从连接池cnhotel删除一个无效连接
+Fri Nov 17 15:50:37 CST 2000: 从连接池cnhotel删除一个无效连接
+Fri Nov 17 15:50:37 CST 2000: 连接池cnhotel创建一个新的连接
+Fri Nov 17 15:59:05 CST 2000: 成功注册JDBC驱动程序oracle.jdbc.driver.OracleDriver
+Fri Nov 17 15:59:05 CST 2000: 成功创建连接池cnhotel
+Fri Nov 17 15:59:06 CST 2000: 连接池cnhotel创建一个新的连接
+Fri Nov 17 15:59:06 CST 2000: 关闭连接池cnhotel中的一个连接
+Fri Nov 17 15:59:06 CST 2000: 撤销JDBC驱动程序 oracle.jdbc.driver.OracleDriver的注册
+Fri Nov 17 15:59:07 CST 2000: 连接池cnhotel创建一个新的连接
+Fri Nov 17 15:59:07 CST 2000: 关闭连接池cnhotel中的一个连接
+Fri Nov 17 15:59:07 CST 2000: 撤销JDBC驱动程序 oracle.jdbc.driver.OracleDriver的注册
+Fri Nov 17 16:01:20 CST 2000: 成功注册JDBC驱动程序oracle.jdbc.driver.OracleDriver
+Fri Nov 17 16:01:20 CST 2000: 成功创建连接池cnhotel
+Fri Nov 17 16:01:21 CST 2000: 连接池cnhotel创建一个新的连接
+Fri Nov 17 16:01:21 CST 2000: 关闭连接池cnhotel中的一个连接
+Fri Nov 17 16:01:21 CST 2000: 撤销JDBC驱动程序 oracle.jdbc.driver.OracleDriver的注册
+Fri Nov 17 16:04:32 CST 2000: 从连接池cnhotel删除一个无效连接
+Fri Nov 17 16:04:32 CST 2000: 连接池cnhotel创建一个新的连接
+Fri Nov 17 16:06:45 CST 2000: 成功注册JDBC驱动程序oracle.jdbc.driver.OracleDriver
+Fri Nov 17 16:06:45 CST 2000: 成功创建连接池cnhotel
+Fri Nov 17 16:06:46 CST 2000: 连接池cnhotel创建一个新的连接
+Fri Nov 17 16:06:46 CST 2000: 关闭连接池cnhotel中的一个连接
+Fri Nov 17 16:06:46 CST 2000: 撤销JDBC驱动程序 oracle.jdbc.driver.OracleDriver的注册
+Fri Nov 17 16:06:47 CST 2000: 连接池cnhotel创建一个新的连接
+Fri Nov 17 16:06:47 CST 2000: 关闭连接池cnhotel中的一个连接
+Fri Nov 17 16:06:47 CST 2000: 撤销JDBC驱动程序 oracle.jdbc.driver.OracleDriver的注册
+Fri Nov 17 16:06:55 CST 2000: 从连接池cnhotel删除一个无效连接
+Fri Nov 17 16:06:55 CST 2000: 从连接池cnhotel删除一个无效连接
+Fri Nov 17 16:06:55 CST 2000: 连接池cnhotel创建一个新的连接
+Fri Nov 17 16:21:04 CST 2000: 成功注册JDBC驱动程序oracle.jdbc.driver.OracleDriver
+Fri Nov 17 16:21:04 CST 2000: 成功创建连接池cnhotel
+Fri Nov 17 16:21:04 CST 2000: 成功创建连接池cneoa
+Fri Nov 17 16:21:04 CST 2000: 无法创建下列URL的连接: jdbc:odbc:eoamdf
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(DriverManager.java:477)
+	at java.sql.DriverManager.getConnection(DriverManager.java:137)
+	at com.cig.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.cig.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.cig.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cnbooking.hotel.Database.<init>(Database.java:23)
+	at java.lang.Class.newInstance0(Native Method)
+	at java.lang.Class.newInstance(Class.java, Compiled Code)
+	at java.beans.Beans.instantiate(Beans.java:211)
+	at E_0003a.n_00025w_0005fcnbooking.cnbooking.cnbooking.gb.index_jsp_11._jspService(index_jsp_11.java, Compiled Code)
+	at com.sun.jsp.runtime.HttpJspBase.service(HttpJspBase.java:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:840)
+	at com.sun.jsp.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:88)
+	at com.sun.jsp.runtime.JspServlet.serviceJspFile(JspServlet.java:218)
+	at com.sun.jsp.runtime.JspServlet.service(JspServlet.java:294)
+	at com.borland.jbuilder.runtime.JspLoaderEcho.service(Unknown Source)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:840)
+	at com.sun.web.core.ServletWrapper.handleRequest(ServletWrapper.java:155)
+	at com.sun.web.core.Context.handleRequest(Context.java:414)
+	at com.sun.web.server.ConnectionHandler.run(ConnectionHandler.java:139)
+Fri Nov 17 16:23:54 CST 2000: 无法创建下列URL的连接: jdbc:odbc:eoamdf
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(DriverManager.java:477)
+	at java.sql.DriverManager.getConnection(DriverManager.java:137)
+	at com.cig.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.cig.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.cig.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cnbooking.hotel.Database.<init>(Database.java:23)
+	at java.lang.Class.newInstance0(Native Method)
+	at java.lang.Class.newInstance(Class.java, Compiled Code)
+	at java.beans.Beans.instantiate(Beans.java:211)
+	at java.beans.Beans.instantiate(Beans.java:55)
+	at E_0003a.n_00025w_0005fcnbooking.cnbooking.cnbooking.gb.index_jsp_12._jspService(index_jsp_12.java:83)
+	at com.sun.jsp.runtime.HttpJspBase.service(HttpJspBase.java:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:840)
+	at com.sun.jsp.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:88)
+	at com.sun.jsp.runtime.JspServlet.serviceJspFile(JspServlet.java:218)
+	at com.sun.jsp.runtime.JspServlet.service(JspServlet.java:294)
+	at com.borland.jbuilder.runtime.JspLoaderEcho.service(Unknown Source)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:840)
+	at com.sun.web.core.ServletWrapper.handleRequest(ServletWrapper.java:155)
+	at com.sun.web.core.Context.handleRequest(Context.java:414)
+	at com.sun.web.server.ConnectionHandler.run(ConnectionHandler.java:139)
+Fri Nov 17 16:23:55 CST 2000: 无法创建下列URL的连接: jdbc:odbc:eoamdf
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getConnection(DriverManager.java:477)
+	at java.sql.DriverManager.getConnection(DriverManager.java:137)
+	at com.cig.db.DBConnectionManager$DBConnectionPool.newConnection(DBConnectionManager.java:390)
+	at com.cig.db.DBConnectionManager$DBConnectionPool.getConnection(DBConnectionManager.java:319)
+	at com.cig.db.DBConnectionManager.getConnection(DBConnectionManager.java:70)
+	at com.cnbooking.hotel.Database.<init>(Database.java:23)
+	at java.lang.Class.newInstance0(Native Method)
+	at java.lang.Class.newInstance(Class.java, Compiled Code)
+	at java.beans.Beans.instantiate(Beans.java:211)
+	at java.beans.Beans.instantiate(Beans.java:55)
+	at E_0003a.n_00025w_0005fcnbooking.cnbooking.cnbooking.gb.index_jsp_12._jspService(index_jsp_12.java:83)
+	at com.sun.jsp.runtime.HttpJspBase.service(HttpJspBase.java:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:840)
+	at com.sun.jsp.runtime.JspServlet$JspServletWrapper.service(JspServlet.java:88)
+	at com.sun.jsp.runtime.JspServlet.serviceJspFile(JspServlet.java:218)
+	at com.sun.jsp.runtime.JspServlet.service(JspServlet.java:294)
+	at com.borland.jbuilder.runtime.JspLoaderEcho.service(Unknown Source)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:840)
+	at com.sun.web.core.ServletWrapper.handleRequest(ServletWrapper.java:155)
+	at com.sun.web.core.Context.handleRequest(Context.java:414)
+	at com.sun.web.server.ConnectionHandler.run(ConnectionHandler.java:139)
+Fri Nov 17 16:35:59 CST 2000: 成功注册JDBC驱动程序sun.jdbc.odbc.JdbcOdbcDriver
+Fri Nov 17 16:35:59 CST 2000: 成功创建连接池cneoa
+Fri Nov 17 16:36:01 CST 2000: 连接池cneoa创建一个新的连接
+Fri Nov 17 16:36:01 CST 2000: 连接池cneoa创建一个新的连接
+Fri Nov 17 16:36:02 CST 2000: 关闭连接池cneoa中的一个连接
+Fri Nov 17 16:36:02 CST 2000: 关闭连接池cneoa中的一个连接
+Fri Nov 17 16:36:02 CST 2000: 撤销JDBC驱动程序 sun.jdbc.odbc.JdbcOdbcDriver的注册
+Fri Nov 17 16:36:02 CST 2000: 连接池cneoa创建一个新的连接
+Fri Nov 17 16:36:02 CST 2000: 关闭连接池cneoa中的一个连接
+Fri Nov 17 16:36:02 CST 2000: 撤销JDBC驱动程序 sun.jdbc.odbc.JdbcOdbcDriver的注册
+Fri Nov 17 16:37:45 CST 2000: 成功注册JDBC驱动程序sun.jdbc.odbc.JdbcOdbcDriver
+Fri Nov 17 16:37:45 CST 2000: 成功创建连接池cneoa
+Fri Nov 17 16:37:46 CST 2000: 连接池cneoa创建一个新的连接
+Fri Nov 17 16:37:46 CST 2000: 关闭连接池cneoa中的一个连接
+Fri Nov 17 16:37:46 CST 2000: 撤销JDBC驱动程序 sun.jdbc.odbc.JdbcOdbcDriver的注册
+Fri Nov 17 16:37:46 CST 2000: 连接池cneoa创建一个新的连接
+Fri Nov 17 16:37:46 CST 2000: 关闭连接池cneoa中的一个连接
+Fri Nov 17 16:37:46 CST 2000: 撤销JDBC驱动程序 sun.jdbc.odbc.JdbcOdbcDriver的注册
+Fri Nov 17 16:39:25 CST 2000: 成功注册JDBC驱动程序sun.jdbc.odbc.JdbcOdbcDriver
+Fri Nov 17 16:39:25 CST 2000: 成功创建连接池cneoa
+Fri Nov 17 16:39:26 CST 2000: 连接池cneoa创建一个新的连接
+Fri Nov 17 16:39:26 CST 2000: 关闭连接池cneoa中的一个连接
+Fri Nov 17 16:39:26 CST 2000: 撤销JDBC驱动程序 sun.jdbc.odbc.JdbcOdbcDriver的注册
+Fri Nov 17 16:39:26 CST 2000: 连接池cneoa创建一个新的连接
+Fri Nov 17 16:39:26 CST 2000: 关闭连接池cneoa中的一个连接
+Fri Nov 17 16:39:26 CST 2000: 撤销JDBC驱动程序 sun.jdbc.odbc.JdbcOdbcDriver的注册
+Fri Nov 17 16:47:33 CST 2000: 成功注册JDBC驱动程序sun.jdbc.odbc.JdbcOdbcDriver
+Fri Nov 17 16:47:33 CST 2000: 成功创建连接池cneoa
+Fri Nov 17 16:47:33 CST 2000: 连接池cneoa创建一个新的连接
+Fri Nov 17 16:47:34 CST 2000: 连接池cneoa创建一个新的连接
+Fri Nov 17 16:47:35 CST 2000: 关闭连接池cneoa中的一个连接
+Fri Nov 17 16:47:35 CST 2000: 关闭连接池cneoa中的一个连接
+Fri Nov 17 16:47:35 CST 2000: 撤销JDBC驱动程序 sun.jdbc.odbc.JdbcOdbcDriver的注册
+Fri Nov 17 16:47:36 CST 2000: 连接池cneoa创建一个新的连接
+Fri Nov 17 16:47:36 CST 2000: 关闭连接池cneoa中的一个连接
+Fri Nov 17 16:47:36 CST 2000: 撤销JDBC驱动程序 sun.jdbc.odbc.JdbcOdbcDriver的注册
+Fri Nov 17 17:03:24 CST 2000: 成功注册JDBC驱动程序oracle.jdbc.driver.OracleDriver
+Fri Nov 17 17:03:24 CST 2000: 成功创建连接池cnhotel
+Fri Nov 17 17:04:05 CST 2000: 成功注册JDBC驱动程序oracle.jdbc.driver.OracleDriver
+Fri Nov 17 17:04:05 CST 2000: 成功创建连接池cnhotel
+Fri Nov 17 17:04:06 CST 2000: 连接池cnhotel创建一个新的连接
+Fri Nov 17 17:04:07 CST 2000: 关闭连接池cnhotel中的一个连接
+Fri Nov 17 17:04:07 CST 2000: 撤销JDBC驱动程序 oracle.jdbc.driver.OracleDriver的注册
+Fri Nov 17 17:04:07 CST 2000: 连接池cnhotel创建一个新的连接
+Fri Nov 17 17:04:07 CST 2000: 关闭连接池cnhotel中的一个连接
+Fri Nov 17 17:04:07 CST 2000: 撤销JDBC驱动程序 oracle.jdbc.driver.OracleDriver的注册
+Fri Nov 17 17:13:45 CST 2000: 从连接池cnhotel删除一个无效连接
+Fri Nov 17 17:13:45 CST 2000: 从连接池cnhotel删除一个无效连接
+Fri Nov 17 17:13:45 CST 2000: 连接池cnhotel创建一个新的连接
+Fri Nov 17 17:13:59 CST 2000: 成功注册JDBC驱动程序oracle.jdbc.driver.OracleDriver
+Fri Nov 17 17:13:59 CST 2000: 成功创建连接池cnhotel
+Fri Nov 17 17:14:00 CST 2000: 连接池cnhotel创建一个新的连接
+Fri Nov 17 17:14:00 CST 2000: 关闭连接池cnhotel中的一个连接
+Fri Nov 17 17:14:00 CST 2000: 撤销JDBC驱动程序 oracle.jdbc.driver.OracleDriver的注册
+Fri Nov 17 17:14:00 CST 2000: 连接池cnhotel创建一个新的连接
+Fri Nov 17 17:14:00 CST 2000: 关闭连接池cnhotel中的一个连接
+Fri Nov 17 17:14:00 CST 2000: 撤销JDBC驱动程序 oracle.jdbc.driver.OracleDriver的注册
+Mon Nov 20 15:31:58 CST 2000: 成功注册JDBC驱动程序oracle.jdbc.driver.OracleDriver
+Mon Nov 20 15:31:58 CST 2000: 成功创建连接池cnhotel
+Mon Nov 20 15:31:59 CST 2000: 连接池cnhotel创建一个新的连接
+Mon Nov 20 15:31:59 CST 2000: 连接池cnhotel创建一个新的连接
+Mon Nov 20 15:32:00 CST 2000: 关闭连接池cnhotel中的一个连接
+Mon Nov 20 15:32:00 CST 2000: 关闭连接池cnhotel中的一个连接
+Mon Nov 20 15:32:00 CST 2000: 撤销JDBC驱动程序 oracle.jdbc.driver.OracleDriver的注册
+Mon Nov 20 15:32:00 CST 2000: 连接池cnhotel创建一个新的连接
+Mon Nov 20 15:32:00 CST 2000: 关闭连接池cnhotel中的一个连接
+Mon Nov 20 15:32:00 CST 2000: 撤销JDBC驱动程序 oracle.jdbc.driver.OracleDriver的注册
+Mon Nov 20 16:56:49 CST 2000: 成功注册JDBC驱动程序oracle.jdbc.driver.OracleDriver
+Mon Nov 20 16:56:49 CST 2000: 成功创建连接池cnhotel
+Mon Nov 20 16:56:50 CST 2000: 连接池cnhotel创建一个新的连接
+Mon Nov 20 16:56:51 CST 2000: 连接池cnhotel创建一个新的连接
+Mon Nov 20 16:56:55 CST 2000: 关闭连接池cnhotel中的一个连接
+Mon Nov 20 16:56:55 CST 2000: 关闭连接池cnhotel中的一个连接
+Mon Nov 20 16:56:55 CST 2000: 撤销JDBC驱动程序 oracle.jdbc.driver.OracleDriver的注册
+Mon Nov 20 16:57:38 CST 2000: 连接池cnhotel创建一个新的连接
+Mon Nov 20 16:57:39 CST 2000: 关闭连接池cnhotel中的一个连接
+Mon Nov 20 16:57:40 CST 2000: 撤销JDBC驱动程序 oracle.jdbc.driver.OracleDriver的注册
+Mon Nov 20 17:02:25 CST 2000: 连接池cnhotel创建一个新的连接
+Mon Nov 20 17:02:26 CST 2000: 关闭连接池cnhotel中的一个连接
+Mon Nov 20 17:02:26 CST 2000: 撤销JDBC驱动程序 oracle.jdbc.driver.OracleDriver的注册
+Mon Nov 20 17:07:00 CST 2000: 成功注册JDBC驱动程序oracle.jdbc.driver.OracleDriver
+Mon Nov 20 17:07:00 CST 2000: 成功创建连接池cnhotel
+Mon Nov 20 17:07:01 CST 2000: 连接池cnhotel创建一个新的连接
+Mon Nov 20 17:10:01 CST 2000: 成功注册JDBC驱动程序oracle.jdbc.driver.OracleDriver
+Mon Nov 20 17:10:01 CST 2000: 成功创建连接池cnhotel
+Mon Nov 20 17:10:02 CST 2000: 连接池cnhotel创建一个新的连接
+Mon Nov 20 19:06:32 CST 2000: 成功注册JDBC驱动程序oracle.jdbc.driver.OracleDriver
+Mon Nov 20 19:06:32 CST 2000: 成功创建连接池cnbooking
+Mon Nov 20 19:06:33 CST 2000: 连接池cnbooking创建一个新的连接
+Mon Nov 20 19:07:32 CST 2000: 关闭连接池cnbooking中的一个连接
+Mon Nov 20 19:07:32 CST 2000: 撤销JDBC驱动程序 oracle.jdbc.driver.OracleDriver的注册
+Mon Nov 20 19:07:34 CST 2000: 连接池cnbooking创建一个新的连接
+Mon Nov 20 19:08:02 CST 2000: 关闭连接池cnbooking中的一个连接
+Mon Nov 20 19:08:02 CST 2000: 撤销JDBC驱动程序 oracle.jdbc.driver.OracleDriver的注册
+Mon Nov 20 19:10:04 CST 2000: 连接池cnbooking创建一个新的连接
+Mon Nov 20 19:41:45 CST 2000: 成功注册JDBC驱动程序oracle.jdbc.driver.OracleDriver
+Mon Nov 20 19:41:45 CST 2000: 成功创建连接池cnbooking
+Mon Nov 20 19:41:46 CST 2000: 连接池cnbooking创建一个新的连接
+Mon Nov 20 19:41:50 CST 2000: 关闭连接池cnbooking中的一个连接
+Mon Nov 20 19:41:50 CST 2000: 撤销JDBC驱动程序 oracle.jdbc.driver.OracleDriver的注册
+Tue Nov 21 15:27:38 CST 2000: 成功注册JDBC驱动程序oracle.jdbc.driver.OracleDriver
+Tue Nov 21 15:27:38 CST 2000: 成功创建连接池cnbooking
+Tue Nov 21 15:27:39 CST 2000: 连接池cnbooking创建一个新的连接
+Tue Nov 21 15:27:43 CST 2000: 关闭连接池cnbooking中的一个连接
+Tue Nov 21 15:27:43 CST 2000: 撤销JDBC驱动程序 oracle.jdbc.driver.OracleDriver的注册
+Tue Nov 21 17:20:33 CST 2000: 成功注册JDBC驱动程序oracle.jdbc.driver.OracleDriver
+Tue Nov 21 17:20:33 CST 2000: 成功创建连接池cnbooking
+Tue Nov 21 17:20:34 CST 2000: 连接池cnbooking创建一个新的连接
+Tue Nov 21 17:20:36 CST 2000: 连接池cnbooking创建一个新的连接
+Tue Nov 21 17:20:55 CST 2000: 关闭连接池cnbooking中的一个连接
+Tue Nov 21 17:20:55 CST 2000: 关闭连接池cnbooking中的一个连接
+Tue Nov 21 17:20:55 CST 2000: 撤销JDBC驱动程序 oracle.jdbc.driver.OracleDriver的注册

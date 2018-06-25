@@ -1,0 +1,162 @@
+<HTML><head>
+<title>W3Perl - NT server</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1> NT servers</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Required softs</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+You will need first to install <A HREF="need.html">ActivePerl</A> to run 
+the stats package. The ActivePerl port enable NT user to use the
+slash as the directory separator (instead of the usual '\').
+<BR>
+<!--
+Cron-pages is just need for
+the first run, it initialize everything. For a daily run, launch cron-inc, 
+cron-day, cron-hour. For a weekly run, launch cron-week, cron-session.
+At last for a monthly run, just use cron-month. 
+-->
+<BR>
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Installation</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+Installation have been enhanced on NT as I've been able to install w3perl 
+on a NT 4.0 and Windows 2000 server. <BR>
+<P>
+<FONT COLOR="#A020A0"><LI><B>First STAGE</B></FONT> : <FONT COLOR="#A02020">Install the scripts</FONT>
+<P>
+<!--
+- Create a cgi-bin directory inside your wwwroot directory if none exists.
+Use your explorer software to create the directory.
+-->
+- Run w3perl.exe
+<BR>
+- Then use your IIS server administration tool to change your cgi-bin 
+properties. It should be enable to run scripts and executable within.
+<BR>
+<!--
+- Download the w3perl package and extract it in your wwwroot directory.
+A new sub directory called w3perl will be there now.
+<BR>
+- Inside you'll find an 'install.pl' perl file. Edit it with your Notepad
+and change the $pathcgi and $pathw3perl. Usual NT values are 
+$pathcgi = "C:/Inetpub/wwwroot/cgi-bin/w3perl"; and 
+$pathw3perl = "C:/Inetpub/wwwroot/w3perl"; (change disk letter if
+required).
+<BR>
+- Click on this file. You'll see output describing the installation process.
+<BR>
+-->
+- Check that the directories /w3perl, /w3perl/config and /w3perl/resources/admin are writable by everyone (IIS in fact)
+<P>
+
+<!--
+<FONT COLOR="#A020A0"><LI><B>2nd STAGE</B></FONT> : <FONT COLOR="#A02020">Graphic tool installation</FONT>
+<P>
+- If you want a Graphical display of your statistics you need a programme
+called <FONT COLOR="#20A0A0">FLY</FONT>
+<BR>
+- Go to <A HREF="http://www.unimelb.edu.au/fly/fly.html">http://www.unimelb.edu.au/fly/fly.html</A> and download the <A HREF="http://www.unimelb.edu.au/fly/fly-1.6.0.exe">binary file for NT</A>
+<BR>
+- Place this in your cgi-bin.
+<BR>
+- Remember where you put it because you will have to fill that in during the
+configuration process.
+<BR>
+- If you cannot get hold of a copy, the programme will still work except you
+won't be able to see some nice histograms and pie charts.
+<P>
+-->
+
+<FONT COLOR="#A020A0"><LI><B>2nd STAGE</B></FONT> : <FONT COLOR="#A02020">Build configuration file</FONT>
+<P>
+- Now use your opened browser to build a configuration file.
+<BR>
+- Click on <FONT COLOR="#20A0A0">Make configuration file</FONT> and follow the procedures outlined. By filling in the details you will create a file called <FONT COLOR="#20A0A0">config.pl</FONT>
+<BR>
+- Once created, look for this file in /config/config.pl and move it to your /cgi-bin/w3perl directory.
+<P>
+<FONT COLOR="#A020A0"><LI><B>3rd STAGE</B></FONT> : <FONT COLOR="#A02020">Ready</FONT>
+<P>
+- You should now be able to analyse your logs.
+<BR>
+- In admin go through the <FONT COLOR="#20A0A0">Launch area</FONT> links that will start your statistics from zero.
+<BR>
+- Then run the incremental statistics function every week to accumulate your
+statistics.
+<BR>
+- In order to read them  go to http://your_url/w3perl/
+<BR>
+- You can use <I>at</I> to schedule the scripts run, NT server can't 
+fork processes as Unix do (so cron-w3perl.pl is no use for you). 
+
+<P>
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Limitations</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+NT server can produce CLF (Common Logfile Format), IIS format or 
+Extended W3C format. W3Perl work
+with both output, just select the one you want to use in the configuration 
+file. Lots of different date string format are used with IIS server so
+you'll need to describe your date format in the administration interface.
+Select one of your logfile and edit it via Notepad to check the 
+month/day/year format used.
+<P>
+IIS 3.0 have no support for the extended CLF, referrer and agent stats are
+not available in the standard distribution.
+Someone emailed me about the ability to use referer and agent log in IIS 3.0 as
+microsoft provide a <A HREF="http://backoffice.microsoft.com/downloads/ext.zip">dll</A> which is able to store this information in the standard logfile.
+<BR>
+W3Perl can use both IIS 4.0/5.0 or IIS 3.0 (with the patch) logfile to compute
+referer and agent stats.
+<P>
+Error are stored in an event database on NT so no file are produced.
+But you can use redirection with an HTML error page for the different status
+code and your error pages are logged in the logfile.
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Thanks</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+W3perl have been fully tested on a NT 4.0 server thanks to Alexandre Gefen.
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="/chinaeoa/index.jsp"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

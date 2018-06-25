@@ -1,0 +1,134 @@
+<html>
+<head>
+<title>CNHotelBooking.com后台管理工具</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.font9 {  font-size: 9pt; color: #FF8000; font-weight: normal}
+.font12 {  font-size: 12pt; color: #FF8000; font-weight: bold}
+-->
+</style>
+</head>
+<SCRIPT LANGUAGE=javascript>
+<!--
+
+function PostForm(I)
+{
+ if (I==1)
+ { 
+   if (fmMemberSearch.txtID.value == "")
+   {
+	 alert("请输入会员编号!");
+	 return;
+   }
+   fmMemberSearch.txtName.value = "";
+   fmMemberSearch.txtEmail.value = "";
+   fmMemberSearch.txtTel.value = "";
+   //fmAreaSearch.action = "cnhotel/bst/area_search_result.jsp";
+ }
+ else if (I==2)
+ {
+   if (fmMemberSearch.txtName.value == "")
+   {
+	 alert("请输入姓名!");
+	 return;
+   }
+   fmMemberSearch.txtID.value = "";
+   //fmMemberSearch.txtName.value = "";
+   fmMemberSearch.txtEmail.value = "";
+   fmMemberSearch.txtTel.value = "";
+   //fmAreaSearch.action = "cnhotel/bst/area_search_result.jsp"; 
+ }
+ else if (I==3)
+ {
+   if (fmMemberSearch.txtEmail.value == "")
+   {
+	 alert("请输入Email!");
+	 return;
+   }
+   fmMemberSearch.txtID.value = "";
+   fmMemberSearch.txtName.value = "";
+   //fmMemberSearch.txtEmail.value = "";
+   fmMemberSearch.txtTel.value = "";
+ }
+ else if (I==4)
+ {
+   if (fmMemberSearch.txtTel.value == "")
+   {
+	 alert("请输入电话!");
+	 return;
+   }
+   fmMemberSearch.txtID.value = "";
+   fmMemberSearch.txtName.value = "";
+   fmMemberSearch.txtEmail.value = "";
+   //fmMemberSearch.txtTel.value = "";
+ }
+ 
+ fmMemberSearch.submit();
+}
+//-->
+</SCRIPT>
+<body bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<span class="font9"></span> <span class="font9"></span> 
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="80">&nbsp; </td>
+    <td>
+      <form name=fmMemberSearch method="post" action="cnhotel/bst/membersearch_result.jsp">
+        <table width="400" border="0" cellspacing="2" cellpadding="5" height="40">
+          <tr> 
+            <td class="font12">会员查询--请选择查询方式</td>
+          </tr>
+        </table>
+        <table width="400" border="1" cellpadding="5" cellspacing="2" bordercolordark="#ffffff" bordercolorlight="#f9c026">
+          <tr> 
+            <td width="70" class="font9">ID查询：</td>
+            <td colspan="2"> 
+              <input name="txtID" size="30" 
+           >
+            </td>
+          </tr>
+          <tr align="middle"> 
+            <td colspan="3" class="font9"> <A href="javascript:PostForm(1)"><IMG border=0 height=26 src="images/botton_search.gif" width=68></a> 
+            </td>
+          </tr>
+          <tr> 
+            <td width="70" class="font9">姓名查询：</td>
+            <td colspan="2"> 
+              <input name="txtName" size="30" 
+           >
+            </td>
+          </tr>
+          <tr align="middle"> 
+            <td colspan="3" class="font9"> <A href="JavaScript:PostForm(2)"><IMG border=0 height=26 src="images/botton_search.gif" width=68></a></td>
+          </tr>
+          <tr> 
+            <td width="70" class="font9">Email查询：</td>
+            <td colspan="2"> 
+              <input name="txtEmail" size="30" 
+           >
+            </td>
+          </tr>
+          <tr align="middle"> 
+            <td colspan="3" class="font9"> <A href="JavaScript:PostForm(3)"><IMG border=0 height=26 src="images/botton_search.gif" width=68></a></td>
+          </tr>
+          <tr> 
+            <td width="70" class="font9">电话查询：</td>
+            <td colspan="2"> 
+              <input name="txtTel" size="30" 
+           >
+            </td>
+          </tr>
+          <tr> 
+            <td colspan="3"> 
+              <div align="center"> </div>
+              <div align="center"> <A href="JavaScript:PostForm(4)"><IMG border=0 height=26 src="images/botton_search.gif" width=68></a></div>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

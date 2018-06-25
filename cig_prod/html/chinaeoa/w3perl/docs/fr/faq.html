@@ -1,0 +1,164 @@
+<HTML><head>
+<title>W3Perl FAQ - FR</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>FAQ</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Questions</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+<OL>
+<LI> W3Perl est <A HREF="#open">incapable</A> d'ouvrir le fichier de log ...
+<LI> Je n'ai aucun <A HREF="#graphs">graphes</A> dans les pages. Quel est le probl&egrave;me ?
+<LI> Je n'ai pas de <A HREF="#background">background</A> dans mes pages.
+<LI> Il y a plusieurs trous dans le texte sur les stats sur les <A HREF="#countries">pays</A>. Pourquoi ?
+<LI> Je ne parviens pas &agrave; trouver <A HREF="#myhost">mon serveur</A> dans les fichiers produits.
+ Pourquoi ?
+<LI> J'ai choisi de voir l'activit&eacute; de mon domaine local mais les stats ne me montrent auncune
+stats au sein de mon <A HREF="#domain">domaine</A>.
+<LI> Cron-pages.pl s'arr&ecirc;te en me pr&eacute;venant que <A HREF="#oneday">rien n'a &ecute;t&eacute; scann&eacute;</A>
+<LI> <A HREF="#nofiles">Auncun fichier</A> n'est produit.
+<LI> L'initialisation est tr&egrave;s <A HREF="#slow">lente</A> (cron-pages.pl)
+<LI> Je voudrais juste des stats <A HREF="#between">entre deux dates</A> ou je veux des stats sur
+une <A HREF="#between">journ&eacute;e sp&eacute;cifique</A>.
+</OL>
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>R&eacute;ponses</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+<A NAME="open">
+<B> W3Perl est incapable d'ouvrir le fichier de log...</B>
+<P>
+<I>Le fichier de log doit pouvoir &ecirc;tre lisible par tous (mais pas en &eacute;criture bien s&ucirc;r !)
+Demandez gentillement &agrave; votre ing&eacute;nieur syst&egrave;me de corriger cela.
+Un 'chmod 644' sur le fichier de log est suffisant pour utiliser w3perl.
+</I>
+<P><HR width=30%><P>
+<A NAME="graphs">
+<B>Je n'ai aucun graphes dans les pages. Quel est le probl&egrave;me ?</B>
+<P>
+<I>Il manque quelque chose....assurez vous que vous avez bien l'application <A HREF="need.html">fly</A> install&eacute;e
+quelque part sur votre machine. V&eacute;rifiez aussi le chemin que vous avez donn&eacute; dans le fichier <A HREF="config.html">config.pl</A>.</I>
+<P><HR width=30%><P>
+<A NAME="background">
+<B>Je n'ai pas de background dans mes pages.</B>
+<P>
+<I>V&eacute;rifiez votre variable $linkpath dans <A HREF="config.html">config.pl</A>.<br>
+Vous devez donn&eacute; un chemin relatif au r&eacute;pertoire du serveur.
+</I>
+<P><HR width=30%><P>
+<A NAME="countries">
+<B>Il y a plusieurs trous dans le texte sur les stats sur les pays. Pourquoi ?</B>
+<P>
+<I>Il y a des <A HREF="http://itl5.itlnet.com/isocodes.htm">codes de pays</A> dans le fichier
+ "pays-conv" (situ&eacute; dans le r&eacute;pertoire resources.
+Dans la crontab, prenez soin d'oter la redirection "> /dev/null 2>&1" pour &ecirc;tre informer
+des extensions manquantes.
+</I>
+<P><HR width=30%><P>
+<A NAME="myhost">
+<B>Je ne parviens pas &agrave; trouver mon serveur dans les fichiers produits.
+ Pourquoi ?</B>
+<P>
+<I>
+* Vous devez s&eacute;lectionner votre domaine locale ($locallog = 1). <br>
+* Peut &ecirc;tre avez vous mis votre machine dans la variable nolog ? Si c'est le cas, otez la de nolog. <br>
+* Ou peut &ecir;tre votre machine n'a pas de table de reverse DNS. Dans ce cas,
+vous trouverez votre machine dans la liste des pays non r&eacute;solus. <br>
+* L'application ne g&egrave;re pas les noms de machines plus longs que 9 champs.
+</I>
+<P><HR width=30%><P>
+<A NAME="domain">
+<B>J'ai choisi de voir l'activit&eacute; de mon domaine local mais les stats ne me montrent auncune
+stats au sein de mon domaine.</B>
+<P>
+<I>
+Deux possibilit&eacute;s : personne ne s'est servi de votre site &agrave; l'int&eacute;rieur de votre
+domaine local ou plus simplement avez vous fait une erreur dans la variable $localserver. 
+<A HREF="config.html">V&eacute;rifiez cela.</A>
+</I>
+<P><HR width=30%><P>
+<A NAME="oneday">
+<B>Cron-pages.pl s'arr&ecirc;te en me pr&eacute;venant que rien n'a &ecute;t&eacute; scann&eacute;</B>
+<P>
+<I>
+* V&eacute;rifiez votre variable $tri. Elle doit &ecirc;tre mise &agrave; "/" si vous d&eacute;sirez
+des stats sur l'ensemble de votre fichier de log ou elle doit &ecirc;tre &agrave; un sous
+r&eacute;pertoire si vous ne d&eacute;sirez qu'une partie de votre fichier de log. Peut &ecirc;tre
+essayez vous de scanner votre fichier de log avec un sous r&eacute;pertoire qui n'existe pas.<BR>
+* Peut &ecirc;tre avez vous exclus tout votre serveur ! V&eacute;rifiez @excluderepert dans votre
+fichier config.pl<br>
+* Le fichier de log doit poss&eacute;der plus d'une journ&eacute;e de donn&eacute;es. Attendez le
+lendemain pour avoir un fichier de log plus important.<br>
+* Si vous utilisez un fichier de log <A HREF="multiple.html">quotidien</A>.
+Vous devez utiliser w3perl de cette facon :<br>
+<UL>
+Premier jour : &grave; minuit, d&eacute;placer votre fichier de log logfile vers logfile.old et 
+lancer cron-pages.pl sur ce fichier logfile.old<br>
+Jour + 1 : &grave; minuit, effacez logfile.old, d&eacute;placez le fichier de log courant vers logfile.old
+et lancer cron-inc.pl<br>
+Jour + 2 : idem que le jour + 1 ...
+</UL>
+</I>
+<P><HR width=30%><P>
+<A NAME="nofiles">
+<B>Auncun fichier n'est produit.</B>
+<P>
+<I>Est ce que votre r&eacute;pertoire est en &eacute;criture ? Avez vous s&eacute;lectionner un
+langage pour la sortie dans @lang ?
+</I>
+<P><HR width=30%><P>
+<A NAME="slow">
+<B>L'initialisation est tr&egrave;s lente (cron-pages.pl)</B>
+<P>
+<I>
+V&eacute;rifiez votre fichier de configuration. Evitez d'utiliser l'option de reverse dns car
+chaque ligne de votre fichier de log peut prendre plusieurs secondes &agrave; &ecirc;tre ex&eacute;cuter.
+Si vous avez de gros fichiers de log, utilisez une pr&eacute;cision plus bas (&eacute;vitez imp&eacute;rativement
+le mode 4). Vous pouvez aussi <A HREF="multiple.html">compr&eacute;sser</A> votre fichier de log
+pour augmenter la vitesse de calcul.
+</I>
+<P><HR width=30%><P>
+<A NAME="between">
+<B> Je voudrais juste des stats entre deux dates ou je veux des stats sur
+une journ&eacute;e sp&eacute;cifique.</B>
+<P>
+<I>
+Uitilisez cron-page.pl -s &lt;date1&gt; -r &lt;date2&gt; o&ugrave; date1 et date2 ont les syntaxes suivantes 
+: &lt;jour&gt;-&lt;mois&gt;-&lt;ann&eacute;e&gt;
+(jour, mois et ann&eacute;e sont des nombres &agrave; deux chiffres)
+<BR>
+Utilisez cron-inc.pl -j &lt;date&gt; o&ugrave; date a la syntaxe suivante : dd/Mmm/yyyy
+dd est le jour avec deux chiffres, Mmm est le mois avec la premi&egrave;re lettre en majuscule 
+et yyyy est l'ann&eacute;e avec quatre chiffres.
+<P>
+<HR size=3 width=80%>
+<br>
+N'h&eacute;sitez pas &agrave; me <A HREF="mailto:domisse@w3perl.com">contacter</A> 
+si vous avez des suggestions ou un commentaire (y compris les reports de bugs).
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="/chinaeoa/index.jsp"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

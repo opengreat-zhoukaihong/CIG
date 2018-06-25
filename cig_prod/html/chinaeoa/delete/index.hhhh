@@ -1,0 +1,528 @@
+
+
+
+<html>
+<head>
+<title>ChinaEOA.com</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="eoa.css" rel="stylesheet" type="text/css">
+<script language="JavaScript">
+<!--
+ function Login()
+{
+  if (fmLogin.User.value == "" || fmLogin.Passwd.value == "")
+  {
+    alert("请输入用户与口令");
+  }
+  else
+   fmLogin.submit();
+}
+function Search()
+{
+  if (fmSearch.Brand.value == "0" || fmSearch.ProductNo.value == "0")
+  {
+    alert("请选择品牌与型号");
+  }
+  else
+  {
+    fmSearch.action = "ProductDetail.jsp?LangCode=GB&ProdId=" + fmSearch.ProductNo.value;
+    fmSearch.submit();
+   }
+}
+//-->
+</script>
+
+<script language="JavaScript">
+<!--
+provinceArray = new Array(
+"1.160/160F.8898","1.3.9753","1.BJ-30.8929","1.BJC-50.8935","1.BJC-50g.8937","1.BJC1000SP.8930","1.BJc-2000.8931","1.BJc-3000.8932","1.BJc-4310sp.8933","1.BJc-4650.8934","1.BJc-5000.8936","1.BJc-5100.8938","1.BJc-5500.8939","1.BJc-6000.8940","1.BJc-7100.8941","1.BJc-80.8942","1.BJc-w7000.8943","1.CP660.8881","1.FC-220.8870","1.GP-335.8871","1.GP-405.8872","1.LBP 660.8947","1.LBP 800.8948","1.LBP1760.8944","1.LBP2460.8945","1.LBP3260.8946","1.NP1020.8882","1.NP1215.8822","1.NP2120.8821","1.NP3050.8883","1.NP6045.8884","1.NP6115.8885","1.NP6241.8886","1.NP6318.8887","1.NP6330.8888","1.NP6350.8889","1.NP7163/7164.8890","1.NP7214.8891","2.AL1240.8827","2.AR161.8828","2.AR200.8829","2.SF1020.8819","2.SF1025.8823","2.SF1116.8820","2.SF2030.8824","2.SF2040.8825","2.SF2052.8826","3.3001.8846","3.3030.8847","3.3040.8848","3.3050.8849","3.4512.8921","3.5421.8863","3.5518.8862","3.5615.8859","3.5837.8864","3.5845.8865","3.5855.8866","3.8825DDS.8900","3.C55.8920","3.DC214.8858","3.N24/N32.8922","3.P8e.8965","3.Phaser 740/DX.8919","3.Phaser 740/N.8917","3.Phaser 740/p.8918","3.V228.8893","3.V250.8860","3.V258.8894","3.V330.8861","3.V338.8895","3.V388.8896","3.XE60.8892","3.XJ4C.8963","4.1568.8830","4.2068.8831","4.2868/2878.8850","4.3560/3570.8851","4.4560.8832","5.7713.8852","5.7715.8853","5.7718.8854","5.7722.8855","5.7728.8856","5.7735.8857","7.111.8905","7.188/180.8903","7.200.8837","7.288.8902","7.340.8838","7.3700L.8904","7.5627/5827.8867","7.5632/5832.8845","7.7650.8842","7.7660.8843","7.7670.8844","7.FT4015.8839","7.FT4422.8840","7.FT5640/5840.8897","7.FW750/760.8841","7.UF-A8585.8901","7.VT2200.8868","7.VT2250.8869","8.EP1054.8873","8.EP1083.8874","8.EP1085.8875","8.EP2030.8880","8.EP3000.8876","8.EP4000.8879","8.EP5000.8877","8.EP6001.8878","10.1212.8833","10.1216.8834","10.2223.8835","10.3231.8836","10.3240/3340.8899","11.DeskJet1120c.8949","11.DeskJet200cci.8950","11.DeskJet420c.8951","11.DeskJet610c.8952","11.DeskJet670c.8953","11.DeskJet695cci.8954","11.DeskJet710c.8955","11.DeskJet810c.8956","11.DeskJet830c.8957","11.DeskJet880c.8958","11.DeskJet895cxi.8959","11.DeskJet930c.8960","11.DeskJet950c.8961","11.DeskJet970cxi.8962","12.COLOR 1520K.8923","12.COLOR 3000.8924","12.COLOR 660.8925","12.COLOR 750.8926","12.COLOR 850.8927","12.DLQ-3000K.8964","12.EPL-5700L.8913","12.EPL-5800.8912","12.EPL-C8200.8911","12.LQ-1600K4.8914","12.LQ-1900KⅡ.8928","12.LQ-580K.8915","12.PHOTO 870.8908","12.PHOTO1270.8909","12.PRO 7000.8910","12.SCAN 2500.8916","12.color480.8907","12.color670.8906");//
+  //cityArray = new Array("1.1.guangzhou.1","1.1.shenzheng.2","1.2.xiamen.3","1.2.fuzhou.4");
+  dropDownItem = new String();
+
+  function changeProvinceInfo(countryBox,provinceBox)
+  {
+    var countryItem = countryBox.value;
+    var itemCount;
+
+    if(countryItem>0)
+    {
+      provinceBox.length=1;
+     // cityBox.length=1;
+      for(var i=0;i<provinceArray.length;i++)
+      {
+        dropDownItem = provinceArray[i].split(".");
+        if(countryItem==dropDownItem[0])
+        {
+          itemCount = provinceBox.length;
+          provinceBox.length += 1;
+          provinceBox.options[itemCount].value = dropDownItem[2];
+          provinceBox.options[itemCount].text = dropDownItem[1];
+        }
+      }
+    }
+  }
+
+//-->
+</script>
+<script
+language="JavaScript">
+<!--
+img1on = new Image();
+img1on.src = "images/temp/menu_1_0.gif"; 
+img2on = new Image();
+img2on.src = "images/temp/menu_2_0.gif";
+img3on = new Image();
+img3on.src = "images/temp/menu_3_0.gif";
+img4on = new Image();
+img4on.src = "images/temp/menu_4_0.gif";
+img5on = new Image();
+img5on.src = "images/temp/menu_5_0.gif";
+img6on = new Image();
+img6on.src = "images/temp/menu_6_0.gif";
+img7on = new Image();
+img7on.src = "images/temp/menu_service_0.gif";
+img8on = new Image();
+img8on.src = "images/temp/menu_service10.gif";
+img9on = new Image();
+img9on.src = "images/temp/menu_service20.gif";
+img10on = new Image();
+img10on.src = "images/temp/menu_service30.gif"; 
+img11on = new Image();
+img11on.src = "images/temp/menu_service40.gif";
+img12on = new Image();
+img12on.src = "images/temp/menu_service50.gif";
+img13on = new Image();
+img13on.src = "images/temp/menu_service60.gif";
+img1off = new Image();
+img1off .src = "images/temp/menu_1.gif"; 
+img2off = new Image();
+img2off .src = "images/temp/menu_2.gif";
+img3off = new Image();
+img3off .src = "images/temp/menu_3.gif";
+img4off = new Image();
+img4off .src = "images/temp/menu_4.gif";
+img5off = new Image();
+img5off .src = "images/temp/menu_5.gif";
+img6off = new Image();
+img6off .src = "images/temp/menu_6.gif";
+img7off = new Image();
+img7off .src = "images/temp/menu_service.gif";
+img8off = new Image();
+img8off .src = "images/temp/menu_service1.gif";
+img9off = new Image();
+img9off .src = "images/temp/menu_service2.gif";
+img10off = new Image();
+img10off.src = "images/temp/menu_service3.gif"; 
+img11off = new Image();
+img11off.src = "images/temp/menu_service4.gif";
+img12off = new Image();
+img12off.src = "images/temp/menu_service5.gif";
+img13off = new Image();
+img13off.src = "images/temp/menu_service6.gif";
+function imgOn (imgName) {
+if (document.images) {
+document[imgName].src = eval (imgName + "on.src");
+}
+}
+function imgOff (imgName) {
+if (document.images) {
+document[imgName].src = eval(imgName + "off.src");
+}
+}
+function MM_preloadImages() { //v3.0
+var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#F7FBFA" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" tracingsrc="file:///F%7C/ChinaEOA/ceoa.gif" tracingopacity="80" background="images/temp/bg.gif">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="1" bgcolor="#000000" >
+  <tr> 
+    <td><img src="images/spacer.gif" width="1" height="1"></td>
+  </tr>
+</table>
+
+<table width="665" border="0" cellspacing="0" cellpadding="0" >
+  <tr> 
+    <td width="665"> 
+      <table width="667" border="0" cellspacing="0" cellpadding="0" height="25">
+        <tr> 
+          <td width="283"><a href="index.html"><img src="images/temp/head_up_1.gif" width="283" height="25" border="0"></a></td>
+          <td>
+            <table width="384" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="13"><img src="images/temp/head_menu_1.gif" width="13" height="25"></td>
+                <td width="362"> 
+                  <table width="362" border="0" cellspacing="0" cellpadding="0" height="25">
+                    <tr> 
+                      <td width="362">
+                        <table width="362" border="0" cellspacing="0" cellpadding="0">
+                          <tr> 
+                            <td width="66"><a href="/product_centre.htm" onMouseOver="imgOn('img1')" onMouseOut="imgOff('img1')"><img src="images/temp/menu_1.gif" width="66" height="22" border="0" name="img1"></a></td>
+                            <td width="61"><a href="registration.jsp" onMouseOver="imgOn('img2')" onMouseOut="imgOff('img2')"><img src="images/temp/menu_2.gif" width="61" height="22" border="0" name="img2"></a></td>
+                            <td width="62"> <a href="#" onMouseOver="imgOn('img3')" onMouseOut="imgOff('img3')"><img src="images/temp/menu_3.gif" width="62" height="22" border="0" name="img3"></a></td>
+                            <td width="49"><a href="/dealer.htm" onMouseOver="imgOn('img4')" onMouseOut="imgOff('img4')"><img src="images/temp/menu_4.gif" width="49" height="22" border="0" name="img4"></a></td>
+                            <td width="62"> <a href="#" onMouseOver="imgOn('img5')" onMouseOut="imgOff('img5')"><img src="images/temp/menu_5.gif" width="62" height="22" border="0" name="img5"></a></td>
+                            <td width="62"> <a href="#" onMouseOver="imgOn('img6')" onMouseOut="imgOff('img6')"><img src="images/temp/menu_6.gif" width="62" height="22" border="0" name="img6"></a></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td height="3" width="362"><img src="images/temp/head_menu_3.gif" width="362" height="3"></td>
+                    </tr>
+                  </table>
+                </td>
+                <td align="right" width="9"><img src="images/temp/head_menu_2.gif" width="9" height="25"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td width="665"> 
+      <table width="667" border="0" cellspacing="0" cellpadding="0" height="46">
+        <tr> 
+          <td width="283"><img src="images/temp/head_dn_1.gif" width="283" height="46"></td>
+          <td>
+            <table width="384" border="0" cellspacing="0" cellpadding="0" height="46" background="images/temp/head_dn_2.gif"><form name="fmLogin" method="post" action="Login.jsp">
+              <tr>
+                <td height="28">用 户：
+                  <input type="text" name="User" size="10" class="font1">
+                  密 码：
+                  <input type="password" name="Passwd" size="10" class="font1">
+                    <a href="javascript:Login();"><img src="images/temp/b_login.gif" width="41" height="15" border="0"></a> 
+                    <a href="#"><img src="images/temp/b_pw.gif" width="57" height="15" border="0"></a></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+              </tr></form>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table width="667" border="0" cellspacing="0" cellpadding="0" >
+  <tr> 
+    <td valign="top" width="14"> <img src="images/temp/left_bar.gif" width="14" height="2"></td>
+    <td valign="top" width="443"> 
+      <table width="443" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td> 
+            <div id="Layer1" style="position:absolute; left:160px; top:215px;z-index:2; visibility: hidden"> 
+              <table width="100" border="0" cellpadding="0" cellspacing="0">
+                <tr> 
+                  <td height="5" align="right"><img src="images/cross.gif" border="0" onMouseDown="HideLayer(1)" width="14" height="5"></td>
+                </tr>
+                <tr> 
+                  <td height="90"> 
+                    <table width="100" border="0" cellpadding="0" cellspacing="0">
+                      <tr align="center">
+<td height="18"><a href="ProductList.jsp?CateName=%B5%CD%CB%D9%B8%B4%D3%A1%BB%FA&Category=11&TypeId=3&LangCode=GB">低速复印机</a></td>
+</tr>
+<tr align="center">
+<td height="18"><a href="ProductList.jsp?CateName=%D6%D0%CB%D9%B8%B4%D3%A1%BB%FA&Category=12&TypeId=3&LangCode=GB">中速复印机</a></td>
+</tr>
+<tr align="center">
+<td height="18"><a href="ProductList.jsp?CateName=%B8%DF%CB%D9%B8%B4%D3%A1%BB%FA&Category=13&TypeId=3&LangCode=GB">高速复印机</a></td>
+</tr>
+<tr align="center">
+<td height="18"><a href="ProductList.jsp?CateName=%B2%CA%C9%AB%B8%B4%D3%A1%BB%FA&Category=14&TypeId=3&LangCode=GB">彩色复印机</a></td>
+</tr>
+<tr align="center">
+<td height="18"><a href="ProductList.jsp?CateName=%C9%FA%B2%FA%D0%CD%B8%B4%D3%A1%BB%FA&Category=15&TypeId=3&LangCode=GB">生产型复印机</a></td>
+</tr>
+
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div id="Layer2" style="position:absolute; left:160; top:215;z-index:2; layer-background-color: #FFFFFF; visibility: hidden"> 
+              <table width="100" border="0" cellpadding="0" cellspacing="0">
+                <tr> 
+                  <td height="4" align="right"><img src="images/cross.gif" border="0" onMouseDown="HideLayer(2)" width="14" height="5"></td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <table width="100" border="0" cellpadding="0" cellspacing="0">
+                      <tr align="center">
+<td height="18"><a href="ProductList.jsp?CateName=%BC%A4%B9%E2%B4%F2%D3%A1%BB%FA&Category=1&TypeId=1&LangCode=GB">激光打印机</a></td>
+</tr>
+<tr align="center">
+<td height="18"><a href="ProductList.jsp?CateName=%C5%E7%C4%AB%B4%F2%D3%A1%BB%FA&Category=2&TypeId=1&LangCode=GB">喷墨打印机</a></td>
+</tr>
+<tr align="center">
+<td height="18"><a href="ProductList.jsp?CateName=%D5%EB%CA%BD%B4%F2%D3%A1%BB%FA&Category=3&TypeId=1&LangCode=GB">针式打印机</a></td>
+</tr>
+
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div id="Layer3" style="position:absolute; left:160; top:215;z-index:2; layer-background-color: #FFFFFF; visibility: hidden"> 
+              <table width="100" border="0" cellpadding="0" cellspacing="0">
+                <tr> 
+                  <td height="4" align="right"><img src="images/cross.gif" border="0" onMouseDown="HideLayer(3)" width="14" height="5"></td>
+                </tr>
+                <tr> 
+                  <td>
+                    <table width="100" border="0" cellpadding="0" cellspacing="0">
+                      <tr align="center">
+<td height="18"><a href="ProductList.jsp?CateName=%C6%D5%CD%A8%D6%BD%B4%AB%D5%E6%BB%FA&Category=31&TypeId=2&LangCode=GB">普通纸传真机</a></td>
+</tr>
+<tr align="center">
+<td height="18"><a href="ProductList.jsp?CateName=%C8%C8%C3%F4%D6%BD%B4%AB%D5%E6%BB%FA&Category=32&TypeId=2&LangCode=GB">热敏纸传真机</a></td>
+</tr>
+
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div id="Layer4" style="position:absolute; left:160; top:215;z-index:2; layer-background-color: #FFFFFF; visibility: hidden"> 
+              <table width="100" border="0" cellspacing="0" cellpadding="0">
+                <tr> 
+                  <td height="4" align="right"><img src="images/cross.gif" border="0" onMouseDown="HideLayer(4)" width="14" height="5"></td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <table width="100" border="0" cellpadding="0" cellspacing="0">
+                      
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div id="Layer5" style="position:absolute; left:160; top:215;z-index:2; layer-background-color: #FFFFFF; visibility: hidden"> 
+              <table width="100" border="0" cellpadding="0" cellspacing="0">
+                <tr> 
+                  <td height="4" align="right"><img src="images/cross.gif" border="0" onMouseDown="HideLayer(5)" width="14" height="5"></td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <table width="100" border="0" cellpadding="0" cellspacing="0">
+                      <tr align="center">
+<td height="18"><a href="ProductList.jsp?CateName=%BA%DA%C9%AB%C4%AB%BA%D0&Category=41&TypeId=4&LangCode=GB">黑色墨盒</a></td>
+</tr>
+<tr align="center">
+<td height="18"><a href="ProductList.jsp?CateName=%B2%CA%C9%AB%C4%AB%BA%D0&Category=42&TypeId=4&LangCode=GB">彩色墨盒</a></td>
+</tr>
+<tr align="center">
+<td height="18"><a href="ProductList.jsp?CateName=%B4%F2%D3%A1%BD%E9%D6%CA&Category=43&TypeId=4&LangCode=GB">打印介质</a></td>
+</tr>
+<tr align="center">
+<td height="18"><a href="ProductList.jsp?CateName=%B8%B4%D3%A1%D6%BD%D5%C5&Category=44&TypeId=4&LangCode=GB">复印纸张</a></td>
+</tr>
+<tr align="center">
+<td height="18"><a href="ProductList.jsp?CateName=%B9%C4%D7%E9%BC%FE&Category=45&TypeId=4&LangCode=GB">鼓组件</a></td>
+</tr>
+
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div id="Layer6" style="position:absolute; left:160; top:215;z-index:2; layer-background-color: #FFFFFF; visibility: hidden"> 
+              <table width="100" border="0" cellspacing="0" cellpadding="0">
+                <tr> 
+                  <td height="4" align="right"><img src="images/cross.gif" border="0" onMouseDown="HideLayer(6)" width="14" height="5"></td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <table width="100" border="0" cellpadding="0" cellspacing="0">
+                      <tr align="center">
+<td height="18"><a href="ProductList.jsp?CateName=%D7%D4%B6%AF%BD%F8%B8%E5%C6%F7&Category=80&TypeId=6&LangCode=GB">自动进稿器</a></td>
+</tr>
+<tr align="center">
+<td height="18"><a href="ProductList.jsp?CateName=%D7%D4%B6%AF%B7%D6%D2%B3%C6%F7&Category=81&TypeId=6&LangCode=GB">自动分页器</a></td>
+</tr>
+<tr align="center">
+<td height="18"><a href="ProductList.jsp?CateName=%CB%AB%C3%E6%C6%F7&Category=82&TypeId=6&LangCode=GB">双面器</a></td>
+</tr>
+<tr align="center">
+<td height="18"><a href="ProductList.jsp?CateName=%D7%B0%B6%A9%B7%D6%D2%B3%C6%F7&Category=83&TypeId=6&LangCode=GB">装订分页器</a></td>
+</tr>
+<tr align="center">
+<td height="18"><a href="ProductList.jsp?CateName=%BD%F8%B8%E5%C6%F7&Category=84&TypeId=6&LangCode=GB">进稿器</a></td>
+</tr>
+
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <table border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td colspan="3"><img src="images/temp/body_up.gif" width="443" height="146" border="0" usemap="#Map"><map name="Map"><area shape="circle" coords="257,50,26" href="ProductSearch.jsp?TypeId=3&LangCode=GB" onMouseOver="ShowLayer(1)"><area shape="circle" coords="197,57,23" href="ProductSearch.jsp?TypeId=1&amp;LangCode=GB" onMouseOver="ShowLayer(2)"><area shape="circle" coords="141,76,25" href="ProductSearch.jsp?TypeId=2&amp;LangCode=GB" onMouseOver="ShowLayer(3)"><area shape="circle" coords="101,115,25" onMouseOver="ShowLayer(4)"><area shape="circle" coords="68,154,27" href="ProductSearch.jsp?TypeId=4&amp;LangCode=GB" onMouseOver="ShowLayer(5)"></map></td>
+              </tr>
+              <tr> 
+                <td width="270"><img src="images/temp/body_m1.gif" width="270" height="72" border="0" usemap="#Map2"><map name="Map2"><area shape="circle" coords="49,56,24" href="ProductSearch.jsp?TypeId=5&amp;LangCode=GB" onMouseOver="ShowLayer(6)"><area shape="circle" coords="65,5,22" href="ProductSearch.jsp?TypeId=4&amp;LangCode=GB" onMouseOver="ShowLayer(5)"></map></td>
+                <td width="124">
+                  <table width="124" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="23"><a href="#" onMouseOver="imgOn('img8')" onMouseOut="imgOff('img8')"><img src="images/temp/menu_service1.gif" width="23" height="72" name="img8" border="0"></a></td>
+                      <td width="19"><a href="#" onMouseOver="imgOn('img9')" onMouseOut="imgOff('img9')"><img src="images/temp/menu_service2.gif" width="19" height="72" name="img9" border="0"></a></td>
+                      <td width="21"><a href="#" onMouseOver="imgOn('img10')" onMouseOut="imgOff('img10')"><img src="images/temp/menu_service3.gif" width="21" height="72" name="img10" border="0"></a></td>
+                      <td width="19"><a href="#" onMouseOver="imgOn('img11')" onMouseOut="imgOff('img11')"><img src="images/temp/menu_service4.gif" width="19" height="72" name="img11" border="0"></a></td>
+                      <td width="21"><a href="#" onMouseOver="imgOn('img12')" onMouseOut="imgOff('img12')"><img src="images/temp/menu_service5.gif" width="21" height="72" name="img12" border="0"></a></td>
+                      <td width="21"><a href="#" onMouseOver="imgOn('img13')" onMouseOut="imgOff('img13')"><img src="images/temp/menu_service6.gif" width="21" height="72" name="img13" border="0"></a></td>
+                    </tr>
+                  </table>
+                </td>
+                <td width="49"><img src="images/temp/body_m2.gif" width="49" height="72"></td>
+              </tr>
+              <tr> 
+                <td colspan="3"><img src="images/temp/body_b.gif" width="443" height="40" usemap="#Map3" border="0"><map name="Map3"><area shape="circle" coords="51,-22,32" href="ProductSearch.jsp?TypeId=5&amp;LangCode=GB" onMouseOver="ShowLayer(6)"></map></td>
+              </tr><form name="FORM_Data"><input type="hidden" name="HIDDEN_LayerCount" value="6"></form>
+            </table><script language="JavaScript">
+function  ShowLayer(iLayer)
+{	
+	var strName;
+	var theObj;
+	HideAllLayer();
+	strName = "Layer" + iLayer
+	if(navigator.appName == 'Netscape' && document.layers != null){
+		strName = "document.layers." + strName
+		theObj = eval(strName);
+		theObj.visibility = "visible";
+	}
+	else if (document.all != null){
+		document.all(strName).style.visibility = "visible";
+	}
+}
+
+function  HideLayer(iLayer)
+{	
+	var strName;
+	var theObj;
+	strName = "Layer" + iLayer
+	//alert("strName");
+	if(navigator.appName == 'Netscape' && document.layers != null){
+		strName = "document.layers." + strName
+		theObj = eval(strName);
+		theObj.visibility = "hidden";
+	}
+	else if (document.all != null){
+		document.all(strName).style.visibility = "hidden";
+	}
+}
+
+function  HideAllLayer()
+{	
+	var strName, iLayerCount, i;
+	var theObj;
+	iLayerCount = document.forms.FORM_Data.HIDDEN_LayerCount.value;
+	for(i = 1; i <= iLayerCount; i++)
+	{
+		strName = "Layer" + i
+		if(navigator.appName == 'Netscape' && document.layers != null){
+			strName = "document.layers." + strName
+			theObj = eval(strName);
+			theObj.visibility = "hidden";		
+		}
+			else if (document.all != null){
+			document.all(strName).style.visibility = "hidden";
+		}
+	}
+}
+</script></td>
+        </tr>
+        <tr> 
+          <td><img src="images/temp/service.gif" width="443" height="92"></td>
+        </tr>
+      </table>
+    </td>
+    <td valign="top" align="center" width="197"> 
+      <table width="154" border="0" cellspacing="0" cellpadding="0">
+        <tr align="center"> 
+          <td valign="top" width="154"><img src="images/temp/title_search.gif" width="154" height="25"></td>
+        </tr>
+        <tr align="center"> 
+          <td valign="top" width="154"> 
+            <table width="154" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="3" valign="top"><img src="images/temp/left_bars.gif" width="3" height="76"></td>
+                <td valign="top" width="149"> 
+                  <table width="149" border="0" cellspacing="0" cellpadding="0"><form name="fmSearch" method="post" >
+                    <tr> 
+                      <td width="54" align="center">品 牌</td>
+                      <td width="95"> 
+                        <select name="Brand" size="1"  onChange="changeProvinceInfo(Brand,ProductNo)">
+                           <option value="0" selected>-请选择-</option>
+                           <option value='1'>佳能</option><option value='2'>夏普</option><option value='3'>施乐</option><option value='4'>东芝</option><option value='5'>松下</option><option value='6'>三田</option><option value='7'>理光</option><option value='8'>美能达</option><option value='9'>雷立</option><option value='10'>柯尼卡</option><option value='11'>惠普</option><option value='12'>爱普生</option><option value='13'>兄弟</option><option value='14'>三洋</option><option value='15'>三星</option><option value='16'>利盟</option><option value='17'>OKI</option><option value='18'>奥西</option> 
+                        </select>
+                      </td>
+                    </tr>
+                    <tr> 
+                      <td width="54" align="center">型 号</td>
+                      <td width="95"> 
+                        <select name="ProductNo" >
+                           <option value="0" selected>-请选择-</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr align="center"> 
+                      <td width="54">&nbsp;</td>
+                        <td width="95" height="40"><a href="javascript:Search()"><img src="images/temp/b_search.gif" width="44" height="17" border="0"></a></td>
+                    </tr></form>
+                  </table>
+                </td>
+                <td width="2" valign="top"><img src="images/temp/right_bars.gif" width="2" height="76"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr align="center"> 
+          <td valign="top" width="154">&nbsp;</td>
+        </tr>
+        <tr align="center"> 
+          <td valign="top" width="154"><img src="images/temp/title_hot.gif" width="154" height="28"></td>
+        </tr>
+        <tr align="center"> 
+          <td width="154"> 
+            <table width="154" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="3" valign="top"><img src="images/temp/left_bars.gif" width="3" height="76"></td>
+                <td width="149"> 
+                  <table width="149" border="0" cellspacing="0" cellpadding="0">
+                    <tr align="center"> 
+                      <td colspan="2"><a href="javascript:ProductDetail.jsp?ProdId=5858"><img src="images/temp/hot_product.gif" width="149" height="89" border="0"></a></td>
+                    </tr>
+                    <tr align="center"> 
+                      <td colspan="2"><img src="images/temp/hot_text.gif" width="149" height="55"></td>
+                    </tr>
+                    <tr align="center"> 
+                      <td colspan="2">&nbsp;</td>
+                    </tr>
+                    <tr align="center"> 
+                      <td width="75"><a href="ProductDetail.jsp?ProdId=5791&amp;LangCode=GB"><img src="images/temp/b_detail.gif" width="44" height="17" border="0"></a></td>
+                      <td width="74"><a href="#"><img src="images/temp/b_buy.gif" width="44" height="17" border="0"></a></td>
+                    </tr>
+                  </table>
+                </td>
+                <td width="2" valign="top"><img src="images/temp/right_bars.gif" width="2" height="76"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table width="667" border="0" cellspacing="0" cellpadding="0">
+  <tr align="center"> 
+    <td><img src="images/temp/foot.gif" width="620" height="23"> </td>
+  </tr>
+</table>
+</body>
+</html>

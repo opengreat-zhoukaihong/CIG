@@ -1,0 +1,239 @@
+<html>
+<head>
+<link href="eoa.css" rel="stylesheet" type="text/css">
+<SCRIPT language=JavaScript>
+  var menuarray;
+  menur=6;
+  menuc=25;
+  menuselect="";
+  menuselects="";
+function mouseclick(lmname)
+  {
+  j=-1;
+  for(i=0;i<menur;i++)
+     {
+      if(lmname==menuarray[i][2])
+        {
+         menuselect=lmname;
+         if(menuarray[i][1]==1)
+           {
+           menuarray[i][1]=0;
+           menuselect="";
+           j=i;
+            }
+         else
+           {
+           menuarray[i][1]=1;
+           j=i;
+           }
+         }
+      else menuarray[i][1]=0;
+      }
+  document.all.menutable.outerHTML=drawmenu();
+  if(menuarray[j][0]==0)
+    {
+    menuselects="";
+    if(menuarray[j][1]==1)
+      {
+     
+
+      return(0);
+      }
+    }
+      
+  if(menuarray[j][1]==0 && menuselects!="")  
+      {
+      menuselects="";
+
+      return(0);
+      }
+  }
+
+function mouseclicks(lmname)
+  {
+  if(menuselects==lmname) 
+    menuselects="";
+  else 
+    menuselects=lmname;
+  document.all.menutable.outerHTML=drawmenu();
+  
+   for(i=0;i<menur;i++)
+     for(j=0;j<menuarray[i][0];j++)
+       if(lmname==menuarray[i][4+2*j])
+         {
+         if(menuselects=="")
+  
+           return(0);
+
+         else
+           {           
+           open(menuarray[i][4+2*j+1],"mainFrame");
+           return(0);
+           }
+         }
+  }
+function drawmenu()
+  {
+   var i,j,para;
+   para="";
+   para+='<table id="menutable" align="center" height=308 border=1 cellpadding=0 cellspacing=0  bordercolorlight=#000000 bordercolordark=#FFFFFF>';
+    for(i=0;i<menur;i++)
+       {
+       if(menuselect==menuarray[i][2])
+         para+='<tr><td id=td'+menuarray[i][2]+' align=center width=125 height=27   bgcolor=#2078CB><a style="CURSOR: hand" name='+menuarray[i][2]+' OnClick=mouseclick(name) OnMouseOver=mouseover(name) OnMouseOut=mouseout(name)> <font id=ft'+menuarray[i][2]+' face=宋体 size=2 color=#ffffff>'+menuarray[i][3]+'</font></a></td></tr>';
+       else
+         para+='<tr><td id=td'+menuarray[i][2]+' align=center width=125 height=27 bgcolor=#2078CB> <a  style="CURSOR: hand" name='+menuarray[i][2]+' OnClick=mouseclick(name) OnMouseOver=mouseover(name) OnMouseOut=mouseout(name)><font id=ft'+menuarray[i][2]+' face=宋体 size=2 color=#ffffff>'+menuarray[i][3]+'</font></a></td></tr>';
+       if(menuarray[i][1]==1)
+         {
+         for(j=0;j<menuarray[i][0];j++)
+           {
+            if(menuselects==menuarray[i][4+2*j])
+              para+='<tr><td id=td'+menuarray[i][4+2*j]+' align=center width=125 height=21  bgcolor=#E1F4FF><a style="CURSOR: hand" name='+menuarray[i][4+2*j]+' OnClick=mouseclicks(name) OnMouseOver=mouseover(name) OnMouseOut=mouseout(name)><font id=ft'+menuarray[i][4+2*j]+' face=宋体 size=2 color=#ff0000>'+menuarray[i][4+2*j]+'</font></a></td></tr>';
+            else
+              para+='<tr><td bgcolor=#E1F4FF id=td'+menuarray[i][4+2*j]+' align=center width=125 height=21 ><a style="CURSOR: hand" name='+menuarray[i][4+2*j]+' OnClick=mouseclicks(name) OnMouseOver=mouseover(name) OnMouseOut=mouseout(name)><font id=ft'+menuarray[i][4+2*j]+' face=宋体 size=2 color=#0000dd>'+menuarray[i][4+2*j]+'</span></font></a></td></tr>';
+           }
+         } 
+       }
+  para+='</table>';
+  return(para);
+  }
+
+
+function mouseover(lmname)
+  {
+   if(lmname!=menuselect && lmname!=menuselects)
+     {
+     for(i=0;i<menur;i++)  if(lmname==menuarray[i][2]) break;
+     if(i<menur)
+       {
+       aaa="td"+lmname;
+       //document.all[aaa].background="menu/over.jpg";
+       aaa="ft"+lmname;
+       document.all[aaa].size=2;
+       }
+     else
+       {
+       aaa="td"+lmname;
+       //document.all[aaa].background="menu/sover.jpg";
+       aaa="ft"+lmname;
+       document.all[aaa].size=2;
+       }
+     }
+  }
+
+function mouseout(lmname)
+  {
+  if(lmname!=menuselect && lmname!=menuselects)
+     {
+     for(i=0;i<menur;i++)   if(lmname==menuarray[i][2]) break;
+     if(i<menur)
+       {
+       aaa="td"+lmname;
+      
+       aaa="ft"+lmname;
+       document.all[aaa].size=2;
+       }
+     else
+       {
+       aaa="td"+lmname;
+      
+       aaa="ft"+lmname;
+       document.all[aaa].size=2;
+       }
+     }
+  }
+
+function initmenu()
+{
+menuarray=new Array();
+for(i=0;i<menur;i++)
+menuarray[i]=new Array();
+menuarray[0][0]=6;
+menuarray[0][1]=0;
+menuarray[0][2]="0";
+menuarray[0][3]="区域管理";
+menuarray[0][4]="国家列表";
+menuarray[0][5]="#"; 
+menuarray[0][6]="添加国家";
+menuarray[0][7]="#";
+menuarray[0][8]="省份列表";
+menuarray[0][9]="#"; 
+menuarray[0][10]="添加省份";
+menuarray[0][11]="#";
+menuarray[0][12]="城市列表";
+menuarray[0][13]="#"; 
+menuarray[0][14]="添加城市";
+menuarray[0][15]="#";
+
+
+menuarray[1][0]=2;
+menuarray[1][1]=0;
+menuarray[1][2]="1";
+menuarray[1][3]="品牌管理";
+menuarray[1][4]="品牌列表";
+menuarray[1][5]="brandList.jsp";
+menuarray[1][6]="添加品牌";
+menuarray[1][7]="brandAdd.jsp";
+
+
+menuarray[2][0]=2;
+menuarray[2][1]=0;
+menuarray[2][2]="2";
+menuarray[2][3]="产品类别";
+menuarray[2][4]="类别列表";
+menuarray[2][5]="typeList.jsp";
+menuarray[2][6]="添加类别";
+menuarray[2][7]="typeAdd.jsp";
+
+
+menuarray[3][0]=2;
+menuarray[3][1]=0;
+menuarray[3][2]="3";
+menuarray[3][3]="图片目录";
+menuarray[3][4]="目录列表";
+menuarray[3][5]="#";
+menuarray[3][6]="添加目录";
+menuarray[3][7]="#";
+
+
+menuarray[4][0]=3;
+menuarray[4][1]=0;
+menuarray[4][2]="4";
+menuarray[4][3]="产品管理";
+menuarray[4][4]="产品查询";
+menuarray[4][5]="bstProdQuery.jsp";
+menuarray[4][6]="添加产品";
+menuarray[4][7]="bstProductAdd.jsp";
+menuarray[4][8]="推荐产品";
+menuarray[4][9]="bstProductAdd.jsp";
+
+
+menuarray[5][0]=1;
+menuarray[5][1]=0;
+menuarray[5][2]="5";
+menuarray[5][3]="退出系统";
+menuarray[5][4]="退出系统";
+menuarray[5][5]="BstLogout.jsp";
+
+}
+
+</SCRIPT>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="eoa.css" rel="stylesheet" type="text/css">
+</head>
+
+<body bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" background="/images/temp/bg.gif" text="#FFFFFF" link="#FF0000" vlink="#FF0000" alink="#FF0000">
+<table border="0" cellspacing="0" cellpadding="0" align="right" width="140" height="200">
+  <tr align="center" > 
+    <td height="200" width="15">&nbsp; </td>
+    <td height="200" width="119"> 
+      <script language=JavaScript>
+initmenu();
+document.write(drawmenu());
+</script>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

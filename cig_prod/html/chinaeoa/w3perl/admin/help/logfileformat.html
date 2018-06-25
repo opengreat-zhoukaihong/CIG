@@ -1,0 +1,99 @@
+<HEAD>
+<TITLE>W3perl - Help - Logfile</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<CENTER>
+<TABLE BORDER=0 CELLSPACING=0 WIDTH=100%>
+<TR>
+<TD VALIGN=TOP ALIGN=CENTER>
+
+<TABLE BORDER=0 CELLSPACING=0 WIDTH=100%>
+<TR>
+<TH><FONT COLOR="#0000FF">Logfile format</FONT></TH>
+<TD>                   
+<CENTER>
+Here are some typical logfile format :
+</CENTER>
+</TD>
+</TR>
+</TABLE>
+</TD>
+<TR>
+<TD ALIGN=CENTER>
+<P><BR>
+<TABLE BORDER=0 CELLPADDING=3>
+<TR>
+<TH><FONT SIZE=-1>CLF</FONT></TH>
+<TH ALIGN=LEFT><FONT SIZE=-1>%host %null %login %date %hourshift %method %page %protocol %status %requetesize</FONT></TH>
+</TR><TR>
+<TD BGCOLOR="#D9D9D9" COLSPAN=2><FONT SIZE=-1>
+www.lyot.obspm.fr - - [01/Jan/97:23:12:24 +0000] "GET //chinaeoa/index.jsp HTTP/1.0" 200 1220
+</FONT></TD>
+</TR><TR>
+<TH><FONT SIZE=-1>ECLF</FONT></TH>
+<TH ALIGN=LEFT><FONT SIZE=-1>%host %null %login %date %hourshift %method %page %protocol %status %requetesize %referer %agent</FONT></TH>
+</TR><TR>
+<TD BGCOLOR="#D9D9D9" COLSPAN=2><FONT SIZE=-1>
+www.lyot.obspm.fr - - [01/Jan/97:23:12:24 +0000] "GET //chinaeoa/index.jsp HTTP/1.0" 200 1220 "http://www.w3perl.com/softs/" "Mozilla/4.01 (X11; I; SunOS 5.3 sun4m)"
+</FONT>
+</TD>
+</TR><TR>
+<TH><FONT SIZE=-1>NECLF</FONT></TH>
+<TH ALIGN=LEFT><FONT SIZE=-1>
+%host %null %login %date %hourshift %virtualhost %method %page %protocol %status %requetesize %referer %agent
+</FONT></TH>
+</TR><TR>
+<TD BGCOLOR="#D9D9D9" COLSPAN=2><FONT SIZE=-1>
+www.lyot.obspm.fr - - [01/Jan/97:23:12:24 +0000] (www.obspm.fr) "GET //chinaeoa/index.jsp HTTP/1.0" 200 1220 "http://www.w3perl.com/softs/" "Mozilla/4.01 (X11; I; SunOS 5.3 sun4m)"
+</FONT></TD>
+</TR><TR>
+<TH><FONT SIZE=-1>Microsoft</FONT></TH>
+<TH ALIGN=LEFT><FONT SIZE=-1>
+%host %login %date %hour %null %null %null %null %null %requetesize %status %null %method %page
+</FONT></TH>
+</TR><TR>
+<TD BGCOLOR="#D9D9D9" COLSPAN=2><FONT SIZE=-1>
+129.142.90.150, -, 5/5/97, 14:33:27, W3SVC, RHINO, 194.182.141.6, 2601, 207, 1272, 200, 0, GET, /frabout.htm, -, 
+</FONT></TD>
+</TR><TR>
+<!--
+<TH><FONT SIZE=-1>IIS 3 patched</FONT></TH>
+<TH ALIGN=LEFT><FONT SIZE=-1>
+%host %login %date %hour %null %null %null %null %null %requetesize %status %null %method %page %agent %referer
+</FONT></TH>
+</TR><TR>
+<TD BGCOLOR="#D9D9D9" COLSPAN=2><FONT SIZE=-1>
+129.142.90.150, -, 5/5/97, 14:33:27, W3SVC, RHINO, 194.182.141.6, 2601, 207, 1272, 200, 0, GET, /frabout.htm, Mozilla/2.0 (compatible; MSIE 3.0; Windows95), http://www.iaefenet.org/fairs2.html, -, 
+</FONT></TD>
+</TR><TR>
+-->
+<TH><FONT SIZE=-1>W3C</FONT></TH>
+<TH ALIGN=LEFT><FONT SIZE=-1>
+%date %hour %host %method %page %status %query %status %agent %referer
+</FONT></TH>
+</TR><TR>
+<TD BGCOLOR="#D9D9D9" COLSPAN=2><FONT SIZE=-1>
+1998-01-06 19:05:37 193.149.100.108 GET /images/ap.gif - 304 Mozilla/4.0+(compatible;+MSIE+4.0;+Windows+95) http://www.defle.montaigne.u-bordeaux.fr/
+</FONT></TD>
+<!--
+</TR><TR>
+<TH><FONT SIZE=-1></FONT></TH>
+<TH ALIGN=LEFT><FONT SIZE=-1>
+
+</FONT></TH>
+</TR><TR>
+<TD BGCOLOR="#D9D9D9" COLSPAN=2><FONT SIZE=-1>
+
+</FONT></TD>
+-->
+</TR>
+</TABLE>
+
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+</BODY>
+</HTML>

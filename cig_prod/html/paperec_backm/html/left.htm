@@ -1,0 +1,293 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<SCRIPT language=JavaScript>
+  var menuarray;
+  menur=10;
+  menuc=25;
+  menuselect="";
+  menuselects="";
+function mouseclick(lmname)
+  {
+  j=-1;
+  for(i=0;i<menur;i++)
+     {
+      if(lmname==menuarray[i][2])
+        {
+         menuselect=lmname;
+         if(menuarray[i][1]==1)
+           {
+           menuarray[i][1]=0;
+           menuselect="";
+           j=i;
+            }
+         else
+           {
+           menuarray[i][1]=1;
+           j=i;
+           }
+         }
+      else menuarray[i][1]=0;
+      }
+  document.all.menutable.outerHTML=drawmenu();
+  if(menuarray[j][0]==0)
+    {
+    menuselects="";
+    if(menuarray[j][1]==1)
+      {
+     
+
+      return(0);
+      }
+    }
+      
+  if(menuarray[j][1]==0 && menuselects!="")  
+      {
+      menuselects="";
+
+      return(0);
+      }
+  }
+
+function mouseclicks(lmname)
+  {
+  if(menuselects==lmname) 
+    menuselects="";
+  else 
+    menuselects=lmname;
+  document.all.menutable.outerHTML=drawmenu();
+  
+   for(i=0;i<menur;i++)
+     for(j=0;j<menuarray[i][0];j++)
+       if(lmname==menuarray[i][4+2*j])
+         {
+         if(menuselects=="")
+  
+           return(0);
+
+         else
+           {           
+           open(menuarray[i][4+2*j+1],"mainFrame");
+           return(0);
+           }
+         }
+  }
+function drawmenu()
+  {
+   var i,j,para;
+   para="";
+   para+='<table id="menutable" align="center" height=189 border=1 cellpadding=0 cellspacing=0  bordercolorlight=#000000 bordercolordark=#FFFFFF>';
+    for(i=0;i<menur;i++)
+       {
+       if(menuselect==menuarray[i][2])
+         para+='<tr><td id=td'+menuarray[i][2]+' align=center width=125 height=27   bgcolor=#4078e0><a style="CURSOR: hand" name='+menuarray[i][2]+' OnClick=mouseclick(name) OnMouseOver=mouseover(name) OnMouseOut=mouseout(name)> <font id=ft'+menuarray[i][2]+' face=宋体 size=2 color=#ffffff>'+menuarray[i][3]+'</font></a></td></tr>';
+       else
+         para+='<tr><td id=td'+menuarray[i][2]+' align=center width=125 height=27 bgcolor=#4078e0> <a  style="CURSOR: hand" name='+menuarray[i][2]+' OnClick=mouseclick(name) OnMouseOver=mouseover(name) OnMouseOut=mouseout(name)><font id=ft'+menuarray[i][2]+' face=宋体 size=2 color=#ffffff>'+menuarray[i][3]+'</font></a></td></tr>';
+       if(menuarray[i][1]==1)
+         {
+         for(j=0;j<menuarray[i][0];j++)
+           {
+            if(menuselects==menuarray[i][4+2*j])
+              para+='<tr><td id=td'+menuarray[i][4+2*j]+' align=center width=125 height=21  bgcolor=#FFCC33><a style="CURSOR: hand" name='+menuarray[i][4+2*j]+' OnClick=mouseclicks(name) OnMouseOver=mouseover(name) OnMouseOut=mouseout(name)><font id=ft'+menuarray[i][4+2*j]+' face=宋体 size=2 color=#ffffff>'+menuarray[i][4+2*j]+'</font></a></td></tr>';
+            else
+              para+='<tr><td bgcolor=#FFCC33 id=td'+menuarray[i][4+2*j]+' align=center width=125 height=21 ><a style="CURSOR: hand" name='+menuarray[i][4+2*j]+' OnClick=mouseclicks(name) OnMouseOver=mouseover(name) OnMouseOut=mouseout(name)><font id=ft'+menuarray[i][4+2*j]+' face=宋体 size=2 color=#cd5c5c>'+menuarray[i][4+2*j]+'</span></font></a></td></tr>';
+           }
+         } 
+       }
+  para+='</table>';
+  return(para);
+  }
+
+
+function mouseover(lmname)
+  {
+   if(lmname!=menuselect && lmname!=menuselects)
+     {
+     for(i=0;i<menur;i++)  if(lmname==menuarray[i][2]) break;
+     if(i<menur)
+       {
+       aaa="td"+lmname;
+       //document.all[aaa].background="menu/over.jpg";
+       aaa="ft"+lmname;
+       document.all[aaa].size=2;
+       }
+     else
+       {
+       aaa="td"+lmname;
+       //document.all[aaa].background="menu/sover.jpg";
+       aaa="ft"+lmname;
+       document.all[aaa].size=2;
+       }
+     }
+  }
+
+function mouseout(lmname)
+  {
+  if(lmname!=menuselect && lmname!=menuselects)
+     {
+     for(i=0;i<menur;i++)   if(lmname==menuarray[i][2]) break;
+     if(i<menur)
+       {
+       aaa="td"+lmname;
+      
+       aaa="ft"+lmname;
+       document.all[aaa].size=2;
+       }
+     else
+       {
+       aaa="td"+lmname;
+      
+       aaa="ft"+lmname;
+       document.all[aaa].size=2;
+       }
+     }
+  }
+
+function initmenu()
+{
+menuarray=new Array();
+for(i=0;i<menur;i++)
+menuarray[i]=new Array();
+menuarray[0][0]=1;
+menuarray[0][1]=0;
+menuarray[0][2]="0";
+menuarray[0][3]="系统管理";
+menuarray[0][4]="系统参数";
+menuarray[0][5]="../paperec_backm/parachazhao.jsp";
+
+
+menuarray[1][0]=5;
+menuarray[1][1]=0;
+menuarray[1][2]="1";
+menuarray[1][3]="会员管理";
+menuarray[1][4]="新会员管理";
+menuarray[1][5]="../paperec_backm/company.jsp";
+menuarray[1][6]="会员公司";
+menuarray[1][7]="../paperec_backm/membercompany_search.jsp";
+menuarray[1][8]="会员用户";
+menuarray[1][9]="../paperec_backm/memberuser_search.jsp";
+menuarray[1][10]="会员产品资料";
+menuarray[1][11]="../paperec_backm/memberuser_cpzllb.jsp";
+menuarray[1][12]="会员公司关联";
+menuarray[1][13]="../paperec_backm/shurugd_id.jsp";
+
+
+menuarray[2][0]=4;
+menuarray[2][1]=0;
+menuarray[2][2]="2";
+menuarray[2][3]="产品分类管理";
+menuarray[2][4]="产品大类";
+menuarray[2][5]="../paperec_backm/chanpindllb.jsp?classFlag=C";
+menuarray[2][6]="规格定义";
+menuarray[2][7]="../paperec_backm/guigelb.jsp";
+menuarray[2][8]="产品大类规格";
+menuarray[2][9]="../paperec_backm/chazhaodl.jsp?classFlag=C&fromFlag=1";
+menuarray[2][10]="产品分类关联";
+menuarray[2][11]="../paperec_backm/chazhaodl.jsp?classFlag=C&fromFlag=2";
+
+
+
+menuarray[3][0]=2;
+menuarray[3][1]=0;
+menuarray[3][2]="3";
+menuarray[3][3]="订单管理";
+menuarray[3][4]="订单管理";
+menuarray[3][5]="../paperec_backm/yj_search.jsp";
+menuarray[3][6]="已成交订单管理";
+menuarray[3][7]="../paperec_backm/order_success.jsp";
+
+
+
+
+menuarray[4][0]=2;
+menuarray[4][1]=0;
+menuarray[4][2]="4";
+menuarray[4][3]="合同管理";
+menuarray[4][4]="合同模板维护";
+menuarray[4][5]="../paperec_backm/htmuban_search.jsp";
+menuarray[4][6]="合同管理";
+menuarray[4][7]="../paperec_backm/hetong_search.jsp";
+
+
+menuarray[5][0]=4;
+menuarray[5][1]=0;
+menuarray[5][2]="5";
+menuarray[5][3]="网站内容管理";
+menuarray[5][4]="每周精选";
+menuarray[5][5]="../paperec_backm/meizhoujingxuan_list.jsp?act=";
+menuarray[5][6]="行业新闻";
+menuarray[5][7]="/paperec_backm/news_login.jsp";
+menuarray[5][8]="信息发布中心";
+menuarray[5][9]="../paperec_backm/emailtijiao.jsp";
+menuarray[5][10]="BBS管理";
+menuarray[5][11]="../paperec_backm/bbs/bbsBK_login.jsp";
+
+
+menuarray[6][0]=2;
+menuarray[6][1]=0;
+menuarray[6][2]="6";
+menuarray[6][3]="设备管理";
+menuarray[6][4]="设备类别管理";
+menuarray[6][5]="/paperec_backm/equip/equip_list.jsp";
+menuarray[6][6]="设备供需信息检索";
+menuarray[6][7]="/paperec_backm/equip/equipBKlogin.jsp";
+
+
+menuarray[7][0]=5;
+menuarray[7][1]=0;
+menuarray[7][2]="7";
+menuarray[7][3]="纸业商情";
+menuarray[7][4]="期刊管理";
+menuarray[7][5]="/paperec_backm/pbi/journalList.jsp";
+menuarray[7][6]="栏目管理";
+menuarray[7][7]="/paperec_backm/pbi/column_list.jsp";
+menuarray[7][8]="增加栏目";
+menuarray[7][9]="/paperec_backm/pbi/add_column.jsp";
+menuarray[7][10]="文稿管理";
+menuarray[7][11]="/paperec_backm/pbi/article_search.jsp";
+menuarray[7][12]="增加文稿";
+menuarray[7][13]="/paperec_backm/pbi/add_article.jsp";
+
+
+
+
+menuarray[8][0]=5;
+menuarray[8][1]=0;
+menuarray[8][2]="8";
+menuarray[8][3]="安全管理";
+menuarray[8][4]="操作员列表";
+menuarray[8][5]="/paperec_backm/permission/operator_list.jsp";
+menuarray[8][6]="增加操作员";
+menuarray[8][7]="/paperec_backm/permission/add_operator.jsp";
+menuarray[8][8]="功能项管理";
+menuarray[8][9]="/paperec_backm/permission/func_list.jsp";
+menuarray[8][10]="模块管理";
+menuarray[8][11]="/paperec_backm/permission/module_list.jsp";
+menuarray[8][12]="角色管理";
+menuarray[8][13]="/paperec_backm/permission/role_list.jsp";
+
+menuarray[9][0]=1;
+menuarray[9][1]=0;
+menuarray[9][2]="9";
+menuarray[9][3] ="退出管理系统";
+menuarray[9][4]="退出管理系统";
+menuarray[9][5]="/paperec_backm/login.htm";
+
+}
+
+</SCRIPT></head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="125" border="0" cellspacing="0" cellpadding="0" align="right">
+  <tr>
+    <td>
+      <script language=JavaScript>
+initmenu();
+document.write(drawmenu());
+</script>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

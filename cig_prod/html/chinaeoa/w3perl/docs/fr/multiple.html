@@ -1,0 +1,262 @@
+<HTML><head>
+<title>W3Perl One/several file - FR</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Fichiers de log</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1><B>Un fichier unique</B></FONT></I>
+</TD>
+<TD VALIGN=TOP>
+Les serveurs Web stockent leurs logs dans un seul fichier de log de pr&eacute;f&eacute;rence.
+
+<br>
+Sur un serveur NCSA ou Apache, le nom de ce fichier est access_log<br>
+Sur un serveur CERN, le nom de fichier est httpd-log<br>
+dans le fichier de configuration config.pl, vous devez s&eacute;lectionner : $zip = 0
+<P>
+Les serveurs sous CERN peuvent utiliser un fichier de log diff&eacute;rent chaque jour en indexant
+la date &agrave; la fin du nom du fichier de log. Il existe un rectificatif qui permet de r&eacute;gler
+ce probl&egrave;me (voir www.w3.org).
+Si cette option vous plait, il est possible d'utiliser w3perl en cr&eacute;ant un lien symbolique
+diff&eacute;rent chaque jour sur le fichier de log journalier &agrave; l'aide d'une crontab.
+<P>
+Avec les serveurs IIS, les fichiers de log quotidiens ne sont pas un bug mais une sp&eacute;cificit&eacute;
+. W3perl est d&eacute;sormais capable de g&eacute;rer de tels fichiers journaliers.
+</TD>
+</TR>
+
+
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1><B>Fichiers multiples</B></FONT></I>
+</TD>
+<TD VALIGN=TOP>
+Introduit dans la version 2.30, w3perl est capable de lire des fichiers de log avec des 
+noms configurables.
+<BR> S&eacute;lectionnez dans le fichier de configuration le format des noms de fichiers de log que
+vous utilisez.
+<P>
+<B>Les noms de fichiers peuvent &ecirc;tre ce que vous d&eacute;sirez :</B>
+<P>
+<UL>
+<LI> <I>filename</I> est la chaine constante dans votre fichier de log (ex : access_log),<BR>
+<LI> <I>day</I> est le jour sous forme de deux chiffres (de 01 &agrave; 31),<BR>
+<LI> <I>month</I> est le mois sous forme de deux chiffres (de 01 &agrave; 12),<BR>
+<LI> <I>lettermonth</I> est le mois sous forme de 3 lettres avec la premi&egrave;re en majuscule (de Jan &grave; Dec),<BR>
+<LI> <I>year</I> est l'ann&eacute;e sous forme de quatre chiffres (ex : 1998)<BR>
+<LI> <I>smallyear</I> est l'ann&eacute;e sous forme de deux chiffres (ex : 98)<BR>
+<LI> et <I>suffix</I> est l'extension de compression que vous utilisez sur votre machine (ex : gz ou zip).
+</UL>
+<P>
+Exemples de chaines de format support&eacute; :
+<UL>
+<LI> <I>access_log.1998Mar.gz</I>
+<LI> <I>1998.03.10.raw.zip</I>
+<LI> <I>log.03-12-1998.gz</I>
+<LI> <I>in.9904</I>
+</UL>
+<P>
+
+
+</TD>
+</TR>
+
+
+<TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+
+
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Fichiers <BR>compress&eacute;s<BR> quotidiennement</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+Un nombre assez important d'h&eacute;bergeur fournissent des fichiers de log sous la
+forme de fichiers journaliers compress&eacute;s.<BR>
+Utilisez $zip = 1 et $zipcut = 2 au niveau du fichier de configuration pour s&eacute;lectionner
+ce mode.
+<P>
+
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+
+
+<TR>
+
+<TD VALIGN=TOP>
+<I><FONT SIZE=+1>Fichiers journaliers</FONT></I>
+
+</TD>
+<TD>
+L'application a besoin d'un fichier de log contenant au moins une journ&eacute;e de log.<BR>
+Mais si votre site est tr&egrave;s fr&eacute;quent&eacute; et que vous d&eacute;cidez de nettoyer
+votre fichier de log chaque jour pour raison d'espace disque, il est toujours possible
+d'utiliser w3perl.<BR>
+Vous devrez d&eacute;placer votre fichier de log &agrave; minuit vers un autre nom, w3perl lira
+ce fichier d&eacute;plac&eacute; et vous pourrez ensuite l'effacer.
+
+Suivez les instructions suivantes :<BR>
+<OL>
+<LI> A minuit, d&eacute;placez votre fichier de log courant (access_log) vers logfile.old (access_log_old)<br> 
+Dans votre fichier de configuration, vous devez utiliser ce fichier d&eacute;plac&eacute;
+(prefixlog doit &ecirc;tre &eacute;gal &agrave; access_log_old).
+
+<LI> Lancez les stats et ensuite effacer ce fichier d&eacute;plac&eacute; (access_log_old).
+
+<LI> Le premier jour, utilisez cron-pages.pl.<br>
+Le jour suivant, utilisez cron-inc.pl....<br>
+Cron-inc.pl ne parcourera que le fichier de log sur la journ&eacute;e pr&eacute;c&eacute;dente donc
+&agrave; son lancement il devra bien lire le fichier d&eacute;plac&eacute; (access_log_old)
+
+<LI> N'oubliez pas de lancer cron-hour chaque heure, cron-day une fois par jour,
+cron-week une fois par semaine.
+Vous ne pouvez pas utiliser cron-month.pl pour les stats sur les mois, d&eacute;sol&eacute;.
+</OL>
+
+<B>Exemple :</B>
+<P>
+<UL>
+<I>Jour 1</I><br>
+fichier de log courant <I>log_current</I> tourne de 00 h &agrave; 23 h 59
+<P>
+<I>Jour 2</I><br>
+D&eacute;placez votre fichier de log courant <I>log_current</I> vers <I>log_previous</I> &agrave; 00 h 00<br>
+Un nouveau fichier de log courant <I>log_current</I> tourne de 00 h &agrave; 23 h 59<br>
+lancer cron-pages.pl (qui va scanner le fichier <I>log_previous</I>) et ensuite effacez <I>log_previous</I>
+<P>
+<I>Jour 3</I><br>
+D&eacute;placez votre fichier de log courant <I>log_current</I> vers <I>log_previous</I> &agrave; 00 h 00<br>
+Un nouveau fichier de log courant <I>log_current</I> tourne de 00 h &agrave; 23 h 59<br>
+lancez cron-inc.pl (qui va scanner le fichier <I>log_previous</I>) et ensuite effacez <I>log_previous</I>
+<P>
+<I>Jour 4</I><br>
+identique au jour 3
+<br>
+....
+</UL>
+<P>
+Vous aurez ainsi des statistiques incr&eacute;mentales avec juste un fichier quotidien.
+Bien sur, choississez avec attention vos options de configuration dans config.pl car &eacute;tant
+donn&eacute; que vos fichiers de log sont d&eacute;truits, il n'est pas possible de relancer les
+stats.
+<P>
+</TD>
+
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=60%><P></TD>
+</TR>
+
+
+
+
+<TR>                           
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Fichiers <BR>compress&eacute;s<BR>mensuellement</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+Les fichiers de log grossissent tr&egrave;s vite. Dans le fichier de configuration, 
+utilisez : $zip = 1 et $zipcut = 1 pour s&eacute;lectionner le mode de fichiers
+compress&eacute;s mensuellement.
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Faites le vous-m&ecirc;me</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+W3Perl utilise le format de fichiers de log compress&eacute;s depuis plusieurs ann&eacute;es.
+Si vous d&eacute;sirez vous aussi utiliser ce mode qui coupe le fichier de log chaque mois et
+le compresse ensuite, suivez les instructions suivantes :
+<P>
+<B>Pour modifier vos fichiers de log dans le nouveau format, faites :</B>
+<P> 
+<UL>
+<LI>grep "/&lt;month&gt;/&lt;year&gt;"  &lt;logfile&gt; > &lt;logfile&gt;.&lt;monthdigits&gt;-&lt;year&gt;
+<br>
+o&ugrave; month est le mois avec une chaine de 3 lettres avec la premi&egrave;re en majuscule,
+<br> 
+year est un nombre &agrave; 4 chiffres <br>et monthdigits est le mois avec deux chiffres.
+<br>
+(eg : grep "/Dec/1994" access_log &gt; access_log.12-1994)
+<p>
+<LI>gzip &lt;logfile&gt;.&lt;monthdigits&gt;-&lt;year&gt;
+<br>
+(eg : gzip access_log.12-1995)
+<br>
+A la fin de la proc&eacute;dure, vous devriez avoir dans votre r&eacute;pertoire des fichiers qui
+doivent ressembler &agrave; ce genre de chose :
+<P>
+<UL>
+           access_log.10-1994.gz
+<br>       access_log.11-1994.gz
+<br>       access_log.12-1994.gz
+<br>       access_log.01-1995.gz
+</UL>
+<P>
+</UL>
+Les fichiers compress&eacute;s doivent se situer dans le <b>m&ecirc;me r&eacute;pertoire</B> 
+que le fichier de log courant.
+file.<br>
+Cela va vous &eacute;conomiser beaucoup d'espace disque (le gain est de 90%)
+<P>
+Les utilisateurs sous NT peuvent utiliser zip au lieu de gzip. 
+Vous aurez donc &agrave; la place access_log.01-1995.zip au lieu de access_log.01-1995.gz.
+<P>
+<P><HR ALIGN=CENTER WIDTH=20%><P>
+<B>Utilisez squeezelog pour couper et compresser vos fichiers de log chaque mois</B> :
+<P>
+J'utilise un petit script <A HREF="newhttpd.html">squeezelog</A> qui coupe et compresse
+le fichier de log chaque mois.
+Le taux de compression est d'environ 90% du fichier originel.
+<br>
+Il remplace l'utilitaire rotate-log fourni par exemple avec le serveur Apache.
+Sur un serveur NT, se servir de fichiers de log mensuel serait mon choix personnel except&eacute; si
+votre site est tr&egrave;s fr&eacute;quent&eacute;.
+<BR>
+W3Perl fonctionne &eacute;galement plus rapidement dans ce mode car il se contente 
+de ne scanner que le mois courant au lieu d'un gros fichier.
+<P>
+Vous devrez &eacute;diter le fichier <A HREF="newhttpd.html">squeezelog</A> et de le
+configurer pour votre machine. Ce script doit &ecirc;tre ajouter &agrave; votre crontab et 
+executer une fois le premier jour de chaque mois.
+<P>
+Exemple :<br>
+01 00 1 * * /usr/local/bin/perl /norfolk/www-data/w3perl/squeezelog
+<P>
+(si les fichiers de log appartiennent au super utilisateur, vous devrez donc demander &agrave;
+celui-ci d'effectuer la proc&eacute;dure pour vous).
+
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="/chinaeoa/index.jsp"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

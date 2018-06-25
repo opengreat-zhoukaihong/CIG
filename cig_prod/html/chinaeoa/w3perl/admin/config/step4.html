@@ -1,0 +1,395 @@
+<HTML>
+<HEAD>
+<TITLE>W3Perl Forms- Step 4</TITLE>
+<SCRIPT LANGUAGE="Javascript">
+	
+function Check_not_empty() {
+
+//var count_empty = 0;
+
+for (var i = 0; i < document.step4.elements.length; i++) {
+if (document.step4.elements[i].type == "text") {
+if (document.step4.elements[i].value.length == 0) {
+
+if (document.step4.elements[i].name != "refererlog" && document.step4.elements[i].name != "agentlog" && document.step4.elements[i].name != "errorlog") {
+
+string = "";
+if (document.step4.elements[i].name == "path") string = "W3Perl path for output";
+if (document.step4.elements[i].name == "pathserver") string = "Your root server path";
+if (document.step4.elements[i].name == "cgipath") string = "Your CGI-BIN path";
+if (document.step4.elements[i].name == "fileroot") string = "Your logfile path";
+if (document.step4.elements[i].name == "prefixlog") string = "The core name of your logfile";
+
+alert (string+" is empty");
+return false;
+}
+}
+}
+}
+
+return true;
+
+}
+
+function Check_text(string,variable,min,max,len) {
+var val;
+
+var stop = 0;
+for (var i = 0; i < document.step4.elements.length; i++) {
+if (document.step4.elements[i].type == "text" && document.step4.elements[i].name == variable) {
+val = document.step4.elements[i].value.lastIndexOf("/")+1;
+
+if (document.step4.elements[i].value.indexOf("/") == -1) {
+alert ("Your value should have at least one / character");
+stop = 1;
+}
+
+if (val != document.step4.elements[i].value.length && stop == 0) {
+alert ("Your value should end with a slash character");
+stop = 1;
+}
+
+
+}
+}
+}
+
+</SCRIPT>
+</HEAD>
+
+<BODY BACKGROUND="<!-- BG -->" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<FORM METHOD=POST NAME="step4" ACTION="<!-- cgiurl -->/confstat.pl" onSubmit="return Check_not_empty()">
+
+<INPUT NAME="step" VALUE="4" TYPE="HIDDEN">
+
+<!-- HIDDEN -->
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="<!-- LINE -->" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Configuration - Step 4</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD ALIGN=CENTER VALIGN=TOP>
+ </TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD>
+
+Enter path for various setup. Logfile name should be static, i.e this is
+a constant suffix. Server path section is only used to compute stats
+about your html web files You don't have to fill these fields if you
+don't have planned to use cron-url.
+
+</TD>
+</TR>
+<TR><TD BGCOLOR="#AAAAAA" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>W3Perl path</FONT></I>
+</TD>
+<TD VALIGN=TOP BGCOLOR="#DDDDDD">
+
+<TABLE WIDTH=100% BORDER=0>
+<TR><TD>
+W3Perl output path :
+</TD><TD>
+<INPUT NAME="path" SIZE=30 TYPE="text" VALUE="" OnChange="Check_text('text','path')">
+</TD></TR>
+<TR>
+<TD>
+<FONT SIZE=-1>
+<I>(Stats files will be stored in this directory)</I>
+</FONT>
+</TD><TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for examples
+<OPTION>/usr/local/serveurs/skylink/htdocs/stats/ (Unix)
+<OPTION>/home/domisse/public_html/w3perl/ (Unix)
+<OPTION>C:/Inetpub/wwwroot/stats/ (NT)
+<OPTION>ATAFS::HardDisc4.$.Work.www.w3perl. (Acorn)
+</SELECT>
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR><TD>
+W3Perl path installation :
+</TD><TD>
+<INPUT NAME="pathinit" SIZE=30 TYPE="text" VALUE="" OnChange="Check_text('text','pathinit')">
+</TD></TR>
+<TR><TD>
+<FONT SIZE=-1>
+<I>(the directory where w3perl have been installed)</I>
+</FONT>
+</TD><TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for examples
+<OPTION>/usr/local/serveurs/skylink/htdocs/w3perl/ (Unix)
+<OPTION>/home/domisse/public_html/w3perl/ (Unix)
+<OPTION>C:/Inetpub/wwwroot/cgi-bin/w3perl/ (NT)
+<OPTION>ATAFS::HardDisc4.$.Work.w3perl. (Acorn)
+</SELECT>
+</TD></TR>
+<!--
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR><TD>
+W3Perl URL from the root server :
+</TD><TD>
+<INPUT NAME="linkpathinit" SIZE=30 TYPE="text" VALUE="">
+</TD></TR>
+<TR><TD>
+<FONT SIZE=-1>
+<I>(URL to call w3perl html files)</I>
+</FONT>
+</TD><TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for examples
+<OPTION>/w3perl/ (Unix)
+<OPTION>/cgi-bin/w3perl/ (NT)
+<OPTION>/Work/w3perl/ (Acorn)
+</SELECT>
+</TD></TR>
+-->
+</TABLE>
+
+</TD>
+</TR>
+<TR><TD BGCOLOR="#AAAAAA" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Server path</FONT></I>
+</TD>
+<TD BGCOLOR="#DDDDDD">
+
+
+<TABLE WIDTH=100%>
+<TR><TD>
+Your server root HTML directory :
+</TD><TD>
+<INPUT NAME="pathserver" SIZE=30 TYPE="text" VALUE="" OnChange="Check_text('text','pathserver')">
+</TD></TR>
+<TR>
+<TD>
+<FONT SIZE=-1>
+<I>(www root directory where your HTML files are stored)</I>
+</FONT>
+</TD><TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for examples
+<OPTION>/usr/local/serveurs/skylink/htdocs/ (Unix)
+<OPTION>/home/domisse/public_html/ (Unix)
+<OPTION>C:/Inetpub/wwwroot/ (NT)
+<OPTION>ATAFS::HardDisc4.$.Work.data. (Acorn)
+</SELECT>
+</TD></TR>
+<!--
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR><TD>
+Your absolute URL where your HTML files are stored :
+</TD><TD>
+<INPUT NAME="linkpathserver" SIZE=30 TYPE="text" VALUE="">
+</TD></TR>
+<TR>
+<TD>
+<FONT SIZE=-1>
+<I>(The only case where you should change this value is if you are in a user directory)</I>
+</FONT>
+</TD><TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for examples
+<OPTION>/ (Unix)
+<OPTION>/~skylink/ (Unix)
+<OPTION>\\ (NT)
+<OPTION>. (Acorn)
+</SELECT>
+</TD></TR>
+-->
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR><TD>
+Your CGI-BIN path :
+</TD><TD>
+<INPUT NAME="cgipath" SIZE=30 TYPE="text" VALUE="" OnChange="Check_text('text','cgipath')">
+</TD></TR>
+<TR>
+<TD>
+<FONT SIZE=-1>
+<I>(cgi-bin directory path where your scripts are stored)</I>
+</FONT>
+</TD><TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for examples
+<OPTION>/usr/local/serveurs/skylink/cgi-bin/ (Unix)
+<OPTION>C:/Inetpub/wwwroot/cgi-bin/ (NT)
+<OPTION>ATAFS::HardDisc4.$.Work.data.cgi-bin. (Acorn)
+</SELECT>
+</TD></TR>
+</TABLE>
+
+</TD>
+</TR>
+<TR><TD BGCOLOR="#AAAAAA" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Logfile name</FONT></I>
+</TD>
+<TD BGCOLOR="#DDDDDD">
+
+<TABLE>
+<TR><TD>
+Logfiles path :
+</TD><TD>
+<INPUT NAME="fileroot" SIZE=30 TYPE="text" VALUE="" OnChange="Check_text('text','fileroot')">
+</TD></TR>
+<TR>
+<TD>
+<FONT SIZE=-1>
+<I>(directory where your logfiles are stored by your server)</I>
+</FONT>
+</TD><TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for examples
+<OPTION>/usr/local/serveurs/skylink/logs/ (Unix)
+<OPTION>/usr/local/etc/httpd/logs/ (Unix)
+<OPTION>C:/Inetpub/wwwroot/cgi-bin/stats/ (NT)
+<OPTION>ATAFS::HardDisc4.$.Work.logs. (Acorn)
+</SELECT>
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR><TD>
+Logfile name :
+</TD><TD>
+<INPUT NAME="prefixlog" SIZE=15 TYPE="text" VALUE="">
+</TD></TR>
+<TR>
+<TD>
+<FONT SIZE=-1>
+<I>(use the constant string in your
+logfilename if you are using compressed logfile)</I>
+</FONT>
+</TD><TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for examples
+<OPTION>access_log (Unix - Apache, NCSA, Netscape)
+<OPTION>httpdlog (Unix - CERN)
+<OPTION>raw (1998.03.04.raw)
+<OPTION>IN (NT)
+<OPTION>logserver (Acorn)
+</SELECT>
+</TD></TR>
+<!--  BEGIN_EXTENDED -->
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR><TD>
+Referer logfile name :
+</TD><TD>
+<INPUT NAME="refererlog" SIZE=15 TYPE="text" VALUE="">
+</TD></TR>
+
+<TR>
+<TD>
+<FONT SIZE=-1>
+<I>(name of your referrer logfile)</I>
+</FONT>
+</TD><TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for examples
+<OPTION>referer_log (Unix)
+<OPTION>referlog (Acorn)
+</SELECT>
+</TD></TR>
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR><TD>
+Agent logfile name :
+</TD><TD>
+<INPUT NAME="agentlog" SIZE=15 TYPE="text" VALUE="">
+</TD></TR>
+<TR>
+<TD>
+<FONT SIZE=-1>
+<I>(name of your agent logfile)</I>
+</FONT>
+</TD><TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for examples
+<OPTION>agent_log (Unix)
+<OPTION>agentlog (Acorn)
+</SELECT>
+</TD></TR>
+<!-- END_EXTENDED -->
+<!-- BEGIN_ERROR -->
+<TR><TD BGCOLOR="#EEEEEE" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR><TD>
+Error logfile name :
+</TD><TD>
+<INPUT NAME="errorlog" SIZE=15 TYPE="text" VALUE="">
+</TD></TR>
+<TR>
+<TD>
+<FONT SIZE=-1>
+<I>(name of your error logfile)</I>
+</FONT>
+</TD><TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for examples
+<OPTION>error_log (Unix)
+<OPTION>errlog (Acorn)
+</SELECT>
+</TD></TR>
+<!-- END_ERROR -->
+</TABLE>
+
+</TD>
+</TR>
+<TR><TD BGCOLOR="#AAAAAA" COLSPAN=2><IMG SRC="<!-- BG -->" WIDTH=1 HEIGHT=1></TD></TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Utils path :</FONT></I>
+</TD>
+<TD BGCOLOR="#DDDDDD">
+
+<TABLE>
+<TR><TD>
+Fly path (graphic tool) : 
+</TD><TD>
+<INPUT NAME="FLY" SIZE=30 TYPE="text" VALUE="">
+</TD></TR>
+<TR>
+<TD>
+<FONT SIZE=-1>
+<I>(fullname where your fly binary is stored)</I>
+</FONT>
+</TD><TD>
+<SELECT NAME="ex">
+<OPTION SELECTED>Click here for examples
+<OPTION>/usr/local/bin/fly (Unix)
+<OPTION>/home/domisse/bin/fly (Unix)
+<OPTION>C:/Inetpub/wwwroot/cgi-bin/fly.exe (NT)
+<OPTION>ATAFS::HardDisc4.$.Work.bin.fly (Acorn)
+</SELECT>
+</TD></TR>
+</TABLE>
+
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD>
+
+<CENTER>
+<INPUT TYPE="SUBMIT" VALUE="Submit">
+<INPUT TYPE="RESET" VALUE="Reset">
+</CENTER>
+</TD>
+
+</TR>
+</TABLE>
+
+</FORM>
+
+</body>
+</html>

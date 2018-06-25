@@ -1,0 +1,85 @@
+<HTML><head>
+<title>W3Perl upgrade</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Upgrading the package</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD VALIGN=TOP>
+If you are using a version prior 2.50, I would like to advice you to 
+reinstall the package as so many things have changed since. Some data are stored in different ways.
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Procedure</FONT></I></TD>
+<TD VALIGN=TOP>
+Some upgrade need to reset your stats as incremental data have been changed.
+<P>
+<OL>
+<LI> <B>Backup some data</B>
+<P>
+Make first a copy of your configuration files, your install.pl file and also the cron-w3perl.pl script.
+<P>
+<LI> <B>Extract</B>
+<P>
+Then unpack the package, it will overwrite your scripts. 
+<P>
+<LI> <B>Configuration</B>
+<P>
+<UL>
+<LI> You should then fill the new config.pl file with the help of your old config.pl. Just copy, paste and fill the new fields. You can use the adminstration interface to build the config file if you get a recent version. Changes between version are described in comments at the top of the config.pl file.
+<LI> Cut and paste $pathcgi, $pathw3perl from your old install.pl to the new file and also the first line which should be pointed to your Perl path.
+<LI> Cut and paste values you gave in your old cron-w3perl.pl into the new one.
+</UL>
+<P>
+<LI> <B>Installation</B>
+<P>
+When everything is right, run install.pl....you are now ready to use the latest version
+</OL>
+<P>
+
+<P>
+If you want to keep a old copy of your stats, add the
+directory in @excluderepert in config.pl (@excluderepert = ('/w3perl.old/');)
+<P>
+<HR ALIGN=CENTER WIDTH=30%>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Resetting</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+
+Most of the scripts are now running in incremental mode including
+referer, agent, error stats. if you need to reset all your stats, you'll
+need to run cron-w3perl.pl with the -u flag. It will delete all stats data files
+and launch the scripts to rebuild your stats.<BR>
+If you just want to reset one of the optional script, running with the '-b' 
+flag will erase the current incremental data. (see option available with
+the -h flag).
+<P>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="/chinaeoa/index.jsp"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<HTML><head>
+<title>W3Perl Logfile</TITLE>
+</head>
+
+<BODY BACKGROUND="../img/bg.gif" TEXT="#000000" LINK="#0000C0" VLINK="50508F">
+
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=100%>
+<TR>
+<TD WIDTH=120 VALIGN=TOP><IMG SRC="../img/line.gif" WIDTH=110 HEIGHT=2></TD>
+<TD VALIGN=TOP ALIGN=CENTER>
+<FONT COLOR="#0000FF"><H1>Log file</H1></FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<FONT SIZE=+2></FONT>
+</TD>
+<TD VALIGN=TOP>
+Choosing a logfile is important as it will give you more or less precise
+statistics about your server. If you are running an Unix server, you can
+choose between common or extended common logfile format. Only Apache (AFAIK)
+support the new extended common logfile format.
+If you are running a NT server, you can choose between IIS or common logfile.
+<P>
+<CENTER>
+<TABLE BORDER=1>
+<TR>
+<TD>
+<FONT SIZE=-1>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Logfile
+<BR><BR><BR>
+&nbsp;Server
+</FONT>
+</TD>
+<TD ALIGN=CENTER><B>CLF</B></TD>
+<TD ALIGN=CENTER><B>E-CLF</B>
+<FONT SIZE=-2>
+<BR>
+Extended<BR>
+</FONT>
+</TD>
+<TD ALIGN=CENTER><B>NE-CLF</B>
+<FONT SIZE=-2>
+<BR>
+New Extended<BR>
+</FONT>
+</TD>
+<TD ALIGN=CENTER><B>IIS</B></TD>
+<TD ALIGN=CENTER><B>E-IIS</B>
+<FONT SIZE=-2>
+<BR>
+Extended<BR>
+</FONT>
+</TD>
+</TR>
+<TR>
+<TD ALIGN=CENTER>Apache</TD>
+<TD ALIGN=CENTER>X</TD>
+<TD ALIGN=CENTER>X</TD>
+<TD ALIGN=CENTER>X</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+</TR>
+<TR>
+<TD ALIGN=CENTER>Netscape</TD>
+<TD ALIGN=CENTER>X</TD>
+<TD ALIGN=CENTER>X</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+</TR>
+<TR>
+<TD ALIGN=CENTER>Domino</TD>
+<TD ALIGN=CENTER>X</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+</TR>
+<TR>
+<TD ALIGN=CENTER>NCSA</TD>
+<TD ALIGN=CENTER>X</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+</TR>
+<TR>
+<TD ALIGN=CENTER>CERN</TD>
+<TD ALIGN=CENTER>X</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+</TR>
+<TR>
+<TD ALIGN=CENTER>IIS 3.0</TD>
+<TD ALIGN=CENTER>X</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>X</TD>
+<TD ALIGN=CENTER><FONT SIZE=-1>(with patch)</FONT></TD>
+</TR>
+<TR>
+<TD ALIGN=CENTER>IIS 4.0</TD>
+<TD ALIGN=CENTER>X</TD>
+<TD ALIGN=CENTER>X</TD>
+<TD ALIGN=CENTER>&nbsp;</TD>
+<TD ALIGN=CENTER>X</TD>
+<TD ALIGN=CENTER>X</TD>
+</TR>
+</TABLE>
+<P>
+</CENTER>
+<BR>
+W3Perl can cope with :
+<UL>
+<LI> <B>Common logfile format</B> <I>[all server]</I>
+<LI> <B>Extended Common logfile format</B> <I>[NCSA > 1.4, Apache]</I>
+<BR>(add referrer and agent informations)
+<LI> <B>New Extended Common logfile format</B> <I>[Apache > 1.1.1]</I>
+<BR>(add virtual server and the elapsed processing time)
+<LI> <B>IIS 3.0 standard logfile format</B> <I>[NT server]</I>
+<LI> <B>Domino logfile format</B> <I>[Domino server]</I>
+<LI> <B>IIS 3.0 patched logfile format</B> <I>[NT server]</I>
+<BR>(add referrer and agent informations)
+<LI> <B>IIS 4.0 logfile format</B> <I>[NT server]</I>
+<BR>(add referrer and agent informations)
+</UL>
+<P>
+CERN, Apache, Netscape, NCSA and Domino error logfile are supported. Referer
+and agent separate logfiles are also supported. 
+<P>
+New logfile format can be easily added in the package, contact me if
+you need a specific format. You can't have error statistics with IIS as these informations
+are only stored in a database (AFAIK).
+<P>
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Extended Common for Apache</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+<TABLE BORDER=1>
+<TR>
+<TD>
+How to have the extended common logfile with Apache (default is common
+logfile without any referrer and agent logfile !).
+
+You just have to modify this line in your httpd.conf
+<P>
+<I>CustomLog logs/access_log common</I>
+<BR>
+into
+<BR>
+<I>CustomLog logs/access_log combined</I>
+<P>
+Then restart your httpd server.
+</TD>
+</TR>
+</TABLE>
+
+<P>
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=TOP>
+<I><FONT SIZE=+1>Huge logfile</FONT></I>
+</TD>
+<TD VALIGN=TOP>
+It would be faster if you decide to crunch your logifle each month.
+Instead of scanning a huge log file, the package will only scan
+about the current month log file.
+<P>
+How to build monthly crunched log file is explain 
+<A HREF="multiple.html">here</A>
+<P>
+
+</TD>
+</TR>
+<TD WIDTH=120></TD>
+<TD><P><HR ALIGN=CENTER WIDTH=30%><P></TD>
+</TR>
+
+<TR>
+<TD WIDTH=120></TD>
+<TD ALIGN=CENTER>
+<A HREF="/chinaeoa/index.jsp"><IMG border=0 SRC="../img/back.gif" WIDTH=67 HEIGHT=39 ALT="back"></A>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

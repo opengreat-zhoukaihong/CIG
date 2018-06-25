@@ -1,0 +1,16 @@
+Configuration files directory
+-----------------------------
+
+This directory should be filled with w3perl configuration files.
+The administration interface (/w3perl/admin/) will create
+files inside this directory. As scripts are running by web server with
+minimal permission, this directory should be read/write to everyone.
+(chmod 777).
+
+To install configuration files, you'll need to copy (NOT move) them
+in your cgi-bin directory with others w3perl scripts.
+
+If you upgrade configuration files either from the administration 
+interface or by hand, you need to modify the files inside this
+directory and then copy them in your cgi-bin.
+
